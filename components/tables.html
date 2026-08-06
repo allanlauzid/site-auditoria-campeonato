@@ -1,0 +1,30 @@
+<!--
+  COMPONENTE: Tabela
+  Uso: dados tabulares dentro do conteúdo (ex.: matriz de dependências,
+  classificação por grupo). Envolvida em .table-wrap para scroll horizontal
+  em mobile sem quebrar layout. <caption> obrigatório para acessibilidade.
+-->
+<div class="table-wrap">
+  <table>
+    <caption class="visually-hidden">Exemplo estrutural de tabela — matriz de dependências</caption>
+    <thead>
+      <tr>
+        <th scope="col">Documento</th>
+        <th scope="col">Depende de</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fase 3</td>
+        <td>Fase 2</td>
+        <td><span class="badge badge--accent">Constitucional</span></td>
+      </tr>
+      <tr>
+        <td>Manual — CRM</td>
+        <td>Fase 5, Projeto 08, Projeto 11</td>
+        <td><span class="badge badge--success">Finalizado</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

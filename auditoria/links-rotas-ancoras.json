@@ -1,0 +1,85 @@
+{
+  "gerado_em": "2026-08-05T22:41:26.631219",
+  "fase": "Fase 5 — Links, Rotas, Âncoras",
+  "metodologia": "Varredura completa (nao amostragem) de 52 arquivos .html via BeautifulSoup: extracao de href/src/canonical/og:url/JSON-LD url; crawl BFS real a partir de index.html seguindo apenas <a href> internos; comparacao com navigation.json, sitemap.xml e search-index.json (389 entradas).",
+  "totais": {
+    "arquivos_html_total": 52,
+    "paginas_conteudo_publico": 29,
+    "links_href_src_verificados": 430,
+    "links_quebrados_encontrados": 3,
+    "links_quebrados_reais_fora_de_template": 0,
+    "links_quebrados_corrigidos": 0,
+    "ancoras_quebradas_encontradas": 1,
+    "ancoras_quebradas_corrigidas": 1,
+    "ids_duplicados_na_mesma_pagina_encontrados": 0,
+    "ids_invalidos_encontrados": 0,
+    "paginas_orfas_conteudo_encontradas": 0,
+    "paginas_alcancadas_so_via_search_index": 0,
+    "paginas_ausentes_de_navigation_json": 0,
+    "paginas_ausentes_de_sitemap_atual": 24,
+    "documentos_com_sequencia_anterior_proximo_ausente": 0,
+    "documentos_index_sem_doc_nav_esperado": 6
+  },
+  "links_quebrados_detalhe": [
+    {
+      "arquivo": "templates/document-template.html",
+      "ocorrencias": [
+        "{{URL_DOC_ANTERIOR}}",
+        "{{URL_DOC_PROXIMO}}",
+        "{{URL_CANONICA}}"
+      ],
+      "classificacao": "nao e link quebrado real — placeholders de template interno (nao publicado, nao listado em navigation.json/sitemap), substituidos em tempo de geracao de pagina. Nenhuma correcao necessaria.",
+      "acao": "nenhuma (falso positivo confirmado)"
+    }
+  ],
+  "ancoras_quebradas_detalhe": [
+    {
+      "arquivo": "components/search-results.html",
+      "linha_aprox": 7,
+      "antes": "href=\"/docs/fases/fase3.html#sistema-simbolico\" (e item-path repetindo o mesmo valor na linha 9)",
+      "depois": "href=\"/docs/fases/fase3.html#17-sistema-simbolico\"",
+      "motivo": "o id real do heading H2 em docs/fases/fase3.html (linha 294) e '17-sistema-simbolico' (prefixo numerico do capitulo), nao 'sistema-simbolico'. O componente search-results.html e um exemplo estatico de referencia visual (comentario no topo do arquivo), mas foi corrigido para nao propagar um link quebrado como modelo.",
+      "status": "corrigido"
+    }
+  ],
+  "duplicate_ids": "nenhum id duplicado na mesma pagina em nenhuma das 52 paginas",
+  "ids_invalidos": "nenhum — verificacao inicial com regex exigindo letra inicial gerou 411 falsos positivos (ids como '0-ficha-tecnica...', '17-sistema-simbolico'); IDs iniciados por digito sao validos em HTML5 (unico requisito: nao vazio, sem espaco em branco). Apos correcao do criterio, 0 ids realmente invalidos (nenhum com espaco/vazio).",
+  "ids_instaveis_hash_aleatorio": "nenhum id no formato hash aleatorio encontrado; todos os ids seguem padrao slug legivel (ex.: '11-projeto01-...', '3-fase3-...').",
+  "crawl_bfs": {
+    "origem": "index.html",
+    "paginas_de_conteudo_total": 29,
+    "paginas_de_conteudo_alcancadas": 29,
+    "paginas_de_conteudo_orfas": [],
+    "observacao": "componentes (components/*.html), templates/document-template.html, search/index.html e 404.html nao sao alcancados via <a href> a partir de index.html por serem, respectivamente, biblioteca de componentes de referencia (nao publicados na navegacao), template de geracao, ponto de entrada da busca client-side (acessado via JS/URL direta, referenciado em navigation.json) e pagina de erro (acessada apenas via rota 404 do servidor). Nenhum e considerado pagina de conteudo publico orfa."
+  },
+  "comparacao_navigation_json": {
+    "paginas_de_conteudo_ausentes_da_navigation_json": [],
+    "conclusao": "todas as 29 paginas de conteudo estao presentes em data/navigation.json; navigation.json tambem referencia /search/index.html, /DESIGN_SYSTEM.md e /README.md (fora do escopo de paginas de conteudo HTML)."
+  },
+  "comparacao_sitemap_atual": {
+    "paginas_de_conteudo_ausentes_do_sitemap_xml_atual": 24,
+    "conclusao": "sitemap.xml atual (5 URLs, dominio ficticio https://exemplo.invalido) esta desatualizado e sera totalmente regenerado na Fase 8."
+  },
+  "sequencia_anterior_proximo": {
+    "paginas_com_doc_nav": 23,
+    "paginas_sem_doc_nav": [
+      "docs/fases/index.html",
+      "docs/glossario/index.html",
+      "docs/manuais/index.html",
+      "docs/projetos/index.html",
+      "docs/roadmaps/index.html",
+      "docs/roadmaps/mapa-constitucional.html"
+    ],
+    "observacao": "paginas sem doc-nav sao paginas-indice (listagem) ou mapa-constitucional.html (pagina de referencia autonoma), onde navegacao anterior/proximo linear nao se aplica. Nenhum link prev/next quebrado encontrado nas 23 paginas restantes."
+  },
+  "outras_verificacoes": {
+    "caminhos_absolutos_tipo_C_ou_sessions": 0,
+    "dominios_ficticios_exemplo_invalido_em_html": 23,
+    "href_vazio_sem_funcao": 0,
+    "javascript_urls": 0,
+    "links_para_pastas_nao_publicas_auditoria_relatorios": 0,
+    "canonical_ausente_em_paginas_indice": 6,
+    "observacao_dominio_ficticio": "as 23 ocorrencias de https://exemplo.invalido encontradas em tags canonical/og:url/JSON-LD nas paginas de conteudo NAO foram alteradas nesta Fase 5 — tratamento centralizado e completo (incluindo CSS/JS/JSON) ocorre na Fase 8 (Sitemap real), evitando correcao fragmentada.",
+    "observacao_canonical_ausente": "as 6 paginas-indice sem tag <link rel=canonical> sao um achado de SEO, nao um link quebrado; registrado para acompanhamento, fora do escopo de correcao obrigatoria desta fase."
+  }
+}

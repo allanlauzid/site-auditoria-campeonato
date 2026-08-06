@@ -1,0 +1,83 @@
+{
+  "$schema": "navigation.schema.v1",
+  "_comment": "Fonte única de verdade da navegação principal e lateral. navigation.js lê este arquivo para montar header, sidebar e footer. Adicionar um item aqui é suficiente para que apareça em toda a navegação (ver MAINTAINABILITY.md).",
+  "topNav": [
+    { "label": "Início", "url": "/index.html" },
+    { "label": "Fases", "url": "/docs/fases/index.html" },
+    { "label": "Projetos", "url": "/docs/projetos/index.html" },
+    { "label": "Manuais", "url": "/docs/manuais/index.html" },
+    { "label": "Roadmaps", "url": "/docs/roadmaps/index.html" },
+    { "label": "Glossário", "url": "/docs/glossario/index.html" }
+  ],
+  "sidebarGroups": [
+    {
+      "title": "Documentação de Controle",
+      "items": [
+        { "label": "Engenharia da Documentação (Etapa 1)", "url": "/docs/arquitetura/engenharia-documentacao.html" }
+      ]
+    },
+    {
+      "title": "Fases (Constituição Estratégica)",
+      "items": [
+        { "label": "Fase 1 — Benchmark", "url": "/docs/fases/fase1.html" },
+        { "label": "Fase 2 — Identidade Estratégica", "url": "/docs/fases/fase2.html" },
+        { "label": "Fase 3 — Plataforma de Marca", "url": "/docs/fases/fase3.html" },
+        { "label": "Fase 4 — Arquitetura de Lançamento", "url": "/docs/fases/fase4.html" },
+        { "label": "Fase 5 — Ecossistema Institucional", "url": "/docs/fases/fase5.html" },
+        { "label": "Fase 6 — Master Plan", "url": "/docs/fases/fase6.html" }
+      ]
+    },
+    {
+      "title": "Projetos (Constituições Operacionais)",
+      "items": [
+        { "label": "Projeto 01 — Comunicação", "url": "/docs/projetos/projeto01.html" },
+        { "label": "Projeto 02 — Criativo", "url": "/docs/projetos/projeto02.html" },
+        { "label": "Projeto 03 — Identidade Visual", "url": "/docs/projetos/projeto03.html" },
+        { "label": "Projeto 04 — Brand Book", "url": "/docs/projetos/projeto04.html" },
+        { "label": "Projeto 05 — Patrocínios", "url": "/docs/projetos/projeto05.html" },
+        { "label": "Projeto 06 — Comercial/Vendas", "url": "/docs/projetos/projeto06.html" },
+        { "label": "Projeto 07 — Experiência do Evento", "url": "/docs/projetos/projeto07.html" },
+        { "label": "Projeto 08 — Memória/Patrimônio", "url": "/docs/projetos/projeto08.html" },
+        { "label": "Projeto 09 — Operacional do Evento", "url": "/docs/projetos/projeto09.html" },
+        { "label": "Projeto 10 — Lançamento/Mobilização", "url": "/docs/projetos/projeto10.html" },
+        { "label": "Projeto 11 — Inteligência Pré-Inscrição", "url": "/docs/projetos/projeto11.html" }
+      ]
+    },
+    {
+      "title": "Manuais Funcionais",
+      "items": [
+        { "label": "Manual — CRM", "url": "/docs/manuais/manual-crm.html" },
+        { "label": "Manual — Dashboard Executivo", "url": "/docs/manuais/manual-dashboard.html" },
+        { "label": "Manual — Formulário de Interesse", "url": "/docs/manuais/manual-formulario.html" },
+        { "label": "Manual — Stories Baseados em Dados", "url": "/docs/manuais/manual-stories.html" }
+      ]
+    },
+    {
+      "title": "Referência",
+      "items": [
+        { "label": "Roadmaps consolidados", "url": "/docs/roadmaps/index.html" },
+        { "label": "Glossário (46 termos)", "url": "/docs/glossario/index.html" },
+        { "label": "Mapa constitucional", "url": "/docs/roadmaps/mapa-constitucional.html" }
+      ]
+    }
+  ],
+  "footerColumns": [
+    { "title": "Documentação", "links": [
+      { "label": "Fases", "url": "/docs/fases/index.html" },
+      { "label": "Projetos", "url": "/docs/projetos/index.html" },
+      { "label": "Manuais", "url": "/docs/manuais/index.html" }
+    ]},
+    { "title": "Referência", "links": [
+      { "label": "Glossário", "url": "/docs/glossario/index.html" },
+      { "label": "Roadmaps", "url": "/docs/roadmaps/index.html" },
+      { "label": "Busca", "url": "/search/index.html" }
+    ]},
+    { "title": "Documentação de Controle", "links": [
+      { "label": "Engenharia da Documentação", "url": "/docs/arquitetura/engenharia-documentacao.html" }
+    ]},
+    { "title": "Projeto", "links": [
+      { "label": "Sobre este portal", "url": "/README.md" },
+      { "label": "Design System", "url": "/DESIGN_SYSTEM.md" }
+    ]}
+  ]
+}

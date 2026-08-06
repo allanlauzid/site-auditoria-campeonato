@@ -1,0 +1,5 @@
+{
+  "$schema": "site-config.schema.v1",
+  "_comment": "Configuracao de ambiente do portal. baseUrl vazio proposital: nenhum dominio real foi definido ate o momento desta auditoria RC1. Antes da publicacao, preencher baseUrl (ex.: https://www.dominio-real.com.br) e executar a substituicao de {{baseUrl}} em todas as paginas (canonical, og:url, JSON-LD url) e em sitemap.xml/robots.txt.",
+  "baseUrl": ""
+}

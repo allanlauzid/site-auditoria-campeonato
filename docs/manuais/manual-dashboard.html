@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manual — Dashboard Executivo · Portal CBKS</title>
+<meta content="Objetivo: reduzir incerteza na tomada de decisão — o dashboard não existe para medir tudo o que é possível medir, existe para medir exatamente aquilo que ajuda alguém a decidir melhor." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="Manual — Dashboard Executivo" property="og:title"/>
+<meta content="Objetivo: reduzir incerteza na tomada de decisão — o dashboard não existe para medir tudo o que é possível medir, existe para medir exatamente aquilo que ajuda alguém a decidir melhor." property="og:description"/>
+<meta content="{{baseUrl}}/docs/manuais/manual-dashboard.html" property="og:url"/>
+<meta content="/assets/images/og-default.png" property="og:image"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Manual — Dashboard Executivo" name="twitter:title"/>
+<meta content="Objetivo: reduzir incerteza na tomada de decisão — o dashboard não existe para medir tudo o que é possível medir, existe para medir exatamente aquilo que ajuda alguém a decidir melhor." name="twitter:description"/>
+<link href="{{baseUrl}}/docs/manuais/manual-dashboard.html" rel="canonical"/>
+<link href="/assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/css/design-system.css" rel="stylesheet"/>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Manual — Dashboard Executivo",
+    "description": "Objetivo: reduzir incerteza na tomada de decisão — o dashboard não existe para medir tudo o que é possível medir, existe para medir exatamente aquilo que ajuda alguém a decidir melhor.",
+    "url": "{{baseUrl}}/docs/manuais/manual-dashboard.html",
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Portal de Documentação — Campeonato Brasileiro de Kettlebell Sport"
+    },
+    "dateModified": "2026-08-05",
+    "version": "Versão documental: não versionado"
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="site-header__brand" href="/index.html">
+<img alt="" height="28" loading="eager" src="/assets/icons/logo-mark.svg" width="28"/>
+<span>Portal CBKS</span>
+</a>
+<nav aria-label="Navegação principal"><ul class="site-header__nav" data-topnav=""></ul></nav>
+<div class="site-header__actions">
+<button aria-label="Abrir busca (Ctrl+K)" class="btn btn--icon" data-action="open-modal" data-target="search-modal" type="button">🔍</button>
+<button aria-label="Alternar tema claro/escuro" aria-pressed="false" class="btn btn--icon" data-action="toggle-theme" type="button">🌓</button>
+<button aria-controls="primary-sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="btn btn--icon" data-action="toggle-sidebar" type="button">☰</button>
+</div>
+</div>
+</header>
+<div class="container">
+<div class="page-shell">
+<aside aria-label="Navegação da documentação" class="page-shell__sidebar sidebar" id="primary-sidebar">
+<div data-sidebar=""></div>
+</aside>
+<main class="page-shell__main" id="main-content">
+<nav aria-label="Trilha de navegação" class="breadcrumb" data-breadcrumb=""></nav>
+<article class="doc-content">
+<header>
+<p class="card__eyebrow">Manual / Dashboard Executivo</p>
+<h1>Manual — Dashboard Executivo</h1>
+<div class="card__meta" style="margin:var(--space-4) 0 var(--space-6)">
+<span class="badge badge--neutral">Versão: não versionado</span>
+<span class="badge badge--success">Status: finalizado, auditoria dupla</span>
+<span>⏱ 16 min de leitura</span>
+</div>
+<p class="text-muted"><strong>Objetivo:</strong> Este manual define, no eixo Captura → Relacionamento → Inteligência → Comunicação pública, a camada de INTELIGÊNCIA: o sistema permanente que qualquer Dashboard Executivo futuro — em qualquer plataforma de BI — deve seguir. Opera dentro dos princípios dos Projetos 01, 06, 07, 08, 09, 10 e 11, e de toda a Constituição anterior, sem autoridade para alterá-los.</p>
+<p class="text-muted"><em>Campeonato Brasileiro de Kettlebell Sport — Manual Operacional Permanente</em></p>
+<p class="text-muted"><em>Opera dentro dos princípios dos Projetos 01, 06, 07, 08, 09, 10 e 11, e de toda a Constituição anterior — sem autoridade para alterá-los. Este manual não cria dashboards, telas, gráficos ou banco de dados — cria o sistema permanente que qualquer Dashboard Executivo futuro, em qualquer plataforma de BI, deve seguir.</em></p>
+<div class="callout callout--info" role="note" style="margin-bottom:var(--space-4)">
+<span aria-hidden="true" class="callout__icon">🧭</span>
+<div>
+<strong>Cadeia conceitual do ecossistema de dados (Captura → Relacionamento → Inteligência → Comunicação pública):</strong> Formulário = Captura · CRM = Relacionamento · Dashboard = Inteligência · Stories = Comunicação pública. Este documento corresponde ao elo <strong>INTELIGÊNCIA</strong> dessa cadeia.
+              </div>
+</div>
+<div class="callout callout--warning" role="note" style="margin-bottom:var(--space-4)">
+<span aria-hidden="true" class="callout__icon">🔀</span>
+<div>
+<strong>Navegação pedagógica × grafo técnico de dependências</strong> — são dois conceitos distintos nesta página. A <em>navegação pedagógica</em> (rodapé "Anterior/Próximo") segue a ordem de leitura recomendada Formulário → CRM → Dashboard → Stories. O <em>grafo técnico de dependências</em> (abaixo, "Dependências") descreve o que tecnicamente alimenta este sistema, e pode não coincidir com a ordem de leitura.
+              </div>
+</div>
+<div class="callout callout--info" role="note">
+<span aria-hidden="true" class="callout__icon">🔗</span>
+<div>
+<strong>Dependências (grafo técnico):</strong> <a href="/docs/manuais/manual-crm.html">Manual — CRM</a>, <a href="/docs/projetos/projeto11.html">Projeto 11 — Sistema de Inteligência Pré-Inscrição</a>, <a href="/docs/projetos/projeto08.html">Projeto 08 — Sistema de Memória e Patrimônio</a><br/>
+<strong>Documentos relacionados:</strong> <a href="/docs/manuais/manual-crm.html">Manual — CRM</a>, <a href="/docs/manuais/manual-stories.html">Manual — Stories Baseados em Dados</a><br/>
+<strong>Roadmaps associados:</strong> <a href="/docs/roadmaps/index.html">Roadmaps consolidados</a>
+</div>
+</div>
+</header>
+<section id="conteudo-principal">
+<h2 id="1-filosofia-do-dashboard">1. FILOSOFIA DO DASHBOARD</h2>
+<p><strong>Objetivo:</strong> reduzir incerteza na tomada de decisão — o dashboard não existe para medir tudo o que é possível medir, existe para medir exatamente aquilo que ajuda alguém a decidir melhor.</p>
+<p><strong>Papel institucional:</strong> ser a fonte única de leitura executiva consolidada de todos os sistemas já constitucionais (Projetos 06 a 11), evitando que diferentes áreas operem com números divergentes sobre a mesma realidade.</p>
+<p><strong>Como apoia decisões:</strong> cada indicador exibido está formalmente vinculado a uma decisão real de algum sistema já existente — nunca um número solto "porque é interessante saber".</p>
+<p><strong>Como protege a marca:</strong> ao priorizar indicadores de profundidade (retenção, precisão de previsão, completude de memória) sobre métricas de vaidade (alcance bruto isolado), o dashboard reforça, na prática diária de gestão, a mesma filosofia de longo prazo já estabelecida desde a Fase 1.</p>
+<p><strong>O que nunca deve acontecer:</strong> indicador sem responsável definido; indicador sem interpretação clara; indicador que existe apenas porque é fácil de medir, não porque é útil; qualquer decisão relevante tomada ignorando o dashboard em favor de percepção informal não verificada.</p>
+<hr/>
+<h2 id="2-arquitetura-geral">2. ARQUITETURA GERAL</h2>
+<p><strong>Níveis de informação:</strong>
+1. <strong>Resumo executivo</strong> — poucos números, os mais decisivos, no topo de qualquer visualização.
+2. <strong>Tático</strong> — indicadores por área (Capítulo 3), acessados conforme a função de quem consulta.
+3. <strong>Detalhamento (drill-down)</strong> — possibilidade de aprofundar qualquer número até sua origem, sem exigir isso por padrão.
+4. <strong>Histórico</strong> — comparação com edições anteriores, sempre disponível, nunca escondida.</p>
+<p><strong>Hierarquia:</strong> a posição e o destaque visual de um indicador refletem sua importância real para decisão, nunca apenas disponibilidade técnica do dado.</p>
+<p><strong>Relacionamentos:</strong> indicadores de diferentes áreas são conectados quando relevantes (ex: interesse pré-inscrição relacionado a dimensionamento operacional), nunca apresentados como painéis isolados sem relação entre si.</p>
+<hr/>
+<h2 id="3-perfis-de-usuario">3. PERFIS DE USUÁRIO</h2>
+<table>
+<thead>
+<tr>
+<th scope="col">Perfil</th>
+<th scope="col">Decisões que precisa tomar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Presidência</td>
+<td>Direção estratégica geral, aprovação de investimento maior, avaliação de saúde institucional.</td>
+</tr>
+<tr>
+<td>Coordenação Geral</td>
+<td>Integração entre áreas, resolução de conflito de prioridade entre centros (Projeto 09).</td>
+</tr>
+<tr>
+<td>Marketing</td>
+<td>Ajuste de comunicação e mobilização (Projeto 10).</td>
+</tr>
+<tr>
+<td>Comercial</td>
+<td>Priorização de negociação, argumento de valor real a patrocinadores (Projeto 06).</td>
+</tr>
+<tr>
+<td>Operação</td>
+<td>Dimensionamento físico e logístico (Projeto 09).</td>
+</tr>
+<tr>
+<td>Produção</td>
+<td>Ajuste de recursos técnicos de montagem e execução.</td>
+</tr>
+<tr>
+<td>Comunicação</td>
+<td>Calibração de conteúdo e canais (Projeto 01/10).</td>
+</tr>
+<tr>
+<td>Patrocínio</td>
+<td>Avaliação de retorno e renovação (Projeto 05).</td>
+</tr>
+<tr>
+<td>Arbitragem</td>
+<td>Monitoramento de consistência técnica (Fase 5).</td>
+</tr>
+<tr>
+<td>Memória</td>
+<td>Completude e qualidade do acervo histórico (Projeto 08).</td>
+</tr>
+<tr>
+<td>Inteligência</td>
+<td>Precisão de previsão e qualidade de dado (Projeto 11).</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="4-arquitetura-dos-indicadores">4. ARQUITETURA DOS INDICADORES</h2>
+<ul>
+<li><strong>Estratégicos:</strong> usados pela Presidência e Governança de Marca, refletem saúde institucional de longo prazo (Fase 6).</li>
+<li><strong>Táticos:</strong> usados por diretores de área, apoiam decisões de médio prazo dentro de um ciclo de edição.</li>
+<li><strong>Operacionais:</strong> usados em tempo real durante a operação do evento (Projeto 09), exigem atualização imediata.</li>
+<li><strong>Históricos:</strong> comparam edições ao longo do tempo (Projeto 08), fundamentam decisões de tendência.</li>
+<li><strong>Preditivos:</strong> projeções baseadas no Sistema de Inteligência Pré-Inscrição (Projeto 11), usadas para planejamento antecipado.</li>
+</ul>
+<p>Cada indicador pertence a exatamente uma dessas categorias, evitando ambiguidade sobre seu uso pretendido.</p>
+<hr/>
+<h2 id="5-catalogo-de-kpis-principios-por-indicador">5. CATÁLOGO DE KPIs — PRINCÍPIOS POR INDICADOR</h2>
+<p>Cada KPI listado obedece à mesma estrutura obrigatória de definição:</p>
+<ul>
+<li><strong>Interesse pré-inscrição</strong> — definição: volume de manifestação de interesse válida (Projeto 11); objetivo: antecipar demanda; interpretação: sempre lida junto à taxa de conversão histórica, nunca isoladamente; frequência: diária durante a macrofase de Escuta (Projeto 10); responsável: Inteligência; decisão associada: calibração de comunicação regional e dimensionamento preliminar.</li>
+<li><strong>Conversão</strong> — definição: proporção de interesse que se torna inscrição confirmada; objetivo: medir eficácia e alinhamento de expectativa; interpretação: queda abrupta pode indicar desalinhamento de comunicação, não apenas fraqueza comercial; frequência: semanal; responsável: Marketing/Comercial; decisão: ajuste de mensagem ou de processo de inscrição.</li>
+<li><strong>Distribuição geográfica</strong> — definição: participação por estado/cidade/região; objetivo: orientar logística e expansão; interpretação: sempre comparada ao histórico (Projeto 08); frequência: semanal, tempo real próximo à abertura; responsável: Operação/Inteligência; decisão: dimensionamento e priorização regional.</li>
+<li><strong>Crescimento da comunidade</strong> — definição: variação de interesse e participação ano a ano; objetivo: medir saúde de longo prazo; interpretação: sempre lida junto à retenção, nunca isoladamente; frequência: por edição/anual; responsável: Governança de Marca; decisão: estratégica, de expansão (Fase 5).</li>
+<li><strong>Participação por categoria/modalidade</strong> — definição: volume por categoria técnica; objetivo: dimensionar operação técnica; interpretação: concentração excessiva sinaliza risco operacional (Projeto 09); frequência: semanal, próximo à abertura; responsável: Coordenação Técnica; decisão: ajuste de formato/logística.</li>
+<li><strong>Atletas estreantes vs. recorrentes</strong> — definição: proporção de novos e retornantes; objetivo: distinguir crescimento real de simples retenção; interpretação: os dois são positivos, mas exigem leitura estratégica diferente; frequência: por edição; responsável: Governança de Marca; decisão: calibração de investimento em aquisição vs. retenção.</li>
+<li><strong>Retenção</strong> — definição: proporção de atletas que retornam em edições subsequentes; objetivo: indicador central de saúde de longo prazo (Fase 6); interpretação: mais importante que crescimento bruto isolado; frequência: por edição; responsável: Governança de Marca; decisão: revisão de experiência (Projeto 07) se em queda.</li>
+<li><strong>Patrocínios</strong> — definição: taxa de renovação e satisfação (Projeto 05/06); objetivo: sustentabilidade financeira; interpretação: sempre lida junto ao ROI institucional, não apenas financeiro; frequência: por ciclo contratual; responsável: Comercial; decisão: ajuste de proposta de valor.</li>
+<li><strong>Engajamento</strong> — definição: interação real com conteúdo institucional; objetivo: medir conexão genuína, não alcance passivo; interpretação: sempre contextualizada por tipo de conteúdo (<a href="/docs/projetos/projeto10.html#6-sistema-de-conteudo">Projeto 10, Capítulo 6</a>); frequência: semanal; responsável: Comunicação; decisão: ajuste de linha editorial.</li>
+<li><strong>Alcance</strong> — definição: volume bruto de visualização; objetivo: indicador de menor peso relativo, nunca decisório isoladamente; interpretação: sempre lido junto a engajamento e conversão; frequência: semanal; responsável: Comunicação; decisão: apoio secundário, nunca decisão isolada.</li>
+<li><strong>Operação</strong> — definição: aderência a marcos operacionais (<a href="/docs/projetos/projeto09.html#18-sistema-de-avaliacao">Projeto 09, Capítulo 18</a>); objetivo: confiabilidade de execução; interpretação: desvio sinaliza risco imediato; frequência: tempo real durante evento; responsável: Direção Geral; decisão: intervenção operacional imediata.</li>
+<li><strong>Experiência</strong> — definição: satisfação e memorabilidade (<a href="/docs/projetos/projeto07.html#18-sistema-de-avaliacao">Projeto 07, Capítulo 18</a>); objetivo: medir cumprimento da promessa central da marca; interpretação: queda exige investigação qualitativa, não apenas numérica; frequência: por edição; responsável: Coordenação de Experiência; decisão: ajuste de rituais/logística de experiência.</li>
+<li><strong>Memória</strong> — definição: completude do acervo histórico (<a href="/docs/projetos/projeto08.html#17-sistema-de-avaliacao">Projeto 08, Capítulo 17</a>); objetivo: garantir cumprimento da promessa "nós guardamos"; interpretação: lacunas indicam falha operacional de captação, não apenas administrativa; frequência: por edição; responsável: Curadoria; decisão: reforço de captação na edição seguinte.</li>
+</ul>
+<hr/>
+<h2 id="6-sistema-de-alertas">6. SISTEMA DE ALERTAS</h2>
+<p><strong>Quando gerar um alerta:</strong> desvio significativo e confirmado entre previsão e realidade (<a href="/docs/projetos/projeto11.html#9-sistema-de-indicadores">Projeto 11, Capítulo 9</a>); categoria se aproximando do limite operacional previsto (Projeto 09); queda abrupta e não explicada de indicador crítico (retenção, conversão).</p>
+<p><strong>Quando não gerar um alerta:</strong> flutuação dentro da margem histórica normal de variação — alertas excessivamente sensíveis geram fadiga de alerta e reduzem a atenção real dada aos alertas que de fato importam.</p>
+<p><strong>Limiares:</strong> definidos tecnicamente por indicador (Capítulo 5), sempre calibrados com base em dado histórico real, nunca em valor arbitrário sem lastro.</p>
+<p><strong>Anomalias e tendências:</strong> distinguidas explicitamente — uma anomalia é um desvio pontual; uma tendência é um padrão sustentado ao longo de múltiplas leituras. O sistema trata as duas de forma diferente, nunca reagindo a um único ponto fora da curva como se fosse tendência confirmada.</p>
+<hr/>
+<h2 id="7-sistema-de-visualizacao">7. SISTEMA DE VISUALIZAÇÃO</h2>
+<p>Os mesmos princípios de honestidade estatística já formalizados no Manual dos Stories Baseados em Dados se aplicam integralmente aqui, com o mesmo rigor: gráficos sem distorção de eixo, mapas com proporção fiel, comparações sempre rotuladas, percentuais sempre com base declarada. Cartões de indicador exibem sempre número <strong>e</strong> contexto mínimo (nunca apenas o número isolado). Cores têm significado consistente e nunca decorativo — uma cor de alerta significa sempre a mesma coisa em qualquer painel do sistema. <strong>Prioridade permanente:</strong> clareza e precisão acima de qualquer consideração estética.</p>
+<hr/>
+<h2 id="8-storytelling-executivo">8. STORYTELLING EXECUTIVO</h2>
+<p>Toda apresentação de dados a um gestor responde, nesta ordem: <strong>o que aconteceu</strong> (fato objetivo) → <strong>por que aconteceu</strong> (contexto e causa, quando disponível) → <strong>quais impactos existem</strong> (conexão com outras áreas e indicadores, Capítulo 2) → <strong>quais decisões são recomendadas</strong> (ação concreta, nunca apenas dado bruto entregue sem direção). Um dashboard executivo que entrega apenas o primeiro passo desta sequência está incompleto, mesmo que tecnicamente correto.</p>
+<hr/>
+<h2 id="9-integracao">9. INTEGRAÇÃO</h2>
+<p>Este dashboard consolida, sem duplicar, os dados já produzidos pelos Projetos 06 a 11 — nunca recoleta o que outro sistema já captura. <strong>Princípio de fonte única:</strong> cada dado tem exatamente uma origem primária rastreável, mesmo quando aparece em múltiplos painéis, mesmo princípio já fixado no <a href="/docs/projetos/projeto11.html#8-sistema-de-dashboards">Projeto 11, Capítulo 8</a>.</p>
+<hr/>
+<h2 id="10-governanca-dos-dados">10. GOVERNANÇA DOS DADOS</h2>
+<p><strong>Origem:</strong> todo indicador é rastreável até seu sistema-fonte primário (CRM, Sistema de Memória, Sistema de Inscrições, etc.).</p>
+<p><strong>Responsáveis:</strong> cada indicador tem um responsável nomeado (Capítulo 5), nunca "a equipe" de forma genérica.</p>
+<p><strong>Validação:</strong> segue o mesmo protocolo já constitucional (<a href="/docs/projetos/projeto11.html#5-sistema-de-qualidade-dos-dados">Projeto 11, Capítulo 5</a>) antes de qualquer exibição executiva.</p>
+<p><strong>Atualização e versionamento:</strong> conforme frequência definida (Capítulo 12), com histórico de mudança de definição de indicador sempre preservado, nunca sobrescrito silenciosamente.</p>
+<p><strong>Auditorias:</strong> revisão periódica formal (Capítulo 18).</p>
+<p><strong>Confiabilidade e rastreabilidade:</strong> nenhum número aparece no dashboard sem poder ser explicado, até sua fonte primária, por quem o consulta.</p>
+<hr/>
+<h2 id="11-qualidade-dos-indicadores">11. QUALIDADE DOS INDICADORES</h2>
+<p>Medida por: <strong>completude</strong> (dado disponível para todo o período relevante) · <strong>consistência</strong> (mesma definição aplicada uniformemente) · <strong>precisão</strong> (proximidade entre indicador e realidade) · <strong>atualização</strong> (aderência à frequência definida) · <strong>confiabilidade</strong> (ausência de erro sistemático) · <strong>relevância</strong> (ainda apoia decisão real, Capítulo 15) · <strong>comparabilidade</strong> (metodologia estável ao longo do tempo, <a href="/docs/projetos/projeto11.html#14-sistema-de-aprendizado">Projeto 11, Capítulo 14</a>).</p>
+<hr/>
+<h2 id="12-frequencia-de-atualizacao">12. FREQUÊNCIA DE ATUALIZAÇÃO</h2>
+<ul>
+<li><strong>Tempo real:</strong> indicadores operacionais durante a execução do evento (Projeto 09).</li>
+<li><strong>Diariamente:</strong> interesse pré-inscrição durante a macrofase de Escuta (Projeto 10/11).</li>
+<li><strong>Semanalmente:</strong> engajamento, conversão, distribuição geográfica.</li>
+<li><strong>Mensalmente:</strong> KPIs de marca de acompanhamento contínuo (Fase 6).</li>
+<li><strong>Por edição:</strong> retenção, experiência, memória, patrocínio.</li>
+<li><strong>Anualmente:</strong> inteligência de mercado de longo prazo (<a href="/docs/projetos/projeto10.html#9-sistema-de-inteligencia-de-mercado">Projeto 10, Capítulo 9</a>).</li>
+</ul>
+<p>Cada frequência é justificada pela velocidade real de mudança do fenômeno medido — nunca por conveniência técnica de coleta.</p>
+<hr/>
+<h2 id="13-sistema-de-tomada-de-decisao">13. SISTEMA DE TOMADA DE DECISÃO</h2>
+<ul>
+<li><strong>Quando agir:</strong> desvio crítico confirmado (não apenas um ponto isolado) em indicador com decisão associada clara (Capítulo 5).</li>
+<li><strong>Quando monitorar:</strong> desvio leve, ainda dentro do aceitável, mas digno de acompanhamento próximo.</li>
+<li><strong>Quando investigar:</strong> padrão anômalo sem explicação evidente — antes de qualquer ação, entender a causa.</li>
+<li><strong>Quando comunicar:</strong> marco relevante, positivo ou negativo, que afeta percepção de múltiplas áreas.</li>
+<li><strong>Quando escalar:</strong> qualquer desvio que toque em elemento constitucional protegido (rituais, valores, promessas centrais) sobe imediatamente à Governança de Marca, mesma lógica já aplicada em toda a Constituição.</li>
+</ul>
+<hr/>
+<h2 id="14-seguranca-e-acesso">14. SEGURANÇA E ACESSO</h2>
+<p><strong>Níveis de acesso:</strong> definidos por perfil (Capítulo 3), nunca acesso irrestrito universal.</p>
+<p><strong>Permissões:</strong> visualizar, exportar e editar são níveis distintos — a maioria dos perfis visualiza; exportação é restrita e registrada; edição de definição de indicador é exclusiva da função de Inteligência, sob validação da Governança de Marca.</p>
+<p><strong>Proteção de dados e LGPD:</strong> nenhum dado pessoal identificável aparece em visão agregada executiva sem necessidade real — a maioria das decisões estratégicas não exige saber o nome individual por trás de um número, apenas o padrão agregado.</p>
+<p><strong>Compartilhamento:</strong> apenas dentro do escopo formalmente aprovado; versões para patrocinadores seguem tratamento específico (Capítulo 17).</p>
+<p><strong>Exportação:</strong> sempre registrada, nunca anônima.</p>
+<p><strong>Registro de acessos:</strong> log formal de quem acessou qual informação e quando, coerente com o princípio de rastreabilidade (Capítulo 10).</p>
+<hr/>
+<h2 id="15-roadmap-de-evolucao">15. ROADMAP DE EVOLUÇÃO</h2>
+<p><strong>Como incorporar novo indicador:</strong> aplicando o mesmo teste de propósito já usado em todo o sistema — "isso apoia uma decisão real que hoje não é apoiada?"</p>
+<p><strong>Como aposentar indicador:</strong> quando deixa de gerar decisão real ao longo do tempo, documentando formalmente a descontinuação, nunca apenas removendo silenciosamente.</p>
+<p><strong>Como manter comparabilidade histórica:</strong> qualquer mudança de metodologia preserva a série histórica anterior de forma explícita e documentada, nunca substituindo silenciosamente o significado de um indicador já usado por anos.</p>
+<hr/>
+<h2 id="16-roadmap-de-implementacao">16. ROADMAP DE IMPLEMENTAÇÃO</h2>
+<p><strong>Dependências:</strong> implementação real depende de que as fontes de dado (CRM, Sistema de Memória, Sistema de Inteligência Pré-Inscrição) estejam minimamente maduras e integradas (<a href="/docs/projetos/projeto11.html#15-sistema-de-integracao">Projeto 11, Capítulo 15</a>) — um dashboard não pode ser mais confiável do que suas fontes.</p>
+<p><strong>Boas práticas:</strong> nenhuma ferramenta específica de BI é exigida por este manual — qualquer plataforma que suporte os princípios de rastreabilidade (Capítulo 10) e níveis de acesso (Capítulo 14) é compatível, mesmo princípio de não-dependência de fornecedor único já usado nos Projetos 08 e 09.</p>
+<p><strong>Critérios de implantação:</strong> validação com um perfil de usuário real (Capítulo 3) antes de expansão para todos os perfis simultaneamente, permitindo ajuste com base em uso real, não apenas desenho teórico.</p>
+<hr/>
+<h2 id="17-casos-especiais">17. CASOS ESPECIAIS</h2>
+<ul>
+<li><strong>Presidência/Conselho:</strong> visão mais alta possível, menor volume de detalhe, foco total em indicadores estratégicos (Capítulo 4).</li>
+<li><strong>Patrocinadores:</strong> nunca recebem acesso direto ao dashboard interno completo — recebem versão adaptada e exportável, seguindo as mesmas regras de compartilhamento de dado já definidas no Sistema de Patrocínios (Projeto 05/06).</li>
+<li><strong>Coordenação Técnica:</strong> foco em indicadores de integridade competitiva (arbitragem, categorias).</li>
+<li><strong>Marketing/Comercial/Operação:</strong> conforme perfis já detalhados no Capítulo 3.</li>
+<li><strong>Memória:</strong> foco em indicadores históricos e de completude patrimonial (Projeto 08).</li>
+<li><strong>Comunidade (público geral):</strong> nunca acessa o dashboard bruto — recebe dados já tratados e contextualizados exclusivamente pelo Manual dos Stories Baseados em Dados, preservando a distinção entre informação executiva interna e comunicação pública.</li>
+</ul>
+<hr/>
+<h2 id="18-sistema-de-auditoria">18. SISTEMA DE AUDITORIA</h2>
+<p><strong>Como auditar dashboards:</strong> revisão periódica formal de se cada indicador ainda apoia decisão real (Capítulo 15), não apenas se os números continuam tecnicamente corretos.</p>
+<p><strong>Como validar indicadores:</strong> reconferência de cálculo contra a fonte primária (Capítulo 10).</p>
+<p><strong>Como detectar erros:</strong> comparação sistemática entre o valor exibido e a fonte primária original.</p>
+<p><strong>Como revisar definições:</strong> processo formal e documentado de ajuste de definição de KPI ao longo dos anos, nunca alteração informal.</p>
+<p><strong>Como manter consistência entre edições:</strong> aplicação da mesma metodologia (Capítulo 11), auditada a cada novo ciclo.</p>
+<hr/>
+<h2 id="19-roadmap-de-documentos-derivados">19. ROADMAP DE DOCUMENTOS DERIVADOS</h2>
+<ol>
+<li><strong>Manual dos KPIs</strong> — aprofundamento técnico completo do Capítulo 5.</li>
+<li><strong>Manual dos Indicadores Operacionais</strong> — aprofundamento específico do Projeto 09.</li>
+<li><strong>Manual dos Indicadores Comerciais</strong> — aprofundamento específico dos Projetos 05/06.</li>
+<li><strong>Manual dos Indicadores de Marketing</strong> — aprofundamento específico dos Projetos 01/10.</li>
+<li><strong>Manual dos Indicadores da Experiência</strong> — aprofundamento específico do Projeto 07.</li>
+<li><strong>Manual de Visualização de Dados</strong> — aprofundamento técnico do Capítulo 7.</li>
+<li><strong>Manual de Storytelling Executivo</strong> — aprofundamento técnico do Capítulo 8.</li>
+<li><strong>Manual de Governança dos Dados</strong> — aprofundamento técnico do Capítulo 10.</li>
+</ol>
+<p><strong>Prioridade de desenvolvimento:</strong> <strong>prioridade 1</strong> — Manual dos KPIs e Manual de Governança dos Dados, pré-requisitos técnicos de qualquer implementação real; <strong>prioridade 2</strong> — Manuais de Indicadores Operacionais, Comerciais, de Marketing e de Experiência, que aprofundam cada área específica; <strong>prioridade 3</strong> — Manual de Visualização de Dados e Manual de Storytelling Executivo, que tornam a informação já validada acessível e compreensível.</p>
+<hr/>
+<h2 id="auditoria-final-conselho-de-onze-especialistas-ciclo-iterativo">AUDITORIA FINAL — CONSELHO DE ONZE ESPECIALISTAS (CICLO ITERATIVO)</h2>
+<h3 id="rodada-1-criticas-tecnicas">Rodada 1 — críticas técnicas</h3>
+<p><strong>Business Intelligence:</strong> "A Arquitetura Geral em níveis (Capítulo 2) e o princípio de fonte única (Capítulo 9) são exatamente as decisões estruturais corretas para evitar o problema mais comum de dashboards executivos — múltiplas versões da verdade circulando simultaneamente. Nenhuma inconsistência estrutural."</p>
+<p><strong>Ciência de Dados:</strong> "O Sistema de Alertas (Capítulo 6), com distinção explícita entre anomalia pontual e tendência sustentada, é tecnicamente correto e evita o erro comum de reagir a ruído estatístico como se fosse sinal real. Nenhuma inconsistência."</p>
+<p><strong>Analytics:</strong> "O Catálogo de KPIs (Capítulo 5) está completo e bem estruturado. Recomendo apenas que fique explícito como lidar com um KPI que, ao longo do tempo, revela correlação forte com outro já existente — hoje o documento não define se KPIs redundantes devem ser consolidados."</p>
+<p><strong>Estatística:</strong> "A qualidade dos indicadores (Capítulo 11) cobre bem as dimensões técnicas relevantes. Sugiro que a 'precisão' explicitamente inclua menção a margem de erro ou intervalo de confiança quando aplicável a indicadores preditivos (Capítulo 4), não apenas a indicadores descritivos."</p>
+<p><strong>UX para Dashboards:</strong> "O Storytelling Executivo (Capítulo 8) é uma estrutura sólida e replicável. Nenhuma inconsistência."</p>
+<p><strong>Gestão Estratégica:</strong> "A vinculação obrigatória entre cada indicador e uma decisão real (Capítulo 1) é a decisão filosófica mais importante do documento — evita a armadilha comum de dashboards que impressionam mas não orientam nada. Nenhuma inconsistência."</p>
+<p><strong>Data Storytelling:</strong> "A ordem fixa 'o que, por que, impacto, decisão' (Capítulo 8) é coerente com boas práticas reais de comunicação executiva de dados. Nenhuma inconsistência."</p>
+<p><strong>Governança de Dados:</strong> "O Capítulo 10 está bem alinhado aos princípios já estabelecidos no Projeto 11. Recomendo reforçar que a rastreabilidade (todo número explicável até a fonte) deve ser tecnicamente verificável a qualquer momento por auditoria, não apenas uma promessa declarativa — já implícito, mas vale explicitar como requisito de auditoria formal (Capítulo 18)."</p>
+<p><strong>Marketing Esportivo:</strong> "A separação clara entre dashboard interno completo e versão adaptada para patrocinadores (Capítulo 17) protege corretamente tanto a confidencialidade interna quanto a relação comercial. Nenhuma inconsistência."</p>
+<p><strong>Inteligência de Mercado:</strong> "A distinção de frequência entre inteligência de mercado anual (Capítulo 12) e inteligência pré-inscrição mais frequente está coerente com o que já foi definido no Projeto 10/11. Nenhuma inconsistência."</p>
+<p><strong>Design da Informação:</strong> "O Sistema de Visualização (Capítulo 7), com cores de significado consistente entre painéis, é uma boa prática frequentemente negligenciada em sistemas reais. Nenhuma inconsistência."</p>
+<h3 id="ajustes-incorporados-apos-a-rodada-1">Ajustes incorporados após a Rodada 1</h3>
+<ul>
+<li><strong>Capítulo 5</strong> passa a prever que, quando dois KPIs revelarem correlação forte e sustentada ao longo de múltiplos ciclos, a Governança de Marca avalia formalmente se devem ser consolidados ou mantidos separados por servirem decisões distintas — nunca uma decisão automática, sempre avaliada caso a caso.</li>
+<li><strong>Capítulo 11</strong> passa a incluir explicitamente que indicadores preditivos (Capítulo 4) devem comunicar margem de erro ou grau de confiança junto ao valor projetado, nunca apresentando uma previsão como se tivesse a mesma certeza de um dado descritivo já consolidado.</li>
+<li><strong>Capítulo 18</strong> passa a exigir explicitamente que a rastreabilidade de qualquer número (Capítulo 10) seja tecnicamente verificável em auditoria formal, não apenas declarada como princípio — toda auditoria deve incluir teste real de rastreamento de amostra de indicadores até a fonte primária.</li>
+</ul>
+<h3 id="rodada-2-segunda-leitura-critica-apos-ajustes">Rodada 2 — segunda leitura crítica após ajustes</h3>
+<p><strong>Analytics:</strong> "O processo formal de avaliação de KPIs correlacionados resolve minha observação — evita tanto a duplicação desnecessária quanto a eliminação precipitada de indicadores que podem servir propósitos distintos apesar da correlação."</p>
+<p><strong>Estatística:</strong> "A exigência de margem de erro ou grau de confiança em indicadores preditivos resolve exatamente o ponto que levantei. Tecnicamente correto."</p>
+<p><strong>Governança de Dados:</strong> "A exigência de teste real de rastreamento em auditoria formal, não apenas declaração de princípio, transforma rastreabilidade de promessa em prática verificável. Resolve minha observação."</p>
+<p><strong>Consolidação final:</strong> a segunda rodada não identificou nenhuma inconsistência estrutural relevante remanescente. Todos os ajustes da primeira rodada foram incorporados como princípios formais, reforçando tanto o rigor técnico quanto a utilidade decisória do sistema. O ciclo iterativo é encerrado nesta rodada.</p>
+<hr/>
+<p><em>Fim do Manual do Dashboard Executivo. Documento oficial, fundamentado em toda a Constituição do projeto (Fases 1-6, Projetos 01-11), servindo como padrão permanente para qualquer Dashboard Executivo do Campeonato Brasileiro de Kettlebell Sport.</em></p>
+</section>
+<section aria-labelledby="glossario-relacionado-title">
+<h2 id="glossario-relacionado-title">Glossário relacionado</h2>
+<p class="text-muted">Consulte o Glossário do portal para definições de vocabulário citado neste Manual.</p>
+</section>
+<nav aria-label="Navegação entre documentos" class="doc-nav">
+<a class="doc-nav__link doc-nav__link--prev" href="/docs/manuais/manual-crm.html">
+<div class="doc-nav__label">← Anterior</div>
+<div class="doc-nav__title">Manual — CRM</div>
+</a>
+<a class="doc-nav__link doc-nav__link--next" href="/docs/manuais/manual-stories.html">
+<div class="doc-nav__label">Próximo →</div>
+<div class="doc-nav__title">Manual — Stories Baseados em Dados</div>
+</a>
+</nav>
+</article>
+</main>
+<aside aria-label="Sumário do documento" class="page-shell__toc toc">
+<div class="toc__title">Nesta página</div>
+<ul class="toc__list" data-toc-list=""></ul>
+</aside>
+</div>
+</div>
+<div class="modal-overlay" data-open="false" id="search-modal">
+<div aria-labelledby="search-modal-title" aria-modal="true" class="modal" role="dialog" tabindex="-1">
+<div class="modal__header">
+<h2 id="search-modal-title" style="margin:0;font-size:var(--fs-500)">Buscar</h2>
+<button aria-label="Fechar busca" class="modal__close" data-action="close-modal" type="button">×</button>
+</div>
+<div class="search-bar" role="search">
+<span aria-hidden="true" class="search-bar__icon">🔍</span>
+<label class="visually-hidden" for="modal-search-input">Buscar</label>
+<input autocomplete="off" data-search-input="" id="modal-search-input" placeholder="Buscar documentos, termos, capítulos..." type="search"/>
+</div>
+<div aria-live="polite" class="search-results" data-search-results=""></div>
+</div>
+</div>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid" data-footer-columns=""></div>
+<div class="site-footer__bottom">
+<span>© <span data-current-year=""></span> Campeonato Brasileiro de Kettlebell Sport.</span>
+</div>
+</div>
+</footer>
+<script src="/assets/js/navigation.js" type="module"></script>
+<script src="/assets/js/search.js" type="module"></script>
+<script>
+    document.querySelectorAll("[data-current-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+    import("/assets/js/navigation.js").then(function (mod) {
+      mod.renderBreadcrumb([
+        { label: "Início", url: "/index.html" },
+        { label: "Manuais", url: "/docs/manuais/index.html" },
+        { label: "Manual — Dashboard Executivo" }
+      ]);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!--
+  COMPONENTE: Índice (geral / categoria / cronológico / tema / glossário)
+  Uso: páginas de índice (docs/fases/index.html, docs/projetos/index.html etc.)
+  e também como bloco reutilizável de "documentos relacionados" simplificado.
+  4 variantes de agrupamento usam a MESMA marcação — o que muda é como o
+  script de página agrupa os itens de /data/documents.json antes de renderizar:
+    - Geral: todos os 21, sem agrupamento.
+    - Por categoria: agrupado por "categoria" (fase/projeto/manual).
+    - Cronológico: ordenado por "ordem" (sequência lógica de dependência).
+    - Por tema/grupo: agrupado por "grupoPrimario" (os 15 grupos temáticos).
+-->
+<nav aria-label="Índice de documentos">
+  <ul class="index-list">
+    <li class="index-list__item"><a href="/docs/fases/fase1.html">Fase 1 — Inteligência Estratégica e Benchmark</a></li>
+    <li class="index-list__item"><a href="/docs/fases/fase2.html">Fase 2 — Identidade Estratégica</a></li>
+    <li class="index-list__item"><a href="/docs/fases/fase3.html" aria-current="page">Fase 3 — Plataforma de Marca</a></li>
+  </ul>
+</nav>

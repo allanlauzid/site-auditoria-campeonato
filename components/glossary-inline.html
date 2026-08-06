@@ -1,0 +1,16 @@
+<!--
+  COMPONENTE: Glossário inline (tooltip de termo)
+  Uso: dentro do texto de conteúdo, para termos definidos em /data/glossario.json.
+  Ex.: O <a class="glossary-term" ...>Sistema Simbólico</a> reaparece em...
+  Acessibilidade: elemento focável (tabindex 0), tooltip aparece em hover E focus.
+-->
+<p>
+  Exemplo de uso no meio de um parágrafo: o
+  <a href="/docs/glossario/index.html#sistema-simbolico" class="glossary-term" tabindex="0">
+    Sistema Simbólico
+    <span class="glossary-term__tooltip" role="tooltip">
+      Conjunto de rituais e artefatos de significado definidos na Fase 3 (Chamada do Nome, Livro de Nomes, Peso Testemunha...).
+    </span>
+  </a>
+  é citado por praticamente todos os documentos operacionais.
+</p>

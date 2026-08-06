@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ==================================================================
+       TEMPLATE OFICIAL DE DOCUMENTO
+       Etapa 2A — estrutura vazia com placeholders {{ }}. Etapa 2B substitui
+       cada placeholder pelo conteúdo real de um dos 21 documentos, sem
+       alterar a arquitetura HTML/CSS/JS abaixo.
+       ================================================================== -->
+<title>Fase 6 — Master Plan de Implementação · Portal CBKS</title>
+<meta content="É o documento operacional mais “gerencial” do corpus — o único com Matriz RACI, Risk Register tabular e cenários orçamentários. P1–P19 mapeiam diretamente para sistemas/documentos definidos nas Fases 3–5 e para os Projetos 01–11/Manuais. Fecha com auditoria de 8 especialistas, a maior do corpus, e é o único documento cuja auditoria produziu 2 ajustes de conteúdo explicitamente incorporados no próprio texto (estudo financeiro como entregável obrigatório; critério quantitativo de árbitros)." name="description"/>
+<!-- SEO: Open Graph -->
+<meta content="article" property="og:type"/>
+<meta content="Fase 6 — Master Plan de Implementação" property="og:title"/>
+<meta content="É o documento operacional mais “gerencial” do corpus — o único com Matriz RACI, Risk Register tabular e cenários orçamentários. P1–P19 mapeiam diretamente para sistemas/documentos definidos nas Fases 3–5 e para os Projetos 01–11/Manuais. Fecha com auditoria de 8 especialistas, a maior do corpus, e é o único documento cuja auditoria produziu 2 ajustes de conteúdo explicitamente incorporados no próprio texto (estudo financeiro como entregável obrigatório; critério quantitativo de árbitros)." property="og:description"/>
+<meta content="{{baseUrl}}/docs/fases/fase6.html" property="og:url"/>
+<meta content="/assets/images/og-default.png" property="og:image"/>
+<meta content="pt_BR" property="og:locale"/>
+<!-- SEO: Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Fase 6 — Master Plan de Implementação" name="twitter:title"/>
+<meta content="É o documento operacional mais “gerencial” do corpus — o único com Matriz RACI, Risk Register tabular e cenários orçamentários. P1–P19 mapeiam diretamente para sistemas/documentos definidos nas Fases 3–5 e para os Projetos 01–11/Manuais. Fecha com auditoria de 8 especialistas, a maior do corpus, e é o único documento cuja auditoria produziu 2 ajustes de conteúdo explicitamente incorporados no próprio texto (estudo financeiro como entregável obrigatório; critério quantitativo de árbitros)." name="twitter:description"/>
+<link href="{{baseUrl}}/docs/fases/fase6.html" rel="canonical"/>
+<link href="/assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/css/design-system.css" rel="stylesheet"/>
+<!-- SEO: Schema.org JSON-LD (TechArticle) -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Fase 6 — Master Plan de Implementação",
+    "description": "É o documento operacional mais “gerencial” do corpus — o único com Matriz RACI, Risk Register tabular e cenários orçamentários. P1–P19 mapeiam diretamente para sistemas/documentos definidos nas Fases 3–5 e para os Projetos 01–11/Manuais. Fecha com auditoria de 8 especialistas, a maior do corpus, e é o único documento cuja auditoria produziu 2 ajustes de conteúdo explicitamente incorporados no próprio texto (estudo financeiro como entregável obrigatório; critério quantitativo de árbitros).",
+    "url": "{{baseUrl}}/docs/fases/fase6.html",
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Portal de Documentação — Campeonato Brasileiro de Kettlebell Sport"
+    },
+    "dateModified": "2026-08-05",
+    "version": "Versão documental: não informada no arquivo-fonte"
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+<!-- INCLUIR: components/header.html -->
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="site-header__brand" href="/index.html">
+<img alt="" height="28" loading="eager" src="/assets/icons/logo-mark.svg" width="28"/>
+<span>Portal CBKS</span>
+</a>
+<nav aria-label="Navegação principal"><ul class="site-header__nav" data-topnav=""></ul></nav>
+<div class="site-header__actions">
+<button aria-label="Abrir busca (Ctrl+K)" class="btn btn--icon" data-action="open-modal" data-target="search-modal" type="button">🔍</button>
+<button aria-label="Alternar tema claro/escuro" aria-pressed="false" class="btn btn--icon" data-action="toggle-theme" type="button">🌓</button>
+<button aria-controls="primary-sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="btn btn--icon" data-action="toggle-sidebar" type="button">☰</button>
+</div>
+</div>
+</header>
+<div class="container">
+<div class="page-shell">
+<!-- INCLUIR: components/sidebar.html -->
+<aside aria-label="Navegação da documentação" class="page-shell__sidebar sidebar" id="primary-sidebar">
+<div data-sidebar=""></div>
+</aside>
+<main class="page-shell__main" id="main-content">
+<!-- INCLUIR: components/breadcrumb.html -->
+<nav aria-label="Trilha de navegação" class="breadcrumb" data-breadcrumb=""></nav>
+<article class="doc-content">
+<header>
+<p class="card__eyebrow">Fase / Roadmap-Implementação (documento de gestão de programa)</p>
+<h1>Fase 6 — Master Plan de Implementação</h1>
+<div class="card__meta" style="margin:var(--space-4) 0 var(--space-6)">
+<span class="badge badge--neutral">Versão: Versão documental: não informada no arquivo-fonte</span>
+<span class="badge badge--success">Status: Documento definitivo, já revisado com ajustes incorporados.</span>
+<span>⏱ 23 min de leitura</span>
+</div>
+<p class="text-muted"><strong>Objetivo:</strong> Plano Diretor de execução — mapa de 10 programas e 19 projetos (P1–P19), roadmap por fase de maturidade, estrutura organizacional, RACI, orçamento em três cenários proporcionais, risk register, KPIs, governança de projeto, critérios de prontidão, dependências críticas, quick wins, iniciativas por horizonte temporal.</p>
+<p class="text-muted"><strong>Resumo:</strong> É o documento operacional mais “gerencial” do corpus — o único com Matriz RACI, Risk Register tabular e cenários orçamentários. P1–P19 mapeiam diretamente para sistemas/documentos definidos nas Fases 3–5 e para os Projetos 01–11/Manuais. Fecha com auditoria de 8 especialistas, a maior do corpus, e é o único documento cuja auditoria produziu 2 ajustes de conteúdo explicitamente incorporados no próprio texto (estudo financeiro como entregável obrigatório; critério quantitativo de árbitros).</p>
+<p class="text-muted"><em>Campeonato Brasileiro de Kettlebell Sport — Plano Diretor de Execução</em></p>
+<p class="text-muted"><em>Campeonato Brasileiro de Kettlebell Sport — Plano Diretor de Execução</em></p>
+<p class="text-muted"><em>Fases 1 a 5 tratadas como Constituição definitiva e não revisitadas. Este documento transforma estratégia em execução — responde o quê, em que ordem, por quem, com quais recursos e como medir avanço. Nenhuma decisão aqui contraria o DNA, a Plataforma de Marca, a Arquitetura de Lançamento ou o Ecossistema Institucional definidos anteriormente.</em></p>
+<div class="callout callout--info" role="note">
+<span aria-hidden="true" class="callout__icon">🔗</span>
+<div>
+<strong>Dependências:</strong> <a href="/docs/fases/fase1.html">Fase 1 — Inteligência Estratégica e Benchmark</a>, <a href="/docs/fases/fase2.html">Fase 2 — Identidade Estratégica</a>, <a href="/docs/fases/fase3.html">Fase 3 — Plataforma de Marca</a>, <a href="/docs/fases/fase4.html">Fase 4 — Arquitetura de Lançamento</a>, <a href="/docs/fases/fase5.html">Fase 5 — Ecossistema Institucional</a>.<br/>
+<strong>Documentos relacionados:</strong> Nenhum registrado em documents.json para esta Fase — ver corpo do documento para citações nominais a Projetos/Manuais ainda não publicados.<br/>
+<strong>Roadmaps associados:</strong> Nenhum roadmap dedicado nesta Fase (ver docs/roadmaps/mapa-constitucional.html para a arquitetura em camadas completa do corpus).
+              </div>
+</div>
+</header>
+<!-- {{INDICE_AUTOMATICO}} é gerado por navigation.js::buildTOC() a partir
+               dos h2/h3 abaixo — não precisa ser escrito manualmente. -->
+<section id="conteudo-principal">
+<h2 id="1-visao-geral-da-implementacao">1. VISÃO GERAL DA IMPLEMENTAÇÃO</h2>
+<p>A Fase 5 já entregou uma ordem lógica de dependências entre sistemas (governança → atletas/memória → reconhecimento → árbitros/ranking → conteúdo → imprensa/patrocínio → educação → inovação → legado). Este Master Plan traduz essa lógica em <strong>programas executáveis</strong>, cada um decomposto em <strong>projetos concretos</strong>, organizados em <strong>quatro grandes fases de maturidade</strong> (Fundação, Consolidação, Expansão, Maturidade), com estrutura organizacional, orçamento, riscos e indicadores associados.</p>
+<p>A lógica geral é: nada é implementado em paralelo sem necessidade — a ordem de implantação segue rigorosamente as dependências já identificadas na Fase 5, e nenhum programa comercial ou de crescimento pode avançar mais rápido do que a capacidade real dos sistemas centrais (Memória, Reconhecimento, Governança de Marca) de sustentar o que está sendo prometido. Este é o princípio executivo mais importante de todo o documento, e reaparece de formas diferentes em quase todos os capítulos seguintes.</p>
+<hr/>
+<h2 id="2-principios-de-implementacao">2. PRINCÍPIOS DE IMPLEMENTAÇÃO</h2>
+<ol>
+<li><strong>Nenhum programa comercial avança mais rápido que o Sistema de Memória e o Sistema de Reconhecimento.</strong> Crescimento sem infraestrutura de registro quebra a promessa central da marca.</li>
+<li><strong>Toda decisão operacional é testada contra os Princípios de Decisão da Fase 3</strong> antes de aprovação — nenhuma exceção por pressão de prazo ou comercial.</li>
+<li><strong>Versão mínima viável antes de escala.</strong> Cada sistema entra em operação em formato simples e consistente antes de crescer em volume ou complexidade.</li>
+<li><strong>Documentar é obrigação, não boa prática.</strong> Toda atividade relevante do projeto deve gerar registro formal — é isso que alimenta o Sistema de Memória desde o primeiro dia.</li>
+<li><strong>Todo projeto tem um responsável único identificável.</strong> Responsabilidade compartilhada sem dono claro é tratada como risco de execução.</li>
+<li><strong>O que nunca pode acontecer:</strong> decisão comercial que contradiga a Plataforma de Marca sem passar pelo veto da Governança de Marca; lançamento de iniciativa sem critério de sucesso definido previamente; crescimento de inscrições tratado como métrica isolada de sucesso, desconectada de retenção e memória.</li>
+</ol>
+<hr/>
+<h2 id="3-mapa-de-programas">3. MAPA DE PROGRAMAS</h2>
+<table>
+<thead>
+<tr>
+<th scope="col">Programa</th>
+<th scope="col">Objetivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Institucional</strong></td>
+<td>Estabelecer governança, estrutura jurídica, relação federativa e proteção formal do DNA da marca.</td>
+</tr>
+<tr>
+<td><strong>Marca</strong></td>
+<td>Traduzir a Plataforma de Marca (Fase 3) em ferramentas aplicáveis (manual de voz, identidade, guias de aplicação) e garantir consistência.</td>
+</tr>
+<tr>
+<td><strong>Comunidade</strong></td>
+<td>Estruturar e sustentar as relações com atletas, treinadores, boxes, voluntários e árbitros.</td>
+</tr>
+<tr>
+<td><strong>Comunicação</strong></td>
+<td>Produzir e distribuir conteúdo, sustentar relacionamento com imprensa e criadores.</td>
+</tr>
+<tr>
+<td><strong>Comercial</strong></td>
+<td>Estruturar relacionamento com patrocinadores e parceiros institucionais.</td>
+</tr>
+<tr>
+<td><strong>Técnico</strong></td>
+<td>Garantir arbitragem, regras, ranking e qualidade competitiva.</td>
+</tr>
+<tr>
+<td><strong>Eventos</strong></td>
+<td>Planejar e operar o campeonato e eventos paralelos.</td>
+</tr>
+<tr>
+<td><strong>Tecnologia</strong></td>
+<td>Construir e manter a infraestrutura digital, especialmente o Sistema de Memória.</td>
+</tr>
+<tr>
+<td><strong>Educação</strong></td>
+<td>Formar treinadores, árbitros e novos praticantes.</td>
+</tr>
+<tr>
+<td><strong>Legado</strong></td>
+<td>Curadoria de longo prazo do arquivo histórico e narrativas de década.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="4-projetos-por-programa">4. PROJETOS POR PROGRAMA</h2>
+<p><em>(Cada projeto é apresentado em formato compacto: objetivo · entregáveis · dependências · prioridade · riscos · critério de sucesso.)</em></p>
+<h3 id="programa-institucional">Programa Institucional</h3>
+<p><strong>P1 — Constituição da Governança de Marca</strong>
+Objetivo: formalizar o órgão com poder de veto definido na Fase 5. Entregáveis: estatuto interno, composição do conselho, processo de veto documentado. Dependências: nenhuma (é o primeiro projeto do Master Plan). Prioridade: crítica. Riscos: órgão criado apenas no papel, sem poder real. Critério de sucesso: pelo menos um caso real de veto exercido e documentado nos primeiros 12 meses.</p>
+<p><strong>P2 — Estrutura Jurídica e Federativa</strong>
+Objetivo: formalizar personalidade jurídica da organização e relacionamento com federações/entidades esportivas. Entregáveis: constituição jurídica, filiações formais. Dependências: P1. Prioridade: crítica. Riscos: atraso jurídico bloqueando demais programas. Critério de sucesso: documentação jurídica completa e validada por assessoria especializada.</p>
+<h3 id="programa-de-marca">Programa de Marca</h3>
+<p><strong>P3 — Manual de Aplicação de Marca</strong>
+Objetivo: traduzir a Plataforma de Marca (Fase 3) em guia prático de uso (voz, tom, territórios, símbolos). Entregáveis: manual formal, exemplos de aplicação correta/incorreta. Dependências: P1. Prioridade: alta. Riscos: manual criado, mas ignorado na prática. Critério de sucesso: 100% do material institucional revisado por checklist de consistência antes de publicação.</p>
+<p><strong>P4 — Sistema Simbólico Operacional</strong>
+Objetivo: transformar os rituais definidos na Fase 3 (Chamada do Nome, Última Respiração, Livro de Nomes) em procedimentos executáveis em evento real. Entregáveis: roteiro operacional de cada ritual. Dependências: P3. Prioridade: alta. Riscos: execução inconsistente entre edições. Critério de sucesso: ritual executado de forma idêntica em 100% das edições realizadas.</p>
+<h3 id="programa-de-comunidade">Programa de Comunidade</h3>
+<p><strong>P5 — Cadastro Único de Atletas</strong>
+Objetivo: implementar o Sistema de Atletas da Fase 5. Entregáveis: base de dados funcional, formulário de cadastro. Dependências: P2, P8 (tecnologia mínima). Prioridade: crítica. Riscos: dados incompletos ou não padronizados. Critério de sucesso: 100% dos competidores da primeira edição com cadastro completo.</p>
+<p><strong>P6 — Programa de Boxes Fundadores</strong>
+Objetivo: estabelecer os primeiros boxes parceiros como base do Sistema de Boxes. Entregáveis: acordo formal de parceria, identificação visual de box em resultados. Dependências: P5. Prioridade: alta. Riscos: baixa adesão inicial. Critério de sucesso: mínimo de boxes fundadores definido e formalmente engajado antes da primeira edição.</p>
+<p><strong>P7 — Reconhecimento de Voluntários e Árbitros</strong>
+Objetivo: aplicar reconhecimento nominal também a quem sustenta a operação, não apenas a atletas. Entregáveis: processo formal de registro e reconhecimento. Dependências: P5. Prioridade: média. Riscos: tratamento como "extra" e não como sistema formal. Critério de sucesso: 100% de voluntários e árbitros nomeados publicamente ao final de cada edição.</p>
+<h3 id="programa-de-comunicacao">Programa de Comunicação</h3>
+<p><strong>P8 — Arquitetura de Conteúdo de Descoberta</strong>
+Objetivo: operacionalizar o Ato 1 da Narrativa de Lançamento (Fase 4) de forma contínua, não apenas no lançamento inicial. Entregáveis: linha editorial de descoberta, produção de conteúdo documental. Dependências: P3. Prioridade: alta. Riscos: descontinuidade após o lançamento (risco de insularidade já sinalizado desde a Fase 2). Critério de sucesso: produção de conteúdo de descoberta ativa em toda janela do ano, não apenas pré-evento.</p>
+<p><strong>P9 — Relacionamento com Imprensa</strong>
+Objetivo: estruturar o Sistema de Imprensa da Fase 5. Entregáveis: banco de contatos, material de apoio editorial, histórico de pauta. Dependências: P8. Prioridade: média. Riscos: cobertura genérica que dilui a diferenciação de marca. Critério de sucesso: presença de linguagem correta do território de marca em pelo menos parte relevante das matérias publicadas.</p>
+<h3 id="programa-comercial">Programa Comercial</h3>
+<p><strong>P10 — Critérios de Alinhamento de Patrocínio</strong>
+Objetivo: formalizar os critérios de compatibilidade com a marca antes de qualquer negociação comercial (Fase 5). Entregáveis: checklist formal de alinhamento, processo de aprovação com veto da Governança de Marca. Dependências: P1, P3. Prioridade: alta. Riscos: pressão comercial ignorando o checklist sob urgência financeira. Critério de sucesso: 100% dos contratos comerciais aprovados formalmente pelo checklist antes da assinatura.</p>
+<p><strong>P11 — Programa Piloto de Patrocínio</strong>
+Objetivo: viabilizar o primeiro ciclo de patrocínio testável (Fase 4). Entregáveis: contrato piloto, relatório de indicadores de profundidade traduzido para métricas tradicionais. Dependências: P10. Prioridade: média. Riscos: expectativa de retorno incompatível com estágio real do projeto. Critério de sucesso: pelo menos um contrato piloto renovado após o primeiro ciclo.</p>
+<h3 id="programa-tecnico">Programa Técnico</h3>
+<p><strong>P12 — Certificação e Padronização de Arbitragem</strong>
+Objetivo: implementar o Sistema de Árbitros da Fase 5. Entregáveis: critérios nacionais de certificação, processo de auditoria. Dependências: P2. Prioridade: crítica. Riscos: inconsistência entre árbitros de diferentes regiões. Critério de sucesso: 100% dos árbitros atuantes formalmente certificados.</p>
+<p><strong>P13 — Sistema de Ranking Nacional</strong>
+Objetivo: implementar pontuação contínua entre edições (Fase 5). Entregáveis: critérios de pontuação, plataforma de publicação pública. Dependências: P12, P5. Prioridade: alta. Riscos: baixa credibilidade se a arbitragem não estiver consolidada primeiro. Critério de sucesso: ranking público, atualizado e auditável após cada evento oficial.</p>
+<h3 id="programa-de-eventos">Programa de Eventos</h3>
+<p><strong>P14 — Primeira Edição Piloto</strong>
+Objetivo: entregar a primeira edição como prova concreta da promessa de marca, mesmo em escala modesta. Entregáveis: evento completo, com todos os rituais simbólicos operacionais (P4). Dependências: P4, P5, P6, P12. Prioridade: crítica. Riscos: crescimento de expectativa maior do que a capacidade operacional real. Critério de sucesso: 100% dos atletas competidores reconhecidos nominalmente durante o evento.</p>
+<p><strong>P15 — Eventos Paralelos Regionais</strong>
+Objetivo: iniciar a camada de expansão de proximidade prevista na Fase 5. Entregáveis: formato replicável de evento regional menor. Dependências: P14. Prioridade: baixa nos primeiros anos. Riscos: diluição de padrão técnico se replicado cedo demais. Critério de sucesso: pelo menos um evento regional realizado com mesmo padrão simbólico do evento principal.</p>
+<h3 id="programa-de-tecnologia">Programa de Tecnologia</h3>
+<p><strong>P16 — Plataforma do Sistema de Memória</strong>
+Objetivo: construir a infraestrutura digital do Livro de Nomes/arquivo histórico. Entregáveis: banco de dados público, interface de consulta. Dependências: P2. Prioridade: crítica — é pré-requisito de praticamente todo o restante do ecossistema. Riscos: tratado como entregável secundário e postergado. Critério de sucesso: sistema funcional e público antes da primeira edição.</p>
+<p><strong>P17 — Integração de Dados entre Sistemas</strong>
+Objetivo: conectar Sistema de Atletas, Ranking e Memória de forma automatizada. Entregáveis: integração técnica entre bases. Dependências: P16, P5, P13. Prioridade: média. Riscos: retrabalho manual acumulado se adiado. Critério de sucesso: atualização automática do arquivo após cada evento oficial.</p>
+<h3 id="programa-de-educacao">Programa de Educação</h3>
+<p><strong>P18 — Formação Inicial de Treinadores e Árbitros</strong>
+Objetivo: implementar o Sistema de Educação da Fase 5 em formato simples. Entregáveis: curso/workshop formal, certificado reconhecido. Dependências: P12. Prioridade: média. Riscos: baixa adesão inicial por falta de reconhecimento de mercado do certificado. Critério de sucesso: primeira turma formada e certificada.</p>
+<h3 id="programa-de-legado">Programa de Legado</h3>
+<p><strong>P19 — Curadoria de Narrativas de Longo Prazo</strong>
+Objetivo: iniciar o Sistema de Legado da Fase 5. Entregáveis: primeira narrativa histórica documentada (mesmo em pequena escala). Dependências: P16, P14. Prioridade: baixa nos primeiros anos, crescente depois. Riscos: nenhum dado relevante para curadoria se o Sistema de Memória não estiver consolidado antes. Critério de sucesso: publicação da primeira retrospectiva formal após 3 a 5 edições realizadas.</p>
+<hr/>
+<h2 id="5-roadmap-de-implantacao-por-fase-de-maturidade">5. ROADMAP DE IMPLANTAÇÃO (POR FASE DE MATURIDADE)</h2>
+<p><strong>Fundação</strong> — objetivo: fazer existir a base mínima de governança, memória e reconhecimento. Contém: P1, P2, P3, P4, P5, P6, P12, P16. Nenhum programa comercial de larga escala é ativado nesta fase; o foco é integridade estrutural, não volume.</p>
+<p><strong>Consolidação</strong> — objetivo: estabilizar operação recorrente e comprovar que a promessa de marca se sustenta em mais de uma edição. Contém: P7, P8, P9, P10, P11, P13, P14, P17, P18. Depende diretamente da Fundação estar operacional — nenhum destes projetos deve iniciar antes que P1, P5 e P16 estejam funcionando.</p>
+<p><strong>Expansão</strong> — objetivo: ampliar alcance geográfico e institucional sem comprometer os elementos protegidos. Contém: P15 e evoluções de escala dos programas comerciais e técnicos já existentes. Depende de pelo menos um ciclo completo de Consolidação bem-sucedido, com indicadores de retenção (Capítulo 10) validados.</p>
+<p><strong>Maturidade</strong> — objetivo: consolidar o ecossistema como patrimônio de longo prazo. Contém: P19 e a formalização plena do Sistema de Inovação e da "constituição simbólica" prevista para expansão internacional futura (<a href="/docs/fases/fase5.html#9-evolucao-se-o-campeonato-se-tornar-referencia-mundial">Fase 5, Capítulo 9</a>). Depende de múltiplos ciclos de Expansão bem-sucedidos e de um arquivo histórico já robusto.</p>
+<p>A regra de dependência entre fases é absoluta: <strong>nenhuma fase se inicia formalmente antes que os critérios de prontidão (Capítulo 12) da fase anterior estejam cumpridos</strong> — não por tempo decorrido, mas por entrega real.</p>
+<hr/>
+<h2 id="6-estrutura-organizacional">6. ESTRUTURA ORGANIZACIONAL</h2>
+<p><strong>Cargos e responsabilidades mínimas:</strong></p>
+<ul>
+<li><strong>Diretor Executivo</strong> — responsável geral pela execução do Master Plan e pela relação entre programas.</li>
+<li><strong>Diretor de Marca (Guardião da Constituição)</strong> — preside a Governança de Marca, com poder de veto sobre decisões que contrariem as Fases 1 a 5.</li>
+<li><strong>Diretor Técnico</strong> — responsável por arbitragem, ranking e regras esportivas.</li>
+<li><strong>Diretor de Comunidade</strong> — responsável por atletas, boxes, treinadores, voluntários.</li>
+<li><strong>Diretor de Comunicação</strong> — responsável por conteúdo, imprensa e canais.</li>
+<li><strong>Diretor Comercial</strong> — responsável por patrocínio e parceiros institucionais.</li>
+<li><strong>Coordenador de Tecnologia</strong> — responsável pelo Sistema de Memória e infraestrutura digital.</li>
+<li><strong>Coordenador de Eventos</strong> — responsável pela operação do campeonato e eventos paralelos.</li>
+<li><strong>PMO (Program Management Office)</strong> — responsável por acompanhamento de cronograma, riscos e indicadores de todos os programas.</li>
+</ul>
+<p><strong>Competências mínimas exigidas:</strong> capacidade de leitura crítica da Constituição do projeto (Fases 1-5) por todos os diretores, não apenas pelo Diretor de Marca — nenhuma função deve operar sem entender profundamente o DNA que está executando.</p>
+<h3 id="matriz-raci-programas-principais">Matriz RACI — Programas Principais</h3>
+<table>
+<thead>
+<tr>
+<th scope="col">Programa</th>
+<th scope="col">Diretor Executivo</th>
+<th scope="col">Diretor de Marca</th>
+<th scope="col">Diretor Técnico</th>
+<th scope="col">Diretor Comercial</th>
+<th scope="col">Diretor Comunicação</th>
+<th scope="col">PMO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Institucional</td>
+<td>A</td>
+<td>R</td>
+<td>C</td>
+<td>I</td>
+<td>I</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Marca</td>
+<td>A</td>
+<td>R</td>
+<td>I</td>
+<td>C</td>
+<td>C</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Comunidade</td>
+<td>A</td>
+<td>C</td>
+<td>C</td>
+<td>I</td>
+<td>C</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Comunicação</td>
+<td>A</td>
+<td>C</td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Comercial</td>
+<td>A</td>
+<td>C</td>
+<td>I</td>
+<td>R</td>
+<td>C</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Técnico</td>
+<td>A</td>
+<td>I</td>
+<td>R</td>
+<td>I</td>
+<td>I</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Eventos</td>
+<td>A</td>
+<td>C</td>
+<td>C</td>
+<td>I</td>
+<td>C</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Tecnologia</td>
+<td>A</td>
+<td>C</td>
+<td>I</td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Educação</td>
+<td>A</td>
+<td>I</td>
+<td>R</td>
+<td>I</td>
+<td>I</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Legado</td>
+<td>A</td>
+<td>R</td>
+<td>I</td>
+<td>I</td>
+<td>C</td>
+<td>I</td>
+</tr>
+</tbody>
+</table>
+<p><em>R = Responsável pela execução · A = Aprovador final · C = Consultado · I = Informado.</em></p>
+<hr/>
+<h2 id="7-recursos">7. RECURSOS</h2>
+<p><strong>Essenciais:</strong> equipe mínima nos cargos-chave do Capítulo 6; plataforma tecnológica do Sistema de Memória (P16); processo formal de governança de marca (P1); certificação técnica de arbitragem (P12); estrutura jurídica (P2).</p>
+<p><strong>Importantes:</strong> parcerias institucionais com federações/entidades esportivas; plataforma de gestão de inscrições e ranking; material de apoio de imprensa; identidade visual aplicada (a ser desenvolvida em fase futura de execução criativa, fora do escopo deste Master Plan).</p>
+<p><strong>Desejáveis (podem esperar fases posteriores):</strong> infraestrutura própria de transmissão de alta produção; expansão de eventos paralelos regionais; programas sociais de acesso ampliado; tecnologia avançada de análise de performance para atletas.</p>
+<p><em>(Este Master Plan não estima valores financeiros absolutos em reais, porque a Fase 1 já identificou a ausência de qualquer benchmark de custo, CAC ou ticket médio nos dados de mercado disponíveis. A estimativa de orçamento a seguir é apresentada de forma relativa e proporcional, não em valores fixos — que devem ser levantados em estudo financeiro específico antes da aprovação orçamentária formal.)</em></p>
+<hr/>
+<h2 id="8-orcamento-tres-cenarios-proporcionais-nao-absolutos">8. ORÇAMENTO — TRÊS CENÁRIOS (PROPORCIONAIS, NÃO ABSOLUTOS)</h2>
+<p><strong>Cenário Conservador (referência-base = 1x)</strong>
+Cobre exclusivamente a Fase de Fundação: governança mínima, Sistema de Memória em versão simples, primeira edição em escala pequena com boxes fundadores, arbitragem certificada em nível básico. Sem programa comercial estruturado além de patrocínio piloto pontual. Adequado para validar a promessa de marca antes de qualquer investimento maior.</p>
+<p><strong>Cenário Intermediário (referência ≈ 2,5x a 3x o conservador)</strong>
+Cobre Fundação e Consolidação plenas: plataforma tecnológica integrada (P17), programa comercial estruturado (P10/P11), relacionamento contínuo de imprensa, primeira formação educacional formal (P18). Nível recomendado para um projeto que já validou a primeira edição e busca solidez de médio prazo.</p>
+<p><strong>Cenário Ambicioso (referência ≈ 5x a 7x o conservador)</strong>
+Cobre também elementos da fase de Expansão: eventos paralelos regionais, programas sociais, tecnologia de transmissão mais robusta, estrutura comercial madura com múltiplos patrocinadores simultâneos. Recomendado apenas depois de indicadores de retenção (Capítulo 10) comprovarem solidez do ecossistema — nunca como ponto de partida.</p>
+<p><strong>Critério de decisão entre cenários:</strong> a escolha não deve ser feita apenas por disponibilidade de capital, mas pela real capacidade de execução da estrutura organizacional (Capítulo 6) naquele momento — investir no cenário ambicioso sem a governança e a memória já maduras reproduz exatamente o risco de "crescer rápido demais, cedo demais" identificado na Fase 4.</p>
+<hr/>
+<h2 id="9-gestao-de-riscos-risk-register">9. GESTÃO DE RISCOS — RISK REGISTER</h2>
+<table>
+<thead>
+<tr>
+<th scope="col">Risco</th>
+<th scope="col">Probabilidade</th>
+<th scope="col">Impacto</th>
+<th scope="col">Prioridade</th>
+<th scope="col">Prevenção</th>
+<th scope="col">Contingência</th>
+<th scope="col">Responsável</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sistema de Memória atrasado além da primeira edição</td>
+<td>Média</td>
+<td>Alto</td>
+<td>Crítica</td>
+<td>Priorização orçamentária explícita (P16 antes de programas comerciais)</td>
+<td>Registro manual temporário migrado depois</td>
+<td>Coordenador de Tecnologia</td>
+</tr>
+<tr>
+<td>Governança de marca sem poder real de veto</td>
+<td>Média</td>
+<td>Alto</td>
+<td>Crítica</td>
+<td>Estatuto formal com casos de uso definidos (P1)</td>
+<td>Auditoria externa do processo de veto</td>
+<td>Diretor de Marca</td>
+</tr>
+<tr>
+<td>Crescimento comercial pressionando ritmo além da capacidade</td>
+<td>Alta</td>
+<td>Alto</td>
+<td>Crítica</td>
+<td>Critérios de prontidão obrigatórios entre fases (Capítulo 12)</td>
+<td>Pausa formal de novas parcerias até estabilização</td>
+<td>Diretor Executivo</td>
+</tr>
+<tr>
+<td>Inconsistência de arbitragem entre regiões</td>
+<td>Média</td>
+<td>Médio</td>
+<td>Alta</td>
+<td>Certificação nacional centralizada (P12)</td>
+<td>Auditoria técnica e recertificação</td>
+<td>Diretor Técnico</td>
+</tr>
+<tr>
+<td>Insularidade de comunidade (fechamento a novos públicos)</td>
+<td>Média</td>
+<td>Médio</td>
+<td>Alta</td>
+<td>Manutenção contínua do conteúdo de descoberta (P8) mesmo fora do lançamento</td>
+<td>Campanha específica de reabertura de portas de entrada</td>
+<td>Diretor de Comunicação</td>
+</tr>
+<tr>
+<td>Expectativa de patrocinador incompatível com estágio real do projeto</td>
+<td>Alta</td>
+<td>Médio</td>
+<td>Alta</td>
+<td>Tradução de indicadores de profundidade em linguagem tradicional desde o primeiro contrato</td>
+<td>Renegociação de escopo com transparência total</td>
+<td>Diretor Comercial</td>
+</tr>
+<tr>
+<td>Sobrecarga de pessoas-chave nos primeiros anos</td>
+<td>Alta</td>
+<td>Médio</td>
+<td>Média</td>
+<td>Estrutura organizacional mínima definida com clareza de responsabilidade única (Capítulo 6)</td>
+<td>Contratação emergencial ou redistribuição de escopo</td>
+<td>Diretor Executivo</td>
+</tr>
+<tr>
+<td>Cobertura de imprensa genérica, diluindo diferenciação</td>
+<td>Média</td>
+<td>Médio</td>
+<td>Média</td>
+<td>Material de apoio editorial consistente (P9)</td>
+<td>Ação de relacionamento direto com veículos-chave</td>
+<td>Diretor de Comunicação</td>
+</tr>
+<tr>
+<td>Ausência de dados financeiros de mercado para embasar orçamento</td>
+<td>Alta</td>
+<td>Médio</td>
+<td>Média</td>
+<td>Estudo financeiro específico antes de aprovação de cenário ambicioso</td>
+<td>Uso do cenário conservador como piso seguro</td>
+<td>PMO</td>
+</tr>
+<tr>
+<td>Perda de padrão simbólico ao expandir regionalmente</td>
+<td>Baixa</td>
+<td>Alto</td>
+<td>Média</td>
+<td>Roteiro operacional formal dos rituais (P4) replicado sem alteração</td>
+<td>Auditoria de consistência simbólica por edição</td>
+<td>Diretor de Marca</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="10-kpis-por-area">10. KPIs POR ÁREA</h2>
+<p><strong>Marca</strong>
+- Consistência de aplicação (percentual de material aprovado no checklist de marca) — medição: auditoria interna · frequência: a cada peça publicada · meta: 100% · responsável: Diretor de Marca.</p>
+<p><strong>Comunidade</strong>
+- Retenção de atletas (percentual de retorno em edições subsequentes) — medição: cruzamento de cadastros no Sistema de Atletas · frequência: anual · meta: crescimento consistente ano a ano · responsável: Diretor de Comunidade.
+- Boxes ativos — medição: contagem de boxes formalmente engajados · frequência: semestral · meta: crescimento sustentado · responsável: Diretor de Comunidade.</p>
+<p><strong>Comercial</strong>
+- Taxa de renovação de patrocinadores — medição: contratos renovados / contratos totais · frequência: anual · meta: maioria dos contratos-piloto renovados · responsável: Diretor Comercial.</p>
+<p><strong>Técnico</strong>
+- Consistência de arbitragem — medição: auditoria de critérios aplicados entre diferentes eventos · frequência: por edição · meta: divergência mínima entre árbitros certificados · responsável: Diretor Técnico.</p>
+<p><strong>Comunicação</strong>
+- Menções espontâneas com linguagem correta de marca — medição: monitoramento de imprensa e redes · frequência: trimestral · meta: crescimento da proporção de menções alinhadas ao território de marca · responsável: Diretor de Comunicação.</p>
+<p><strong>Institucional / Legado</strong>
+- Completude do arquivo histórico — medição: percentual de atletas/edições com registro completo no Sistema de Memória · frequência: anual · meta: 100% dos participantes de cada edição registrados · responsável: Coordenador de Tecnologia.</p>
+<hr/>
+<h2 id="11-governanca-do-projeto">11. GOVERNANÇA DO PROJETO</h2>
+<p><strong>Rituais de gestão:</strong>
+- Reunião semanal de PMO — acompanhamento de cronograma e riscos operacionais dos projetos em andamento.
+- Reunião mensal de diretoria — revisão de indicadores por área (Capítulo 10) e decisões operacionais entre programas.
+- Revisão trimestral da Governança de Marca — auditoria de consistência de aplicação e casos de veto exercidos ou pendentes.
+- Revisão anual estratégica — avaliação formal de prontidão para avançar de fase de maturidade (Capítulo 12).</p>
+<p><strong>Tomada de decisão:</strong> decisões operacionais são resolvidas dentro do programa responsável; decisões que envolvem mais de um programa sobem ao Diretor Executivo; decisões que envolvem qualquer elemento protegido da Constituição (Fases 1-5) exigem aprovação da Governança de Marca, com poder de veto.</p>
+<p><strong>Escalonamento:</strong> qualquer risco classificado como "crítico" no Risk Register (Capítulo 9) é escalado automaticamente à reunião mensal de diretoria, independentemente do calendário regular.</p>
+<p><strong>Auditorias:</strong> auditoria técnica anual de arbitragem; auditoria de consistência de marca a cada edição; auditoria financeira anual independente a partir do Cenário Intermediário em diante.</p>
+<hr/>
+<h2 id="12-criterios-de-prontidao-objetivos-nao-subjetivos">12. CRITÉRIOS DE PRONTIDÃO (OBJETIVOS, NÃO SUBJETIVOS)</h2>
+<ul>
+<li><strong>Fundação concluída quando:</strong> Governança de Marca formalmente constituída com pelo menos um caso de uso documentado; Sistema de Memória funcional e público; primeira edição realizada com 100% dos atletas competidores registrados e reconhecidos nominalmente; arbitragem certificada aplicada em 100% das provas.</li>
+<li><strong>Consolidação concluída quando:</strong> pelo menos duas edições consecutivas realizadas com indicadores de retenção mensurados; pelo menos um contrato de patrocínio piloto renovado; ranking nacional público e atualizado automaticamente; primeira turma de formação técnica certificada.</li>
+<li><strong>Expansão concluída quando:</strong> pelo menos um evento regional realizado com o mesmo padrão simbólico do evento principal, auditado e aprovado pela Governança de Marca; estrutura comercial sustentando mais de um patrocinador simultâneo.</li>
+<li><strong>Maturidade concluída quando:</strong> primeira narrativa formal de legado publicada; Sistema de Inovação formalmente institucionalizado; arquivo histórico com múltiplos ciclos de edições documentados de forma contínua.</li>
+</ul>
+<hr/>
+<h2 id="13-dependencias-criticas-bloqueadores">13. DEPENDÊNCIAS CRÍTICAS (BLOQUEADORES)</h2>
+<ol>
+<li>Sem <strong>Governança de Marca (P1)</strong> formalizada, nenhum outro programa tem proteção contra desvio de identidade — é o bloqueador mais crítico de todo o plano.</li>
+<li>Sem <strong>estrutura jurídica (P2)</strong>, não é possível formalizar contratos comerciais, parcerias institucionais ou certificação técnica.</li>
+<li>Sem o <strong>Sistema de Memória (P16)</strong>, a primeira edição não pode cumprir a promessa central da marca — é bloqueador direto de P14.</li>
+<li>Sem <strong>arbitragem certificada (P12)</strong>, o Sistema de Ranking (P13) não tem legitimidade para existir.</li>
+<li>Sem pelo menos <strong>uma edição realizada com sucesso (P14)</strong>, nenhum projeto do Programa de Legado (P19) tem material real para trabalhar.</li>
+<li>Sem <strong>indicadores de retenção validados</strong> ao final da Consolidação, a fase de Expansão não deve ser autorizada, sob risco de reproduzir o erro de "crescer rápido demais, cedo demais".</li>
+</ol>
+<hr/>
+<h2 id="14-quick-wins-alto-impacto-baixo-esforco">14. QUICK WINS (ALTO IMPACTO, BAIXO ESFORÇO)</h2>
+<ul>
+<li><strong>Reconhecimento nominal na primeira edição</strong> — não exige tecnologia avançada, apenas disciplina de execução, e já entrega a promessa central da marca de forma tangível.</li>
+<li><strong>Boxes fundadores reconhecidos publicamente desde o início</strong> — custo baixo, gera pertencimento imediato e prova social genuína.</li>
+<li><strong>Vídeo documental simples de descoberta</strong> — não exige aparato de produção caro (conforme já indicado na Fase 4), apenas boa captação de rosto/respiração/tensão real, e já cumpre o Ato 1 da narrativa de lançamento.</li>
+<li><strong>Contato direto com imprensa de nicho especializada</strong> — retorno alto de legitimidade a baixo custo, antes mesmo de qualquer estrutura de assessoria mais robusta.</li>
+<li><strong>Registro básico do Livro de Nomes mesmo antes da plataforma tecnológica completa</strong> — pode começar em planilha simples, migrando depois para P16, sem esperar a infraestrutura ideal para começar a cumprir a promessa.</li>
+</ul>
+<p>Essas iniciativas são priorizadas porque não dependem de orçamento robusto nem de maturidade organizacional completa — são formas de já começar a entregar a essência da marca ("a força que se sustenta é a força que se lembra") enquanto os sistemas mais complexos ainda estão em construção.</p>
+<hr/>
+<h2 id="15-iniciativas-estrategicas-por-horizonte">15. INICIATIVAS ESTRATÉGICAS POR HORIZONTE</h2>
+<p><strong>12 meses:</strong> constituir a governança de marca; lançar o Sistema de Memória em versão mínima; realizar a primeira edição piloto com rituais simbólicos plenamente operacionais; certificar o primeiro grupo de árbitros.</p>
+<p><strong>3 anos:</strong> consolidar o Sistema de Ranking nacional; estabelecer relacionamento contínuo (não sazonal) com imprensa especializada; formalizar pelo menos um ciclo comercial renovado; publicar indicadores de retenção consistentes.</p>
+<p><strong>5 anos:</strong> iniciar expansão regional controlada (eventos paralelos); amadurecer o Sistema de Educação com certificação reconhecida nacionalmente; estruturar programa comercial com múltiplos parceiros simultâneos alinhados aos critérios de marca.</p>
+<p><strong>10 anos:</strong> institucionalizar o Sistema de Inovação; publicar a primeira grande narrativa de legado de década; iniciar estudo formal de replicação internacional do modelo, com a "constituição simbólica" prevista na Fase 5.</p>
+<hr/>
+<h2 id="16-auditoria-final-conselho-de-oito-especialistas">16. AUDITORIA FINAL — CONSELHO DE OITO ESPECIALISTAS</h2>
+<p><strong>Diretor Executivo:</strong> "O plano tem clareza rara de dependências — sei exatamente o que não posso fazer antes de outra coisa. Meu único pedido é que os critérios de prontidão (Capítulo 12) sejam tratados como inegociáveis, mesmo sob pressão de investidores ou prazos externos."</p>
+<p><strong>PMO:</strong> "A matriz RACI e o Risk Register dão instrumentos concretos de acompanhamento — isso é o que falta na maioria dos planos estratégicos que viram só teoria bonita. Recomendo revisão trimestral do próprio Risk Register, não apenas dos indicadores, porque riscos mudam de prioridade conforme o projeto avança de fase."</p>
+<p><strong>Diretor Financeiro:</strong> "Entendo e respeito a decisão de não fabricar números absolutos sem dado de mercado real, mas isso não pode virar desculpa para adiar indefinidamente o estudo financeiro específico mencionado no Capítulo 8. Recomendo que esse estudo seja o primeiro entregável formal do Cenário Conservador, antes mesmo da primeira edição."</p>
+<p><strong>Diretor de Marketing:</strong> "Gostei de ver o Programa de Comunicação com projeto específico para manter o conteúdo de descoberta ativo continuamente (P8) — é a correção direta do risco de insularidade que vínhamos carregando desde a Fase 2. Isso precisa ser protegido de cortes orçamentários em cenários mais conservadores."</p>
+<p><strong>Diretor Técnico:</strong> "A dependência entre certificação de arbitragem e legitimidade do ranking está corretamente sequenciada. Only ponto de atenção prático: o plano não detalha volume mínimo de árbitros certificados necessário para a primeira edição — isso deveria ser adicionado como critério quantitativo na próxima revisão operacional."</p>
+<p><strong>Patrocinador:</strong> "A exigência de checklist de alinhamento antes de qualquer contrato comercial (P10) é mais rigorosa do que a maioria dos projetos que avalio — isso é positivo para mim como investidor de longo prazo, mesmo que signifique processos de aprovação mais lentos no curto prazo."</p>
+<p><strong>Atleta:</strong> "Ver o reconhecimento nominal como quick win logo na primeira edição, mesmo antes de toda a tecnologia estar pronta, é a prova de que a promessa não é só discurso — é a primeira coisa que entrega valor real para quem compete."</p>
+<p><strong>Especialista em Branding:</strong> "A estrutura de governança com poder de veto reaparece de forma consistente em todos os capítulos — do Risk Register aos critérios de prontidão. Isso é o que garante que o Master Plan realmente protege o que foi construído nas Fases 1 a 5, e não apenas cita essas fases como referência decorativa."</p>
+<p><strong>Consolidação das críticas:</strong> nenhuma crítica exigiu alteração estrutural do Master Plan — todas reforçam pontos de atenção operacional já previstos, com dois ajustes incorporados a partir desta auditoria: <strong>(1)</strong> o estudo financeiro específico (Capítulo 8) passa a ser tratado como entregável formal obrigatório do início do Cenário Conservador, não como iniciativa posterior; <strong>(2)</strong> o Programa Técnico (Capítulo 4, P12) deve receber, na próxima revisão operacional, um critério quantitativo mínimo de árbitros certificados necessários antes da primeira edição.</p>
+<hr/>
+<p><em>Fim da Fase 6 — Master Plan de Implementação. Documento oficial, fundamentado nas Fases 1 a 5, servindo como Plano Diretor de execução do Campeonato Brasileiro de Kettlebell Sport pelos próximos anos.</em></p>
+</section>
+<section aria-labelledby="glossario-relacionado-title">
+<h2 id="glossario-relacionado-title">Glossário relacionado</h2>
+<p class="text-muted">Consulte o Glossário do portal (46 termos) para definições de vocabulário citado nesta Fase, incluindo termos do Sistema Simbólico introduzidos na Fase 3.</p>
+</section>
+<!-- INCLUIR: components/document-navigator.html -->
+<nav aria-label="Navegação entre documentos" class="doc-nav">
+<a class="doc-nav__link doc-nav__link--prev" href="/docs/fases/fase5.html">
+<div class="doc-nav__label">← Anterior</div>
+<div class="doc-nav__title">Fase 5 — Ecossistema Institucional</div>
+</a>
+<a class="doc-nav__link doc-nav__link--next" href="/docs/projetos/index.html">
+<div class="doc-nav__label">Próximo →</div>
+<div class="doc-nav__title">Projetos (índice de categoria — páginas individuais ainda não publicadas)</div>
+</a>
+</nav>
+</article>
+</main>
+<aside aria-label="Sumário do documento" class="page-shell__toc toc">
+<div class="toc__title">Nesta página</div>
+<ul class="toc__list" data-toc-list=""></ul>
+</aside>
+</div>
+</div>
+<!-- INCLUIR: components/modal.html (busca) -->
+<div class="modal-overlay" data-open="false" id="search-modal">
+<div aria-labelledby="search-modal-title" aria-modal="true" class="modal" role="dialog" tabindex="-1">
+<div class="modal__header">
+<h2 id="search-modal-title" style="margin:0;font-size:var(--fs-500)">Buscar</h2>
+<button aria-label="Fechar busca" class="modal__close" data-action="close-modal" type="button">×</button>
+</div>
+<div class="search-bar" role="search">
+<span aria-hidden="true" class="search-bar__icon">🔍</span>
+<label class="visually-hidden" for="modal-search-input">Buscar</label>
+<input autocomplete="off" data-search-input="" id="modal-search-input" placeholder="Buscar documentos, termos, capítulos..." type="search"/>
+</div>
+<div aria-live="polite" class="search-results" data-search-results=""></div>
+</div>
+</div>
+<!-- INCLUIR: components/footer.html -->
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid" data-footer-columns=""></div>
+<div class="site-footer__bottom">
+<span>© <span data-current-year=""></span> Campeonato Brasileiro de Kettlebell Sport.</span>
+</div>
+</div>
+</footer>
+<script src="/assets/js/navigation.js" type="module"></script>
+<script src="/assets/js/search.js" type="module"></script>
+<script>
+    document.querySelectorAll("[data-current-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+    import("/assets/js/navigation.js").then(function (mod) {
+      mod.renderBreadcrumb([
+        { label: "Início", url: "/index.html" },
+        { label: "Fases", url: "/docs/fases/index.html" },
+        { label: "Fase 6 — Master Plan de Implementação" }
+      ]);
+    });
+  </script>
+</body>
+</html>

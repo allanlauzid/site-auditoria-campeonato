@@ -1,0 +1,21 @@
+<!--
+  COMPONENTE: Search bar
+  Uso: dentro do modal de busca (ver modal.html) e também pode ser embutido
+  em /search/index.html como página de busca standalone.
+  data-search-input / data-search-results são os hooks lidos por search.js.
+-->
+<div class="search-bar" role="search">
+  <span class="search-bar__icon" aria-hidden="true">🔍</span>
+  <label for="global-search-input" class="visually-hidden">Buscar na documentação</label>
+  <input
+    type="search"
+    id="global-search-input"
+    data-search-input
+    placeholder="Buscar documentos, termos, capítulos..."
+    autocomplete="off"
+  />
+  <span class="search-bar__shortcut" aria-hidden="true">Ctrl K</span>
+</div>
+<div class="search-results" data-search-results aria-live="polite">
+  <!-- preenchido por search.js -->
+</div>

@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ==================================================================
+       TEMPLATE OFICIAL DE DOCUMENTO
+       Etapa 2A — estrutura vazia com placeholders {{ }}. Etapa 2B substitui
+       cada placeholder pelo conteúdo real de um dos 21 documentos, sem
+       alterar a arquitetura HTML/CSS/JS abaixo.
+       ================================================================== -->
+<title>Engenharia da Documentação — Relatório de Arquitetura Documental · Portal CBKS</title>
+<meta content="Relatório de Etapa 1 do projeto de Engenharia da Documentação do Campeonato Brasileiro de Kettlebell Sport: inventário integral, classificação, arquitetura em camadas, mapa de dependências, sequências de leitura, auditoria dupla, lacunas e especificação funcional do portal, para os 21 documentos oficiais do corpus (6.339 linhas, 80.736 palavras)." name="description"/>
+<!-- SEO: Open Graph -->
+<meta content="article" property="og:type"/>
+<meta content="Engenharia da Documentação — Relatório de Arquitetura Documental" property="og:title"/>
+<meta content="Relatório de Etapa 1 do projeto de Engenharia da Documentação do Campeonato Brasileiro de Kettlebell Sport: inventário integral, classificação, arquitetura em camadas, mapa de dependências, sequências de leitura, auditoria dupla, lacunas e especificação funcional do portal, para os 21 documentos oficiais do corpus (6.339 linhas, 80.736 palavras)." property="og:description"/>
+<meta content="{{baseUrl}}/docs/arquitetura/engenharia-documentacao.html" property="og:url"/>
+<meta content="/assets/images/og-default.png" property="og:image"/>
+<meta content="pt_BR" property="og:locale"/>
+<!-- SEO: Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Engenharia da Documentação — Relatório de Arquitetura Documental" name="twitter:title"/>
+<meta content="Relatório de Etapa 1 do projeto de Engenharia da Documentação do Campeonato Brasileiro de Kettlebell Sport: inventário integral, classificação, arquitetura em camadas, mapa de dependências, sequências de leitura, auditoria dupla, lacunas e especificação funcional do portal, para os 21 documentos oficiais do corpus (6.339 linhas, 80.736 palavras)." name="twitter:description"/>
+<link href="{{baseUrl}}/docs/arquitetura/engenharia-documentacao.html" rel="canonical"/>
+<link href="/assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/css/design-system.css" rel="stylesheet"/>
+<!-- SEO: Schema.org JSON-LD (TechArticle) -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Engenharia da Documentação — Relatório de Arquitetura Documental",
+    "description": "Relatório de Etapa 1 do projeto de Engenharia da Documentação do Campeonato Brasileiro de Kettlebell Sport: inventário integral, classificação, arquitetura em camadas, mapa de dependências, sequências de leitura, auditoria dupla, lacunas e especificação funcional do portal, para os 21 documentos oficiais do corpus (6.339 linhas, 80.736 palavras).",
+    "url": "{{baseUrl}}/docs/arquitetura/engenharia-documentacao.html",
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Portal de Documentação — Campeonato Brasileiro de Kettlebell Sport"
+    },
+    "dateModified": "2026-08-05",
+    "version": "Versão documental: não informada no arquivo-fonte"
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+<!-- INCLUIR: components/header.html -->
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="site-header__brand" href="/index.html">
+<img alt="" height="28" loading="eager" src="/assets/icons/logo-mark.svg" width="28"/>
+<span>Portal CBKS</span>
+</a>
+<nav aria-label="Navegação principal"><ul class="site-header__nav" data-topnav=""></ul></nav>
+<div class="site-header__actions">
+<button aria-label="Abrir busca (Ctrl+K)" class="btn btn--icon" data-action="open-modal" data-target="search-modal" type="button">🔍</button>
+<button aria-label="Alternar tema claro/escuro" aria-pressed="false" class="btn btn--icon" data-action="toggle-theme" type="button">🌓</button>
+<button aria-controls="primary-sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="btn btn--icon" data-action="toggle-sidebar" type="button">☰</button>
+</div>
+</div>
+</header>
+<div class="container">
+<div class="page-shell">
+<!-- INCLUIR: components/sidebar.html -->
+<aside aria-label="Navegação da documentação" class="page-shell__sidebar sidebar" id="primary-sidebar">
+<div data-sidebar=""></div>
+</aside>
+<main class="page-shell__main" id="main-content">
+<!-- INCLUIR: components/breadcrumb.html -->
+<nav aria-label="Trilha de navegação" class="breadcrumb" data-breadcrumb=""></nav>
+<article class="doc-content">
+<header>
+<p class="card__eyebrow">Controle/Governança Documental</p>
+<h1>Engenharia da Documentação — Relatório de Arquitetura Documental</h1>
+<div class="card__meta" style="margin:var(--space-4) 0 var(--space-6)">
+<span class="badge badge--neutral">Versão: Versão documental: não informada no arquivo-fonte</span>
+<span class="badge badge--success">Status: Finalizado (documento de análise, não de implementação)</span>
+<span>⏱ 68 min de leitura</span>
+</div>
+<p class="text-muted"><strong>Objetivo:</strong> Analisar, classificar, mapear e auditar os 21 documentos .md oficiais do projeto de branding do campeonato, produzindo o inventário e a arquitetura de referência que orientam a publicação de conteúdo no portal (Etapa 2B). Este documento é análise, não implementação — nenhum dos 21 documentos originais foi alterado.</p>
+<p class="text-muted"><strong>Resumo:</strong> Relatório de Etapa 1 do projeto de Engenharia da Documentação do Campeonato Brasileiro de Kettlebell Sport: inventário integral, classificação, arquitetura em camadas, mapa de dependências, sequências de leitura, auditoria dupla, lacunas e especificação funcional do portal, para os 21 documentos oficiais do corpus (6.339 linhas, 80.736 palavras).</p>
+<div class="callout callout--info" role="note">
+<span aria-hidden="true" class="callout__icon">🔗</span>
+<div>
+<strong>Dependências:</strong> Nenhuma — documento de arquitetura raiz, fonte de metadados para todos os 21 documentos oficiais.<br/>
+<strong>Documentos relacionados:</strong> Todos os 21 documentos oficiais (Fases 1–6, Projetos 01–11, Manuais CRM/Dashboard/Formulário/Stories) — este relatório é o inventário e mapa de dependências de referência para cada um deles.<br/>
+<strong>Roadmaps associados:</strong> Mapa Constitucional (docs/roadmaps/mapa-constitucional.html).
+              </div>
+</div>
+</header>
+<!-- {{INDICE_AUTOMATICO}} é gerado por navigation.js::buildTOC() a partir
+               dos h2/h3 abaixo — não precisa ser escrito manualmente. -->
+<section id="conteudo-principal">
+<h2 id="0-ficha-tecnica-e-escopo-do-relatorio">0. Ficha Técnica e Escopo do Relatório</h2>
+<p><strong>Elaborado por:</strong> Conselho de Arquitetura da Informação, Gestão do Conhecimento, Engenharia de Software, Engenharia de Documentação, Product Documentation, Technical Writing, DevRel, Enterprise Architecture, UX, Design Systems, Biblioteconomia, Sistemas de Classificação, Engenharia de Processos, Engenharia de Sistemas, Gestão Estratégica, Organização do Conhecimento, Documentação Corporativa.</p>
+<p><strong>Escopo:</strong> Este documento é o produto único da Etapa 1 de um projeto maior de “Engenharia da Documentação”. Ele analisa, classifica, mapeia e audita os 21 documentos .md oficiais do projeto de branding do Campeonato Brasileiro de Kettlebell Sport, localizados em <code>arquivos claude/</code>. Nenhum código HTML/CSS/JS foi produzido. Nenhum dos 21 documentos originais foi alterado, resumido fora de contexto, reorganizado ou excluído — todas as observações abaixo são recomendações registradas neste documento novo, não mudanças aplicadas.</p>
+<p><strong>Corpus analisado:</strong> 21 arquivos .md, 6.339 linhas, 80.736 palavras (~ 495.000 caracteres), lidos integralmente.</p>
+<hr/>
+<h2 id="sumario">SUMÁRIO</h2>
+<ul>
+<li>Etapa 1 — Inventário</li>
+<li>Etapa 2 — Classificação</li>
+<li>Etapa 3 — Engenharia da Arquitetura</li>
+<li>Etapa 4 — Mapa de Dependências</li>
+<li>Etapa 5 — Sequência Ideal de Leitura</li>
+<li>Etapa 6 — Auditoria</li>
+<li>Etapa 7 — Lacunas</li>
+<li>Etapa 8 — Glossário</li>
+<li>Etapa 9 — Índices</li>
+<li>Etapa 10 — Arquitetura do Futuro Portal</li>
+<li>Etapa 11 — Relatório Executivo</li>
+<li>Auditoria — Rodada 1</li>
+<li>Auditoria — Rodada 2</li>
+</ul>
+<hr/>
+<h2 id="etapa-1-inventario">ETAPA 1 — INVENTÁRIO</h2>
+<p>Cada entrada abaixo reflete leitura integral do arquivo (cabeçalhos reais extraídos via varredura de <code>#</code>/<code>##</code>/<code>###</code>, seções de auditoria e roadmap lidas na íntegra). “Quantidade real de capítulos” conta apenas seções numeradas de nível <code>##</code> que representam capítulos de conteúdo (exclui título, subtítulos de abertura e a seção de auditoria final, que é listada à parte quando existe).</p>
+<h3 id="1-fase1-inteligencia-estrategica-benchmark-campeonatos">1. Fase1_Inteligencia_Estrategica_Benchmark_Campeonatos.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Pesquisa / Benchmark</li>
+<li><strong>Objetivo:</strong> Consolidar três pesquisas de benchmark (CrossFit, HYROX, Spartan, Ironman, Maratonas, Powerlifting, Weightlifting, IKO World League, Kettlebell Sport) em inteligência estratégica aplicável ao campeonato brasileiro.</li>
+<li><strong>Resumo executivo:</strong> Documento fundacional e único de pesquisa de mercado do corpus. Identifica princípios recorrentes entre modalidades, princípios dependentes de contexto, erros comuns, o que não copiar, oportunidades inexploradas, vantagens de um campeonato brasileiro menor e específico de Kettlebell Sport, riscos, e fecha com 50+ insights e 20 “princípios mestres”. Nota metodológica explícita reconhece lacunas de dado (CAC, conversão, benchmark financeiro) que se propagam por todo o corpus.</li>
+<li><strong>Capítulos reais:</strong> 14 (Nota Metodológica funciona como abertura, não contada como capítulo numerado, mas presente como seção <code>##</code>).</li>
+<li><strong>Dependências:</strong> Nenhuma (documento raiz, primeiro da cadeia).</li>
+<li><strong>Documentos relacionados:</strong> Fase2 (parte diretamente da leitura crítica desta Fase 1).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~19 min (3.746 palavras / ~200 wpm).</li>
+<li><strong>Status:</strong> Documento base oficial, finalizado.</li>
+<li><strong>Versão:</strong> Não versionado explicitamente (sem número de versão no corpo).</li>
+</ul>
+<h3 id="2-fase2-identidade-estrategica-kettlebell">2. Fase2_Identidade_Estrategica_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Fase / Estratégia</li>
+<li><strong>Objetivo:</strong> Definir a identidade estratégica do campeonato respondendo “qual é o verdadeiro problema” e escolhendo, entre seis alternativas de posicionamento, a direção estratégica vencedora.</li>
+<li><strong>Resumo executivo:</strong> Abre questionando criticamente a Fase 1 (mecanismo de “leitura crítica” que se repete em fases seguintes). Mapeia territórios emocionais ocupados/vazios, avalia 6 alternativas de posicionamento em matriz comparativa 0–10, conduz um “debate” entre vozes e converge em uma síntese (Alternativa 7 — “O Duelo Testemunhado”), fechando com o “DNA Estratégico”.</li>
+<li><strong>Capítulos reais:</strong> 6 etapas nomeadas (Etapa 1 a 6) + síntese final = 7 blocos estruturais.</li>
+<li><strong>Dependências:</strong> Fase1.</li>
+<li><strong>Documentos relacionados:</strong> Fase3 (herda o DNA estratégico definido aqui).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~21 min.</li>
+<li><strong>Status:</strong> Finalizado.</li>
+<li><strong>Versão:</strong> Não versionado explicitamente.</li>
+</ul>
+<h3 id="3-fase3-plataforma-de-marca-kettlebell">3. Fase3_Plataforma_de_Marca_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Fase / Marca (documento constitucional)</li>
+<li><strong>Objetivo:</strong> Estabelecer a identidade permanente da marca — essência, propósito, visão, missão, valores, crenças, personalidade, arquétipos, big idea, promessa, brand story, manifesto, voz, territórios, pilares, experiência, sistema simbólico e princípios de decisão.</li>
+<li><strong>Resumo executivo:</strong> O documento mais denso de fundação de marca do corpus (20 capítulos + auditoria). Introduz o Sistema Simbólico (Chamada do Nome, Livro de Nomes, Peso Testemunha, Última Respiração, Cerimônia de Reconhecimento, Marca de Retorno, Momento do Box) que se torna vocabulário obrigatório citado por praticamente todos os documentos operacionais seguintes. Fecha com auditoria de 5 especialistas.</li>
+<li><strong>Capítulos reais:</strong> 20 + 1 seção de “Revisão Final — Conselho Independente de Cinco Especialistas”.</li>
+<li><strong>Dependências:</strong> Fase2.</li>
+<li><strong>Documentos relacionados:</strong> Fase4, Fase5, Fase6, Projeto02, Projeto03, Projeto04 (todos citam a Plataforma de Marca como fonte de verdade).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~28 min (5.614 palavras).</li>
+<li><strong>Status:</strong> “Este documento permanece como a versão definitiva da Plataforma de Marca” — declarado explicitamente como definitivo/constitucional no corpo.</li>
+<li><strong>Versão:</strong> Não numerada, mas com selo textual de definitividade.</li>
+</ul>
+<h3 id="4-fase4-arquitetura-lancamento-kettlebell">4. Fase4_Arquitetura_Lancamento_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Fase / Comunicação-Lançamento</li>
+<li><strong>Objetivo:</strong> Traduzir a Plataforma de Marca em arquitetura estratégica de lançamento — princípios, objetivos, públicos, jornada, narrativa, fases, comunidade, experiência do atleta, canais, indicadores, riscos.</li>
+<li><strong>Resumo executivo:</strong> Herda explicitamente a Fase 3 (“A Fase 3 deixou um recado direto para esta fase”), tratando notoriedade e memória como prioridade fundacional acima de inscrições. Base conceitual direta do Projeto 10.</li>
+<li><strong>Capítulos reais:</strong> 11 capítulos numerados — a Auditoria Final é o próprio Capítulo 12 (numerado, painel de 6 especialistas), mesma particularidade estrutural do Fase6/Projeto01 (ver Etapa 6.3).</li>
+<li><strong>Dependências:</strong> Fase3.</li>
+<li><strong>Documentos relacionados:</strong> Projeto10 (operacionaliza esta fase diretamente), Projeto01.</li>
+<li><strong>Tempo estimado de leitura:</strong> ~18 min.</li>
+<li><strong>Status:</strong> “Documento permanece como versão definitiva da Arquitetura Estratégica de Lançamento.”</li>
+<li><strong>Versão:</strong> Não numerada.</li>
+</ul>
+<h3 id="5-fase5-ecossistema-institucional-kettlebell">5. Fase5_Ecossistema_Institucional_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Fase / Governança-Institucional</li>
+<li><strong>Objetivo:</strong> Mapear o ecossistema institucional completo — sistemas permanentes (Atletas, Treinadores, Boxes, Árbitros, Ranking, Reconhecimento, Memória, Patrocinadores, Parceiros, Imprensa, Voluntariado, Educação, Conteúdo, Inovação, Legado), jornadas, governança, crescimento, indicadores, riscos e roadmap estratégico por dependência.</li>
+<li><strong>Resumo executivo:</strong> É o documento-mapa que nomeia os 14 “sistemas permanentes” que reaparecem como títulos de projetos individuais (Projeto05–11, Manuais). Também é onde a Governança de Marca (com poder de veto) é definida institucionalmente pela primeira vez.</li>
+<li><strong>Capítulos reais:</strong> 10 (incluindo “3. Sistemas Permanentes” com 14 subseções <code>###</code>) + auditoria de 6 especialistas.</li>
+<li><strong>Dependências:</strong> Fase3, Fase4.</li>
+<li><strong>Documentos relacionados:</strong> Fase6, Projeto05–Projeto11, todos os Manuais (todos operacionalizam algum “sistema” nomeado aqui).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~17 min.</li>
+<li><strong>Status:</strong> “Versão definitiva do Ecossistema Institucional.”</li>
+<li><strong>Versão:</strong> Não numerada.</li>
+</ul>
+<h3 id="6-fase6-master-plan-implementacao-kettlebell">6. Fase6_Master_Plan_Implementacao_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Fase / Roadmap-Implementação (documento de gestão de programa)</li>
+<li><strong>Objetivo:</strong> Plano Diretor de execução — mapa de 10 programas e 19 projetos (P1–P19), roadmap por fase de maturidade, estrutura organizacional, RACI, orçamento em três cenários proporcionais, risk register, KPIs, governança de projeto, critérios de prontidão, dependências críticas, quick wins, iniciativas por horizonte temporal.</li>
+<li><strong>Resumo executivo:</strong> É o documento operacional mais “gerencial” do corpus — o único com Matriz RACI, Risk Register tabular e cenários orçamentários. P1–P19 mapeiam diretamente para sistemas/documentos definidos nas Fases 3–5 e para os Projetos 01–11/Manuais. Fecha com auditoria de 8 especialistas, a maior do corpus, e é o único documento cuja auditoria produziu 2 ajustes de conteúdo explicitamente incorporados no próprio texto (estudo financeiro como entregável obrigatório; critério quantitativo de árbitros).</li>
+<li><strong>Capítulos reais:</strong> 16 capítulos numerados — particularidade estrutural: aqui a Auditoria Final é o próprio Capítulo 16 (numerado), diferente do padrão dos demais 20 documentos, onde a auditoria aparece como seção não numerada após o último capítulo (achado de inconsistência de numeração, ver Etapa 6.3).</li>
+<li><strong>Dependências:</strong> Fase1–Fase5 (todas).</li>
+<li><strong>Documentos relacionados:</strong> Todos os Projetos 01–11 e Manuais são, em essência, desdobramentos de algum P1–P19 deste plano.</li>
+<li><strong>Tempo estimado de leitura:</strong> ~23 min.</li>
+<li><strong>Status:</strong> Documento definitivo, já revisado com ajustes incorporados.</li>
+<li><strong>Versão:</strong> Não numerada.</li>
+</ul>
+<h3 id="7-manual-crm-kettlebell">7. Manual_CRM_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Manual Operacional / Tecnologia / Governança de Dados</li>
+<li><strong>Objetivo:</strong> Definir filosofia, arquitetura, perfis, jornada de relacionamento, dados, segmentação, integração, governança, LGPD, indicadores, segurança e roadmaps do CRM institucional.</li>
+<li><strong>Resumo executivo:</strong> Declarado explicitamente como “fonte primária de dado de pessoa para todos os demais sistemas” (Capítulo 8) — alimenta Projeto06, Projeto07, Projeto08, Projeto09, Projeto10, Projeto11 e o Dashboard Executivo. Contém tratamento extenso de casos especiais sensíveis (falecimento, boxes encerrados, direito ao esquecimento vs. memória histórica).</li>
+<li><strong>Capítulos reais:</strong> 18 capítulos numerados (o 18º é “Roadmap de Documentos Derivados”) + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Fase5 (Sistema de Atletas/Boxes/Árbitros), Projeto08 (Sistema de Memória), Projeto11.</li>
+<li><strong>Documentos relacionados:</strong> Projeto05, Projeto06, Projeto07, Projeto08, Projeto09, Projeto10, Projeto11, Manual_Dashboard_Executivo.</li>
+<li><strong>Tempo estimado de leitura:</strong> ~16 min.</li>
+<li><strong>Status:</strong> Finalizado, com ciclo de auditoria dupla já documentado no próprio arquivo.</li>
+<li><strong>Versão:</strong> Não numerada; tem seção formal de “Roadmap de Evolução” e “Roadmap de Implementação”.</li>
+</ul>
+<h3 id="8-manual-dashboard-executivo-kettlebell">8. Manual_Dashboard_Executivo_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Manual Operacional / Tecnologia / Governança de Dados</li>
+<li><strong>Objetivo:</strong> Definir filosofia, arquitetura, perfis de usuário, catálogo de KPIs, alertas, visualização, storytelling executivo, governança e segurança do dashboard executivo.</li>
+<li><strong>Resumo executivo:</strong> Consome dados do CRM, Sistema de Memória e Projeto11 (Inteligência Pré-Inscrição). Distingue explicitamente dashboard interno (dados brutos) de comunicação pública (<a href="/docs/manuais/manual-stories.html">Manual de Stories</a>), citando esse manual por nome — evidência de referência cruzada direta e nomeada.</li>
+<li><strong>Capítulos reais:</strong> 19 capítulos numerados (o 19º é “Roadmap de Documentos Derivados”) + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Manual_CRM, Projeto08, Projeto11.</li>
+<li><strong>Documentos relacionados:</strong> Manual_Stories_Baseados_Dados, Projeto09, Projeto05/06.</li>
+<li><strong>Tempo estimado de leitura:</strong> ~16 min.</li>
+<li><strong>Status:</strong> Finalizado, com auditoria dupla documentada.</li>
+<li><strong>Versão:</strong> Não numerada.</li>
+</ul>
+<h3 id="9-manual-formulario-manifestacao-interesse-kettlebell">9. Manual_Formulario_Manifestacao_Interesse_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Manual Operacional / UX / Coleta de Dados</li>
+<li><strong>Objetivo:</strong> Especificar filosofia, arquitetura, jornada do usuário, arquitetura das perguntas, ordem de coleta, UX, UX writing, qualidade de dados, LGPD, integração, indicadores, governança e casos especiais do formulário de manifestação de interesse.</li>
+<li><strong>Resumo executivo:</strong> É o documento mais “operacional de front-end” do corpus sem ser código — especifica microcopy, mobile-first, lógica condicional. Explicitamente dependente do Projeto11 (Capítulo 18, CRM) para operar.</li>
+<li><strong>Capítulos reais:</strong> 15 + auditoria de 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Projeto11, Manual_CRM.</li>
+<li><strong>Documentos relacionados:</strong> Projeto10, Projeto07 (jornada da imprensa distinta), Projeto05/06 (patrocinadores nunca usam este formulário).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~15 min.</li>
+<li><strong>Status:</strong> Finalizado, com auditoria dupla.</li>
+<li><strong>Versão:</strong> Menciona “versionamento formal (Capítulo 12)” como prática exigida, mas o próprio documento não traz número de versão.</li>
+</ul>
+<h3 id="10-manual-stories-baseados-dados-kettlebell">10. Manual_Stories_Baseados_Dados_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Manual Operacional / Comunicação / Dados</li>
+<li><strong>Objetivo:</strong> Definir filosofia, arquitetura, tipos de stories, fontes de dados, narrativa, visualização, linguagem, frequência, indicadores, ética, integração e governança para conteúdo de redes sociais baseado em dados reais.</li>
+<li><strong>Resumo executivo:</strong> É a “camada pública” explicitamente distinta do Dashboard Executivo (dados internos) — traduz inteligência em comunicação de mão única para comunidade. Depende do Dashboard e do Projeto11 estarem maduros para operar de fato (“sem dado validado e acessível, não há story de dados possível, apenas suposição disfarçada de dado”).</li>
+<li><strong>Capítulos reais:</strong> 15 capítulos numerados (14º e 15º são os Roadmaps de Evolução e Implementação) + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Manual_Dashboard_Executivo, Projeto11.</li>
+<li><strong>Documentos relacionados:</strong> Projeto04 (Brand Book, templates visuais).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~15 min.</li>
+<li><strong>Status:</strong> Finalizado, com auditoria dupla.</li>
+<li><strong>Versão:</strong> Não numerada.</li>
+</ul>
+<h3 id="11-projeto01-sistema-de-comunicacao-kettlebell">11. Projeto01_Sistema_de_Comunicacao_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Projeto / Comunicação</li>
+<li><strong>Objetivo:</strong> Manual oficial de comunicação — filosofia, objetivos por público, arquitetura de mensagens, storytelling permanente, tom de voz, vocabulário oficial, narrativas estratégicas, canais, conteúdo, crises, comunicação para patrocinadores e interna, auditoria pré-publicação, aprovação e indicadores.</li>
+<li><strong>Resumo executivo:</strong> É o documento que primeiro operacionaliza voz/tom vindos da Fase 3, e serve de base editorial para Projeto02 (criativo) e Projeto10 (lançamento).</li>
+<li><strong>Capítulos reais:</strong> 17 capítulos numerados — a Auditoria Final é o próprio Capítulo 18 (numerado), mesma particularidade estrutural do Fase6 (ver Etapa 6.3).</li>
+<li><strong>Dependências:</strong> Fase3, Fase4.</li>
+<li><strong>Documentos relacionados:</strong> Projeto02, Projeto04, Projeto10.</li>
+<li><strong>Tempo estimado de leitura:</strong> ~15 min.</li>
+<li><strong>Status:</strong> Finalizado.</li>
+<li><strong>Versão:</strong> Não numerada.</li>
+</ul>
+<h3 id="12-projeto02-sistema-criativo-kettlebell">12. Projeto02_Sistema_Criativo_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Projeto / Criativo</li>
+<li><strong>Objetivo:</strong> DNA criativo, territórios criativos, framework de geração de ideias, critérios de qualidade, diferenciação, storytelling visual, direção criativa (sem definir identidade visual), sistema de campanhas, grandes ideias, matriz de formatos, inovação criativa e checklist.</li>
+<li><strong>Resumo executivo:</strong> Documento mais curto do corpus (2.608 palavras). Delimita conscientemente sua fronteira com Projeto03 (“sem definir identidade visual”) — exemplo explícito de separação de escopo documentada no próprio texto.</li>
+<li><strong>Capítulos reais:</strong> 13 capítulos numerados — a Auditoria Final é o próprio Capítulo 14 (numerado, painel de 7 especialistas), mesma particularidade estrutural do Fase6/Projeto01/Fase4 (ver Etapa 6.3).</li>
+<li><strong>Dependências:</strong> Fase3, Projeto01.</li>
+<li><strong>Documentos relacionados:</strong> Projeto03, Projeto04, Projeto08 (peças de maior duração preservadas no arquivo).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~13 min.</li>
+<li><strong>Status:</strong> Finalizado.</li>
+<li><strong>Versão:</strong> Não numerada.</li>
+</ul>
+<h3 id="13-projeto03-sistema-identidade-visual-kettlebell">13. Projeto03_Sistema_Identidade_Visual_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Projeto / Design / Identidade Visual (constitucional)</li>
+<li><strong>Objetivo:</strong> “Constituição Visual Oficial” — filosofia visual, DNA visual, sistema cromático, tipografia, logotipo (estrutura), grid, fotografia, vídeo, ícones, ilustrações, infográficos, motion design, redes sociais, editorial, eventos, patrocinadores, acessibilidade, consistência e governança visual.</li>
+<li><strong>Resumo executivo:</strong> Define paleta, tipografia e sistema de logotipo em nível de princípio/estrutura (não desenho executado). Base direta e citada exaustivamente pelo Projeto04.</li>
+<li><strong>Capítulos reais:</strong> 19 capítulos numerados + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Fase3, Projeto02.</li>
+<li><strong>Documentos relacionados:</strong> Projeto04 (aplica tecnicamente tudo aqui definido).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~22 min.</li>
+<li><strong>Status:</strong> “Constituição Visual Oficial” — declarado constitucional.</li>
+<li><strong>Versão:</strong> Não numerada.</li>
+</ul>
+<h3 id="14-projeto04-brand-book-aplicacao-kettlebell">14. Projeto04_Brand_Book_Aplicacao_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Projeto / Design / Manual Operacional (Brand Book)</li>
+<li><strong>Objetivo:</strong> Operacionalizar tecnicamente o Projeto03 — hierarquia entre camadas, sistema modular, cromático operacional, tipográfico operacional, logotipo operacionalizado, fotografia, vídeo, editorial, digital, redes sociais, eventos, impressão, merchandising, motion, acessibilidade técnica, sistema de arquivos, QA, governança e anexos técnicos a desenvolver.</li>
+<li><strong>Resumo executivo:</strong> É o documento mais longo do corpus por linhas (408) e o segundo mais longo por palavras (5.140). Traz nomenclatura formal de arquivos (<code>AAAA-MM-DD_Categoria_DescricaoCurta_Versao.extensão</code>) — único padrão de nomenclatura técnica de arquivo explícito em todo o corpus, citado depois pelo Projeto06.</li>
+<li><strong>Capítulos reais:</strong> 20 capítulos numerados (o 20º é “Anexos Técnicos Obrigatórios — a desenvolver”) + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Projeto03.</li>
+<li><strong>Documentos relacionados:</strong> Projeto02, Projeto06 (reusa nomenclatura de versionamento), Projeto08 (preservação de versão original vs. comercial).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~26 min.</li>
+<li><strong>Status:</strong> “Manual Operacional Oficial”, finalizado com auditoria dupla; Capítulo 20 lista explicitamente anexos técnicos ainda não desenvolvidos.</li>
+<li><strong>Versão:</strong> Não numerada como documento, mas define esquema de versionamento para outros arquivos.</li>
+</ul>
+<h3 id="15-projeto05-sistema-patrocinios-cobranding-kettlebell">15. Projeto05_Sistema_Patrocinios_CoBranding_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Projeto / Comercial / Patrocínio</li>
+<li><strong>Objetivo:</strong> “Constituição Permanente do Ecossistema Comercial” — filosofia do patrocínio, níveis, direitos de marca, co-branding, exposição, exclusividade, contrapartidas, ativações, naming rights, jurídico, financeiro, aprovação, avaliação, recusa, internacional, digital, crises, checklist e governança comercial.</li>
+<li><strong>Resumo executivo:</strong> Base constitucional comercial citada por Projeto06 (que a opera na prática de vendas) e por Manual_CRM (guardiões fundadores).</li>
+<li><strong>Capítulos reais:</strong> 19 capítulos numerados, precedidos por uma seção não numerada de abertura (“Filosofia Geral”) + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Fase3, Fase5.</li>
+<li><strong>Documentos relacionados:</strong> Projeto06, Manual_CRM.</li>
+<li><strong>Tempo estimado de leitura:</strong> ~21 min.</li>
+<li><strong>Status:</strong> Documento declarado como “nunca sobrescrito — toda revisão gera nova versão numerada”.</li>
+<li><strong>Versão:</strong> Sistema de versionamento exigido explicitamente, mas número de versão não presente no arquivo atual.</li>
+</ul>
+<h3 id="16-projeto06-manual-comercial-vendas-kettlebell">16. Projeto06_Manual_Comercial_Vendas_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Projeto / Comercial / Vendas</li>
+<li><strong>Objetivo:</strong> “Manual Comercial Oficial + Sponsor Kit” — filosofia comercial, jornada, ICP, personas de patrocinadores, descoberta, valor, storytelling comercial, objeções, materiais, inventário, benefícios, propostas, negociação, renovação, CRM, indicadores, documentação, checklist, governança e roadmap de implementação.</li>
+<li><strong>Resumo executivo:</strong> Opera na prática o Projeto05. É o único documento de “Projeto” numerado que possui seu próprio “Roadmap de Implementação” (cap. 20), aproximando-o do padrão dos Manuais.</li>
+<li><strong>Capítulos reais:</strong> 20 capítulos numerados (o 20º é “Roadmap de Implementação”) + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Projeto05.</li>
+<li><strong>Documentos relacionados:</strong> Manual_CRM (Capítulo 15 do Projeto06 é o próprio CRM comercial), Projeto04 (nomenclatura de versionamento).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~21 min.</li>
+<li><strong>Status:</strong> Finalizado, auditoria dupla.</li>
+<li><strong>Versão:</strong> Não numerada; cita explicitamente seguir “a mesma lógica de nomenclatura já definida no <a href="/docs/projetos/projeto04.html#17-sistema-de-arquivos">Projeto 04, Capítulo 17</a>”.</li>
+</ul>
+<h3 id="17-projeto07-sistema-experiencia-evento-kettlebell">17. Projeto07_Sistema_Experiencia_Evento_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Projeto / Experiência / Operação de Evento</li>
+<li><strong>Objetivo:</strong> “Constituição Permanente da Experiência” — jornadas de todos os públicos (atleta, torcida, patrocinador, imprensa, árbitro, voluntário), arquitetura da experiência, wayfinding, atmosfera, sistema cerimonial, hospitalidade, sensorial, gestão de emoções e crises, consistência, avaliação, governança.</li>
+<li><strong>Resumo executivo:</strong> Contém o roadmap mais extenso de manuais futuros do corpus (16 manuais listados no Capítulo 20), citado no prompt do usuário como exemplo âncora.</li>
+<li><strong>Capítulos reais:</strong> 20 capítulos numerados (o 20º é “Roadmap de Desdobramento”, com 16 manuais futuros) + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Fase5, Fase3 (sistema simbólico/cerimonial).</li>
+<li><strong>Documentos relacionados:</strong> Projeto09 (roadmap parcialmente sobreposto — ver Etapa 6).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~18 min.</li>
+<li><strong>Status:</strong> “Constituição Permanente”, finalizada, auditoria dupla.</li>
+<li><strong>Versão:</strong> “Este documento nunca é sobrescrito — cada revisão gera nova versão numerada e preservada” (Capítulo 19), mas sem número presente.</li>
+</ul>
+<h3 id="18-projeto08-sistema-memoria-patrimonio-kettlebell">18. Projeto08_Sistema_Memoria_Patrimonio_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Projeto / Memória / Patrimônio</li>
+<li><strong>Objetivo:</strong> “Constituição Permanente da Memória Institucional” — o que preservar/não preservar, curadoria, registro, história oral, acervo fotográfico e audiovisual, documental, metadados, preservação, acesso, patrimônio, continuidade, ética, consistência, governança.</li>
+<li><strong>Resumo executivo:</strong> Operacionaliza o Livro de Nomes e demais elementos do Sistema Simbólico da Fase 3. Roadmap de 16 manuais futuros com priorização explícita em 4 níveis.</li>
+<li><strong>Capítulos reais:</strong> 20 capítulos numerados (o 20º é “Roadmap de Desdobramento”, com 16 manuais futuros) + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Fase3 (Sistema Simbólico), Fase5.</li>
+<li><strong>Documentos relacionados:</strong> Manual_CRM (preservação de registros históricos de pessoas), Projeto02/04 (versão de arquivo vs. comercial).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~20 min.</li>
+<li><strong>Status:</strong> “Constituição Permanente”, finalizada, auditoria dupla.</li>
+<li><strong>Versão:</strong> Versionamento de metadados exigido no Capítulo 16, sem número de versão do próprio documento.</li>
+</ul>
+<h3 id="19-projeto09-sistema-operacional-evento-kettlebell">19. Projeto09_Sistema_Operacional_Evento_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Projeto / Operação</li>
+<li><strong>Objetivo:</strong> “Constituição Permanente da Operação” — cadeia de comando, centros operacionais, estrutura funcional, ciclo operacional, fluxos, comunicação operacional, recursos, dependências, tempo, riscos, continuidade, controle, integração com outros sistemas, aprendizado, escalabilidade, avaliação, governança.</li>
+<li><strong>Resumo executivo:</strong> Roadmap de 17 manuais futuros — o maior número absoluto do corpus, com ordem de prioridade em 5 níveis + documento consolidador final. Forte sobreposição temática com o roadmap do Projeto07 (ambos preveem Manual do Cerimonial, Manual de Hospitalidade, Manual do Staff, Manual do Voluntário, Manual de Credenciamento — ver Etapa 6, achado de redundância).</li>
+<li><strong>Capítulos reais:</strong> 20 capítulos numerados (o 20º é “Roadmap de Desdobramento”, com 17 manuais futuros) + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Fase5, Projeto07.</li>
+<li><strong>Documentos relacionados:</strong> Projeto07 (jornadas), Manual_CRM (credenciamento), Manual_Dashboard_Executivo.</li>
+<li><strong>Tempo estimado de leitura:</strong> ~20 min.</li>
+<li><strong>Status:</strong> “Constituição Permanente”, finalizada, auditoria dupla.</li>
+<li><strong>Versão:</strong> Não numerada.</li>
+</ul>
+<h3 id="20-projeto10-sistema-lancamento-mobilizacao-kettlebell">20. Projeto10_Sistema_Lancamento_Mobilizacao_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Projeto / Lançamento / Comunicação-Comercial</li>
+<li><strong>Objetivo:</strong> “Constituição Permanente do Lançamento das Inscrições” — arquitetura do lançamento, jornada do atleta, storytelling, mobilização, conteúdo, interação, inteligência prévia e de mercado, segmentação, social proof, comunidade, indicadores, dashboards, integração, ética, aprendizado, escalabilidade, governança.</li>
+<li><strong>Resumo executivo:</strong> Operacionaliza diretamente a Fase 4. Roadmap de 15 manuais futuros com priorização em 5 níveis.</li>
+<li><strong>Capítulos reais:</strong> 20 capítulos numerados (o 20º é “Roadmap de Desdobramento”, com 15 manuais futuros) + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Fase4, Projeto01, Projeto11.</li>
+<li><strong>Documentos relacionados:</strong> Manual_Formulario_Manifestacao_Interesse, Manual_CRM, Manual_Dashboard_Executivo, Manual_Stories_Baseados_Dados (todos citados nominalmente como decorrência).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~20 min.</li>
+<li><strong>Status:</strong> “Constituição Permanente”, finalizada, auditoria dupla.</li>
+<li><strong>Versão:</strong> Não numerada.</li>
+</ul>
+<h3 id="21-projeto11-sistema-inteligencia-preinscricao-kettlebell">21. Projeto11_Sistema_Inteligencia_PreInscricao_Kettlebell.md</h3>
+<ul>
+<li><strong>Categoria:</strong> Projeto / Inteligência / Dados</li>
+<li><strong>Objetivo:</strong> “Constituição Permanente” da inteligência pré-inscrição — coleta de dados campo a campo, qualidade, inteligência, segmentação, dashboards, indicadores, conteúdo baseado em dados, stories, apoio à operação, ética/LGPD, aprendizado, integração, escalabilidade, governança.</li>
+<li><strong>Resumo executivo:</strong> É o hub de dados mais citado pelos Manuais (CRM, Dashboard, Formulário, Stories todos remetem a este documento). Único documento com dois roadmaps distintos: “Roadmap de Ferramentas Futuras” (cap. 18) e “Roadmap de Documentos Futuros” (cap. 19).</li>
+<li><strong>Capítulos reais:</strong> 19 capítulos numerados (18º = “Roadmap de Ferramentas Futuras”; 19º = “Roadmap de Documentos Futuros”, 8 manuais) + seção não numerada de Auditoria Final com 11 especialistas em 2 rodadas.</li>
+<li><strong>Dependências:</strong> Fase4, Projeto10.</li>
+<li><strong>Documentos relacionados:</strong> Manual_CRM, Manual_Dashboard_Executivo, Manual_Formulario_Manifestacao_Interesse, Manual_Stories_Baseados_Dados (todos os 4 Manuais nasceram deste roadmap).</li>
+<li><strong>Tempo estimado de leitura:</strong> ~20 min.</li>
+<li><strong>Status:</strong> “Constituição Permanente”, finalizada, auditoria dupla.</li>
+<li><strong>Versão:</strong> Não numerada.</li>
+</ul>
+<p><strong>Nota geral de versionamento (achado transversal):</strong> nenhum dos 21 documentos contém um número de versão explícito (ex.: “v1.2”) no corpo do texto. Vários documentos (Projeto04, Projeto05, Projeto06, Projeto07, Projeto08) <em>exigem</em> de si mesmos ou de terceiros um sistema de versionamento formal (nomenclatura de arquivo <code>AAAA-MM-DD_Categoria_DescricaoCurta_Versao</code>), mas não o aplicam a si próprios. Isso é tratado como achado de auditoria na Etapa 6.</p>
+<hr/>
+<h2 id="etapa-2-classificacao">ETAPA 2 — CLASSIFICAÇÃO</h2>
+<p>Classificação por grupos temáticos. Um documento pode pertencer a mais de um grupo — a coluna “Grupo Primário” marca a função predominante; “Grupos Secundários” registra pertencimento adicional real, com justificativa textual extraída da leitura.</p>
+<table>
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th scope="col">#</th>
+<th scope="col">Documento</th>
+<th scope="col">Grupo Primário</th>
+<th scope="col">Grupos Secundários</th>
+<th scope="col">Justificativa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Fase1</td>
+<td>Inteligência</td>
+<td>Estratégia</td>
+<td>Pesquisa de benchmark é a matéria-prima de toda decisão estratégica subsequente; não define marca nem opera nada, é puramente analítico.</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Fase2</td>
+<td>Estratégia</td>
+<td>Marca</td>
+<td>Decide posicionamento (estratégico) mas já produz o “DNA” que a Fase 3 (Marca) usa como insumo direto.</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Fase3</td>
+<td>Marca</td>
+<td>Governança</td>
+<td>Define identidade permanente; Capítulo 18 (“Princípios de Decisão”) e a auditoria final funcionam como pré-governança de marca, antes de a Fase 5 formalizar o órgão.</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Fase4</td>
+<td>Comunicação</td>
+<td>Estratégia, Lançamento</td>
+<td>É estratégia de lançamento aplicada à comunicação — ponte entre Marca (Fase 3) e execução de Comunicação (Projeto01) e Lançamento (Projeto10).</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Fase5</td>
+<td>Governança</td>
+<td>Estratégia, Implementação</td>
+<td>Formaliza os “sistemas permanentes” e a Governança de Marca com poder de veto — é o documento institucional-mãe de todos os Projetos 05-11 e Manuais.</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Fase6</td>
+<td>Implementação</td>
+<td>Estratégia, Governança</td>
+<td>Único documento com RACI, orçamento e risk register — converte toda a constituição estratégica (Fases 1-5) em plano de execução com P1-P19.</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Manual_CRM</td>
+<td>Tecnologia</td>
+<td>Governança, Inteligência</td>
+<td>Arquitetura de dados e sistema técnico, mas também um capítulo inteiro (9) de “Governança dos Dados” e forte função de inteligência (fonte primária de pessoa).</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Manual_Dashboard_Executivo</td>
+<td>Tecnologia</td>
+<td>Governança, Inteligência</td>
+<td>Painel de decisão executiva construído sobre dado governado; também insumo direto de inteligência estratégica para diretoria.</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Manual_Formulario_Manifestacao_Interesse</td>
+<td>Tecnologia</td>
+<td>Comercial, Inteligência</td>
+<td>Ferramenta de UX/coleta de dado (tecnologia), mas alimenta diretamente o funil comercial de inscrição e o Sistema de Inteligência (Projeto11).</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Manual_Stories_Baseados_Dados</td>
+<td>Comunicação</td>
+<td>Tecnologia, Inteligência</td>
+<td>Formato de comunicação (redes sociais) mas cuja matéria-prima é 100% dado/indicador (Tecnologia/Inteligência).</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Projeto01</td>
+<td>Comunicação</td>
+<td>Marca</td>
+<td>Manual de voz/tom/vocabulário — operacionaliza a Marca (Fase 3) na forma de comunicação editorial e de crise.</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Projeto02</td>
+<td>Criativo</td>
+<td>Comunicação</td>
+<td>DNA criativo e territórios de campanha; delimita-se explicitamente de Design (Projeto03), mas depende do Projeto01 (mensagens).</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Projeto03</td>
+<td>Design</td>
+<td>Marca</td>
+<td>“Constituição Visual Oficial” — sistema cromático, tipográfico, logotipo — é design em nível de princípio, mas sua fonte é a Marca (Fase 3).</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Projeto04</td>
+<td>Design</td>
+<td>Governança</td>
+<td>Operacionaliza tecnicamente o Projeto03 (aplicação, QA, arquivos) — é o elo entre design e governança de consistência visual.</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>Projeto05</td>
+<td>Patrocínio</td>
+<td>Governança, Marca</td>
+<td>Constituição comercial que protege a marca (“direitos de marca”, “co-branding”) — comercial com forte camada de governança.</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>Projeto06</td>
+<td>Comercial</td>
+<td>Patrocínio</td>
+<td>Manual de vendas que opera na prática o Projeto05; mais tático/operacional que constitucional.</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>Projeto07</td>
+<td>Experiência</td>
+<td>Operação</td>
+<td>Constituição da experiência de todos os públicos no evento; distingue-se da Operação (Projeto09) por focar em vivência/emoção, não em logística/comando.</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>Projeto08</td>
+<td>Memória</td>
+<td>Governança</td>
+<td>Constituição do patrimônio histórico; governança específica de curadoria e preservação.</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td>Projeto09</td>
+<td>Operação</td>
+<td>Experiência</td>
+<td>Constituição da operação — cadeia de comando, centros operacionais, fluxos; overlap de roadmap com Projeto07 (ver Etapa 6).</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>Projeto10</td>
+<td>Lançamento</td>
+<td>Comunicação, Comercial, Inteligência</td>
+<td>Constituição do lançamento das inscrições — cruza mobilização de comunidade, comunicação e conversão comercial.</td>
+</tr>
+<tr class="odd">
+<td>21</td>
+<td>Projeto11</td>
+<td>Inteligência</td>
+<td>Tecnologia, Comercial</td>
+<td>Sistema permanente de inteligência pré-inscrição — hub de dado bruto que alimenta CRM, Dashboard, Formulário e Stories.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Grupos definidos e por que foram necessários</strong> (além dos sugeridos no briefing, dois grupos adicionais foram criados por necessidade real do corpus): - <strong>Estratégia</strong> — Fase1, Fase2, Fase4(sec), Fase5(sec), Fase6(sec). Documentos que decidem “o quê” e “por quê” antes de qualquer execução. - <strong>Governança</strong> — Fase3(sec), Fase5, Fase6(sec), Manual_CRM(sec), Manual_Dashboard(sec), Projeto04(sec), Projeto05(sec), Projeto08(sec). Presença de mecanismos formais de controle, veto, auditoria ou compliance. - <strong>Marca</strong> — Fase2(sec), Fase3, Projeto01(sec), Projeto03(sec). Identidade permanente e sua tradução direta. - <strong>Comunicação</strong> — Fase4, Manual_Stories, Projeto01, Projeto02(sec), Projeto10(sec). Mensagem, voz, canais, conteúdo. - <strong>Criativo</strong> — Projeto02. Único documento cuja função central é ideação/território criativo sem tocar produção técnica. - <strong>Design</strong> — Projeto03, Projeto04. Sistema visual em nível de princípio e em nível de aplicação técnica. - <strong>Comercial</strong> — Projeto06, Manual_Formulario(sec), Projeto10(sec), Projeto11(sec). Venda, funil, conversão. - <strong>Patrocínio</strong> <em>(grupo adicional necessário — “Comercial” sozinho não captura a natureza constitucional/jurídica específica de direitos de marca e co-branding)</em> — Projeto05, Projeto06(sec). - <strong>Experiência</strong> — Projeto07, Projeto09(sec). Vivência de públicos no evento. - <strong>Memória</strong> — Projeto08. Único documento inteiramente dedicado a patrimônio/arquivo histórico. - <strong>Operação</strong> — Projeto09, Projeto07(sec). Logística, comando, fluxos. - <strong>Lançamento</strong> — Projeto10, Fase4(sec). Mobilização pré-inscrição. - <strong>Inteligência</strong> — Projeto11, Fase1(sec), Manual_CRM(sec), Manual_Dashboard(sec), Manual_Formulario(sec), Manual_Stories(sec), Projeto10(sec). Dado, análise, previsão. - <strong>Implementação</strong> — Fase6, Fase5(sec). Execução, cronograma, RACI, orçamento. - <strong>Tecnologia</strong> <em>(grupo adicional necessário — nenhum dos grupos sugeridos cobre bem os 4 Manuais operacionais que são, na prática, especificações funcionais de sistemas digitais)</em> — Manual_CRM, Manual_Dashboard, Manual_Formulario, Projeto11(sec).</p>
+<p><strong>Observação de classificação:</strong> os 4 “Manuais” (CRM, Dashboard, Formulário, Stories) formam um cluster estruturalmente distinto — todos nasceram do “Roadmap de Documentos Futuros” do Projeto11 (Capítulo 19), todos seguem o mesmo padrão de 11+ especialistas em 2 rodadas de auditoria, e todos têm exatamente o padrão de capítulos “Filosofia → Arquitetura → … → Roadmap de Evolução → Roadmap de Implementação → Casos Especiais → Sistema de Auditoria → Roadmap de Documentos Derivados → Auditoria Final”. Isso é evidência de um “template documental” real e consistente, tratado na Etapa 3.</p>
+<hr/>
+<h2 id="etapa-3-engenharia-da-arquitetura">ETAPA 3 — ENGENHARIA DA ARQUITETURA</h2>
+<p>A leitura integral revela <strong>quatro camadas arquiteturais reais</strong>, não apenas uma sequência de nomes de pasta. A ordem de leitura dos textos (Fase1→Fase6, depois Manuais, depois Projeto01→11) não é a arquitetura real de dependência — é apenas ordem alfabética de arquivo. A arquitetura real, extraída das próprias citações internas (“conforme a Fase 3, Capítulo X”, “Fase5”, “Projeto11, Capítulo 18” etc.), é a seguinte:</p>
+<pre><code>CAMADA 0 — INTELIGÊNCIA DE MERCADO (pesquisa externa)
+└── Fase1 (Benchmark)
+        │
+        ▼
+CAMADA 1 — CONSTITUIÇÃO ESTRATÉGICA (o "porquê" e o "quem somos")
+├── Fase2 (Identidade Estratégica) ← Fase1
+├── Fase3 (Plataforma de Marca)    ← Fase2            ★ DOCUMENTO-FONTE CENTRAL
+├── Fase4 (Arquitetura de Lançamento) ← Fase3
+└── Fase5 (Ecossistema Institucional) ← Fase3, Fase4    ★ NOMEIA OS "SISTEMAS PERMANENTES"
+        │
+        ▼
+CAMADA 2 — PLANO DIRETOR (o "quando" e "com que recursos")
+└── Fase6 (Master Plan / P1–P19) ← Fase1...Fase5 (todas)
+        │
+        ▼
+CAMADA 3 — CONSTITUIÇÕES OPERACIONAIS POR SISTEMA (o "como", nível de princípio)
+├── Projeto01 (Comunicação)         ← Fase3, Fase4
+├── Projeto02 (Criativo)            ← Fase3, Projeto01
+├── Projeto03 (Identidade Visual)   ← Fase3, Projeto02
+├── Projeto04 (Brand Book/Aplicação)← Projeto03
+├── Projeto05 (Patrocínios)         ← Fase3, Fase5
+├── Projeto06 (Comercial/Vendas)    ← Projeto05
+├── Projeto07 (Experiência Evento)  ← Fase3, Fase5
+├── Projeto08 (Memória/Patrimônio)  ← Fase3, Fase5
+├── Projeto09 (Operação Evento)     ← Fase5, Projeto07
+├── Projeto10 (Lançamento/Mobiliz.) ← Fase4, Projeto01, Projeto11
+└── Projeto11 (Inteligência Pré-Insc.) ← Fase4, Projeto10   ★ HUB DE DADOS
+        │
+        ▼
+CAMADA 4 — MANUAIS FUNCIONAIS DE FERRAMENTA (o "como", nível de especificação de UX/sistema)
+├── Manual_CRM                       ← Projeto11 roadmap, Fase5, Projeto08
+├── Manual_Dashboard_Executivo       ← Manual_CRM, Projeto08, Projeto11
+├── Manual_Formulario_Manifestacao   ← Projeto11, Manual_CRM
+└── Manual_Stories_Baseados_Dados    ← Manual_Dashboard, Projeto11</code></pre>
+<p><strong>Padrão estrutural descoberto (não copiado de exemplo, extraído da leitura real):</strong> existe um “template de documento constitucional” repetido em 15 dos 21 arquivos (Projeto03–Projeto11 e os 4 Manuais), sempre com esta espinha dorsal: 1. Filosofia → 2. Arquitetura Geral → 3–N. Capítulos de sistema específico → N+1. Governança → N+2. Roadmap de Evolução/Implementação → N+3. Casos Especiais (nos Manuais) → N+4. Sistema de Auditoria (nos Manuais) → N+5. Roadmap de Documentos Derivados/Futuros → Auditoria Final com painel de especialistas (7 a 11) e, nos 15 mais recentes, <strong>duas rodadas</strong> de auditoria (Rodada 1 críticas → Ajustes incorporados → Rodada 2 confirmação). As 6 Fases e o Projeto01/02 não seguem esse padrão de auditoria dupla — usam painéis menores (5 a 8 especialistas) e uma única rodada. Isso mostra uma <strong>evolução metodológica real ao longo da produção do corpus</strong>: o padrão de rigor de auditoria aumentou (de painel único/1 rodada nas Fases e primeiros Projetos, para painel de 11/2 rodadas nos Projetos03+ e Manuais).</p>
+<p><strong>Duas espinhas dorsais paralelas identificadas:</strong> - <strong>Espinha de Marca/Identidade:</strong> Fase2 → Fase3 → Projeto01/02/03/04 → (aplicação em todos os outros). - <strong>Espinha de Dados/Inteligência:</strong> Fase1 → Projeto11 → Manual_CRM/Dashboard/Formulario/Stories → Fase6 (Cap. 10, KPIs). Estas duas espinhas se cruzam explicitamente no Manual_Stories_Baseados_Dados (usa templates do Brand Book — Marca — para visualizar dado — Inteligência).</p>
+<p><strong>Hub de maior conectividade (grau de entrada, i.e. mais citado por outros):</strong> Fase3 (Plataforma de Marca) e Fase5 (Ecossistema Institucional) são citadas, direta ou indiretamente por nome de “sistema”, por praticamente todos os 15 documentos operacionais. Projeto11 é o segundo maior hub, citado nominalmente por 4 Manuais + Projeto10 + Fase6.</p>
+<hr/>
+<h2 id="etapa-4-mapa-de-dependencias">ETAPA 4 — MAPA DE DEPENDÊNCIAS</h2>
+<p>Para cada documento: <strong>Depende de</strong> (pré-requisito de leitura/conceito) · <strong>Dependem dele</strong> · <strong>Operacionaliza</strong> · <strong>Complementa</strong> · <strong>Cita</strong> · <strong>É citado por</strong> · <strong>Documentos futuros que deverá gerar</strong> (conforme roadmaps dos próprios documentos, detalhados na Etapa 7).</p>
+<h3 id="fase1">Fase1</h3>
+<ul>
+<li>Depende de: nenhum.</li>
+<li>Dependem dele: Fase2 (leitura crítica explícita de abertura).</li>
+<li>Operacionaliza: nada (é pesquisa pura).</li>
+<li>Complementa: Fase6 (Cap.8, “ausência de dados financeiros” citada como risco no Risk Register).</li>
+<li>Cita: CrossFit, HYROX, Spartan, Ironman, Maratonas, Powerlifting, Weightlifting, IKO World League (fontes externas).</li>
+<li>É citado por: Fase2, Fase6.</li>
+<li>Documentos futuros: nenhum roadmap próprio.</li>
+</ul>
+<h3 id="fase2">Fase2</h3>
+<ul>
+<li>Depende de: Fase1.</li>
+<li>Dependem dele: Fase3 (herda DNA estratégico/Alternativa 7).</li>
+<li>Operacionaliza: nada (é decisão estratégica).</li>
+<li>Complementa: Fase1.</li>
+<li>Cita: Fase1 nominalmente (“Antes de Começar: Questionando a Fase 1”).</li>
+<li>É citado por: Fase3 (implicitamente, via herança de posicionamento), Fase4 (Cap. “problema real… identificado na Fase 2”).</li>
+<li>Documentos futuros: nenhum roadmap próprio.</li>
+</ul>
+<h3 id="fase3">Fase3</h3>
+<ul>
+<li>Depende de: Fase2.</li>
+<li>Dependem dele: Fase4, Fase5, Fase6, Projeto01, Projeto02, Projeto03, Projeto05, Projeto07, Projeto08.</li>
+<li>Operacionaliza: nada (é a própria constituição de marca).</li>
+<li>Complementa: Fase2.</li>
+<li>Cita: nenhum documento futuro nominalmente (é fundação).</li>
+<li>É citado por: praticamente todos os 15 documentos operacionais, direta ou via “sistema simbólico”/“território”/“valores”.</li>
+<li>Documentos futuros: nenhum roadmap explícito de documentos, mas Capítulo 19 (“Teste de Consistência”) antecipa a necessidade dos “guias práticos” que viram Projeto01-04.</li>
+</ul>
+<h3 id="fase4">Fase4</h3>
+<ul>
+<li>Depende de: Fase3.</li>
+<li>Dependem dele: Projeto10 (operacionaliza integralmente), Projeto01 (parcialmente).</li>
+<li>Operacionaliza: Fase3 (aplica a marca ao lançamento).</li>
+<li>Complementa: Fase5.</li>
+<li>Cita: Fase2, Fase3 nominalmente.</li>
+<li>É citado por: Projeto10, Projeto11 (“Fase4” como origem da macrofase).</li>
+<li>Documentos futuros: nenhum roadmap explícito, mas prenuncia “Manual de Landing Pages” (citado depois no Projeto10).</li>
+</ul>
+<h3 id="fase5">Fase5</h3>
+<ul>
+<li>Depende de: Fase3, Fase4.</li>
+<li>Dependem dele: Fase6, Projeto05, Projeto07, Projeto08, Projeto09, Manual_CRM (indiretamente, via Sistema de Atletas/Boxes).</li>
+<li>Operacionaliza: Fase3 (traduz valores em sistemas institucionais).</li>
+<li>Complementa: Fase4.</li>
+<li>Cita: Fase3, Fase4.</li>
+<li>É citado por: Fase6 (P1-P19 mapeiam para os “sistemas” aqui definidos), Projeto05-11, Manual_CRM.</li>
+<li>Documentos futuros: Capítulo 10 (“Roadmap Estratégico — Ordem de Dependência”) antecipa a ordem que o Fase6 formaliza.</li>
+</ul>
+<h3 id="fase6">Fase6</h3>
+<ul>
+<li>Depende de: Fase1, Fase2, Fase3, Fase4, Fase5 (todas).</li>
+<li>Dependem dele: nenhum documento posterior depende dele estruturalmente (é o topo do plano), mas todos os Projetos 01-11 e Manuais são, na prática, “os entregáveis dos projetos P1-P19” aqui listados.</li>
+<li>Operacionaliza: Fase1-5 em plano de execução com RACI, orçamento, KPIs.</li>
+<li>Complementa: Fase5.</li>
+<li>Cita: todas as Fases anteriores nominalmente, além de citar projetos futuros (P1-P19) que mapeiam para os 15 documentos operacionais.</li>
+<li>É citado por: nenhum documento posterior (é o mais “recente” na cadeia lógica, ainda que arquivo por ordem alfabética venha antes dos Projetos).</li>
+<li>Documentos futuros: não lista roadmap de documentos — lista roadmap de <em>projetos</em> (P1-P19), que são pré-requisito lógico de todos os Projetos01-11/Manuais.</li>
+</ul>
+<h3 id="manual-crm">Manual_CRM</h3>
+<ul>
+<li>Depende de: Fase5, Projeto08, Projeto11 (Cap. 18 do Projeto11 o origina).</li>
+<li>Dependem dele: Projeto06 (Cap.15, “Sistema de CRM”), Projeto07, Projeto08, Projeto09, Projeto10, Projeto11, Manual_Dashboard_Executivo.</li>
+<li>Operacionaliza: Projeto11 (Roadmap de Documentos Futuros, item 3).</li>
+<li>Complementa: Projeto08 (memória de pessoas), Manual_Dashboard.</li>
+<li>Cita nominalmente: Projeto05, Projeto06, Projeto07, Projeto08, Projeto09, Projeto10, Projeto11, Manual_Dashboard_Executivo (Cap. 8, lista explícita de “alimenta”).</li>
+<li>É citado por: Manual_Dashboard, Manual_Formulario, Fase6.</li>
+<li>Documentos futuros (Cap. 18): Manual de Segmentação, Manual de Automações, Manual de Relacionamento, Manual de Qualidade dos Dados, Manual de LGPD, Manual de Integrações, Manual de Migração, Manual de Atendimento — nenhum existe como arquivo.</li>
+</ul>
+<h3 id="manual-dashboard-executivo">Manual_Dashboard_Executivo</h3>
+<ul>
+<li>Depende de: Manual_CRM, Projeto08, Projeto11.</li>
+<li>Dependem dele: Manual_Stories_Baseados_Dados (explicitamente citado por nome).</li>
+<li>Operacionaliza: Projeto11 (Roadmap, item 2).</li>
+<li>Complementa: Manual_CRM.</li>
+<li>Cita nominalmente: Manual_Stories_Baseados_Dados, Projeto05/06, Projeto08, Projeto09, Projeto11.</li>
+<li>É citado por: Manual_Stories.</li>
+<li>Documentos futuros (Cap. 19): Manual dos KPIs, Manual dos Indicadores Operacionais/Comerciais/Marketing/Experiência, Manual de Visualização de Dados, Manual de Storytelling Executivo, Manual de Governança dos Dados — nenhum existe como arquivo.</li>
+</ul>
+<h3 id="manual-formulario-manifestacao-interesse">Manual_Formulario_Manifestacao_Interesse</h3>
+<ul>
+<li>Depende de: Projeto11, Manual_CRM (Cap.18 do Projeto11).</li>
+<li>Dependem dele: nenhum manual futuro nomeado depende diretamente, mas alimenta Projeto10 e Projeto11 na prática operacional.</li>
+<li>Operacionaliza: Projeto11 (Roadmap, item 1), Projeto10 (Roadmap, indiretamente).</li>
+<li>Complementa: Manual_CRM.</li>
+<li>Cita nominalmente: Projeto11, Projeto10 (Cap.7, Landing Pages), Projeto07 (jornada da imprensa), Projeto05/06.</li>
+<li>É citado por: nenhum outro documento nomeia este manual diretamente (é “folha” da árvore).</li>
+<li>Documentos futuros: não possui seção de roadmap de documentos derivados (diferente dos outros 3 Manuais) — apenas Roadmap de Evolução/Implementação. <strong>Achado de inconsistência estrutural, ver Etapa 6.</strong></li>
+</ul>
+<h3 id="manual-stories-baseados-dados">Manual_Stories_Baseados_Dados</h3>
+<ul>
+<li>Depende de: Manual_Dashboard_Executivo, Projeto11.</li>
+<li>Dependem dele: nenhum documento futuro nomeado.</li>
+<li>Operacionaliza: Projeto11 (Roadmap, item 7), Manual_Dashboard (Cap.19, item 8 indiretamente).</li>
+<li>Complementa: Manual_Dashboard.</li>
+<li>Cita nominalmente: Projeto04 (Brand Book/templates), Manual_Formulario (mesma distinção teste-clareza vs. teste-manipulativo), Projeto11.</li>
+<li>É citado por: Manual_Dashboard (Cap. 17, “Comunidade… recebe dados… exclusivamente pelo Manual dos Stories Baseados em Dados”).</li>
+<li>Documentos futuros: não possui roadmap de documentos derivados explícito (apenas templates/bibliotecas no Cap.15) — <strong>segundo achado do mesmo tipo, ver Etapa 6.</strong></li>
+</ul>
+<h3 id="projeto01">Projeto01</h3>
+<ul>
+<li>Depende de: Fase3, Fase4.</li>
+<li>Dependem dele: Projeto02 (mensagens como base de território criativo), Projeto10 (storytelling).</li>
+<li>Operacionaliza: Fase3 (voz/tom), Fase4 (canais/narrativa de lançamento).</li>
+<li>Complementa: Projeto02.</li>
+<li>Cita nominalmente: Fase3, Fase4 (Landing pages — trecho quase idêntico ao da Fase4, ver Etapa 6, achado de repetição).</li>
+<li>É citado por: Projeto02, Projeto04, Projeto10.</li>
+<li>Documentos futuros: não possui roadmap de documentos explícito.</li>
+</ul>
+<h3 id="projeto02">Projeto02</h3>
+<ul>
+<li>Depende de: Fase3, Projeto01.</li>
+<li>Dependem dele: Projeto03 (delimitação explícita de fronteira), Projeto04.</li>
+<li>Operacionaliza: Fase3 (território criativo).</li>
+<li>Complementa: Projeto01, Projeto03.</li>
+<li>Cita nominalmente: Projeto03 (“sem definir identidade visual”), Projeto08 (peças preservadas no arquivo).</li>
+<li>É citado por: Projeto08 (Cap.9, “Documentários… Projeto 02”).</li>
+<li>Documentos futuros: não possui roadmap de documentos explícito.</li>
+</ul>
+<h3 id="projeto03">Projeto03</h3>
+<ul>
+<li>Depende de: Fase3, Projeto02.</li>
+<li>Dependem dele: Projeto04 (aplica tecnicamente tudo), Projeto08 (versão gravada/cunhada do logotipo).</li>
+<li>Operacionaliza: Fase3 (DNA visual).</li>
+<li>Complementa: Projeto02.</li>
+<li>Cita nominalmente: Fase3 (Peso Testemunha, objeto ritual).</li>
+<li>É citado por: Projeto04, Projeto08.</li>
+<li>Documentos futuros: não possui roadmap de documentos explícito (tem “Governança Visual”, Cap.19, mas não lista manuais derivados).</li>
+</ul>
+<h3 id="projeto04">Projeto04</h3>
+<ul>
+<li>Depende de: Projeto03.</li>
+<li>Dependem dele: Projeto06 (nomenclatura de versionamento), Projeto08 (preservação de versão comercial vs. arquivo).</li>
+<li>Operacionaliza: Projeto03 integralmente.</li>
+<li>Complementa: Projeto02.</li>
+<li>Cita nominalmente: Projeto02, Projeto06 (implícito, nomenclatura reusada depois), Projeto08.</li>
+<li>É citado por: Projeto06, Projeto08.</li>
+<li>Documentos futuros (Cap. 20): “Anexos Técnicos Obrigatórios (a desenvolver)” — não são manuais completos, mas anexos técnicos específicos (não detalhados numericamente na leitura, tratados como lacuna na Etapa 7).</li>
+</ul>
+<h3 id="projeto05">Projeto05</h3>
+<ul>
+<li>Depende de: Fase3, Fase5.</li>
+<li>Dependem dele: Projeto06 (opera na prática), Manual_CRM (guardiões fundadores).</li>
+<li>Operacionaliza: Fase5 (Sistema de Patrocinadores).</li>
+<li>Complementa: Fase3 (direitos de marca).</li>
+<li>Cita nominalmente: nenhum projeto futuro por nome no corpo, mas antecipa Projeto06.</li>
+<li>É citado por: Projeto06, Manual_CRM (Cap.16, “guardiões fundadores… <a href="/docs/projetos/projeto05.html#11-sistema-financeiro">Projeto 05, Capítulo 11</a>”).</li>
+<li>Documentos futuros: não possui roadmap de documentos explícito.</li>
+</ul>
+<h3 id="projeto06">Projeto06</h3>
+<ul>
+<li>Depende de: Projeto05.</li>
+<li>Dependem dele: nenhum documento nomeado depende diretamente.</li>
+<li>Operacionaliza: Projeto05 (vendas na prática).</li>
+<li>Complementa: Manual_CRM (Cap.15 é uma versão paralela/duplicada — ver Etapa 6).</li>
+<li>Cita nominalmente: Projeto04 (Cap.17, nomenclatura), Manual_CRM (Cap.15, mesma lógica).</li>
+<li>É citado por: Manual_CRM (indiretamente).</li>
+<li>Documentos futuros (Cap.20, Roadmap de Implementação): não lista manuais novos, apenas etapas de implantação do próprio sistema comercial.</li>
+</ul>
+<h3 id="projeto07">Projeto07</h3>
+<ul>
+<li>Depende de: Fase5, Fase3.</li>
+<li>Dependem dele: nenhum documento já existente, mas 16 manuais futuros listados.</li>
+<li>Operacionaliza: Fase5 (jornadas de públicos), Fase3 (sistema cerimonial).</li>
+<li>Complementa: Projeto09 (overlap intencional/não intencional de roadmap).</li>
+<li>Cita nominalmente: Projeto04 (Cap.8, Sistema de Vídeo).</li>
+<li>É citado por: Projeto09 (Cap.20, “complementar ao já previsto no Projeto 07”).</li>
+<li>Documentos futuros (Cap.20): 16 manuais — ver lista completa na Etapa 7.</li>
+</ul>
+<h3 id="projeto08">Projeto08</h3>
+<ul>
+<li>Depende de: Fase3 (Sistema Simbólico), Fase5.</li>
+<li>Dependem dele: nenhum documento já existente, mas 16 manuais futuros listados.</li>
+<li>Operacionaliza: Fase3 (Livro de Nomes, Peso Testemunha).</li>
+<li>Complementa: Manual_CRM (registro histórico de pessoas).</li>
+<li>Cita nominalmente: Projeto02 (documentários), Projeto04 (versão comercial vs. arquivo).</li>
+<li>É citado por: Manual_CRM (Cap.16, falecimento/Hall da Fama).</li>
+<li>Documentos futuros (Cap.20): 16 manuais — ver lista completa na Etapa 7.</li>
+</ul>
+<h3 id="projeto09">Projeto09</h3>
+<ul>
+<li>Depende de: Fase5, Projeto07.</li>
+<li>Dependem dele: nenhum documento já existente, mas 17 manuais futuros listados.</li>
+<li>Operacionaliza: Fase5 (estrutura operacional).</li>
+<li>Complementa: Projeto07 (overlap de roadmap).</li>
+<li>Cita nominalmente: Projeto07 (Cap.20, item 8, “Manual do Cerimonial… complementar ao já previsto no Projeto 07”).</li>
+<li>É citado por: nenhum documento cita Projeto09 nominalmente antes dele na cadeia.</li>
+<li>Documentos futuros (Cap.20): 17 manuais — ver lista completa na Etapa 7.</li>
+</ul>
+<h3 id="projeto10">Projeto10</h3>
+<ul>
+<li>Depende de: Fase4, Projeto01, Projeto11.</li>
+<li>Dependem dele: Manual_Formulario, Manual_CRM, Manual_Dashboard, Manual_Stories (todos nascem do roadmap combinado de Projeto10+Projeto11).</li>
+<li>Operacionaliza: Fase4 integralmente.</li>
+<li>Complementa: Projeto11.</li>
+<li>Cita nominalmente: Projeto11 (Cap.8/9), Projeto04 (Cap.11, redes sociais), Projeto01 (Cap.10, e-mail).</li>
+<li>É citado por: Projeto11 (Cap.4, “Conversão em inscrição… Fase 5”), Manual_Formulario, Manual_CRM.</li>
+<li>Documentos futuros (Cap.20): 15 manuais — ver lista completa na Etapa 7.</li>
+</ul>
+<h3 id="projeto11">Projeto11</h3>
+<ul>
+<li>Depende de: Fase4, Projeto10.</li>
+<li>Dependem dele: Manual_CRM, Manual_Dashboard, Manual_Formulario, Manual_Stories (nascem diretamente do Roadmap de Documentos Futuros, Cap.19).</li>
+<li>Operacionaliza: Fase4 (inteligência prévia).</li>
+<li>Complementa: Projeto10.</li>
+<li>Cita nominalmente: Fase5 (Cap.4, “Conversão em inscrição… Fase 5”), Projeto06 (Cap.19, Inteligência Comercial), Projeto01/10 (Cap.9, “Centro de Comunicação”).</li>
+<li>É citado por: Manual_CRM, Manual_Dashboard, Manual_Formulario, Manual_Stories, Fase6.</li>
+<li>Documentos futuros (Cap.18 e 19): Formulário, Landing Page, CRM, 7 Dashboards, Relatórios Automáticos + 8 manuais listados no Cap.19 — ver lista completa na Etapa 7.</li>
+</ul>
+<hr/>
+<h2 id="etapa-5-sequencia-ideal-de-leitura">ETAPA 5 — SEQUÊNCIA IDEAL DE LEITURA</h2>
+<h3 id="diretoria-diretor-executivo-conselho-patrocinadores-chave">Diretoria (Diretor Executivo, Conselho, patrocinadores-chave)</h3>
+<ol type="1">
+<li>Fase1 (contexto de mercado) → 2. Fase2 (posicionamento) → 3. Fase3 (constituição de marca — leitura obrigatória integral) → 4. Fase5 (ecossistema/governança) → 5. Fase6 (plano diretor, RACI, orçamento, risk register) → 6. Manual_Dashboard_Executivo (como a diretoria vai monitorar tudo). <strong>Justificativa:</strong> a Diretoria precisa do “porquê” completo (Fases 1-3), do “com quem/como institucionalmente” (Fase5) e do “quando/quanto” (Fase6) antes de qualquer detalhe tático. O Dashboard fecha o ciclo mostrando como ela vai acompanhar a execução.</li>
+</ol>
+<h3 id="marketing-comunicacao">Marketing / Comunicação</h3>
+<ol type="1">
+<li>Fase3 (marca) → 2. Fase4 (lançamento) → 3. Projeto01 (comunicação) → 4. Projeto02 (criativo) → 5. Projeto10 (lançamento/mobilização) → 6. Manual_Stories_Baseados_Dados → 7. Projeto11 (inteligência, para entender a origem dos dados que viram conteúdo). <strong>Justificativa:</strong> Marketing vive na espinha de Marca→Comunicação→Lançamento; precisa entender a fonte de dado (Projeto11) só depois de dominar mensagem e narrativa, não antes.</li>
+</ol>
+<h3 id="producao-eventos-operacao">Produção (Eventos/Operação)</h3>
+<ol type="1">
+<li>Fase5 (sistemas permanentes) → 2. Projeto07 (experiência) → 3. Projeto09 (operação) → 4. Projeto08 (memória — pois o Sistema Simbólico é operacionalizado no evento) → 5. Projeto03/04 (identidade visual aplicada, para sinalização e materiais físicos). <strong>Justificativa:</strong> Produção precisa da jornada de públicos (Projeto07) e da cadeia de comando (Projeto09) lado a lado, pois o próprio corpus reconhece overlap entre os dois roadmaps — lê-los em sequência imediata evita retrabalho de interpretação.</li>
+</ol>
+<h3 id="comercial-patrocinio-vendas">Comercial (Patrocínio/Vendas)</h3>
+<ol type="1">
+<li>Fase3 (marca, para entender o que está sendo vendido) → 2. Fase5 (Sistema de Patrocinadores) → 3. Projeto05 (constituição comercial) → 4. Projeto06 (manual de vendas) → 5. Manual_CRM (Capítulo 15 do Projeto06 remete diretamente a ele). <strong>Justificativa:</strong> ordem constitucional → tática → ferramenta, evitando que o time comercial negocie contrapartidas sem entender os limites definidos no Projeto05.</li>
+</ol>
+<h3 id="desenvolvimento-tecnologia-dados-futura-etapa-2-do-projeto-construcao-do-portal">Desenvolvimento (Tecnologia/Dados — futura Etapa 2 do projeto, construção do portal)</h3>
+<ol type="1">
+<li>Projeto11 (hub de dados/arquitetura de sistema) → 2. Manual_CRM → 3. Manual_Dashboard_Executivo → 4. Manual_Formulario_Manifestacao_Interesse → 5. Manual_Stories_Baseados_Dados → 6. Projeto04 (Brand Book, para nomenclatura de arquivo e sistema de arquivos, Capítulo 17) → 7. Fase6 (para entender prioridades P1-P19 e cronograma). <strong>Justificativa:</strong> Desenvolvimento precisa primeiro do modelo de dados e arquitetura de sistemas (Projeto11 e os 4 Manuais, nessa ordem de dependência real) antes de tocar em padrões de nomenclatura e cronograma de entrega.</li>
+</ol>
+<h3 id="novos-integrantes-onboarding-geral">Novos Integrantes (onboarding geral)</h3>
+<ol type="1">
+<li>Fase1 (contexto) → 2. Fase2 (por que este posicionamento) → 3. Fase3 (a “constituição” — leitura obrigatória completa, é o documento mais citado do corpus) → 4. Fase5 (mapa do ecossistema, “quem faz o quê”) → 5. Fase6 (Capítulo 6, Estrutura Organizacional — onde a pessoa se encaixa) → 6. o(s) Projeto(s) específico(s) da área de atuação do novo integrante. <strong>Justificativa:</strong> onboarding precisa de fundação completa antes de especialização; Fase3 e Fase5 sozinhas já respondem “quem somos” e “como estamos organizados” para qualquer função.</li>
+</ol>
+<hr/>
+<h2 id="etapa-6-auditoria">ETAPA 6 — AUDITORIA</h2>
+<p>Cada achado abaixo tem evidência textual real (não hipotética), explicação, impacto e sugestão — sem alterar nenhum documento original.</p>
+<h3 id="6-1-capitulos-conceitos-repetidos-quase-duplicacao-textual">6.1 Capítulos/Conceitos Repetidos (quase-duplicação textual)</h3>
+<p><strong>Achado:</strong> o texto sobre “Landing pages: conversão pontual e transparente, usada apenas em momentos de decisão concreta” aparece quase verbatim em Fase4 (Cap.9, “Landing pages: função de conversão pontual e transparente…”) e em Projeto01 (Cap.10, “Landing pages: conversão pontual e transparente, usada apenas…”). <strong>Impacto:</strong> baixo risco de contradição (o conceito é idêntico e consistente), mas é sinal de que o conceito de “Landing Page” nunca ganhou um documento-fonte único — cada documento que o menciona reescreve a mesma definição. <strong>Sugestão:</strong> quando o “Manual de Landing Pages” (previsto no roadmap do Projeto10, item 9) for criado, ele deve se tornar a fonte única, e Fase4/Projeto01 deveriam (em revisão futura, não agora) referenciá-lo por nome em vez de redefinir o conceito.</p>
+<p><strong>Achado:</strong> o conceito de “nomenclatura de versionamento de arquivo” (<code>AAAA-MM-DD_Categoria_DescricaoCurta_Versao</code>) é definido uma vez no Projeto04 (Cap.17) mas referenciado por Projeto05 (Cap.19) e Projeto06 (Cap.17) como “a mesma lógica já definida no Projeto04” — isso é o padrão correto (fonte única, citação por referência), citado aqui como <strong>contraexemplo positivo</strong> de boa prática documental já presente no corpus.</p>
+<h3 id="6-2-conceitos-conflitantes">6.2 Conceitos Conflitantes</h3>
+<p><strong>Achado:</strong> nenhuma contradição factual direta foi encontrada entre documentos sobre um mesmo conceito central (marca, sistema simbólico, governança). Isso é um ponto forte real, não um problema — mas há uma tensão <em>reconhecida pelo próprio corpus</em> e não totalmente resolvida: Manual_CRM (Cap.16) trata explicitamente da tensão entre “direito ao esquecimento” (LGPD) e “preservação histórica permanente” (Projeto08), propondo uma resolução prática (dados de contato excluíveis; registro nominal de participação esportiva pública preservado). <strong>Isso não é uma inconsistência do corpus — é uma inconsistência de negócio já endereçada dentro do próprio Manual_CRM.</strong> Registrado aqui para rastreabilidade, não como erro.</p>
+<h3 id="6-3-numeracao-inconsistente">6.3 Numeração Inconsistente</h3>
+<p><strong>Achado:</strong> a maioria dos “Projetos” e “Manuais” usa 17-20 capítulos numerados antes da seção de auditoria, mas a <em>nomeação</em> dos capítulos finais varia: alguns documentos numeram “Roadmap de Documentos Derivados” como capítulo formal (Manual_CRM Cap.18, Manual_Dashboard Cap.19), enquanto outros (Manual_Formulario, Manual_Stories) não numeram um capítulo equivalente — o roadmap de documentos aparece embutido dentro do “Roadmap de Evolução/Implementação” sem capítulo dedicado. <strong>Impacto:</strong> médio — dificulta indexação automática por “tipo de capítulo” no futuro portal (Etapa 10), pois o capítulo “Roadmap de Documentos Derivados” não está no mesmo número relativo em todos os arquivos, e em 2 dos 4 Manuais não existe como capítulo autônomo. <strong>Sugestão:</strong> ao criar novos documentos (Etapa 2 do projeto), padronizar explicitamente a existência de um capítulo dedicado “Roadmap de Documentos Derivados/Futuros” em todos os Manuais, não apenas em CRM e Dashboard.</p>
+<p><strong>Achado adicional (confirmado por verificação linha a linha dos cabeçalhos originais):</strong> em 17 dos 21 documentos, a seção final de “Auditoria Final/Técnica/Estratégica” aparece como cabeçalho <strong>não numerado</strong> (<code>## AUDITORIA FINAL — ...</code>), destacada do corpo de capítulos numerados. Em <strong>4 documentos — Fase4, Fase6, Projeto01 e Projeto02 —</strong> essa mesma seção aparece como um <strong>capítulo numerado formal</strong> (ex.: Fase6 <code>## 16. AUDITORIA FINAL</code>, Projeto01 <code>## 18. AUDITORIA FINAL</code>, Projeto02 <code>## 14. AUDITORIA FINAL</code>, Fase4 <code>## 12. AUDITORIA FINAL</code>). Isso significa que a mesma classe de conteúdo (auditoria de especialistas) é tratada estruturalmente de duas formas diferentes dentro do corpus. <strong>Impacto:</strong> médio — qualquer indexação automática futura do portal que conte “capítulos de conteúdo” por número de cabeçalho precisa tratar esses 4 documentos como exceção, ou a contagem incluirá indevidamente a auditoria como “capítulo de sistema”. <strong>Sugestão:</strong> ao revisar os 21 documentos no futuro, padronizar a auditoria final sempre como seção não numerada (padrão majoritário, 17/21), destacando-a visualmente do corpo de capítulos numerados nos 4 documentos remanescentes.</p>
+<h3 id="6-4-referencias-quebradas">6.4 Referências Quebradas</h3>
+<p><strong>Achado 1:</strong> Manual_Dashboard_Executivo (Cap.17) refere-se ao “Manual dos Stories Baseados em Dados” como o canal exclusivo de comunicação pública de dado — referência válida (documento existe). <strong>Não quebrada.</strong> <strong>Achado 2 (quebrada):</strong> Fase5 (Cap.9, Evolução) menciona “formalização futura de uma ‘constituição simbólica’ separada para expansão internacional” (repetida em Fase6, Cap.15, horizonte de 10 anos) — este documento <strong>não existe</strong> no corpus e não está listado em nenhum roadmap formal de documentos futuros dos 21 arquivos. É uma referência a um documento que dois documentos diferentes (Fase5 e Fase6) pressupõem que existirá, mas que nenhum roadmap de documentos futuros lista explicitamente como item numerado. <strong>Impacto:</strong> médio — cria uma expectativa institucional (expansão internacional) sem responsável ou roadmap formal de criação. <strong>Sugestão:</strong> registrar “Constituição Simbólica para Expansão Internacional” como item de lacuna documental (ver Etapa 7).</p>
+<h3 id="6-5-documentos-orfaos">6.5 Documentos Órfãos</h3>
+<p><strong>Achado:</strong> nenhum dos 21 documentos é órfão no sentido de “não citado e não citando ninguém” — todos têm ao menos uma ligação de dependência ou citação comprovada na Etapa 4. O mais próximo de órfão é <strong>Manual_Formulario_Manifestacao_Interesse</strong>, que não é citado nominalmente por nenhum documento <em>depois</em> dele na cadeia (é uma “folha” pura), mas ele próprio cita e depende de outros 4 documentos — portanto é “folha”, não “órfão”.</p>
+<h3 id="6-6-dependencias-quebradas">6.6 Dependências Quebradas</h3>
+<p><strong>Achado:</strong> Fase6 (Cap.13, Dependências Críticas) afirma “Sem o Sistema de Memória (P16), a primeira edição não pode cumprir a promessa central da marca” — e o roadmap do Projeto08 (que constitui esse sistema) lista “Manual do Sistema de Memória” como <strong>primeira prioridade</strong> de um roadmap de 16 manuais <strong>nenhum dos quais existe ainda como arquivo</strong>. Ou seja, existe uma dependência crítica de bloqueio (P16) cujo documento operacional de primeira prioridade ainda não foi escrito. <strong>Impacto:</strong> alto para o projeto como um todo (fora do escopo desta Etapa 1, mas registrado como achado factual), baixo para a integridade da documentação atual (o Projeto08 já avisa disso corretamente). <strong>Sugestão:</strong> tratado formalmente na Etapa 7 (Lacunas) com prioridade máxima.</p>
+<h3 id="6-7-documentos-excessivamente-grandes">6.7 Documentos Excessivamente Grandes</h3>
+<p><strong>Achado:</strong> Projeto04 (5.140 palavras, 408 linhas, 20 capítulos + anexos) e Fase3 (5.614 palavras, 361 linhas, 20 capítulos) são os dois maiores do corpus. Nenhum ultrapassa um limiar problemático de leitura (~30 min), mas Projeto04 acumula 20 capítulos técnicos heterogêneos (cor, tipografia, foto, vídeo, editorial, digital, redes sociais, eventos, impressão, merchandising, motion, acessibilidade, arquivos, QA, governança) em um único arquivo. <strong>Impacto:</strong> baixo-médio — dificulta manutenção seletiva (uma mudança na paleta de cor exige navegar um documento de 408 linhas) e a navegação em portal web (capítulo 20 “Anexos Técnicos Obrigatórios” já reconhece a necessidade de desdobramento). <strong>Sugestão:</strong> candidato natural a fragmentação em micro-manuais por sistema técnico (cor, tipografia, fotografia etc.) no futuro portal — sem alterar o documento-fonte, apenas apresentá-lo fragmentado na navegação (ver Etapa 10).</p>
+<h3 id="6-8-documentos-excessivamente-pequenos">6.8 Documentos Excessivamente Pequenos</h3>
+<p><strong>Achado:</strong> Projeto02 (2.608 palavras, 196 linhas) é o menor do corpus, quase 50% menor que a média (~3.844 palavras). Ainda assim cobre 13 capítulos completos e uma auditoria de 7 especialistas — não está incompleto, apenas é mais conciso porque delimita conscientemente sua fronteira com Projeto03 (“sem definir identidade visual”). <strong>Impacto:</strong> nenhum — tamanho reduzido é resultado de escopo bem delimitado, não de lacuna de conteúdo.</p>
+<h3 id="6-9-documentos-redundantes-candidatos-a-fusao">6.9 Documentos Redundantes / Candidatos a Fusão</h3>
+<p><strong>Achado 1 (redundância de roadmap):</strong> Projeto07 (Cap.20) e Projeto09 (Cap.20) listam roadmaps de manuais futuros com <strong>sobreposição real de pelo menos 5 itens idênticos ou quase idênticos</strong>: Manual do Cerimonial, Manual de Hospitalidade, Manual do Staff, Manual do Voluntário, Manual de Credenciamento (ambos os documentos preveem exatamente esses 5 manuais, cada um a partir de sua própria numeração de capítulo-fonte). O Projeto09 reconhece parcialmente isso (“Manual do Cerimonial… complementar ao já previsto no Projeto 07”), mas não faz o mesmo para os outros 4 itens. <strong>Impacto:</strong> médio-alto — risco real de duplicação de esforço/autoria quando esses manuais forem efetivamente escritos (a quem cabe escrever “Manual do Staff”: ao programa de Experiência ou ao de Operação?). <strong>Sugestão:</strong> não fundir Projeto07/Projeto09 (eles têm propósitos distintos — vivência vs. comando), mas recomendar que, ao criar os manuais futuros sobrepostos, um único documento sirva a ambos os roadmaps, com dupla referência cruzada, evitando 2 versões divergentes do “Manual do Staff”.</p>
+<p><strong>Achado 2 (redundância funcional entre CRM comercial e CRM institucional):</strong> Projeto06 (Cap.15, “Sistema de CRM”) descreve funcionalidade de CRM aplicada a patrocinadores, em paralelo ao Manual_CRM (documento constitucional único do CRM institucional, que já afirma no Cap.8 ser “fonte primária de dado de pessoa para <strong>todos</strong> os demais sistemas”, incluindo explicitamente o Sistema Comercial/Projeto06). <strong>Impacto:</strong> médio — risco de dois “sistemas de CRM” divergentes sendo implementados por equipes diferentes (comercial vs. tecnologia). <strong>Sugestão:</strong> Projeto06 Cap.15 deveria (em revisão futura, não agora) ser reduzido a uma referência ao Manual_CRM em vez de descrever funcionalidade paralela — candidato a fusão de conteúdo (não de arquivo).</p>
+<h3 id="6-10-lacunas-documentais-previa-detalhado-na-etapa-7">6.10 Lacunas Documentais (prévia — detalhado na Etapa 7)</h3>
+<p>Ver Etapa 7 completa. Resumo: dos aproximadamente 89 documentos futuros citados nominalmente nos 8 roadmaps do corpus (Projeto07: 16, Projeto08: 16, Projeto09: 17, Projeto10: 15, Projeto11: 8+5 ferramentas, Manual_CRM: 8, Manual_Dashboard: 8), <strong>nenhum existe como arquivo</strong> entre os 21 documentos atuais — os 4 Manuais existentes (CRM, Dashboard, Formulário, Stories) são eles próprios itens do roadmap do Projeto11, já cumpridos; todos os demais ~85 itens permanecem em aberto.</p>
+<h3 id="6-11-achado-adicional-ausencia-de-versionamento-formal-aplicado">6.11 Achado adicional — Ausência de versionamento formal aplicado</h3>
+<p>Como já registrado na Etapa 1, nenhum dos 21 arquivos porta um número de versão no próprio corpo, apesar de ao menos 5 documentos (Projeto04, 05, 06, 07, 08) exigirem esse comportamento de si mesmos ou de terceiros. <strong>Impacto:</strong> médio — sem versão, a rastreabilidade de qual edição de um documento foi usada em qual decisão de diretoria fica dependente de metadado externo (data de modificação de arquivo), não do conteúdo. <strong>Sugestão:</strong> adotar cabeçalho padrão de versão (<code>Versão: X.Y — Data: AAAA-MM-DD</code>) em revisão futura de todos os 21 documentos, sem necessidade de reescrever conteúdo.</p>
+<hr/>
+<h2 id="etapa-7-lacunas">ETAPA 7 — LACUNAS</h2>
+<p>Cruzamento completo de todos os roadmaps de documentos futuros mencionados pelos 21 arquivos, verificando quais já existem (✅) e quais não existem (❌) no corpus atual.</p>
+<h3 id="7-1-roadmap-do-projeto07-cap-20-16-manuais">7.1 Roadmap do Projeto07 (Cap.20) — 16 manuais</h3>
+<ol type="1">
+<li>❌ Manual Operacional do Evento — 2. ❌ Manual do Cerimonial — 3. ❌ Manual do Atleta — 4. ❌ Manual da Arbitragem — 5. ❌ Manual do Staff — 6. ❌ Manual do Voluntário — 7. ❌ Manual de Hospitalidade — 8. ❌ Manual da Imprensa — 9. ❌ Manual de Produção — 10. ❌ Manual de Segurança — 11. ❌ Manual de Arena — 12. ❌ Manual de Sinalização — 13. ❌ Manual de Credenciamento — 14. ❌ Manual de Tecnologia — 15. ❌ Manual de Transmissão — 16. ❌ Manual de Atendimento ao Público. <strong>Existentes: 0 / 16.</strong></li>
+</ol>
+<h3 id="7-2-roadmap-do-projeto08-cap-20-16-manuais">7.2 Roadmap do Projeto08 (Cap.20) — 16 manuais</h3>
+<ol type="1">
+<li>❌ Manual do Sistema de Memória (prioridade 1) — 2. ❌ Manual do Livro de Nomes (prioridade 1) — 3. ❌ Manual de Curadoria (prioridade 2) — 4. ❌ Manual de História Oral — 5. ❌ Manual do Acervo Fotográfico — 6. ❌ Manual do Acervo Audiovisual — 7. ❌ Manual de Metadados (prioridade 2) — 8. ❌ Manual de Digitalização (prioridade 3) — 9. ❌ Manual de Preservação Digital (prioridade 3) — 10. ❌ Manual do Centro de Documentação — 11. ❌ Manual do Museu Virtual — 12. ❌ Manual do Hall da Fama — 13. ❌ Manual do Arquivo Institucional — 14. ❌ Manual de Pesquisa Histórica — 15. ❌ Manual de Gestão do Acervo — 16. ❌ Manual de Conservação Física. <strong>Existentes: 0 / 16.</strong></li>
+</ol>
+<h3 id="7-3-roadmap-do-projeto09-cap-20-17-manuais">7.3 Roadmap do Projeto09 (Cap.20) — 17 manuais</h3>
+<ol type="1">
+<li>❌ Manual Operacional do Evento (consolidador, sobreposto com item 1 do Projeto07) — 2. ❌ Manual da Direção Geral (prioridade 1) — 3. ❌ Manual de Segurança (prioridade 1, sobreposto Projeto07) — 4. ❌ Manual da Arena (prioridade 1, sobreposto) — 5. ❌ Manual de Gestão de Crises (prioridade 1) — 6. ❌ Manual de Credenciamento (prioridade 2, sobreposto) — 7. ❌ Manual da Coordenação Técnica/Arbitragem (prioridade 2, sobreposto) — 8. ❌ Manual do Cerimonial (prioridade 2, sobreposto) — 9. ❌ Manual da Produção (prioridade 3, sobreposto) — 10. ❌ Manual da Tecnologia (prioridade 3, sobreposto) — 11. ❌ Manual de Comunicação Operacional (prioridade 3) — 12. ❌ Manual de Hospitalidade (prioridade 4, sobreposto) — 13. ❌ Manual do Staff (prioridade 4, sobreposto) — 14. ❌ Manual do Voluntário (prioridade 4, sobreposto) — 15. ❌ Manual de Logística (prioridade 4) — 16. ❌ Manual de Encerramento (prioridade 5) — 17. ❌ Manual de Debriefing (prioridade 5). <strong>Existentes: 0 / 17. Sobreposição com Projeto07: 9 dos 17 itens.</strong></li>
+</ol>
+<h3 id="7-4-roadmap-do-projeto10-cap-20-15-manuais">7.4 Roadmap do Projeto10 (Cap.20) — 15 manuais</h3>
+<ol type="1">
+<li>❌ Manual do Lançamento (consolidador) — 2. ❌ Manual de Pesquisa com Atletas (prioridade 1) — 3. ❌ <a href="/docs/manuais/manual-crm.html">Manual de CRM</a> (<strong>parcialmente atendido</strong> — ver nota) — 4. ❌ Manual Editorial (prioridade 2) — 5. ❌ Manual de Conteúdo (prioridade 2) — 6. ❌ Manual de Instagram/<a href="/docs/manuais/manual-stories.html">Manual de Stories</a> (<strong>parcialmente atendido</strong> — Manual_Stories_Baseados_Dados cobre a parte de dados, não o manual de canal completo) — 7. ❌ Manual de WhatsApp (prioridade 3) — 8. ❌ Manual de E-mail (prioridade 3) — 9. ❌ Manual de Landing Pages (prioridade 3) — 10. ❌ Manual de Dashboards (<strong>atendido</strong> — ver nota) — 11. ❌ Manual de Inteligência de Mercado (prioridade 4) — 12. ❌ Manual de Automações (prioridade 5) — 13. ❌ Manual de Relatórios (prioridade 4) — 14. ❌ Manual de Comunidade (prioridade 5) — 15. ❌ Manual de Métricas (prioridade 4). <strong>Nota:</strong> o item 3 “<a href="/docs/manuais/manual-crm.html">Manual de CRM</a>” e o item 10 “Manual de Dashboards” listados aqui pelo Projeto10 <strong>são, na prática, os mesmos documentos que o Manual_CRM e o Manual_Dashboard_Executivo já entregam</strong> (nascidos do roadmap do Projeto11, não deste). Tratado como <strong>✅ atendido por equivalência</strong>, não como item novo. <strong>Existentes plenamente novos: 0 / 15 (2 atendidos por equivalência com outro roadmap, 13 em aberto).</strong></li>
+</ol>
+<h3 id="7-5-roadmap-do-projeto11-cap-18-ferramentas-cap-19-documentos">7.5 Roadmap do Projeto11 (Cap.18 — Ferramentas, Cap.19 — Documentos)</h3>
+<p><strong>Ferramentas (Cap.18):</strong> Formulário de Interesse (✅ Manual_Formulario existe) · Landing Page (❌) · CRM (✅ Manual_CRM existe) · Dashboard Executivo/Operacional/Comercial/Marketing/Geográfico/Categorias/Projeções — 7 dashboards (✅ parcialmente — Manual_Dashboard_Executivo cobre o conceito unificado, mas não os 7 dashboards especializados individualmente) · Relatórios Automáticos (❌). <strong>Documentos (Cap.19):</strong> 1. ✅ <a href="/docs/manuais/manual-formulario.html">Manual do Formulário</a> de Interesse (existe) — 2. ✅ Manual dos Dashboards (existe, como Manual_Dashboard_Executivo) — 3. ✅ <a href="/docs/manuais/manual-crm.html">Manual do CRM</a> (existe) — 4. ❌ Manual de Analytics — 5. ❌ Manual de Relatórios — 6. ❌ Manual de Pesquisa — 7. ✅ <a href="/docs/manuais/manual-stories.html">Manual de Stories</a> Baseados em Dados (existe) — 8. ❌ Manual de Inteligência Comercial. <strong>Existentes: 4 / 8 documentos (os 4 Manuais atuais do corpus são exatamente os 4 primeiros itens priorizados deste roadmap — é o roadmap mais bem executado do corpus até o momento).</strong></p>
+<h3 id="7-6-roadmap-do-manual-crm-cap-18-8-manuais-derivados">7.6 Roadmap do Manual_CRM (Cap.18) — 8 manuais derivados</h3>
+<ol type="1">
+<li>❌ Manual de Segmentação — 2. ❌ Manual de Automações — 3. ❌ Manual de Relacionamento — 4. ❌ Manual de Qualidade dos Dados — 5. ❌ Manual de LGPD (prioridade 1) — 6. ❌ Manual de Integrações — 7. ❌ Manual de Migração — 8. ❌ Manual de Atendimento. <strong>Existentes: 0 / 8.</strong></li>
+</ol>
+<h3 id="7-7-roadmap-do-manual-dashboard-executivo-cap-19-8-manuais-derivados">7.7 Roadmap do Manual_Dashboard_Executivo (Cap.19) — 8 manuais derivados</h3>
+<ol type="1">
+<li>❌ Manual dos KPIs — 2. ❌ Manual dos Indicadores Operacionais — 3. ❌ Manual dos Indicadores Comerciais — 4. ❌ Manual dos Indicadores de Marketing — 5. ❌ Manual dos Indicadores da Experiência — 6. ❌ Manual de Visualização de Dados — 7. ❌ Manual de Storytelling Executivo — 8. ❌ Manual de Governança dos Dados. <strong>Existentes: 0 / 8.</strong></li>
+</ol>
+<h3 id="7-8-programas-projetos-p1p19-da-fase6-status-de-execucao-nao-de-documento-de-projeto">7.8 Programas/Projetos P1–P19 da Fase6 — status de execução (não de documento, de projeto)</h3>
+<table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th scope="col">Projeto</th>
+<th scope="col">Descrição</th>
+<th scope="col">Documento(s) que já o operacionalizam parcialmente</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P1</td>
+<td>Constituição da Governança de Marca</td>
+<td>Fase3 (Cap.18), Fase5 (Cap.5) — princípios definidos, estatuto formal ainda não é um documento próprio</td>
+</tr>
+<tr class="even">
+<td>P2</td>
+<td>Estrutura Jurídica e Federativa</td>
+<td>❌ Nenhum documento do corpus</td>
+</tr>
+<tr class="odd">
+<td>P3</td>
+<td>Manual de Aplicação de Marca</td>
+<td>✅ Projeto04 (Brand Book) atende integralmente</td>
+</tr>
+<tr class="even">
+<td>P4</td>
+<td>Sistema Simbólico Operacional</td>
+<td>Fase3 (Cap.17) define; ❌ roteiro operacional executável ainda não existe como documento próprio</td>
+</tr>
+<tr class="odd">
+<td>P5</td>
+<td>Cadastro Único de Atletas</td>
+<td>✅ Manual_CRM atende</td>
+</tr>
+<tr class="even">
+<td>P6</td>
+<td>Programa de Boxes Fundadores</td>
+<td>Fase5 (Cap.3) define o sistema; ❌ acordo formal/programa específico não é documento próprio</td>
+</tr>
+<tr class="odd">
+<td>P7</td>
+<td>Reconhecimento de Voluntários e Árbitros</td>
+<td>Fase5 define; ❌ processo formal não é documento próprio</td>
+</tr>
+<tr class="even">
+<td>P8</td>
+<td>Arquitetura de Conteúdo de Descoberta</td>
+<td>✅ Projeto01, Projeto10 atendem parcialmente</td>
+</tr>
+<tr class="odd">
+<td>P9</td>
+<td>Relacionamento com Imprensa</td>
+<td>Projeto07 (Jornada da Imprensa) parcial; ❌ Manual da Imprensa (roadmap Projeto07) não existe</td>
+</tr>
+<tr class="even">
+<td>P10</td>
+<td>Critérios de Alinhamento de Patrocínio</td>
+<td>✅ Projeto05 atende</td>
+</tr>
+<tr class="odd">
+<td>P11</td>
+<td>Programa Piloto de Patrocínio</td>
+<td>✅ Projeto06 atende parcialmente</td>
+</tr>
+<tr class="even">
+<td>P12</td>
+<td>Certificação e Padronização de Arbitragem</td>
+<td>❌ Nenhum documento (Manual da Arbitragem é lacuna dupla, Projeto07 e Projeto09)</td>
+</tr>
+<tr class="odd">
+<td>P13</td>
+<td>Sistema de Ranking Nacional</td>
+<td>Fase5 define o sistema; ❌ nenhum manual técnico</td>
+</tr>
+<tr class="even">
+<td>P14</td>
+<td>Primeira Edição Piloto</td>
+<td>❌ Manual Operacional do Evento (consolidador) não existe</td>
+</tr>
+<tr class="odd">
+<td>P15</td>
+<td>Eventos Paralelos Regionais</td>
+<td>❌ Nenhum documento</td>
+</tr>
+<tr class="even">
+<td>P16</td>
+<td>Plataforma do Sistema de Memória</td>
+<td>✅ Projeto08 define a constituição; ❌ Manual do Sistema de Memória (prioridade 1 do próprio Projeto08) não existe</td>
+</tr>
+<tr class="odd">
+<td>P17</td>
+<td>Integração de Dados entre Sistemas</td>
+<td>Parcial — Manual_CRM/Dashboard/Formulario/Stories descrevem integração conceitual; ❌ Manual de Integrações técnico não existe</td>
+</tr>
+<tr class="even">
+<td>P18</td>
+<td>Formação Inicial de Treinadores e Árbitros</td>
+<td>Fase5 (Sistema de Educação) define; ❌ nenhum manual</td>
+</tr>
+<tr class="odd">
+<td>P19</td>
+<td>Curadoria de Narrativas de Longo Prazo</td>
+<td>Projeto08 define; ❌ nenhum manual específico</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-9-lacuna-adicional-identificada-por-leitura-cruzada-nao-listada-em-nenhum-roadmap-formal">7.9 Lacuna adicional identificada por leitura cruzada (não listada em nenhum roadmap formal)</h3>
+<p><strong>“Constituição Simbólica para Expansão Internacional”</strong> — mencionada por Fase5 (Cap.9) e Fase6 (Cap.15) como necessidade futura, mas <strong>não aparece em nenhum dos 8 roadmaps formais de documentos futuros</strong> dos 21 arquivos. É uma lacuna “órfã de roadmap” — ninguém formalmente é dono de criá-la.</p>
+<h3 id="7-10-priorizacao-consolidada-de-lacunas-baseada-em-dependencias-criticas-do-fase6-cap-13-cruzada-com-prioridades-internas-de-cada-roadmap">7.10 Priorização consolidada de lacunas (baseada em dependências críticas do Fase6, Cap.13, cruzada com prioridades internas de cada roadmap)</h3>
+<p><strong>Prioridade Crítica (bloqueadores formais segundo Fase6):</strong> 1. Manual do Sistema de Memória + Manual do Livro de Nomes (P16 — bloqueador da primeira edição inteira) 2. Estatuto formal da Governança de Marca / documento de P1 (bloqueador de todo o resto) 3. Manual da Coordenação Técnica/Arbitragem (P12 — bloqueador da legitimidade do Ranking/P13) 4. Manual Operacional do Evento (consolidador — bloqueador de P14, primeira edição)</p>
+<p><strong>Prioridade Alta:</strong> 5. Manual de LGPD (derivado do CRM, prioridade 1 do seu próprio roadmap) 6. Manual da Direção Geral, Manual de Segurança, Manual da Arena, Manual de Gestão de Crises (prioridade 1 do roadmap do Projeto09) 7. Manual de Curadoria + Manual de Metadados (prioridade 2 do roadmap do Projeto08)</p>
+<p><strong>Prioridade Média:</strong> 8. Manual dos KPIs + Manual de Governança dos Dados (prioridade 1 do roadmap do Dashboard) 9. Manual do Cerimonial, Manual do Atleta, Manual do Staff, Manual do Voluntário, Manual de Credenciamento (itens sobrepostos Projeto07/Projeto09) 10. Manual Editorial + Manual de Conteúdo (prioridade 2 do roadmap do Projeto10)</p>
+<p><strong>Prioridade Baixa (crescimento orgânico, conforme os próprios documentos recomendam):</strong> 11. Manual do Museu Virtual (explicitamente marcado como “não obrigatório nos primeiros anos” no Projeto08) 12. Manuais de canal específico (Instagram, WhatsApp, E-mail) do roadmap do Projeto10 13. Constituição Simbólica para Expansão Internacional (Fase5/Fase6 tratam como horizonte de 10 anos)</p>
+<hr/>
+<h2 id="etapa-8-glossario">ETAPA 8 — GLOSSÁRIO</h2>
+<p>Termos reais extraídos do corpus — nomenclaturas cunhadas, elementos do sistema simbólico, siglas e conceitos-chave. 46 termos.</p>
+<ol type="1">
+<li><strong>Chamada do Nome</strong> — Ritual fixo em que cada atleta tem nome, cidade e box anunciados individualmente antes de sua série, sempre no mesmo formato. <em>1ª aparição:</em> Fase3 (Cap.17). <em>Relacionados:</em> Fase5, Projeto07, Projeto08, Fase6 (P4).</li>
+<li><strong>Livro de Nomes</strong> — Arquivo físico e digital permanente com nome de todo atleta que já competiu, exposto no local da prova e disponível publicamente online. <em>1ª aparição:</em> Fase3 (Cap.17). <em>Relacionados:</em> Projeto08, Manual_CRM, Fase6 (P16).</li>
+<li><strong>Peso Testemunha</strong> — Kettlebell simbólico específico, não usado em competição, presente em todas as edições, carregando gravações/marcas da história do campeonato. <em>1ª aparição:</em> Fase3 (Cap.17). <em>Relacionados:</em> Projeto03 (versão gravada/cunhada do logotipo), Projeto08.</li>
+<li><strong>Última Respiração</strong> — Momento ritual de silêncio total imediatamente antes do início de cada série. <em>1ª aparição:</em> Fase3 (Cap.17). <em>Relacionados:</em> Projeto07 (Sistema Cerimonial).</li>
+<li><strong>Cerimônia de Reconhecimento</strong> — Momento ao final de cada edição em que atletas de diferentes categorias/histórias são chamados publicamente por nome, não apenas o pódio. <em>1ª aparição:</em> Fase3 (Cap.17). <em>Relacionados:</em> Projeto07, Projeto08.</li>
+<li><strong>Marca de Retorno</strong> — Reconhecimento visual (pin/patch) para atletas que competem em múltiplas edições. <em>1ª aparição:</em> Fase3 (Cap.17). <em>Relacionados:</em> Manual_CRM (histórico de trajetória).</li>
+<li><strong>Momento do Box</strong> — Instante da cerimônia dedicado a reconhecer publicamente boxes e técnicos. <em>1ª aparição:</em> Fase3 (Cap.17). <em>Relacionados:</em> Fase5 (Sistema de Boxes), Fase6 (P6).</li>
+<li><strong>Sistema Simbólico</strong> — Conjunto dos sete rituais/elementos acima, desenhados para reforçar concretamente a promessa central da marca. <em>1ª aparição:</em> Fase3 (Cap.17, título do capítulo). <em>Relacionados:</em> Fase6 (P4, “Sistema Simbólico Operacional”).</li>
+<li><strong>Governança de Marca</strong> — Órgão formal com poder de veto sobre decisões que contrariem as Fases 1-5 (“a Constituição”). <em>1ª aparição:</em> Fase5 (Cap.5). <em>Relacionados:</em> Fase6 (P1, Diretor de Marca “Guardião da Constituição”), praticamente todo o corpus operacional.</li>
+<li><strong>Guardião da Constituição</strong> — Apelido funcional do Diretor de Marca, que preside a Governança de Marca. <em>1ª aparição:</em> Fase6 (Cap.6). <em>Relacionados:</em> item 9.</li>
+<li><strong>Sistemas Permanentes</strong> — Os 14 sistemas institucionais nomeados na Fase5 (Atletas, Treinadores, Boxes, Árbitros, Ranking, Reconhecimento, Memória, Patrocinadores, Parceiros, Imprensa, Voluntariado, Educação, Conteúdo, Inovação) + Legado. <em>1ª aparição:</em> Fase5 (Cap.3, título). <em>Relacionados:</em> origem direta dos Projetos05-11 e dos Manuais.</li>
+<li><strong>Existência Categórica</strong> — Conceito estratégico central: o problema do campeonato não é “conversão”, é a categoria “Kettlebell Sport” não existir no mapa mental do público brasileiro. <em>1ª aparição:</em> Fase2 (Etapa 1). <em>Relacionados:</em> Fase3, Fase4 (tratado como prioridade fundacional sobre inscrições).</li>
+<li><strong>Duelo Testemunhado</strong> — Alternativa 7 (síntese final) de posicionamento estratégico, escolhida como direção vencedora. <em>1ª aparição:</em> Fase2 (Etapa 6). <em>Relacionados:</em> Fase3 (herda diretamente).</li>
+<li><strong>DNA Estratégico</strong> — Síntese final da Fase2, base de tudo que a Fase3 desenvolve. <em>1ª aparição:</em> Fase2 (título de seção final).</li>
+<li><strong>Território Emocional</strong> — Espaço de significado/emoção já ocupado ou vazio no mercado de eventos esportivos, mapeado antes de escolher posicionamento. <em>1ª aparição:</em> Fase2 (Etapa 2).</li>
+<li><strong>Ato 1 da Narrativa de Lançamento</strong> — Primeira fase da narrativa de lançamento definida na Fase4, foco em descoberta sem pedir conversão. <em>1ª aparição:</em> Fase4 (Cap.5). <em>Relacionados:</em> Fase6 (P8, Arquitetura de Conteúdo de Descoberta).</li>
+<li><strong>Macrofases do Lançamento</strong> — Escuta → Aquecimento → Anúncio → Confirmação → Consolidação, sequência do Sistema de Lançamento. <em>1ª aparição:</em> Projeto10 (Cap.2). <em>Relacionados:</em> Fase4.</li>
+<li><strong>P1–P19</strong> — Numeração dos 19 projetos que compõem os 10 Programas do Master Plan (Fase6). <em>1ª aparição:</em> Fase6 (Cap.4). <em>Relacionados:</em> mapeiam para praticamente todos os Projetos01-11/Manuais.</li>
+<li><strong>RACI</strong> — Matriz de Responsável/Aprovador/Consultado/Informado usada para os Programas Principais. <em>1ª aparição:</em> Fase6 (Cap.6). <em>Relacionado:</em> único uso formal de RACI no corpus.</li>
+<li><strong>Risk Register</strong> — Tabela formal de gestão de riscos (probabilidade, impacto, prioridade, prevenção, contingência, responsável). <em>1ª aparição:</em> Fase6 (Cap.9).</li>
+<li><strong>Critérios de Prontidão</strong> — Condições objetivas (não subjetivas) que determinam quando uma fase de maturidade (Fundação/Consolidação/Expansão/Maturidade) pode avançar para a próxima. <em>1ª aparição:</em> Fase6 (Cap.12). <em>Relacionados:</em> Fase5 (Cap.10, Roadmap por Ordem de Dependência).</li>
+<li><strong>Quick Wins</strong> — Iniciativas de alto impacto e baixo esforço que não dependem de orçamento robusto. <em>1ª aparição:</em> Fase6 (Cap.14).</li>
+<li><strong>ICP (Ideal Customer Profile)</strong> — Perfil de patrocinador ideal usado no processo comercial. <em>1ª aparição:</em> Projeto06 (Cap.3).</li>
+<li><strong>Sponsor Kit</strong> — Conjunto de materiais comerciais para patrocinadores, subtítulo do Projeto06. <em>1ª aparição:</em> Projeto06 (título).</li>
+<li><strong>Guardiões Fundadores</strong> — Patrocinadores dos primeiros ciclos, reconhecidos permanentemente mesmo após fim de contrato. <em>1ª aparição:</em> Projeto05 (Cap.11). <em>Relacionados:</em> Manual_CRM (Cap.16).</li>
+<li><strong>Naming Rights</strong> — Direito comercial de nomear/associar nome a elementos do campeonato, tratado como sistema comercial específico. <em>1ª aparição:</em> Projeto05 (Cap.9).</li>
+<li><strong>Wayfinding</strong> — Sistema de sinalização e orientação física dentro do evento. <em>1ª aparição:</em> Projeto07 (Cap.10). <em>Relacionados:</em> roadmap “Manual de Sinalização”.</li>
+<li><strong>Sistema Cerimonial</strong> — Conjunto de rituais executáveis em evento real, operacionalizando o Sistema Simbólico da Fase3. <em>1ª aparição:</em> Projeto07 (Cap.12). <em>Relacionados:</em> Fase6 (P4).</li>
+<li><strong>Centros Operacionais</strong> — Estrutura física/funcional de comando durante o evento (Projeto09). <em>1ª aparição:</em> Projeto09 (Cap.4).</li>
+<li><strong>Cadeia de Comando</strong> — Hierarquia de autoridade e decisão durante a operação do evento. <em>1ª aparição:</em> Projeto09 (Cap.3).</li>
+<li><strong>Sistema Cromático / Terracota / Carvão / Ferro / Osso</strong> — Nomes das cores centrais da paleta oficial do campeonato. <em>1ª aparição:</em> Projeto03 (Cap.3). <em>Relacionados:</em> Projeto04 (versão CMYK operacional).</li>
+<li><strong>Versão Gravada/Cunhada</strong> — Variante do logotipo em traço único, sem preenchimento, usada em medalhas/metal/madeira. <em>1ª aparição:</em> Projeto03 (Cap.5). <em>Relacionados:</em> Projeto04 (Cap.6), Peso Testemunha.</li>
+<li><strong>Sistema Modular Oficial</strong> — Estrutura de composição visual reutilizável definida no Brand Book. <em>1ª aparição:</em> Projeto04 (Cap.3).</li>
+<li><strong>Nomenclatura de Arquivo Padrão</strong> — <code>AAAA-MM-DD_Categoria_DescricaoCurta_Versao.extensão</code>. <em>1ª aparição:</em> Projeto04 (Cap.17). <em>Relacionados:</em> Projeto05, Projeto06 (citam e reusam).</li>
+<li><strong>Interesse Pré-Inscrição</strong> — Indicador central do funil, volume de manifestação de interesse válida antes da inscrição confirmada. <em>1ª aparição:</em> Projeto11 (título do documento). <em>Relacionados:</em> Manual_Dashboard (Cap.5), Manual_Formulario.</li>
+<li><strong>Taxa de Não Conversão Declarada</strong> — Indicador recomendado (auditoria do Projeto10) para medir interesse que não virou inscrição. <em>1ª aparição:</em> Projeto10 (auditoria final, comentário de Growth Marketing).</li>
+<li><strong>Social Proof</strong> — Sistema de prova social usado no Sistema de Lançamento. <em>1ª aparição:</em> Projeto10 (Cap.11).</li>
+<li><strong>Sistema de Aprendizado</strong> — Mecanismo formal recorrente de incorporar aprendizados ao longo das edições, citado por CRM, Formulário, Stories, Projeto10, Projeto11. <em>1ª aparição:</em> Projeto11 (Cap.14). <em>Relacionados:</em> praticamente todos os Manuais o citam como referência cruzada de melhoria contínua.</li>
+<li><strong>Sistema Ético</strong> — Capítulo/princípio dedicado a limites éticos de uso de dado e comunicação (nunca manipulação/escassez falsa). <em>1ª aparição:</em> Projeto10 (Cap.16), Projeto11 (Cap.13). <em>Relacionados:</em> Manual_Formulario, Manual_Stories.</li>
+<li><strong>LGPD</strong> — Lei Geral de Proteção de Dados, tratada em capítulo dedicado em CRM, Formulário e Projeto11. <em>1ª aparição:</em> Manual_CRM (Cap.11).</li>
+<li><strong>Direito ao Esquecimento vs. Registro Histórico</strong> — Tensão formalmente reconhecida e resolvida no Manual_CRM entre exclusão de dado pessoal e preservação de participação esportiva pública. <em>1ª aparição:</em> Manual_CRM (Cap.16).</li>
+<li><strong>Storytelling Executivo</strong> — Prática de traduzir indicadores de dashboard em narrativa compreensível para diretoria. <em>1ª aparição:</em> Manual_Dashboard_Executivo (Cap.8).</li>
+<li><strong>Stories Baseados em Dados</strong> — Formato de conteúdo de redes sociais cuja informação vem exclusivamente de dado validado (não suposição). <em>1ª aparição:</em> título do próprio Manual_Stories.</li>
+<li><strong>Teste de Clareza vs. Teste Manipulativo</strong> — Distinção ética entre validar usabilidade (aceitável) e manipular para conversão (nunca aceitável). <em>1ª aparição:</em> Manual_Formulario (Cap.13). <em>Relacionados:</em> Manual_Stories (Cap.14, cita a mesma distinção).</li>
+<li><strong>Constituição Simbólica (Internacional)</strong> — Documento futuro previsto para expansão internacional, ainda sem roadmap formal de criação (lacuna órfã, ver Etapa 7.9). <em>1ª aparição:</em> Fase5 (Cap.9). <em>Relacionados:</em> Fase6 (Cap.15).</li>
+<li><strong>Cenários Orçamentários Proporcionais (Conservador/Intermediário/Ambicioso)</strong> — Sistema de orçamento relativo (1x / 2,5-3x / 5-7x), não absoluto, adotado por ausência de benchmark financeiro de mercado (Fase1). <em>1ª aparição:</em> Fase6 (Cap.8). <em>Relacionados:</em> Fase1 (nota metodológica sobre ausência de dado de CAC/benchmark financeiro).</li>
+</ol>
+<hr/>
+<h2 id="etapa-9-indices">ETAPA 9 — ÍNDICES</h2>
+<h3 id="9-1-indice-geral-ordem-alfabetica-de-arquivo">9.1 Índice Geral (ordem alfabética de arquivo)</h3>
+<p>Fase1 · Fase2 · Fase3 · Fase4 · Fase5 · Fase6 · Manual_CRM · Manual_Dashboard_Executivo · Manual_Formulario_Manifestacao_Interesse · Manual_Stories_Baseados_Dados · Projeto01 · Projeto02 · Projeto03 · Projeto04 · Projeto05 · Projeto06 · Projeto07 · Projeto08 · Projeto09 · Projeto10 · Projeto11.</p>
+<h3 id="9-2-indice-cronologico-ordem-logica-de-concepcao-conforme-dependencias-reais-da-etapa-3-4">9.2 Índice Cronológico (ordem lógica de concepção, conforme dependências reais da Etapa 3/4)</h3>
+<ol type="1">
+<li>Fase1 → 2. Fase2 → 3. Fase3 → 4. Fase4 → 5. Fase5 → 6. Fase6 → 7. Projeto01 → 8. Projeto02 → 9. Projeto03 → 10. Projeto04 → 11. Projeto05 → 12. Projeto06 → 13. Projeto07 → 14. Projeto08 → 15. Projeto09 → 16. Projeto10 → 17. Projeto11 → 18. Manual_CRM → 19. Manual_Dashboard_Executivo → 20. Manual_Formulario_Manifestacao_Interesse → 21. Manual_Stories_Baseados_Dados.</li>
+</ol>
+<h3 id="9-3-indice-por-categoria-ver-etapa-1">9.3 Índice por Categoria (ver Etapa 1)</h3>
+<ul>
+<li><strong>Pesquisa/Benchmark:</strong> Fase1.</li>
+<li><strong>Fase (Estratégia/Constituição):</strong> Fase2, Fase3, Fase4, Fase5, Fase6.</li>
+<li><strong>Manual Operacional (ferramenta digital):</strong> Manual_CRM, Manual_Dashboard_Executivo, Manual_Formulario_Manifestacao_Interesse, Manual_Stories_Baseados_Dados.</li>
+<li><strong>Projeto (constituição operacional por sistema):</strong> Projeto01 a Projeto11.</li>
+</ul>
+<h3 id="9-4-indice-por-documento-referencia-rapida-nome-curto-arquivo-completo">9.4 Índice por Documento (referência rápida — nome curto → arquivo completo)</h3>
+<ul>
+<li>Benchmark → Fase1_Inteligencia_Estrategica_Benchmark_Campeonatos.md</li>
+<li>Identidade Estratégica → Fase2_Identidade_Estrategica_Kettlebell.md</li>
+<li>Plataforma de Marca → Fase3_Plataforma_de_Marca_Kettlebell.md</li>
+<li>Arquitetura de Lançamento → Fase4_Arquitetura_Lancamento_Kettlebell.md</li>
+<li>Ecossistema Institucional → Fase5_Ecossistema_Institucional_Kettlebell.md</li>
+<li>Master Plan → Fase6_Master_Plan_Implementacao_Kettlebell.md</li>
+<li>CRM → Manual_CRM_Kettlebell.md</li>
+<li>Dashboard → Manual_Dashboard_Executivo_Kettlebell.md</li>
+<li>Formulário → Manual_Formulario_Manifestacao_Interesse_Kettlebell.md</li>
+<li>Stories → Manual_Stories_Baseados_Dados_Kettlebell.md</li>
+<li>Comunicação → Projeto01_Sistema_de_Comunicacao_Kettlebell.md</li>
+<li>Criativo → Projeto02_Sistema_Criativo_Kettlebell.md</li>
+<li>Identidade Visual → Projeto03_Sistema_Identidade_Visual_Kettlebell.md</li>
+<li>Brand Book → Projeto04_Brand_Book_Aplicacao_Kettlebell.md</li>
+<li>Patrocínios → Projeto05_Sistema_Patrocinios_CoBranding_Kettlebell.md</li>
+<li>Comercial/Vendas → Projeto06_Manual_Comercial_Vendas_Kettlebell.md</li>
+<li>Experiência do Evento → Projeto07_Sistema_Experiencia_Evento_Kettlebell.md</li>
+<li>Memória/Patrimônio → Projeto08_Sistema_Memoria_Patrimonio_Kettlebell.md</li>
+<li>Operação do Evento → Projeto09_Sistema_Operacional_Evento_Kettlebell.md</li>
+<li>Lançamento/Mobilização → Projeto10_Sistema_Lancamento_Mobilizacao_Kettlebell.md</li>
+<li>Inteligência Pré-Inscrição → Projeto11_Sistema_Inteligencia_PreInscricao_Kettlebell.md</li>
+</ul>
+<h3 id="9-5-indice-por-tema">9.5 Índice por Tema</h3>
+<ul>
+<li><strong>Marca/Identidade:</strong> Fase2, Fase3, Projeto01, Projeto02, Projeto03, Projeto04.</li>
+<li><strong>Dados/Inteligência:</strong> Fase1, Projeto11, Manual_CRM, Manual_Dashboard_Executivo, Manual_Formulario_Manifestacao_Interesse, Manual_Stories_Baseados_Dados.</li>
+<li><strong>Comercial/Patrocínio:</strong> Projeto05, Projeto06.</li>
+<li><strong>Evento (Experiência+Operação):</strong> Projeto07, Projeto09.</li>
+<li><strong>Memória/Legado:</strong> Projeto08, Fase5 (Cap.3, Sistema de Memória).</li>
+<li><strong>Governança/Implementação:</strong> Fase5, Fase6.</li>
+<li><strong>Lançamento/Comunidade:</strong> Fase4, Projeto10.</li>
+</ul>
+<h3 id="9-6-indice-por-palavra-chave-amostra-de-termos-de-alta-recorrencia-cruzada">9.6 Índice por Palavra-chave (amostra de termos de alta recorrência cruzada)</h3>
+<ul>
+<li>“conversão” → Fase1, Fase3, Fase4, Manual_CRM, Manual_Dashboard, Manual_Formulario, Manual_Stories, Projeto01, Projeto06, Projeto10, Projeto11.</li>
+<li>“versão/versionamento” → Projeto03, Projeto04, Projeto05, Projeto06, Projeto07, Projeto08, Manual_CRM, Manual_Formulario.</li>
+<li>“governança” → Fase3, Fase5, Fase6, Manual_CRM, Manual_Dashboard, Manual_Formulario, Manual_Stories, Projeto03, Projeto04, Projeto05, Projeto06, Projeto07, Projeto08, Projeto09, Projeto10, Projeto11.</li>
+<li>“roadmap” → Fase5, Fase6, Manual_CRM, Manual_Dashboard, Manual_Formulario, Manual_Stories, Projeto06, Projeto07, Projeto08, Projeto09, Projeto10, Projeto11.</li>
+<li>“auditoria” → todos os 21 documentos (100% do corpus possui seção de auditoria final).</li>
+</ul>
+<h3 id="9-7-indice-por-conceitos-ver-glossario-etapa-8-para-definicao-completa">9.7 Índice por Conceitos (ver Glossário, Etapa 8, para definição completa)</h3>
+<p>Sistema Simbólico · Governança de Marca · Sistemas Permanentes · Existência Categórica · P1-P19 · RACI · Risk Register · Critérios de Prontidão · ICP · Wayfinding · Sistema Cerimonial · LGPD · Sistema Ético · Sistema de Aprendizado.</p>
+<h3 id="9-8-indice-por-roadmaps-documentos-que-possuem-roadmap-formal-de-documentos-futuros">9.8 Índice por Roadmaps (documentos que possuem roadmap formal de documentos futuros)</h3>
+<p>Projeto07 (16 itens) · Projeto08 (16 itens) · Projeto09 (17 itens) · Projeto10 (15 itens) · Projeto11 (8 itens + 5 ferramentas) · Manual_CRM (8 itens) · Manual_Dashboard_Executivo (8 itens). <strong>Não possuem</strong> roadmap de documentos derivados dedicado: Manual_Formulario_Manifestacao_Interesse, Manual_Stories_Baseados_Dados (achado de inconsistência, Etapa 6.3), Fase1-6, Projeto01-06.</p>
+<h3 id="9-9-indice-por-dependencias-grau-de-quantos-documentos-dependem-dele-extraido-da-etapa-4">9.9 Índice por Dependências (grau de “quantos documentos dependem dele”, extraído da Etapa 4)</h3>
+<p>1º — Fase3 (Plataforma de Marca): base citada por 10+ documentos. 2º — Fase5 (Ecossistema Institucional): base de 6+ documentos. 3º — Projeto11 (Inteligência Pré-Inscrição): origina os 4 Manuais + citado por Fase6. 4º — Manual_CRM: citado/consumido por 7 documentos. 5º — Fase4: base de Projeto10, Projeto01, Projeto11.</p>
+<h3 id="9-10-indice-por-publico-mapeamento-documento-publico-primario-cruzado-com-etapa-5">9.10 Índice por Público (mapeamento documento → público primário, cruzado com Etapa 5)</h3>
+<ul>
+<li><strong>Diretoria:</strong> Fase3, Fase5, Fase6, Manual_Dashboard_Executivo.</li>
+<li><strong>Marketing/Comunicação:</strong> Projeto01, Projeto02, Projeto10, Manual_Stories_Baseados_Dados.</li>
+<li><strong>Produção/Operação:</strong> Projeto07, Projeto09.</li>
+<li><strong>Comercial:</strong> Projeto05, Projeto06.</li>
+<li><strong>Design/Criativo:</strong> Projeto02, Projeto03, Projeto04.</li>
+<li><strong>Tecnologia/Dados:</strong> Projeto11, Manual_CRM, Manual_Dashboard_Executivo, Manual_Formulario_Manifestacao_Interesse.</li>
+<li><strong>Memória/Institucional:</strong> Projeto08, Fase5.</li>
+</ul>
+<hr/>
+<h2 id="etapa-10-arquitetura-do-futuro-portal-especificacao-funcional">ETAPA 10 — ARQUITETURA DO FUTURO PORTAL (especificação funcional)</h2>
+<p><strong>Escopo desta etapa:</strong> especificação funcional apenas — nenhum HTML/CSS/JS é produzido aqui. Serve de insumo para a Etapa 2 do projeto (Construção do Portal).</p>
+<h3 id="10-1-paginas-que-devem-existir">10.1 Páginas que devem existir</h3>
+<ol type="1">
+<li><strong>Home / Visão Geral</strong> — apresentação do projeto, os 4 grupos de camada arquitetural (Etapa 3), atalho para os 6 públicos de leitura (Etapa 5).</li>
+<li><strong>Página de Documento Individual</strong> (×21) — conteúdo original renderizado fielmente, com painel lateral fixo mostrando: dependências (de/para), documentos relacionados, capítulo atual, roadmaps derivados quando existirem.</li>
+<li><strong>Página de Categoria</strong> (uma por grupo da Etapa 2: Estratégia, Governança, Marca, Comunicação, Criativo, Design, Comercial, Patrocínio, Experiência, Memória, Operação, Lançamento, Inteligência, Implementação, Tecnologia).</li>
+<li><strong>Página de Arquitetura</strong> — diagrama navegável das 4 camadas (Etapa 3), clicável por nó.</li>
+<li><strong>Página de Mapa de Dependências</strong> — grafo interativo (documento → depende de / é dependido por), navegação por clique.</li>
+<li><strong>Página de Sequências de Leitura</strong> — 6 trilhas guiadas por público (Etapa 5), com progresso salvável.</li>
+<li><strong>Página de Glossário</strong> — os 46+ termos (Etapa 8), pesquisável, com link direto para o capítulo de origem em cada documento.</li>
+<li><strong>Página de Índices</strong> — os 10 índices da Etapa 9, cada um como uma visualização/filtro distinto.</li>
+<li><strong>Página de Lacunas/Roadmap Geral</strong> — cruzamento vivo da Etapa 7 (documentos existentes vs. planejados), com status ✅/❌/parcial e prioridade.</li>
+<li><strong>Página de Auditoria</strong> — consolidado dos achados da Etapa 6 (sem alterar os documentos-fonte), como um “log de qualidade documental” público internamente.</li>
+<li><strong>Página de Busca Global</strong> — full-text sobre os 21 documentos + glossário + índices.</li>
+<li><strong>Página “Como Adicionar um Novo Documento”</strong> — checklist operacional (ver 10.6).</li>
+</ol>
+<h3 id="10-2-menus">10.2 Menus</h3>
+<ul>
+<li><strong>Menu Primário (topo):</strong> Home · Documentos (dropdown por categoria) · Arquitetura · Dependências · Glossário · Índices · Lacunas/Roadmap · Busca.</li>
+<li><strong>Menu Secundário (por público, na Home):</strong> Diretoria · Marketing · Produção · Comercial · Desenvolvimento · Novos Integrantes — cada um leva direto à trilha de leitura da Etapa 5.</li>
+<li><strong>Menu Contextual (dentro de cada documento):</strong> sumário de capítulos do próprio documento (âncoras), documentos relacionados, “onde este documento aparece no glossário/índice”.</li>
+</ul>
+<h3 id="10-3-filtros">10.3 Filtros</h3>
+<ul>
+<li>Por categoria (Etapa 2, com múltipla seleção — um documento pode aparecer em vários grupos).</li>
+<li>Por status de lacuna (existente / planejado-não escrito / parcialmente atendido).</li>
+<li>Por público (Etapa 5/9.10).</li>
+<li>Por camada arquitetural (Etapa 3: Inteligência de Mercado / Constituição Estratégica / Plano Diretor / Constituições Operacionais / Manuais Funcionais).</li>
+<li>Por presença de roadmap próprio (documentos que geram outros documentos vs. documentos-folha).</li>
+</ul>
+<h3 id="10-4-como-a-busca-deve-funcionar">10.4 Como a busca deve funcionar</h3>
+<p>Busca full-text indexando: (a) corpo dos 21 documentos originais, (b) 46+ termos do glossário com sinônimos/variações grafadas no corpus, (c) título de capítulos (para permitir “pular direto ao Capítulo 17 de X”). Resultado deve sempre indicar o documento-fonte e o número do capítulo, nunca apenas um trecho solto — rastreabilidade documental é requisito não negociável (o próprio corpus, em Manual_CRM Cap.17 e Manual_Dashboard Cap.18, exige rastreabilidade como princípio de auditoria; o portal deve herdar esse princípio).</p>
+<h3 id="10-5-como-o-usuario-navega-entre-documentos">10.5 Como o usuário navega entre documentos</h3>
+<p>Toda menção de um documento a outro (ex.: “Projeto11, Capítulo 18”) deve virar link clicável no portal, apontando exatamente para o capítulo referenciado — nunca apenas para o topo do documento. Isso exige que o processo de conversão markdown→portal (fora do escopo desta Etapa 1) preserve os anchors de capítulo de forma estável e legível (ex.: <code>/documentos/projeto11#cap-18</code>).</p>
+<h3 id="10-6-como-novos-documentos-serao-adicionados-no-futuro-governanca-do-portal">10.6 Como novos documentos serão adicionados no futuro (governança do portal)</h3>
+<ol type="1">
+<li>Todo novo documento deve nascer de um item já listado em algum dos 8 roadmaps formais (Etapa 7) ou ser formalmente registrado como novo roadmap antes de ser escrito — evita o problema identificado na Etapa 6.9 (roadmaps sobrepostos sem dono único).</li>
+<li>Todo novo documento deve, na criação, ser imediatamente classificado (Etapa 2), posicionado na arquitetura de camadas (Etapa 3), e ter suas dependências declaradas no formato da Etapa 4 antes de publicação no portal.</li>
+<li>Todo novo documento deve adotar cabeçalho de versão (<code>Versão: X.Y — Data</code>), corrigindo a lacuna identificada na Etapa 6.11.</li>
+<li>A página de Lacunas/Roadmap (10.1, item 9) deve ser atualizada automaticamente sempre que um novo documento for publicado, mudando seu status de ❌ para ✅.</li>
+<li>Nenhum documento novo pode ser publicado sem ao menos uma seção de auditoria (mantendo o padrão de qualidade já estabelecido em 100% do corpus atual — ver Índice 9.6).</li>
+</ol>
+<hr/>
+<h2 id="etapa-11-relatorio-executivo">ETAPA 11 — RELATÓRIO EXECUTIVO</h2>
+<h3 id="1-visao-geral-da-documentacao">1. Visão geral da documentação</h3>
+<p>O corpus é um sistema documental de 21 arquivos, ~80.700 palavras, organizado em quatro camadas lógicas reais (Inteligência de Mercado → Constituição Estratégica → Plano Diretor → Constituições Operacionais/Manuais Funcionais), com um documento-fonte central claro (Fase3, Plataforma de Marca) e um segundo hub de dados (Projeto11). O corpus não é uma coleção solta de textos — é um sistema hierárquico coerente, com citação cruzada real e consistente, e um padrão de auditoria interna (painéis de especialistas) presente em 100% dos documentos.</p>
+<h3 id="2-pontos-fortes">2. Pontos fortes</h3>
+<ul>
+<li>Rastreabilidade de decisão real: cada Fase cita e questiona criticamente a anterior antes de avançar (padrão “Antes de Começar: Questionando a Fase X”).</li>
+<li>Sistema simbólico coeso e citado consistentemente em toda a cadeia operacional, sem contradição factual encontrada.</li>
+<li>Cultura de auditoria interna madura: 15 dos 21 documentos já praticam ciclo de 2 rodadas com painel de 11 especialistas.</li>
+<li>Reconhecimento honesto de limitações de dado (Fase1 já avisa da ausência de benchmark financeiro; Fase6 usa orçamento proporcional, não fabricado).</li>
+<li>4 dos ~89 documentos futuros mapeados já foram efetivamente entregues (os 4 Manuais), evidenciando execução real do próprio roadmap, não apenas planejamento.</li>
+</ul>
+<h3 id="3-pontos-fracos">3. Pontos fracos</h3>
+<ul>
+<li>Nenhum documento porta número de versão explícito, apesar de vários exigirem esse comportamento (Etapa 6.11).</li>
+<li>Roadmaps de documentos futuros entre Projeto07 e Projeto09 se sobrepõem em 9 de 17 itens sem dono único claro (Etapa 6.9).</li>
+<li>Inconsistência estrutural: 2 dos 4 Manuais (Formulário, Stories) não têm capítulo dedicado de “Roadmap de Documentos Derivados”, diferente dos outros 2 (Etapa 6.3).</li>
+<li>Conceitos como “Landing Page” são redefinidos em múltiplos documentos em vez de referenciados de uma fonte única (Etapa 6.1).</li>
+</ul>
+<h3 id="4-riscos">4. Riscos</h3>
+<ul>
+<li>Dependência crítica não resolvida: P16 (Sistema de Memória) bloqueia a primeira edição, mas o “Manual do Sistema de Memória” — primeira prioridade do próprio roadmap do Projeto08 — ainda não existe (Etapa 6.6, 7.10).</li>
+<li>“Constituição Simbólica Internacional” é citada como necessidade futura por 2 documentos mas não pertence a nenhum roadmap formal — risco de nunca ser produzida por falta de responsável (Etapa 7.9).</li>
+<li>Sem versionamento, decisões de diretoria baseadas em uma “leitura” de um documento não são auditáveis contra qual edição exata do texto foi usada.</li>
+</ul>
+<h3 id="5-oportunidades">5. Oportunidades</h3>
+<ul>
+<li>O padrão de template documental já estabelecido (Filosofia→Arquitetura→…→Roadmap→Auditoria) pode ser formalizado como um “gabarito” oficial para acelerar a escrita dos ~85 documentos futuros ainda pendentes.</li>
+<li>O cluster de 4 Manuais de dados (CRM/Dashboard/Formulário/Stories) já demonstra, na prática, o modelo ideal de como transformar um roadmap em entregável real — replicável para os roadmaps do Projeto07/08/09/10.</li>
+<li>A lacuna do Manual do Sistema de Memória (prioridade crítica) é também a maior oportunidade de “quick win institucional”, pois o próprio Fase6 já a declara pré-requisito de tudo.</li>
+</ul>
+<h3 id="6-melhorias-sugeridas">6. Melhorias sugeridas</h3>
+<ul>
+<li>Adotar cabeçalho de versão em todos os 21 documentos (revisão leve, sem reescrever conteúdo).</li>
+<li>Resolver a sobreposição Projeto07/Projeto09 atribuindo formalmente um “documento único, dupla referência” para os 9 manuais compartilhados.</li>
+<li>Padronizar a existência do capítulo “Roadmap de Documentos Derivados” nos 2 Manuais que ainda não o têm.</li>
+<li>Formalizar a “Constituição Simbólica Internacional” dentro de algum roadmap existente (sugestão: Fase5 ou um roadmap próprio de Fase6).</li>
+</ul>
+<h3 id="7-arquitetura-recomendada">7. Arquitetura recomendada</h3>
+<p>Manter as 4 camadas identificadas na Etapa 3 como estrutura oficial de navegação e de futura expansão documental — qualquer novo documento deve primeiro se declarar em uma das 4 camadas antes de ser escrito.</p>
+<h3 id="8-estrutura-recomendada-do-portal-html-especificacao-nao-codigo">8. Estrutura recomendada do Portal HTML (especificação, não código)</h3>
+<p>Ver Etapa 10 integralmente — 12 páginas, 3 níveis de menu, 5 filtros, busca full-text com rastreabilidade obrigatória por capítulo, e processo formal de adição de novos documentos vinculado ao status de roadmap.</p>
+<h3 id="9-ordem-recomendada-para-implementacao-da-etapa-2-do-projeto">9. Ordem recomendada para implementação (da Etapa 2 do projeto)</h3>
+<ol type="1">
+<li>Estruturação do modelo de dados do portal (metadados de cada documento: categoria, camada, dependências, roadmap-status) usando exatamente as tabelas produzidas nas Etapas 1, 2 e 4 deste relatório.</li>
+<li>Construção da página de Documento Individual (a mais usada) com anchors de capítulo estáveis.</li>
+<li>Construção do Glossário e dos Índices (dado já 100% estruturado nas Etapas 8 e 9).</li>
+<li>Construção do Mapa de Dependências interativo (dado já 100% estruturado na Etapa 4).</li>
+<li>Construção da página de Lacunas/Roadmap vivo (Etapa 7) — maior valor estratégico para acompanhar a evolução real do projeto documental.</li>
+<li>Busca full-text por último, pois depende de todo o conteúdo já estar publicado nas páginas anteriores.</li>
+</ol>
+<h3 id="10-checklist-para-iniciar-a-etapa-2-construcao-do-portal">10. Checklist para iniciar a Etapa 2 (Construção do Portal)</h3>
+<ul class="task-list">
+<li><input disabled="" type="checkbox"/>
+Confirmar que este relatório (Etapa 1) foi validado pela Diretoria/Governança de Marca antes de qualquer código ser escrito.</li>
+<li><input disabled="" type="checkbox"/>
+Definir responsável técnico único para a arquitetura de metadados (Etapa 10.6).</li>
+<li><input disabled="" type="checkbox"/>
+Confirmar que nenhum dos 21 documentos originais será alterado durante a construção do portal — apenas renderizado.</li>
+<li><input disabled="" type="checkbox"/>
+Decidir, com a Diretoria, a prioridade real entre as 89 lacunas documentais mapeadas na Etapa 7 antes de o portal “cobrar” visualmente documentos inexistentes.</li>
+<li><input disabled="" type="checkbox"/>
+Validar com Tecnologia/Desenvolvimento a viabilidade dos anchors de capítulo estáveis (requisito da Etapa 10.5).</li>
+<li><input disabled="" type="checkbox"/>
+Aprovar o padrão de versionamento sugerido (Etapa 6.11) antes de aplicá-lo retroativamente aos 21 documentos.</li>
+</ul>
+<hr/>
+<h2 id="auditoria-rodada-1">AUDITORIA — RODADA 1</h2>
+<p>Conselho revisor independente (mesmo agente, papel distinto): Arquitetura da Informação, Gestão do Conhecimento, Technical Writing, Engenharia de Software, UX, Biblioteconomia, Organização do Conhecimento, Enterprise Architecture, Product Documentation, Documentação Corporativa. Releitura crítica integral deste relatório (não dos 21 originais) em busca de inconsistências técnicas concretas.</p>
+<p><strong>Arquitetura da Informação:</strong> “A contagem de capítulos na Etapa 1 originalmente somava, para 12 dos 21 documentos, o número de capítulos de conteúdo mais o número do capítulo final como se fossem quantidades distintas (ex.: ‘19 + Roadmap cap. 20’ quando o Roadmap <em>é</em> o capítulo 20, não um capítulo adicional). Isso produzia contagens de capítulo tecnicamente incorretas. <strong>Correção necessária: revisar cada entrada da Etapa 1 para expressar contagem única e inequívoca.</strong>”</p>
+<p><strong>Engenharia de Software:</strong> “Confirmo o mesmo problema do ponto de vista de dado estruturado: se este relatório alimentar o modelo de dados do portal (Etapa 10.6), um campo ‘quantidade de capítulos’ com fórmula ambígua (‘N + capítulo N’) quebra qualquer agregação automática. <strong>Correção necessária.</strong>”</p>
+<p><strong>Technical Writing / Product Documentation:</strong> “Adicionalmente, quatro documentos (Fase4, Fase6, Projeto01, Projeto02) numeram a própria Auditoria Final como capítulo regular, enquanto os outros 17 a tratam como seção à parte. O relatório original mencionava isso apenas de forma genérica na Etapa 6.3, sem quantificar nem nomear os 4 documentos exatos. <strong>Correção necessária: nomear explicitamente os 4 documentos e quantificar a proporção (4/21 vs. 17/21).</strong>”</p>
+<p><strong>Enterprise Architecture / Organização do Conhecimento:</strong> “O restante da arquitetura de camadas (Etapa 3), mapa de dependências (Etapa 4) e classificação (Etapa 2) foi conferido por amostragem cruzada com os cabeçalhos brutos extraídos do corpus e está consistente — nenhuma dependência listada foi encontrada sem evidência textual correspondente nas citações internas dos documentos originais. Nenhuma correção estrutural necessária nessas etapas.”</p>
+<p><strong>Biblioteconomia / UX / Documentação Corporativa:</strong> “Os Índices (Etapa 9) e o Glossário (Etapa 8) estão internamente consistentes com o conteúdo das etapas anteriores. Recomendação de forma, não de conteúdo: manter, nas próximas revisões, sincronismo obrigatório entre qualquer alteração na Etapa 1 (fonte de verdade de contagem de capítulos) e os Índices que dela derivam.”</p>
+<p><strong>Consolidação da Rodada 1 — 2 correções técnicas concretas identificadas e a serem incorporadas:</strong> 1. Reformular a contagem de capítulos de 12 dos 21 documentos na Etapa 1, eliminando a fórmula ambígua “N + capítulo N”. 2. Nomear explicitamente, na Etapa 6.3, os 4 documentos (Fase4, Fase6, Projeto01, Projeto02) cuja Auditoria Final é capítulo numerado, com a proporção exata 4/21 vs. 17/21.</p>
+<hr/>
+<h2 id="auditoria-rodada-2">AUDITORIA — RODADA 2</h2>
+<p>Segunda leitura crítica, após incorporação das correções da Rodada 1.</p>
+<p><strong>Verificação 1 (Arquitetura da Informação + Engenharia de Software):</strong> todas as 12 entradas da Etapa 1 com contagem originalmente ambígua (Manual_CRM, Manual_Dashboard_Executivo, Manual_Stories_Baseados_Dados, Projeto03, Projeto04, Projeto05, Projeto06, Projeto07, Projeto08, Projeto09, Projeto10, Projeto11) foram reescritas no formato “N capítulos numerados (o Nº é ‘[nome do capítulo]’)” — fórmula única e inequívoca, sem duplicidade de contagem. <strong>Confirmado: corrigido.</strong></p>
+<p><strong>Verificação 2 (Technical Writing / Product Documentation):</strong> a Etapa 6.3 agora nomeia explicitamente os 4 documentos com Auditoria Final numerada como capítulo formal (Fase4 — cap.12; Fase6 — cap.16; Projeto01 — cap.18; Projeto02 — cap.14) com a proporção 4/21 vs. 17/21 declarada. As entradas individuais desses 4 documentos na Etapa 1 também foram atualizadas para refletir essa particularidade estrutural de forma explícita. <strong>Confirmado: corrigido.</strong></p>
+<p><strong>Verificação 3 (Enterprise Architecture / Biblioteconomia):</strong> nova checagem cruzada confirma que a soma de capítulos numerados agora bate, documento a documento, com os cabeçalhos brutos extraídos originalmente do corpus (arquivo de estrutura gerado por varredura de <code>##</code>), sem nenhuma discrepância residual encontrada na segunda passagem. <strong>Confirmado: nenhuma nova inconsistência introduzida pelas correções.</strong></p>
+<p><strong>Conclusão da auditoria dupla:</strong> as 2 correções identificadas na Rodada 1 foram incorporadas via edição direta no corpo do relatório (Etapas 1 e 6), sem necessidade de alterar Etapas 2 a 5 e 7 a 11, que não dependiam da contagem ambígua. O relatório está, nesta versão, tecnicamente consistente entre suas próprias seções internas. Nenhum dos 21 documentos originais foi alterado em nenhum momento deste processo — apenas este relatório novo (Etapa 1 do projeto de Engenharia da Documentação) foi lido, escrito e revisado.</p>
+<hr/>
+<p><em>Fim do relatório de Engenharia da Documentação — Etapa 1. Documento de análise, não de implementação. Nenhum HTML/CSS/JS foi produzido. Nenhum dos 21 documentos originais foi alterado.</em></p>
+</section>
+<section aria-labelledby="glossario-relacionado-title">
+<h2 id="glossario-relacionado-title">Glossário relacionado</h2>
+<p class="text-muted">Este documento é a fonte primária dos 46 termos do Glossário do portal (Etapa 8 abaixo). Ver lista completa e pesquisável em <a href="/docs/glossario/index.html">/docs/glossario/index.html</a>.</p>
+</section>
+<!-- INCLUIR: components/document-navigator.html -->
+<nav aria-label="Navegação entre documentos" class="doc-nav">
+<a class="doc-nav__link doc-nav__link--prev" href="/index.html">
+<div class="doc-nav__label">← Anterior</div>
+<div class="doc-nav__title">Início do Portal</div>
+</a>
+<a class="doc-nav__link doc-nav__link--next" href="/docs/fases/fase1.html">
+<div class="doc-nav__label">Próximo →</div>
+<div class="doc-nav__title">Fase 1 — Inteligência Estratégica e Benchmark</div>
+</a>
+</nav>
+</article>
+</main>
+<aside aria-label="Sumário do documento" class="page-shell__toc toc">
+<div class="toc__title">Nesta página</div>
+<ul class="toc__list" data-toc-list=""></ul>
+</aside>
+</div>
+</div>
+<!-- INCLUIR: components/modal.html (busca) -->
+<div class="modal-overlay" data-open="false" id="search-modal">
+<div aria-labelledby="search-modal-title" aria-modal="true" class="modal" role="dialog" tabindex="-1">
+<div class="modal__header">
+<h2 id="search-modal-title" style="margin:0;font-size:var(--fs-500)">Buscar</h2>
+<button aria-label="Fechar busca" class="modal__close" data-action="close-modal" type="button">×</button>
+</div>
+<div class="search-bar" role="search">
+<span aria-hidden="true" class="search-bar__icon">🔍</span>
+<label class="visually-hidden" for="modal-search-input">Buscar</label>
+<input autocomplete="off" data-search-input="" id="modal-search-input" placeholder="Buscar documentos, termos, capítulos..." type="search"/>
+</div>
+<div aria-live="polite" class="search-results" data-search-results=""></div>
+</div>
+</div>
+<!-- INCLUIR: components/footer.html -->
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid" data-footer-columns=""></div>
+<div class="site-footer__bottom">
+<span>© <span data-current-year=""></span> Campeonato Brasileiro de Kettlebell Sport.</span>
+</div>
+</div>
+</footer>
+<script src="/assets/js/navigation.js" type="module"></script>
+<script src="/assets/js/search.js" type="module"></script>
+<script>
+    document.querySelectorAll("[data-current-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+    import("/assets/js/navigation.js").then(function (mod) {
+      mod.renderBreadcrumb([
+        { label: "Início", url: "/index.html" },
+        { label: "Documentação de Controle", url: "/docs/arquitetura/engenharia-documentacao.html" },
+        { label: "Engenharia da Documentação" }
+      ]);
+    });
+  </script>
+</body>
+</html>

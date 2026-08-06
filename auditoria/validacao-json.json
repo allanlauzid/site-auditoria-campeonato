@@ -1,0 +1,73 @@
+{
+  "gerado_em": "2026-08-05T22:27:56.965218",
+  "arquivos": {
+    "documents.json": {
+      "python_json_load": "OK",
+      "node_json_parse": "OK",
+      "utf8_decode": "OK"
+    },
+    "navigation.json": {
+      "python_json_load": "OK",
+      "node_json_parse": "OK",
+      "utf8_decode": "OK"
+    },
+    "search-index.json": {
+      "python_json_load": "OK",
+      "node_json_parse": "OK",
+      "utf8_decode": "OK"
+    },
+    "roadmaps.json": {
+      "python_json_load": "OK",
+      "node_json_parse": "OK",
+      "utf8_decode": "OK"
+    },
+    "glossario.json": {
+      "python_json_load": "OK",
+      "node_json_parse": "OK",
+      "utf8_decode": "OK"
+    }
+  },
+  "documents_json": {
+    "total_documentos": 22,
+    "ids_unicos": true,
+    "urls_inexistentes_no_disco": [],
+    "relacionados_dangling": []
+  },
+  "navigation_json": {
+    "total_urls_referenciadas": 40,
+    "urls_inexistentes_no_disco": []
+  },
+  "search_index_json": {
+    "total_entradas_pos_remocao": 389,
+    "total_entradas_antes_remocao": 390,
+    "ids_unicos": true,
+    "entradas_docId_inexistente_em_documents": [],
+    "entradas_url_alvo_inexistente": [],
+    "entrada_residual_removida": {
+      "id": "exemplo-glossario-governanca-marca",
+      "motivo": "Dado demonstrativo/placeholder remanescente da Etapa 2A (docId='glossario' inexistente como documento formal em documents.json; excerpt e tokens eram dados de exemplo estrutural, não conteúdo real extraído de um .md fonte). Confirmado pelo campo _comment do próprio arquivo, que descreve a Etapa 2A como entrega de 'schema + 2 entradas de exemplo (dados fictícios de estrutura)'.",
+      "acao": "removida de data/search-index.json",
+      "contagem_antes": 390,
+      "contagem_depois": 389,
+      "revalidacao_apos_remocao": "python json.load OK; node JSON.parse OK"
+    }
+  },
+  "roadmaps_json": {
+    "total_roadmaps": 7,
+    "ids_unicos": true,
+    "origemDocId_inexistente": [],
+    "status_geral": "Etapa 2A/2B parcial — schema populado com 7 roadmaps extraídos de documentos-fonte (ver _comment do arquivo); nenhuma referência quebrada encontrada."
+  },
+  "glossario_json": {
+    "total_termos_atual": 26,
+    "total_termos_esperado_oficial": 46,
+    "status": "INCOMPLETO — arquivo contém 26 de 46 termos oficiais previstos (ver _comment do arquivo: 'Etapa 2A cria apenas o schema e 3 entradas de exemplo — Etapa 2B populará os 46 termos reais'). Tratamento completo fica a cargo da Etapa 3.4, fora do escopo desta Fase 3 de validação formal.",
+    "ids_unicos": true,
+    "termos_orfaos_documentoOrigem_inexistente": [],
+    "definicoes_placeholder_detectadas": [
+      "sistema-simbolico",
+      "governanca-de-marca",
+      "sistemas-permanentes"
+    ]
+  }
+}

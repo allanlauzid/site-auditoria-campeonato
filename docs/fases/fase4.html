@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================================================================
+       TEMPLATE OFICIAL DE DOCUMENTO
+       Etapa 2A — estrutura vazia com placeholders {{ }}. Etapa 2B substitui
+       cada placeholder pelo conteúdo real de um dos 21 documentos, sem
+       alterar a arquitetura HTML/CSS/JS abaixo.
+       ================================================================== -->
+
+  <title>Fase 4 — Arquitetura de Lançamento · Portal CBKS</title>
+  <meta name="description" content="Herda explicitamente a Fase 3 (“A Fase 3 deixou um recado direto para esta fase”), tratando notoriedade e memória como prioridade fundacional acima de inscrições. Base conceitual direta do Projeto 10." />
+
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Fase 4 — Arquitetura de Lançamento" />
+  <meta property="og:description" content="Herda explicitamente a Fase 3 (“A Fase 3 deixou um recado direto para esta fase”), tratando notoriedade e memória como prioridade fundacional acima de inscrições. Base conceitual direta do Projeto 10." />
+  <meta property="og:url" content="{{baseUrl}}/docs/fases/fase4.html" />
+  <meta property="og:image" content="/assets/images/og-default.png" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fase 4 — Arquitetura de Lançamento" />
+  <meta name="twitter:description" content="Herda explicitamente a Fase 3 (“A Fase 3 deixou um recado direto para esta fase”), tratando notoriedade e memória como prioridade fundacional acima de inscrições. Base conceitual direta do Projeto 10." />
+
+  <link rel="canonical" href="{{baseUrl}}/docs/fases/fase4.html" />
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/css/design-system.css" />
+
+  <!-- SEO: Schema.org JSON-LD (TechArticle) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Fase 4 — Arquitetura de Lançamento",
+    "description": "Herda explicitamente a Fase 3 (“A Fase 3 deixou um recado direto para esta fase”), tratando notoriedade e memória como prioridade fundacional acima de inscrições. Base conceitual direta do Projeto 10.",
+    "url": "{{baseUrl}}/docs/fases/fase4.html",
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Portal de Documentação — Campeonato Brasileiro de Kettlebell Sport"
+    },
+    "dateModified": "2026-08-05",
+    "version": "Versão documental: não informada no arquivo-fonte"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <!-- INCLUIR: components/header.html -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="/index.html">
+        <img src="/assets/icons/logo-mark.svg" alt="" width="28" height="28" loading="eager" />
+        <span>Portal CBKS</span>
+      </a>
+      <nav aria-label="Navegação principal"><ul class="site-header__nav" data-topnav></ul></nav>
+      <div class="site-header__actions">
+        <button type="button" class="btn btn--icon" data-action="open-modal" data-target="search-modal" aria-label="Abrir busca (Ctrl+K)">🔍</button>
+        <button type="button" class="btn btn--icon" data-action="toggle-theme" aria-pressed="false" aria-label="Alternar tema claro/escuro">🌓</button>
+        <button type="button" class="btn btn--icon" data-action="toggle-sidebar" aria-expanded="false" aria-controls="primary-sidebar" aria-label="Abrir menu de navegação">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="page-shell">
+
+      <!-- INCLUIR: components/sidebar.html -->
+      <aside class="page-shell__sidebar sidebar" id="primary-sidebar" aria-label="Navegação da documentação">
+        <div data-sidebar></div>
+      </aside>
+
+      <main class="page-shell__main" id="main-content">
+        <!-- INCLUIR: components/breadcrumb.html -->
+        <nav class="breadcrumb" data-breadcrumb aria-label="Trilha de navegação"></nav>
+
+        <article class="doc-content">
+          <header>
+            <p class="card__eyebrow">Fase / Comunicação-Lançamento</p>
+            <h1>Fase 4 — Arquitetura de Lançamento</h1>
+            <div class="card__meta" style="margin:var(--space-4) 0 var(--space-6)">
+              <span class="badge badge--neutral">Versão: Versão documental: não informada no arquivo-fonte</span>
+              <span class="badge badge--success">Status: “Documento permanece como versão definitiva da Arquitetura Estratégica de Lançamento.”</span>
+              <span>⏱ 18 min de leitura</span>
+            </div>
+            <p class="text-muted"><strong>Objetivo:</strong> Traduzir a Plataforma de Marca em arquitetura estratégica de lançamento — princípios, objetivos, públicos, jornada, narrativa, fases, comunidade, experiência do atleta, canais, indicadores, riscos.</p>
+            <p class="text-muted"><strong>Resumo:</strong> Herda explicitamente a Fase 3 (“A Fase 3 deixou um recado direto para esta fase”), tratando notoriedade e memória como prioridade fundacional acima de inscrições. Base conceitual direta do Projeto 10.</p>
+
+<p class="text-muted"><em>Campeonato Brasileiro de Kettlebell Sport</em></p>
+            <p class="text-muted"><em>Campeonato Brasileiro de Kettlebell Sport</em></p>
+            <p class="text-muted"><em>Constituição do projeto (Fases 1, 2 e 3) tratada como definitiva e não revisitada. Este documento constrói a arquitetura de lançamento — não a execução, não o calendário, não as peças. A execução será desenvolvida na próxima fase.</em></p>
+            <div class="callout callout--info" role="note">
+              <span class="callout__icon" aria-hidden="true">🔗</span>
+              <div>
+                <strong>Dependências:</strong> <a href="/docs/fases/fase3.html">Fase 3 — Plataforma de Marca</a>.<br />
+                <strong>Documentos relacionados:</strong> Projeto 10 — Sistema de Lançamento e Mobilização <em>(Documento previsto — ainda não produzido)</em>, Projeto 01 — Sistema de Comunicação <em>(Documento previsto — ainda não produzido)</em>.<br />
+                <strong>Roadmaps associados:</strong> Nenhum roadmap dedicado nesta Fase (ver docs/roadmaps/mapa-constitucional.html para a arquitetura em camadas completa do corpus).
+              </div>
+            </div>
+          </header>
+
+          <!-- {{INDICE_AUTOMATICO}} é gerado por navigation.js::buildTOC() a partir
+               dos h2/h3 abaixo — não precisa ser escrito manualmente. -->
+
+          <section id="conteudo-principal">
+<h2 id="como-a-plataforma-de-marca-influencia-o-lancamento">COMO A PLATAFORMA DE MARCA INFLUENCIA O LANÇAMENTO</h2>
+<p>A Fase 3 deixou um recado direto para esta fase: a marca promete controle, não caos; memória, não espetáculo vazio; nome próprio, não massa anônima. Isso significa que o lançamento não pode seguir o manual padrão de "gerar hype rápido com urgência artificial" — isso violaria diretamente o valor de honestidade competitiva e a personalidade contida definida no Capítulo 7 da Fase 3. Também significa que o problema real que este lançamento precisa resolver não é conversão — é <strong>existência categórica</strong>, exatamente como identificado na Fase 2: a maior parte do público endereçável simplesmente não sabe que esta categoria existe. Por isso, a arquitetura de lançamento aqui construída trata <strong>notoriedade genuína e infraestrutura de memória</strong> como prioridade fundacional, e trata inscrições como consequência tardia, não como métrica de largada.</p>
+<hr />
+<h2 id="1-principios-do-lancamento">1. PRINCÍPIOS DO LANÇAMENTO</h2>
+<ul>
+<li><strong>Nunca simular escassez ou urgência.</strong> Se não houver demanda real que justifique "vagas limitadas", isso não será comunicado — princípio direto do Capítulo 5 da Fase 3.</li>
+<li><strong>Nunca lançar com aparato de mídia maior do que a capacidade real de sustentar.</strong> Um "live announcement" estilo CrossFit sem audiência compatível soaria artificial e quebraria a personalidade contida da marca — risco já identificado na Fase 1.</li>
+<li><strong>Todo ativo de lançamento deve cumprir função dupla:</strong> gerar curiosidade e, ao mesmo tempo, semear a infraestrutura de memória (arquivo de nomes) que a Fase 3 identificou como promessa central ainda não construída operacionalmente.</li>
+<li><strong>Nomear pessoas desde o primeiro dia.</strong> Nenhuma comunicação de lançamento trata o público-alvo como massa — mesmo antes da primeira edição, os primeiros atletas, técnicos e boxes envolvidos devem ser nomeados publicamente.</li>
+<li><strong>Profundidade antes de velocidade.</strong> Preferir crescer mais devagar com comunidade real a crescer rápido com engajamento superficial — aplicação direta do Capítulo 18 (Princípios de Decisão) da Fase 3.</li>
+</ul>
+<p><strong>O que nunca poderá ser feito:</strong>
+Comparações depreciativas com outras modalidades; linguagem de sofrimento extremo ou glorificação de lesão; promessas de acesso "para todo mundo" sem entrega real de reconhecimento individual; contagens regressivas ou senso de urgência fabricado; tom espalhafatoso ou eufórico incompatível com a personalidade definida na Fase 3.</p>
+<p><strong>Erros que destruiriam o posicionamento construído:</strong>
+1. Lançar como "mais um evento de nicho fitness" genérico, sem comunicar o território emocional único definido na Fase 2.
+2. Prometer pertencimento e comunidade e, na prática, tratar os primeiros inscritos como números — quebraria a promessa central da marca já na largada.
+3. Terceirizar a comunicação para um tom de agência genérica de fitness, perdendo a voz contida e precisa definida no Capítulo 13 da Fase 3.
+4. Crescer rápido demais, rápido demais cedo, sem conseguir sustentar a promessa de reconhecimento individual em escala — risco citado pelo próprio atleta de elite na auditoria da Fase 3.</p>
+<hr />
+<h2 id="2-objetivos-estrategicos">2. OBJETIVOS ESTRATÉGICOS</h2>
+<p><strong>Curto prazo (0–12 meses)</strong>
+- <em>Notoriedade:</em> fazer a categoria "Kettlebell Sport" e o nome do campeonato existirem, pela primeira vez, na cabeça de um público de fitness mais amplo do que o círculo já convertido.
+- <em>Consideração:</em> fazer com que quem já pratica força/fitness veja o campeonato como uma opção legítima e desejável, não apenas curiosa.
+- <em>Comunidade:</em> formar um núcleo fundador pequeno, mas genuinamente engajado — os primeiros nomes do "Livro de Nomes".
+- <em>Inscrições:</em> garantir uma primeira edição bem documentada, mesmo que numericamente modesta — qualidade de registro acima de volume.</p>
+<p><strong>Médio prazo (1–3 anos)</strong>
+- <em>Notoriedade:</em> consolidar reconhecimento do campeonato como principal referência nacional da modalidade.
+- <em>Consideração:</em> associação espontânea entre "força controlada" e a marca do campeonato em conversas do universo fitness.
+- <em>Comunidade:</em> camadas de pertencimento (atleta, técnico, box, cidade) funcionando de forma visível e consistente.
+- <em>Inscrições:</em> crescimento sustentável, mas nunca priorizado acima da qualidade da experiência prometida.
+- <em>Fidelização:</em> taxa mensurável de atletas retornando em edições subsequentes.</p>
+<p><strong>Longo prazo (3–10 anos)</strong>
+- <em>Comunidade e Legado:</em> arquivo histórico robusto e citado como referência; múltiplas gerações de atletas, técnicos e boxes representados; a marca torna-se sinônimo cultural da própria modalidade no Brasil, cumprindo a visão de 10-20 anos definida na Fase 3.</p>
+<hr />
+<h2 id="3-publicos">3. PÚBLICOS</h2>
+<p><strong>Pessoas que nunca ouviram falar do esporte</strong>
+Pensam hoje: kettlebell é, no máximo, um acessório de treino funcional, não um esporte competitivo com federação e campeonato próprio.
+Precisam passar a pensar: existe um esporte de verdade, com prestígio técnico e drama competitivo real, que elas nunca tiveram a chance de conhecer.
+Objeções: "isso não é um esporte de verdade"; "isso é coisa de nicho pequeno demais para eu me importar".
+Emoções a despertar: curiosidade genuína, admiração diante de algo inesperadamente impressionante.
+Ação esperada: assistir a um conteúdo, comentar, compartilhar — nenhuma ação de conversão neste estágio.</p>
+<p><strong>Praticantes iniciantes</strong>
+Pensam hoje: talvez pratiquem kettlebell em treino funcional, mas não se veem como "atletas competidores".
+Precisam passar a pensar: competir é acessível e desejável mesmo sem ser um atleta de elite.
+Objeções: "não sou bom o suficiente"; "não entendo as regras de competição".
+Emoções a despertar: sensação de convite genuíno, não de exame de admissão.
+Ação esperada: buscar informação sobre como começar a competir, seguir a comunidade.</p>
+<p><strong>Atletas experientes</strong>
+Pensam hoje: talvez já disputem eventos internacionais ou vejam pouco prestígio nacional para investir energia competitiva no Brasil.
+Precisam passar a pensar: o campeonato nacional é o palco mais prestigioso e mais bem documentado que eles terão no país.
+Objeções: "o cenário nacional não tem nível/visibilidade suficiente".
+Emoções a despertar: orgulho, senso de prestígio técnico reconhecido.
+Ação esperada: competir, engajar publicamente, tornar-se referência/voz pública da comunidade.</p>
+<p><strong>Treinadores</strong>
+Pensam hoje: seu trabalho técnico raramente é reconhecido publicamente além do círculo do próprio box.
+Precisam passar a pensar: o campeonato é uma vitrine legítima do seu trabalho técnico, não apenas dos atletas.
+Objeções: "vou passar batido, só o atleta é lembrado".
+Emoções a despertar: reconhecimento profissional, orgulho de formar atletas.
+Ação esperada: incentivar alunos a competir, engajar-se como voz técnica da comunidade.</p>
+<p><strong>Boxes</strong>
+Pensam hoje: eventos de outras modalidades tratam boxes como concorrência ou como irrelevantes.
+Precisam passar a pensar: o campeonato é parceiro, e o box ganha visibilidade legítima ao participar.
+Objeções: "isso é concorrência com meu próprio negócio/comunidade local".
+Emoções a despertar: senso de parceria e vitrine, não ameaça.
+Ação esperada: apoiar e divulgar entre seus alunos, ceder espaço/estrutura quando pertinente.</p>
+<p><strong>Árbitros</strong>
+Pensam hoje: função técnica importante, mas normalmente invisível na comunicação de eventos esportivos.
+Precisam passar a pensar: são guardiões da honestidade competitiva, valor central da marca — função reconhecida publicamente, não anônima.
+Objeções: "meu papel nunca é valorizado, só cobrado".
+Emoções a despertar: senso de responsabilidade reconhecida.
+Ação esperada: engajamento ativo e orgulho declarado da função.</p>
+<p><strong>Patrocinadores</strong>
+Pensam hoje: fitness de nicho tem risco de baixo retorno e associação a evento pequeno/pouco profissional.
+Precisam passar a pensar: esta é uma marca com território emocional único, defensável e crescente — associação estratégica, não aposta genérica.
+Objeções: "não tenho métricas suficientes para justificar investimento".
+Emoções a despertar: confiança na solidez estratégica e na diferenciação da marca.
+Ação esperada: investimento inicial testável, com abertura a relacionamento de longo prazo.</p>
+<p><strong>Imprensa</strong>
+Pensam hoje: kettlebell sport não é pauta relevante ou compreensível para grande público.
+Precisam passar a pensar: existe ali uma história humana genuinamente interessante, além do jargão técnico.
+Objeções: "não tenho ângulo humano fácil de contar, é técnico demais".
+Emoções a despertar: interesse editorial genuíno, não apenas obrigação de cobertura de nicho.
+Ação esperada: cobertura editorial espontânea, não apenas pautada por assessoria.</p>
+<p><strong>Criadores de conteúdo</strong>
+Pensam hoje: kettlebell sport tem pouco material visual/dramático conhecido para se apropriarem em seus formatos.
+Precisam passar a pensar: existe ali material narrativo raro (tensão, drama contido, autenticidade) que se diferencia do conteúdo saturado de outros nichos fitness.
+Objeções: "não sei explicar as regras para minha audiência".
+Emoções a despertar: entusiasmo por descobrir um território de conteúdo ainda inexplorado.
+Ação esperada: produção espontânea de conteúdo, colaboração editorial.</p>
+<p><strong>Familiares</strong>
+Pensam hoje: pouca ou nenhuma compreensão do que o parente pratica ou do nível de exigência envolvido.
+Precisam passar a pensar: é um esforço sério, admirável, que merece ser testemunhado presencialmente.
+Objeções: "não entendo o suficiente para me importar ou comparecer".
+Emoções a despertar: orgulho e vontade de testemunhar presencialmente.
+Ação esperada: comparecer, apoiar, compartilhar a conquista do familiar.</p>
+<p><strong>Espectadores</strong>
+Pensam hoje: provavelmente nunca assistiram a uma prova e não têm motivo aparente para começar.
+Precisam passar a pensar: dá para se emocionar com essa disputa mesmo sem entender todas as regras técnicas — o drama humano é acessível.
+Objeções: "não vou entender nada do que está acontecendo".
+Emoções a despertar: tensão genuína, torcida espontânea.
+Ação esperada: assistir, comentar, voltar a assistir na próxima edição.</p>
+<hr />
+<h2 id="4-jornada-do-publico">4. JORNADA DO PÚBLICO</h2>
+<ol>
+<li><strong>Nunca ouvi falar</strong> — objetivo: nenhum, ainda fora do radar. Ponto de contato: nenhum ativo direcionado.</li>
+<li><strong>Primeiro contato / curiosidade</strong> — objetivo psicológico: interromper o padrão de conteúdo de fitness já conhecido com algo visualmente e emocionalmente diferente. Emoção: surpresa, curiosidade. Pontos de contato: vídeo curto de descoberta (redes sociais), imprensa, indicação de terceiros.</li>
+<li><strong>Compreensão / interesse</strong> — objetivo: traduzir tecnicidade em desejo, sem intimidar. Emoção: fascínio, admiração. Pontos de contato: conteúdo educativo, bastidores técnicos, YouTube.</li>
+<li><strong>Consideração</strong> — objetivo: fazer a pessoa se imaginar dentro daquele mundo, como praticante, espectador ou apoiador. Emoção: identificação, pertencimento antecipado. Pontos de contato: histórias reais de atletas, comunidade local, site/arquivo.</li>
+<li><strong>Primeira experiência</strong> — objetivo: entregar, na prática, a promessa de reconhecimento e controle prometida pela marca. Emoção: acolhimento, orgulho inicial. Pontos de contato: inscrição, evento presencial, primeira menção nominal.</li>
+<li><strong>Pertencimento</strong> — objetivo: transformar participação isolada em identidade contínua. Emoção: pertencimento genuíno, continuidade. Pontos de contato: comunidade entre edições, reconhecimento contínuo (WhatsApp, e-mail, redes).</li>
+<li><strong>Retorno</strong> — objetivo: reforçar que a trajetória é acumulativa, não recomeça a cada edição. Emoção: orgulho de continuidade, senso de história pessoal crescendo. Pontos de contato: arquivo histórico, reconhecimento de retorno.</li>
+<li><strong>Defesa da marca (advocacy)</strong> — objetivo: transformar quem vive a experiência em voz ativa que traz outras pessoas. Emoção: orgulho de pertencer a algo que vale a pena divulgar. Pontos de contato: indicação espontânea, criação de conteúdo próprio, testemunho público.</li>
+</ol>
+<hr />
+<h2 id="5-narrativa-do-lancamento">5. NARRATIVA DO LANÇAMENTO</h2>
+<p>A história não começa pedindo nada ao público — começa mostrando algo que ele nunca viu, exatamente como a Brand Story da Fase 3 estabelece: um esforço sustentado, silencioso, que passa despercebido até alguém saber onde olhar.</p>
+<p><strong>Ato 1 — Revelação do invisível.</strong> A narrativa se abre mostrando o próprio fenômeno do "duelo testemunhado" — a tensão real de uma série contínua, sem pedir inscrição, sem falar do campeonato ainda. O objetivo é puramente perceptivo: fazer o público notar algo que sempre existiu, mas nunca tinha sido enquadrado dessa forma.</p>
+<p><strong>Ato 2 — Existem nomes por trás disso.</strong> A narrativa evolui para apresentar pessoas reais — os primeiros atletas, técnicos, boxes — não como protagonistas de campanha, mas como prova de que esse mundo já existe e já tem história, mesmo que pequena. Este é o momento em que o "Livro de Nomes" começa a ser semeado publicamente, mesmo antes da primeira edição estar formalmente aberta.</p>
+<p><strong>Ato 3 — Convite ao pertencimento.</strong> Só depois de estabelecida a curiosidade (Ato 1) e a prova social genuína (Ato 2), a narrativa apresenta o convite — inscrição, participação, presença. O convite é comunicado como entrada em algo que já está vivo, não como fundação de algo do zero, mesmo em uma primeira edição — o senso de comunidade já criado nos dois atos anteriores sustenta essa percepção.</p>
+<p><strong>Ato 4 — O ciclo de memória.</strong> Após a primeira edição, a narrativa se fecha (temporariamente) mostrando o resultado do compromisso de memória — nomes documentados, histórias recontadas — criando a ponte natural para a próxima edição, sustentando o "calendário afetivo" identificado como oportunidade na Fase 1.</p>
+<p>Essa arquitetura evolui ao longo do tempo de forma cíclica, não linear: cada nova edição reabre o Ato 1 para novos públicos, enquanto aprofunda os Atos 2, 3 e 4 para quem já está dentro — o lançamento nunca "termina", ele se repete em camadas crescentes de profundidade.</p>
+<hr />
+<h2 id="6-fases-do-lancamento">6. FASES DO LANÇAMENTO</h2>
+<ol>
+<li><strong>Descoberta</strong> — objetivo psicológico: interromper o piloto automático do público, gerando reconhecimento de que algo novo e genuinamente interessante existe.</li>
+<li><strong>Educação</strong> — objetivo psicológico: reduzir a barreira de intimidação técnica, substituindo confusão por fascínio compreensível.</li>
+<li><strong>Aproximação</strong> — objetivo psicológico: reduzir distância emocional entre marca e público, através de histórias reais e nomes reais, não de instituição abstrata.</li>
+<li><strong>Pertencimento</strong> — objetivo psicológico: fazer o público sentir que já poderia fazer parte, antes mesmo de se inscrever.</li>
+<li><strong>Abertura das inscrições</strong> — objetivo psicológico: transformar desejo já construído em ação concreta, com transparência total sobre o processo (nunca escassez artificial).</li>
+<li><strong>Preparação</strong> — objetivo psicológico: sustentar antecipação genuína, com marcos reais de progresso (rumo à experiência, não apenas contagem regressiva vazia).</li>
+<li><strong>Campeonato</strong> — objetivo psicológico: entregar, sem exceção, a promessa central da marca — controle, testemunho, reconhecimento nominal.</li>
+<li><strong>Legado</strong> — objetivo psicológico: transformar a experiência vivida em memória permanente e ponte emocional para o retorno na edição seguinte.</li>
+</ol>
+<hr />
+<h2 id="7-mecanicas-de-comunidade">7. MECÂNICAS DE COMUNIDADE</h2>
+<ul>
+<li><strong>Nomes fundadores:</strong> os primeiros atletas, técnicos e boxes envolvidos no lançamento são explicitamente reconhecidos como parte da fundação do "Livro de Nomes" — não apenas participantes, mas coautores da história em construção.</li>
+<li><strong>Reconhecimento de retorno:</strong> mecanismo simples e consistente de sinalizar publicamente quando um atleta está competindo pela segunda, terceira, quinta vez — tornando visível a continuidade da trajetória.</li>
+<li><strong>Indicação por pertencimento, não por incentivo comercial:</strong> convites para novos participantes são estruturados como "traga alguém do seu box/comunidade", reforçando a camada estrutural de pertencimento em vez de mecanismos de desconto por indicação.</li>
+<li><strong>Contato entre edições:</strong> presença ativa e não transacional em canais de proximidade (comunidade fechada, grupo direto) para manter viva a sensação de "calendário afetivo" fora da janela de competição.</li>
+<li><strong>Memória compartilhada:</strong> rituais de revisitação (relembrar histórias e nomes de edições anteriores) usados deliberadamente como conteúdo recorrente, não apenas como arquivo passivo.</li>
+</ul>
+<p><em>(Mecanismos aqui descritos permanecem em nível de arquitetura — a forma operacional de cada um será definida na próxima fase.)</em></p>
+<hr />
+<h2 id="8-experiencia-do-atleta">8. EXPERIÊNCIA DO ATLETA</h2>
+<p><strong>Primeiro contato:</strong> curiosidade respeitosa — a marca não pressiona, apresenta-se com credibilidade e controle.
+<strong>Decisão de se inscrever:</strong> confiança — o processo é transparente, sem urgência artificial, e a pessoa sente que está entrando por escolha genuína, não por pressão.
+<strong>Preparação:</strong> acompanhamento e reconhecimento crescente — mesmo antes de competir, o atleta já é nomeado e incluído em comunicação real.
+<strong>Dia da competição:</strong> presença total — o atleta sente que, no momento do seu esforço, existe testemunha genuína (Chamada do Nome, Última Respiração) e não apenas cronômetro.
+<strong>Imediatamente depois:</strong> reconhecimento concreto — independentemente do resultado, há reconhecimento público e pessoal do esforço sustentado.
+<strong>Meses depois:</strong> continuidade — contato ativo da comunidade, sem que o atleta precise buscar por conta própria.
+<strong>Anos depois:</strong> identidade — o atleta se vê como parte de uma história documentada e crescente, com orgulho de trajetória acumulada, não apenas de resultados isolados.</p>
+<hr />
+<h2 id="9-papel-de-cada-canal">9. PAPEL DE CADA CANAL</h2>
+<ul>
+<li><strong>Instagram:</strong> porta de descoberta e narrativa visual — carrega principalmente os Atos 1 e 2 da narrativa (revelação e prova social), função de curiosidade e reconhecimento inicial.</li>
+<li><strong>YouTube:</strong> aprofundamento e drama documental — o único canal capaz de sustentar a tensão contida do "duelo testemunhado" em formato longo, com fidelidade ao tom da marca.</li>
+<li><strong>WhatsApp:</strong> camada de proximidade e pertencimento real — função de intimidade e continuidade entre edições, coerente com a promessa de comunidade genuína (não engajamento de massa).</li>
+<li><strong>Email:</strong> função de memória formal — comunicação estruturada, arquivo pessoal do atleta, ponto de contato mais adequado para reforçar a promessa de "nada se perde".</li>
+<li><strong>Site institucional:</strong> casa permanente do Livro de Nomes e do arquivo histórico — função estrutural, não apenas promocional.</li>
+<li><strong>Landing pages:</strong> função de conversão pontual e transparente — usadas apenas nos momentos de decisão concreta (inscrição), nunca como substituto de construção de desejo.</li>
+<li><strong>Assessoria de imprensa:</strong> função de legitimidade externa — validação de terceiros que ajuda a resolver diretamente o problema de "existência categórica" identificado na Fase 2.</li>
+<li><strong>Eventos presenciais:</strong> função de prova definitiva — é onde toda promessa da marca (controle, testemunho, reconhecimento nominal) é finalmente entregue de forma inegável.</li>
+</ul>
+<hr />
+<h2 id="10-indicadores">10. INDICADORES</h2>
+<p><strong>Fortalecimento de marca:</strong> lembrança espontânea da marca em pesquisas informais com público de fitness; associação correta entre a marca e o território "força controlada" (não confundida com CrossFit/HYROX genérico).
+<strong>Comunidade:</strong> número de atletas, técnicos e boxes ativamente engajados fora da janela de competição; frequência de interação espontânea nos canais de proximidade.
+<strong>Retenção:</strong> percentual de atletas que retornam em edições subsequentes; percentual de boxes que retornam a indicar novos atletas.
+<strong>Crescimento:</strong> taxa de crescimento de inscrições ano a ano — sempre lida em conjunto com os indicadores de retenção, nunca isoladamente.
+<strong>Lembrança/reputação:</strong> menções espontâneas na imprensa e por criadores de conteúdo sem ação direta de assessoria; qualidade e tom das menções (se usam a linguagem e o território da marca, ou se tratam o evento genericamente).
+<strong>Legado:</strong> completude e atualização do arquivo histórico (Livro de Nomes); percentual de atletas com trajetória documentada ao longo de múltiplas edições.
+<strong>Patrocínio:</strong> taxa de renovação de patrocinadores ano a ano — indicador mais confiável de valor percebido de longo prazo do que o valor do primeiro contrato isolado.</p>
+<hr />
+<h2 id="11-riscos">11. RISCOS</h2>
+<ol>
+<li><strong>Pressão por hype de curto prazo</strong> — equipes de execução podem ser tentadas a adotar linguagem de urgência ou intensidade genérica para acelerar resultados. <em>Mitigação:</em> usar os Princípios de Decisão da Fase 3 como filtro obrigatório em toda peça antes da publicação.</li>
+<li><strong>Infraestrutura de memória não pronta a tempo</strong> — o arquivo histórico (Livro de Nomes) é uma promessa central, mas exige construção técnica real. <em>Mitigação:</em> tratar a infraestrutura de arquivo como prioridade de execução desde o primeiro dia, não como entregável secundário.</li>
+<li><strong>Crescimento rápido demais, cedo demais</strong> — se a base de participantes crescer antes da capacidade de sustentar reconhecimento individual, a promessa central quebra. <em>Mitigação:</em> controlar deliberadamente o ritmo de crescimento nas primeiras edições, priorizando qualidade de execução sobre volume.</li>
+<li><strong>Insularidade da comunidade</strong> — risco já identificado no debate da Fase 2: uma comunidade muito fechada pode afastar novos públicos. <em>Mitigação:</em> garantir que os Atos 1 e 2 da narrativa (descoberta e prova social) continuem ativos permanentemente, não apenas na fase inicial de lançamento.</li>
+<li><strong>Cobertura de imprensa que trata o esporte de forma genérica</strong> ("mais um CrossFit"), diluindo a diferenciação construída na Fase 2. <em>Mitigação:</em> preparar material de apoio à imprensa que comunique explicitamente o território emocional único da marca.</li>
+<li><strong>Expectativa de patrocinadores por métricas tradicionais de volume</strong>, incompatíveis com a lógica de profundidade da marca. <em>Mitigação:</em> educar patrocinadores desde o primeiro contato sobre os indicadores de valor real da marca (retenção, território, reputação), não apenas alcance bruto.</li>
+</ol>
+<hr />
+<h2 id="12-auditoria-final-conselho-de-seis-especialistas">12. AUDITORIA FINAL — CONSELHO DE SEIS ESPECIALISTAS</h2>
+<p><strong>Diretor Global de Branding:</strong> "A arquitetura é coerente com a plataforma de marca e evita a armadilha mais comum de lançamentos de nicho — imitar o aparato dos grandes players. Meu único alerta é sobre consistência de execução: a narrativa em quatro atos exige disciplina editorial rigorosa para não colapsar em conteúdo genérico de fitness na pressão do dia a dia."</p>
+<p><strong>Diretor de Marketing Esportivo:</strong> "Gosto da priorização de profundidade sobre volume, mas insisto no ponto que já levantei na Fase 3: sem um mecanismo de aquisição robusto (Atos 1 e 2 sempre ativos, não apenas na fase de lançamento), o campeonato corre risco real de virar comunidade fechada e nunca resolver o problema de existência categórica em escala relevante."</p>
+<p><strong>Especialista em Economia Comportamental:</strong> "O uso de reconhecimento nominal como mecanismo central de engajamento é psicologicamente bem fundamentado — reforço social e identidade pessoal são motivadores mais duráveis do que urgência ou desconto. O risco behaviorale que vejo é a ausência de qualquer gatilho de ação imediata nos primeiros estágios da jornada — pode ser necessário, na fase de execução, criar microcompromissos genuínos (não escassez falsa) para não perder momentum de conversão."</p>
+<p><strong>Jornalista Esportivo:</strong> "O ângulo humano do 'duelo testemunhado' é genuinamente noticiável — chamativo o suficiente para justificar pauta espontânea, algo raro em esportes de nicho. Recomendo que o material de apoio à imprensa citado no plano de mitigação de riscos inclua sempre uma história real, não apenas dados técnicos do esporte."</p>
+<p><strong>Patrocinador:</strong> "A lógica de indicadores de profundidade (retenção, território, reputação) é mais sofisticada do que a maioria dos relatórios de patrocínio esportivo que recebo — mas, na prática, ainda vou precisar de números de alcance bruto nos primeiros ciclos para justificar orçamento internamente. Recomendo que a próxima fase inclua uma tradução desses indicadores de profundidade em linguagem que comitês de patrocínio tradicionais também reconheçam."</p>
+<p><strong>Atleta de Elite:</strong> "A experiência descrita no Capítulo 8 é exatamente o que sinto falta em outros eventos que já disputei. Meu ponto de atenção é prático: se o crescimento não for realmente controlado como o documento promete, a primeira quebra de promessa (não ser reconhecido, não ser lembrado) vai doer mais aqui do que doeria em qualquer evento genérico — porque a expectativa criada é mais alta."</p>
+<p><strong>Consolidação das críticas:</strong> nenhuma crítica contradiz a arquitetura construída — todas convergem, mais uma vez, para o mesmo ponto estrutural já sinalizado na Fase 3: a estratégia é conceitualmente sólida, mas seu sucesso depende de disciplina de execução (editorial, técnica e de ritmo de crescimento) e de traduzir os indicadores de profundidade em linguagem que também sirva a interlocutores mais tradicionais, como comitês de patrocínio. Este documento permanece como a versão definitiva da Arquitetura Estratégica de Lançamento; os pontos levantados ficam registrados como requisitos obrigatórios de atenção para a fase de execução.</p>
+<hr />
+<p><em>Fim da Fase 4 — Arquitetura Estratégica de Lançamento. Documento oficial, fundamentado nas Fases 1, 2 e 3, para orientar a construção da execução na próxima fase do projeto.</em></p>
+          </section>
+
+          <section aria-labelledby="glossario-relacionado-title">
+            <h2 id="glossario-relacionado-title">Glossário relacionado</h2>
+            <p class="text-muted">Consulte o Glossário do portal (46 termos) para definições de vocabulário citado nesta Fase, incluindo termos do Sistema Simbólico introduzidos na Fase 3.</p>
+          </section>
+
+          <!-- INCLUIR: components/document-navigator.html -->
+          <nav class="doc-nav" aria-label="Navegação entre documentos">
+            <a class="doc-nav__link doc-nav__link--prev" href="/docs/fases/fase3.html">
+              <div class="doc-nav__label">← Anterior</div>
+              <div class="doc-nav__title">Fase 3 — Plataforma de Marca</div>
+            </a>
+            <a class="doc-nav__link doc-nav__link--next" href="/docs/fases/fase5.html">
+              <div class="doc-nav__label">Próximo →</div>
+              <div class="doc-nav__title">Fase 5 — Ecossistema Institucional</div>
+            </a>
+          </nav>
+        </article>
+      </main>
+
+      <aside class="page-shell__toc toc" aria-label="Sumário do documento">
+        <div class="toc__title">Nesta página</div>
+        <ul class="toc__list" data-toc-list></ul>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- INCLUIR: components/modal.html (busca) -->
+  <div class="modal-overlay" id="search-modal" data-open="false">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="search-modal-title" tabindex="-1">
+      <div class="modal__header">
+        <h2 id="search-modal-title" style="margin:0;font-size:var(--fs-500)">Buscar</h2>
+        <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar busca">×</button>
+      </div>
+      <div class="search-bar" role="search">
+        <span class="search-bar__icon" aria-hidden="true">🔍</span>
+        <label for="modal-search-input" class="visually-hidden">Buscar</label>
+        <input type="search" id="modal-search-input" data-search-input placeholder="Buscar documentos, termos, capítulos..." autocomplete="off" />
+      </div>
+      <div class="search-results" data-search-results aria-live="polite"></div>
+    </div>
+  </div>
+
+  <!-- INCLUIR: components/footer.html -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid" data-footer-columns></div>
+      <div class="site-footer__bottom">
+        <span>© <span data-current-year></span> Campeonato Brasileiro de Kettlebell Sport.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/navigation.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+  <script>
+    document.querySelectorAll("[data-current-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+    import("/assets/js/navigation.js").then(function (mod) {
+      mod.renderBreadcrumb([
+        { label: "Início", url: "/index.html" },
+        { label: "Fases", url: "/docs/fases/index.html" },
+        { label: "Fase 4 — Arquitetura de Lançamento" }
+      ]);
+    });
+  </script>
+</body>
+</html>

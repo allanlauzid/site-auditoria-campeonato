@@ -1,0 +1,30 @@
+<!--
+  COMPONENTE: Document Navigator (anterior/próximo + relacionados)
+  Uso: fim do conteúdo de qualquer documento. "anterior/próximo" segue a
+  ordem lógica de dependência (campo "ordem" em documents.json), não ordem
+  alfabética de arquivo. "Relacionados" vem do campo "relacionados".
+-->
+<nav class="doc-nav" aria-label="Navegação entre documentos">
+  <a class="doc-nav__link doc-nav__link--prev" href="/docs/fases/fase2.html">
+    <div class="doc-nav__label">← Anterior</div>
+    <div class="doc-nav__title">Fase 2 — Identidade Estratégica</div>
+  </a>
+  <a class="doc-nav__link doc-nav__link--next" href="/docs/fases/fase4.html">
+    <div class="doc-nav__label">Próximo →</div>
+    <div class="doc-nav__title">Fase 4 — Arquitetura de Lançamento</div>
+  </a>
+</nav>
+
+<section aria-labelledby="related-docs-title">
+  <h3 id="related-docs-title">Documentos relacionados</h3>
+  <div class="related-docs">
+    <a class="card card--interactive" href="/docs/fases/fase5.html">
+      <p class="card__eyebrow">Fase</p>
+      <h4 class="card__title">Fase 5 — Ecossistema Institucional</h4>
+    </a>
+    <a class="card card--interactive" href="/docs/projetos/projeto03.html">
+      <p class="card__eyebrow">Projeto</p>
+      <h4 class="card__title">Projeto 03 — Identidade Visual</h4>
+    </a>
+  </div>
+</section>

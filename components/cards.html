@@ -1,0 +1,29 @@
+<!--
+  COMPONENTE: Cards
+  Uso: listagens de documentos (índice geral, índice por categoria, home).
+  Variante "interactive" para cards clicáveis. .card-grid é um grid responsivo
+  auto-fit (ver design-system.css §6). Cada card representa 1 entrada de
+  /data/documents.json; renderização real feita por um pequeno script de
+  página (ver templates/document-template.html e index.html para exemplo).
+-->
+<div class="card-grid" data-card-grid-example>
+  <article class="card card--interactive">
+    <p class="card__eyebrow">Fase · Marca</p>
+    <h3 class="card__title"><a href="/docs/fases/fase3.html" style="text-decoration:none;color:inherit;">Fase 3 — Plataforma de Marca</a></h3>
+    <p class="text-muted">Documento constitucional de identidade permanente. (exemplo estrutural)</p>
+    <div class="card__meta">
+      <span class="badge badge--accent">Constitucional</span>
+      <span>~28 min de leitura</span>
+    </div>
+  </article>
+
+  <article class="card card--interactive">
+    <p class="card__eyebrow">Manual · Tecnologia</p>
+    <h3 class="card__title"><a href="/docs/manuais/manual-crm.html" style="text-decoration:none;color:inherit;">Manual — CRM</a></h3>
+    <p class="text-muted">Especificação funcional do CRM institucional. (exemplo estrutural)</p>
+    <div class="card__meta">
+      <span class="badge badge--success">Finalizado</span>
+      <span>~16 min de leitura</span>
+    </div>
+  </article>
+</div>

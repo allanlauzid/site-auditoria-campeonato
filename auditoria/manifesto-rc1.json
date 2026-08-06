@@ -1,0 +1,708 @@
+{
+  "gerado_em": "2026-08-05T22:24:19.961593",
+  "total_arquivos": 78,
+  "arquivos": [
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Fase1_Inteligencia_Estrategica_Benchmark_Campeonatos.md",
+      "tamanho_bytes": 25609,
+      "sha256": "cd7b7f207f38d119f9ee9328b500e647ab8c19885d5916b2ea918249e3f94f70",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Fase2_Identidade_Estrategica_Kettlebell.md",
+      "tamanho_bytes": 28772,
+      "sha256": "7bc11bda7f8053d8176955e295b737e9ce56deb1dd72c1a0c18040ff2570b4e4",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Fase3_Plataforma_de_Marca_Kettlebell.md",
+      "tamanho_bytes": 38202,
+      "sha256": "67dd26e465011886bf8f021347e12768d75baa1a10bc486db5199bb901224fd7",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Fase4_Arquitetura_Lancamento_Kettlebell.md",
+      "tamanho_bytes": 26334,
+      "sha256": "7b747b97026efa5c3433f97f614c9390d0143736c9f9978f49cf618ec9ebe37e",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Fase5_Ecossistema_Institucional_Kettlebell.md",
+      "tamanho_bytes": 25343,
+      "sha256": "0c2b841d1a2ae4dad354012c4f3553a2bbc3e594857a8c75a0760ee044a9bcc2",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Fase6_Master_Plan_Implementacao_Kettlebell.md",
+      "tamanho_bytes": 31920,
+      "sha256": "5fd1605e104617f5a27e3ca1ca6ebf86e47a1f00483db437f9f2cbe2d021a391",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Manual_CRM_Kettlebell.md",
+      "tamanho_bytes": 24343,
+      "sha256": "cb22e69a3200ec626729e6907ad65a67efcc4aeae2b714dadb4ab1822d62f0a8",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Manual_Dashboard_Executivo_Kettlebell.md",
+      "tamanho_bytes": 24623,
+      "sha256": "210740e959f5707eae10273caec36ca26e23d90da043167806bef3f712dccd44",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Manual_Formulario_Manifestacao_Interesse_Kettlebell.md",
+      "tamanho_bytes": 21248,
+      "sha256": "f2f947d2e3459e4de88cd3b170944805d0f5a4417e4c690d7ae56aa6dd4a46ce",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Manual_Stories_Baseados_Dados_Kettlebell.md",
+      "tamanho_bytes": 20671,
+      "sha256": "744058d4e64d6878a74d08865fa1624980260158616298cc0bfa41b431eb7cde",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Projeto01_Sistema_de_Comunicacao_Kettlebell.md",
+      "tamanho_bytes": 21697,
+      "sha256": "c2b498bacee258a4f8d75157a4263195644015b3c11da3a1a668b635ed86a236",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Projeto02_Sistema_Criativo_Kettlebell.md",
+      "tamanho_bytes": 17999,
+      "sha256": "79d62d2b97d18c2141881c18c769980310b98ce88b6dd1af80f2522d14aa31cf",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Projeto03_Sistema_Identidade_Visual_Kettlebell.md",
+      "tamanho_bytes": 32145,
+      "sha256": "e59b9a86a98c6d9ae759a1fdc6cff4c201ac3da2b1d14d12a0fe4b705f7a6e1c",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Projeto04_Brand_Book_Aplicacao_Kettlebell.md",
+      "tamanho_bytes": 36818,
+      "sha256": "0dfb3fb8a7cc493234ce7abeeb2c628d9ff87a621373b98da63317a116f9688e",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Projeto05_Sistema_Patrocinios_CoBranding_Kettlebell.md",
+      "tamanho_bytes": 30376,
+      "sha256": "1e85166e3b9f69241bd8558eb816bb784c09f6be8bfe92b8faf7752f914c4e18",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Projeto06_Manual_Comercial_Vendas_Kettlebell.md",
+      "tamanho_bytes": 30266,
+      "sha256": "839f43b1ac4113e43208e5be858bd391facfe3eb838b2741176d3b13d6598d53",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Projeto07_Sistema_Experiencia_Evento_Kettlebell.md",
+      "tamanho_bytes": 26487,
+      "sha256": "2d19d00abf79d287f055450ac23c516f0774fab06e0b9962255c92a06554d40e",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Projeto08_Sistema_Memoria_Patrimonio_Kettlebell.md",
+      "tamanho_bytes": 30084,
+      "sha256": "9cf0c9b030e180bbe0ea1373266ecaef5b10f70965a535eb7aab866fe3725d07",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Projeto09_Sistema_Operacional_Evento_Kettlebell.md",
+      "tamanho_bytes": 30130,
+      "sha256": "c501a9d3b621eecc78c9a0d42cf0377f481cfdfc7b112b5e2b9b7512ab068416",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Projeto10_Sistema_Lancamento_Mobilizacao_Kettlebell.md",
+      "tamanho_bytes": 29396,
+      "sha256": "a08eb6e2f92131ab8f67ace9ec08627bea539756eb7bba146448cf62d3fada3b",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/arquivos claude/Projeto11_Sistema_Inteligencia_PreInscricao_Kettlebell.md",
+      "tamanho_bytes": 28880,
+      "sha256": "3e1683448b4a646575dc6a21788ffaff14d77c0967951292963ca429dc5a3026",
+      "tipo": ".md",
+      "data_modificacao": "2026-08-05T19:12:56",
+      "classificacao": "fonte-markdown",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/arquitetura/engenharia-documentacao.html",
+      "tamanho_bytes": 139686,
+      "sha256": "de9ae4b870a91bf13f7999a2fc7423ce2c4097773bbeb1cc299f2e65eca21dcf",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:36:33",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/fases/fase1.html",
+      "tamanho_bytes": 40268,
+      "sha256": "c2193883f365abe5bb1692d2278312266a29f45c049eea50074a6aac5be094f3",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:44:47",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/fases/fase2.html",
+      "tamanho_bytes": 42983,
+      "sha256": "58eba95ab520729d695256228a80e3adf44482de6c55f0e3e4791b2764bc9f86",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:44:47",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/fases/fase3.html",
+      "tamanho_bytes": 52392,
+      "sha256": "6d563dd1a1883774de336fdfad642be4e77ba8098a79fbc49622123daa4564bc",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:44:47",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/fases/fase4.html",
+      "tamanho_bytes": 38021,
+      "sha256": "d012d86875f3737e5445e86b5207e7010ca1a282d55dd87f3cf87a9065424b47",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:44:47",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/fases/fase5.html",
+      "tamanho_bytes": 38379,
+      "sha256": "11490bbc683302a90681f7f12823513e5d5d0220d4bb3b611fa81256270f85b1",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:44:47",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/fases/fase6.html",
+      "tamanho_bytes": 47962,
+      "sha256": "a704f7d98223cc4fdc37014f5d837f4e86f632b194ad477b372630cb67e36fdc",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:44:47",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/fases/index.html",
+      "tamanho_bytes": 4511,
+      "sha256": "09c55a8a9705329bd4233b0744613890a0a23f512e326ff1d2dddbf088c3b689",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:47:47",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/glossario/index.html",
+      "tamanho_bytes": 3845,
+      "sha256": "2e2da6182db37a5b91c882f58710ed2a4c8de33774e84f3ca82f896c8caee49c",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:48:12",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/manuais/index.html",
+      "tamanho_bytes": 3953,
+      "sha256": "58329f89ce939b046e4422b280244c7d0a298599dc3b9ce8f945d754d92c7e35",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:48:12",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/manuais/manual-crm.html",
+      "tamanho_bytes": 36769,
+      "sha256": "cd68eb6952c5d98314be2f72c2b101ae3a4c3a694d9394497c9f60e8b7139360",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:59:37",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/manuais/manual-dashboard.html",
+      "tamanho_bytes": 37456,
+      "sha256": "785367dcc0160851abb3afc00997ad46ca55641ad3d79240f98dc4b0b3ef30b5",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:59:37",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/manuais/manual-formulario.html",
+      "tamanho_bytes": 34284,
+      "sha256": "da92058e3bef9e35ce2a40766a07f5fc4d1e6fc947047f37c105e70c2ad413b3",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T22:01:15",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/manuais/manual-stories.html",
+      "tamanho_bytes": 33861,
+      "sha256": "85a9d7070e775c9e12a929b0f12b6936d7fa1959ef7e4711e94d3c32e8f12628",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:59:37",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/index.html",
+      "tamanho_bytes": 5556,
+      "sha256": "3a6eb2dc641d639860b133c2e256cf388e43d836643c5546b67f2349f94b4cf2",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:48:12",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/projeto01.html",
+      "tamanho_bytes": 32481,
+      "sha256": "f4d42bab8c8572ee1d1850b000f1afcb6936f1d5f71b14501b278bf728515b28",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:52:31",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/projeto02.html",
+      "tamanho_bytes": 28923,
+      "sha256": "b7ef4a134c8a8b1696bc012ad7d1960924a60ee4fa0481668753d36e15b05d0a",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:52:31",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/projeto03.html",
+      "tamanho_bytes": 45052,
+      "sha256": "2d1e2cd28373adeaadae0e6f6dff8aea6011e694e453e5e2db104a177388c6fc",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:52:31",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/projeto04.html",
+      "tamanho_bytes": 51225,
+      "sha256": "7985a4e71c2a4ce720cf71146d07a0503979bad73e11a35dfff5d9c162e82dcb",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:52:31",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/projeto05.html",
+      "tamanho_bytes": 43407,
+      "sha256": "d5d5974470e72a7cfe045f3d9ab9c5be0b8813e43604a3192cbdfb0d767a04a9",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:52:31",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/projeto06.html",
+      "tamanho_bytes": 42736,
+      "sha256": "ac84d39eab5ccea98bec5c4b8474a50c017bcf68aa73b0e743f071c00327678b",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:52:31",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/projeto07.html",
+      "tamanho_bytes": 43425,
+      "sha256": "51362e249e795df250d556f6d7e30513a8c4ba0c97152eedc9782dce5145b36f",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:52:31",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/projeto08.html",
+      "tamanho_bytes": 46188,
+      "sha256": "97e6992f7853877fca0e990d8a3f541d8ebba0fd98a725375b31d41d414838ba",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:52:31",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/projeto09.html",
+      "tamanho_bytes": 47820,
+      "sha256": "602a24b8fb2e9d5ea7e23c6c8ee4ff68bed1a20437c2c571e820f6d5aa9d48d4",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:52:31",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/projeto10.html",
+      "tamanho_bytes": 46309,
+      "sha256": "19f557cd8c0552833bcbf1327f9b049fe7e09604028322096cbb57873e064a01",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T21:52:31",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/projetos/projeto11.html",
+      "tamanho_bytes": 45108,
+      "sha256": "ffc72bade891f0dc22cdfc430e037f7fbe76cd228a6d6ba5603ee585038aeb6a",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T22:01:06",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/roadmaps/index.html",
+      "tamanho_bytes": 3726,
+      "sha256": "f1e0e598f6e58f8fabe78b850b90478731a3fa2e0106d36a5a5796ae812790af",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:48:12",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/docs/roadmaps/mapa-constitucional.html",
+      "tamanho_bytes": 3738,
+      "sha256": "24b1cf86c09cf60e47823af25c2d5f75af20c5ee42243e33b5ce7371a5b6361f",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:48:28",
+      "classificacao": "html-conteudo",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/data/documents.json",
+      "tamanho_bytes": 11042,
+      "sha256": "c3f8fa10cb62117aa15db2e9938565bf7d231a28a3052c13addce8a754efa88d",
+      "tipo": ".json",
+      "data_modificacao": "2026-08-05T21:36:43",
+      "classificacao": "json-dados",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/data/glossario.json",
+      "tamanho_bytes": 10330,
+      "sha256": "2bfc42545fc3c920b1d75abb1a892294d0b691f87e180327f56bb3e7bc6fe1d5",
+      "tipo": ".json",
+      "data_modificacao": "2026-08-05T22:01:36",
+      "classificacao": "json-dados",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/data/navigation.json",
+      "tamanho_bytes": 4335,
+      "sha256": "ec7cbe8fe21baf20181d86fb4058125eb22b7caf72ee7dae8e1074a5dafcba08",
+      "tipo": ".json",
+      "data_modificacao": "2026-08-05T21:36:50",
+      "classificacao": "json-dados",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/data/roadmaps.json",
+      "tamanho_bytes": 21425,
+      "sha256": "f70cb3b8e3e67cac705504e6587ac5f0ae5ce4217c4404217cfe005d90f0d677",
+      "tipo": ".json",
+      "data_modificacao": "2026-08-05T22:00:30",
+      "classificacao": "json-dados",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/data/search-index.json",
+      "tamanho_bytes": 349985,
+      "sha256": "7b5f17376ee1a3d11155e9c49d975fa108bc034d7e74f611a7a24d8b9b69b035",
+      "tipo": ".json",
+      "data_modificacao": "2026-08-05T22:00:11",
+      "classificacao": "json-dados",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/assets/css/design-system.css",
+      "tamanho_bytes": 28621,
+      "sha256": "9e5070881fa76976e1719a58af58d8b2265af8b8f1b42cfa1724a335167be3f4",
+      "tipo": ".css",
+      "data_modificacao": "2026-08-05T20:42:11",
+      "classificacao": "css",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/assets/js/navigation.js",
+      "tamanho_bytes": 11740,
+      "sha256": "c7d3641567fadc99833db3ebfeda65d226e3bb2b7f7a00df4e5f25b78344a511",
+      "tipo": ".js",
+      "data_modificacao": "2026-08-05T20:43:56",
+      "classificacao": "js",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/assets/js/search.js",
+      "tamanho_bytes": 5874,
+      "sha256": "97a2853c2dd4ed1cc0b5270653801be1ec6199df4890132647557903f632b1d5",
+      "tipo": ".js",
+      "data_modificacao": "2026-08-05T20:44:17",
+      "classificacao": "js",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/templates/document-template.html",
+      "tamanho_bytes": 7869,
+      "sha256": "2c86bad86e714e6bbe9a83308c43a3ad30a8f89e93640d8ee6775c2b534bc98f",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:46:30",
+      "classificacao": "template",
+      "alteravel_nesta_etapa": false
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/accordion.html",
+      "tamanho_bytes": 539,
+      "sha256": "4d1a22c7b45003624d65ace8f0eb863c979174c4554ac2e4c8777e1ead06347e",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:46:04",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/breadcrumb.html",
+      "tamanho_bytes": 515,
+      "sha256": "5da729b9b26c1f65479b827fae7299e1edfa5ab987627489df1bb4c3dc19cb64",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:44:40",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/buttons.html",
+      "tamanho_bytes": 385,
+      "sha256": "f70823ea309b97f49146df5d7ef108bbfeafe9d03bd44053fd9222f0f8b66797",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:45:46",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/callouts.html",
+      "tamanho_bytes": 1168,
+      "sha256": "77c515840b855694c126e24e3b1573d29385c2a902830555117972ff24f75251",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:44:53",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/cards.html",
+      "tamanho_bytes": 1439,
+      "sha256": "8b578e13265e28c4acb54504c3947a63d27746add4840b6860ad5984f533ed75",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:44:47",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/code-block.html",
+      "tamanho_bytes": 1035,
+      "sha256": "188523952c891cf539b59a3894f3ca7ff06634e336be0100fcabd7505ce217e3",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:45:04",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/document-navigator.html",
+      "tamanho_bytes": 1334,
+      "sha256": "75d2d3e7db20223988b4fb69df3966ad69bf5faedd3de120bb5e2075e1d24259",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:45:33",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/dropdown.html",
+      "tamanho_bytes": 664,
+      "sha256": "f129b6ba463acfeb4104f23f8830c8252ec75afaa010ff9968c17b370486607c",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:45:57",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/footer.html",
+      "tamanho_bytes": 884,
+      "sha256": "ece0466d031b5b9776d0faef8ae674129012bd00297b3c2735dae7ac9082173d",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:44:35",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/glossary-inline.html",
+      "tamanho_bytes": 742,
+      "sha256": "3202b3d40e3b7100ff0e5dbbe95825b567f5e4d2de11ff75a1932526a95d4fc2",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:45:10",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/header.html",
+      "tamanho_bytes": 1558,
+      "sha256": "20c99502e088c781d734f9aebfe0c8323c5e04fe5dd12f1994ce7549be9ca168",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:44:25",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/index-list.html",
+      "tamanho_bytes": 1119,
+      "sha256": "491d4c767079957808b334206c7680dece350da32af05838214e4e4e8b2c4184",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:45:17",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/modal.html",
+      "tamanho_bytes": 1237,
+      "sha256": "69ccd1d11f6d237fd46dd8a6eb0a6fe94f4235f2e0544f9acf477d44313f6d5e",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:45:53",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/roadmap.html",
+      "tamanho_bytes": 661,
+      "sha256": "d1c18b3794af6ee0c58598846e3483b023b26dad02cfde13cbf6ce58f10ae499",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:45:27",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/search-bar.html",
+      "tamanho_bytes": 794,
+      "sha256": "bf7adf94850b13df3d5b887e69067065eb61b600c6ae4a081bbdd55dafd46093",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:45:38",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/search-results.html",
+      "tamanho_bytes": 751,
+      "sha256": "7c67c13e722d2b1bba63dd6c3f203b3a40199c09f1f46487b68af668e5b82a04",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:45:43",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/sidebar.html",
+      "tamanho_bytes": 717,
+      "sha256": "916aa2d0a939545b6b7de24f5b8dd4edad5644ae0dbe50b76108d892f494c0f0",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:44:30",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/tables.html",
+      "tamanho_bytes": 920,
+      "sha256": "cb83936c7d0f845802738718dee1b6b72963797f132dea81acff63a7195ccad2",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:44:57",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/tabs.html",
+      "tamanho_bytes": 666,
+      "sha256": "a7ca8d4de86244b0e5b74e5822c46da73eee57ccfd325f9ef4cfdb547e439c0a",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:46:01",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    },
+    {
+      "caminho": "/sessions/vibrant-fervent-davinci/mnt/# 00 PROJETO-CAMPEONATO/portal-v1-auditoria/components/timeline.html",
+      "tamanho_bytes": 972,
+      "sha256": "7b7d9720b75ff18bf43baa0f3d8b5e0a5c2a1a0a1070e39e8cf62448b68273d4",
+      "tipo": ".html",
+      "data_modificacao": "2026-08-05T20:45:23",
+      "classificacao": "componente",
+      "alteravel_nesta_etapa": true
+    }
+  ]
+}

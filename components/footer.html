@@ -1,0 +1,20 @@
+<!--
+  COMPONENTE: Footer
+  Uso: fim de todas as páginas, fora de .page-shell.
+  Colunas preenchidas por navigation.js via /data/navigation.json (data-footer-columns).
+-->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid" data-footer-columns>
+      <!-- preenchido por navigation.js -->
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span data-current-year>2026</span> Campeonato Brasileiro de Kettlebell Sport — Portal de Documentação Interna.</span>
+      <span>Infraestrutura Etapa 2A — nenhum conteúdo dos 21 documentos oficiais foi migrado nesta etapa.</span>
+    </div>
+  </div>
+</footer>
+<script>
+  // pequeno utilitário inline permitido (não é lib externa): ano corrente no footer
+  document.querySelectorAll("[data-current-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
+</script>

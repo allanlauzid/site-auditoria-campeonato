@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================================================================
+       TEMPLATE OFICIAL DE DOCUMENTO
+       Etapa 2A — estrutura vazia com placeholders {{ }}. Etapa 2B substitui
+       cada placeholder pelo conteúdo real de um dos 21 documentos, sem
+       alterar a arquitetura HTML/CSS/JS abaixo.
+       ================================================================== -->
+
+  <title>{{TITULO}} · Portal CBKS</title>
+  <meta name="description" content="{{RESUMO}}" />
+
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{TITULO}}" />
+  <meta property="og:description" content="{{RESUMO}}" />
+  <meta property="og:url" content="{{URL_CANONICA}}" />
+  <meta property="og:image" content="/assets/images/og-default.png" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{TITULO}}" />
+  <meta name="twitter:description" content="{{RESUMO}}" />
+
+  <link rel="canonical" href="{{URL_CANONICA}}" />
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/css/design-system.css" />
+
+  <!-- SEO: Schema.org JSON-LD (TechArticle) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "{{TITULO}}",
+    "description": "{{RESUMO}}",
+    "url": "{{URL_CANONICA}}",
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Portal de Documentação — Campeonato Brasileiro de Kettlebell Sport"
+    },
+    "dateModified": "{{DATA_MODIFICACAO}}",
+    "version": "{{VERSAO}}"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <!-- INCLUIR: components/header.html -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="/index.html">
+        <img src="/assets/icons/logo-mark.svg" alt="" width="28" height="28" loading="eager" />
+        <span>Portal CBKS</span>
+      </a>
+      <nav aria-label="Navegação principal"><ul class="site-header__nav" data-topnav></ul></nav>
+      <div class="site-header__actions">
+        <button type="button" class="btn btn--icon" data-action="open-modal" data-target="search-modal" aria-label="Abrir busca (Ctrl+K)">🔍</button>
+        <button type="button" class="btn btn--icon" data-action="toggle-theme" aria-pressed="false" aria-label="Alternar tema claro/escuro">🌓</button>
+        <button type="button" class="btn btn--icon" data-action="toggle-sidebar" aria-expanded="false" aria-controls="primary-sidebar" aria-label="Abrir menu de navegação">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="page-shell">
+
+      <!-- INCLUIR: components/sidebar.html -->
+      <aside class="page-shell__sidebar sidebar" id="primary-sidebar" aria-label="Navegação da documentação">
+        <div data-sidebar></div>
+      </aside>
+
+      <main class="page-shell__main" id="main-content">
+        <!-- INCLUIR: components/breadcrumb.html -->
+        <nav class="breadcrumb" data-breadcrumb aria-label="Trilha de navegação"></nav>
+
+        <article class="doc-content">
+          <header>
+            <p class="card__eyebrow">{{CATEGORIA}}</p>
+            <h1>{{TITULO}}</h1>
+            <div class="card__meta" style="margin:var(--space-4) 0 var(--space-6)">
+              <span class="badge badge--neutral">Versão: {{VERSAO}}</span>
+              <span class="badge badge--success">Status: {{STATUS}}</span>
+              <span>⏱ {{TEMPO_LEITURA}} min de leitura</span>
+            </div>
+            <p class="text-muted"><strong>Objetivo:</strong> {{OBJETIVO}}</p>
+            <p class="text-muted"><strong>Resumo:</strong> {{RESUMO}}</p>
+
+            <div class="callout callout--info" role="note">
+              <span class="callout__icon" aria-hidden="true">🔗</span>
+              <div>
+                <strong>Dependências:</strong> {{LISTA_DEPENDENCIAS}}<br />
+                <strong>Documentos relacionados:</strong> {{LISTA_RELACIONADOS}}<br />
+                <strong>Roadmaps associados:</strong> {{LISTA_ROADMAPS}}
+              </div>
+            </div>
+          </header>
+
+          <!-- {{INDICE_AUTOMATICO}} é gerado por navigation.js::buildTOC() a partir
+               dos h2/h3 abaixo — não precisa ser escrito manualmente. -->
+
+          <section id="conteudo-principal">
+            <h2>{{TITULO_CAPITULO_1}}</h2>
+            <p>{{CONTEUDO_CAPITULO_1}}</p>
+
+            <h2>{{TITULO_CAPITULO_N}}</h2>
+            <p>{{CONTEUDO_CAPITULO_N}}</p>
+          </section>
+
+          <section aria-labelledby="glossario-relacionado-title">
+            <h2 id="glossario-relacionado-title">Glossário relacionado</h2>
+            <p class="text-muted">{{TERMOS_GLOSSARIO_RELACIONADOS}}</p>
+          </section>
+
+          <!-- INCLUIR: components/document-navigator.html -->
+          <nav class="doc-nav" aria-label="Navegação entre documentos">
+            <a class="doc-nav__link doc-nav__link--prev" href="{{URL_DOC_ANTERIOR}}">
+              <div class="doc-nav__label">← Anterior</div>
+              <div class="doc-nav__title">{{TITULO_DOC_ANTERIOR}}</div>
+            </a>
+            <a class="doc-nav__link doc-nav__link--next" href="{{URL_DOC_PROXIMO}}">
+              <div class="doc-nav__label">Próximo →</div>
+              <div class="doc-nav__title">{{TITULO_DOC_PROXIMO}}</div>
+            </a>
+          </nav>
+        </article>
+      </main>
+
+      <aside class="page-shell__toc toc" aria-label="Sumário do documento">
+        <div class="toc__title">Nesta página</div>
+        <ul class="toc__list" data-toc-list></ul>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- INCLUIR: components/modal.html (busca) -->
+  <div class="modal-overlay" id="search-modal" data-open="false">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="search-modal-title" tabindex="-1">
+      <div class="modal__header">
+        <h2 id="search-modal-title" style="margin:0;font-size:var(--fs-500)">Buscar</h2>
+        <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar busca">×</button>
+      </div>
+      <div class="search-bar" role="search">
+        <span class="search-bar__icon" aria-hidden="true">🔍</span>
+        <label for="modal-search-input" class="visually-hidden">Buscar</label>
+        <input type="search" id="modal-search-input" data-search-input placeholder="Buscar documentos, termos, capítulos..." autocomplete="off" />
+      </div>
+      <div class="search-results" data-search-results aria-live="polite"></div>
+    </div>
+  </div>
+
+  <!-- INCLUIR: components/footer.html -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid" data-footer-columns></div>
+      <div class="site-footer__bottom">
+        <span>© <span data-current-year></span> Campeonato Brasileiro de Kettlebell Sport.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/navigation.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+  <script>
+    document.querySelectorAll("[data-current-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+    // Exemplo de chamada de breadcrumb específica desta página (substituir na Etapa 2B):
+    // import { renderBreadcrumb } from "/assets/js/navigation.js";
+    // renderBreadcrumb([{label:"Início",url:"/index.html"},{label:"{{CATEGORIA}}",url:"{{URL_CATEGORIA}}"},{label:"{{TITULO}}"}]);
+  </script>
+</body>
+</html>

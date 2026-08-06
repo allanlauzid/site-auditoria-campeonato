@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projeto 11 — Sistema de Inteligência Pré-Inscrição · Portal CBKS</title>
+<meta content="Fases 1-6 e Projetos 01-10 são Constituição definitiva e têm prioridade absoluta. Este documento aprofunda tecnicamente o Sistema de Inteligência Prévia já introduzido no Projeto 10 (Capítulos 8 e 9), sem contradizê-lo — não cria formulários, dashboards, automações ou campanhas, apenas os princípios permanentes que qualquer ferramenta futura deverá obedecer." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="Projeto 11 — Sistema de Inteligência Pré-Inscrição" property="og:title"/>
+<meta content="Fases 1-6 e Projetos 01-10 são Constituição definitiva e têm prioridade absoluta. Este documento aprofunda tecnicamente o Sistema de Inteligência Prévia já introduzido no Projeto 10 (Capítulos 8 e 9), sem contradizê-lo — não cria formulários, dashboards, automações ou campanhas, apenas os princípios permanentes que qualquer ferramenta futura deverá obedecer." property="og:description"/>
+<meta content="{{baseUrl}}/docs/projetos/projeto11.html" property="og:url"/>
+<meta content="/assets/images/og-default.png" property="og:image"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Projeto 11 — Sistema de Inteligência Pré-Inscrição" name="twitter:title"/>
+<meta content="Fases 1-6 e Projetos 01-10 são Constituição definitiva e têm prioridade absoluta. Este documento aprofunda tecnicamente o Sistema de Inteligência Prévia já introduzido no Projeto 10 (Capítulos 8 e 9), sem contradizê-lo — não cria formulários, dashboards, automações ou campanhas, apenas os princípios permanentes que qualquer ferramenta futura deverá obedecer." name="twitter:description"/>
+<link href="{{baseUrl}}/docs/projetos/projeto11.html" rel="canonical"/>
+<link href="/assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/css/design-system.css" rel="stylesheet"/>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Projeto 11 — Sistema de Inteligência Pré-Inscrição",
+    "description": "Fases 1-6 e Projetos 01-10 são Constituição definitiva e têm prioridade absoluta. Este documento aprofunda tecnicamente o Sistema de Inteligência Prévia já introduzido no Projeto 10 (Capítulos 8 e 9), sem contradizê-lo — não cria formulários, dashboards, automações ou campanhas, apenas os princípios permanentes que qualquer ferramenta futura deverá obedecer.",
+    "url": "{{baseUrl}}/docs/projetos/projeto11.html",
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Portal de Documentação — Campeonato Brasileiro de Kettlebell Sport"
+    },
+    "dateModified": "2026-08-05",
+    "version": "Versão documental: não informada no arquivo-fonte"
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="site-header__brand" href="/index.html">
+<img alt="" height="28" loading="eager" src="/assets/icons/logo-mark.svg" width="28"/>
+<span>Portal CBKS</span>
+</a>
+<nav aria-label="Navegação principal"><ul class="site-header__nav" data-topnav=""></ul></nav>
+<div class="site-header__actions">
+<button aria-label="Abrir busca (Ctrl+K)" class="btn btn--icon" data-action="open-modal" data-target="search-modal" type="button">🔍</button>
+<button aria-label="Alternar tema claro/escuro" aria-pressed="false" class="btn btn--icon" data-action="toggle-theme" type="button">🌓</button>
+<button aria-controls="primary-sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="btn btn--icon" data-action="toggle-sidebar" type="button">☰</button>
+</div>
+</div>
+</header>
+<div class="container">
+<div class="page-shell">
+<aside aria-label="Navegação da documentação" class="page-shell__sidebar sidebar" id="primary-sidebar">
+<div data-sidebar=""></div>
+</aside>
+<main class="page-shell__main" id="main-content">
+<nav aria-label="Trilha de navegação" class="breadcrumb" data-breadcrumb=""></nav>
+<article class="doc-content">
+<header>
+<p class="card__eyebrow">Projeto / Sistema de Inteligência Pré-Inscrição</p>
+<h1>Projeto 11 — Sistema de Inteligência Pré-Inscrição</h1>
+<div class="card__meta" style="margin:var(--space-4) 0 var(--space-6)">
+<span class="badge badge--neutral">Versão: não versionado</span>
+<span class="badge badge--success">Status: constituição permanente</span>
+<span>⏱ 20 min de leitura</span>
+</div>
+<p class="text-muted"><strong>Objetivo:</strong> Fases 1-6 e Projetos 01-10 são Constituição definitiva e têm prioridade absoluta. Este documento aprofunda tecnicamente o Sistema de Inteligência Prévia já introduzido no Projeto 10 (Capítulos 8 e 9), sem contradizê-lo — não cria formulários, dashboards, automações ou campanhas, apenas os princípios permanentes que qualquer ferramenta futura deverá obedecer.</p>
+<p class="text-muted"><em>Campeonato Brasileiro de Kettlebell Sport — Constituição Permanente</em></p>
+<div class="callout callout--warning" role="note" style="margin-bottom:var(--space-4)"><span aria-hidden="true" class="callout__icon">🔁</span><div><strong>Relação complementar bidirecional</strong> — este documento e o Projeto 10 operam em interdependência funcional bidirecional (ver decisão de governança: interdependência funcional bidirecional Projeto10↔Projeto11), não uma falha de arquitetura: Lançamento/Mobilização alimenta e é alimentado pela Inteligência Pré-Inscrição. Sequência de leitura recomendada: Projeto 10 → Projeto 11; execução operacional: iterativa/simultânea. Ver <a href="/docs/arquitetura/engenharia-documentacao.html">Engenharia da Documentação</a> para o detalhamento completo desta relação.</div></div>
+<div class="callout callout--info" role="note">
+<span aria-hidden="true" class="callout__icon">🔗</span>
+<div>
+<strong>Dependências:</strong> <a href="/docs/fases/fase4.html">Fase 4 — Arquitetura de Lançamento</a>, <a href="/docs/projetos/projeto10.html">Projeto 10 — Sistema de Lançamento e Mobilização</a><br/>
+<strong>Documentos relacionados:</strong> <a href="/docs/manuais/manual-crm.html">Manual — CRM</a>, <a href="/docs/manuais/manual-dashboard.html">Manual — Dashboard Executivo</a>, <a href="/docs/manuais/manual-formulario.html">Manual — Formulário de Manifestação de Interesse</a>, <a href="/docs/manuais/manual-stories.html">Manual — Stories Baseados em Dados</a><br/>
+<strong>Roadmaps associados:</strong> <a href="/docs/roadmaps/index.html">8 itens no roadmap consolidado</a>
+</div>
+</div>
+</header>
+<section id="conteudo-principal">
+<h2 id="1-filosofia-da-inteligencia-pre-inscricao">1. FILOSOFIA DA INTELIGÊNCIA PRÉ-INSCRIÇÃO</h2>
+<p><strong>Por que coletar dados:</strong> para que a organização conheça o campeonato antes mesmo de ele acontecer — substituindo suposição por conhecimento real em decisões de operação, comunicação, comercial e estratégia.</p>
+<p><strong>Benefício para a organização:</strong> previsão confiável de volume, distribuição geográfica, ocupação de categorias e demanda operacional, permitindo planejamento real em vez de estimativa genérica.</p>
+<p><strong>Benefício para o atleta:</strong> comunicação mais relevante, reconhecimento antecipado (<a href="/docs/projetos/projeto10.html#3-jornada-do-atleta-descoberta-confirmacao">Projeto 10, Capítulo 3</a>), e a sensação concreta de que sua manifestação de interesse já importa antes mesmo da inscrição existir.</p>
+<p><strong>O que nunca deve acontecer:</strong> coleta de dado sem propósito declarado; pergunta que existe apenas por "poderia ser útil algum dia"; fricção desnecessária que trata a curiosidade da organização como prioridade sobre o tempo do interessado; qualquer coleta que viole os princípios éticos já estabelecidos no <a href="/docs/projetos/projeto10.html#16-sistema-etico">Projeto 10, Capítulo 16</a>, e aprofundados aqui no Capítulo 13.</p>
+<p><strong>Princípio central e permanente:</strong> toda pergunta feita a um interessado precisa passar no teste "isso vai apoiar uma decisão real de algum sistema já constitucional?" — se a resposta for não, a pergunta não é feita.</p>
+<hr/>
+<h2 id="2-arquitetura-do-sistema">2. ARQUITETURA DO SISTEMA</h2>
+<p><strong>Quando começa:</strong> na macrofase de Escuta do Sistema de Lançamento (<a href="/docs/projetos/projeto10.html#2-arquitetura-do-lancamento">Projeto 10, Capítulo 2</a>), antes de qualquer mobilização ativa.</p>
+<p><strong>Quando termina:</strong> este sistema não termina na abertura das inscrições — os dados continuam relevantes durante a Confirmação (comparação entre previsão e realidade) e alimentam formalmente o Sistema de Aprendizado (Capítulo 14) mesmo após o encerramento do período de inscrição.</p>
+<p><strong>Integração com o lançamento:</strong> este documento é a camada técnica de aprofundamento do que o Projeto 10 já estabeleceu como princípio — nenhuma contradição é permitida entre os dois.</p>
+<p><strong>Integração com inscrições:</strong> o momento em que um interessado se torna inscrito é uma transição de status dentro do mesmo registro, nunca a criação de um cadastro novo e desconectado.</p>
+<p><strong>Integração com CRM:</strong> este sistema alimenta e é alimentado pelo CRM já previsto no Sistema Comercial (<a href="/docs/projetos/projeto06.html#15-sistema-de-crm">Projeto 06, Capítulo 15</a>) — dado de interesse pré-inscrição e dado comercial de patrocínio convivem na mesma lógica de responsabilidade e histórico, ainda que em bases funcionalmente distintas.</p>
+<p><strong>Integração com memória:</strong> todo interessado que já é atleta registrado no Sistema de Memória (Projeto 08) tem seu histórico reconhecido automaticamente — o sistema nunca pergunta novamente o que já sabe sobre uma pessoa já nomeada no Livro de Nomes.</p>
+<hr/>
+<h2 id="3-jornada-do-interessado">3. JORNADA DO INTERESSADO</h2>
+<ol>
+<li><strong>Primeiro contato:</strong> manifestação mínima de interesse — nome e uma forma de contato, nada além disso.</li>
+<li><strong>Manifestação de interesse:</strong> dados essenciais de localização e categoria pretendida, coletados com propósito claro (Capítulo 4).</li>
+<li><strong>Atualização de informações:</strong> dados progressivamente coletados ao longo do tempo (nunca tudo de uma vez), conforme a decisão do interessado amadurece.</li>
+<li><strong>Confirmação:</strong> dados finais necessários para dimensionamento operacional, coletados perto da decisão de inscrição.</li>
+<li><strong>Conversão em inscrição:</strong> o registro de interesse se torna registro oficial de atleta (Fase 5).</li>
+<li><strong>Pós-inscrição:</strong> o dado permanece como parte da trajetória do atleta no Sistema de Memória (Projeto 08), não é descartado após cumprir sua função de previsão.</li>
+</ol>
+<hr/>
+<h2 id="4-sistema-de-coleta-de-dados-campo-a-campo">4. SISTEMA DE COLETA DE DADOS — CAMPO A CAMPO</h2>
+<p><strong>Princípio geral de coleta progressiva:</strong> nenhum campo abaixo é solicitado todo de uma vez no primeiro contato — a coleta acontece em camadas ao longo da Jornada do Interessado (Capítulo 3), reduzindo fricção e respeitando o tempo de decisão de cada pessoa.</p>
+<table>
+<thead>
+<tr>
+<th scope="col">Campo</th>
+<th scope="col">Justificativa</th>
+<th scope="col">Quando perguntar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nome</strong></td>
+<td>Chave central de todo o sistema — coerente com o valor "nome importa" (Fase 3).</td>
+<td>Sempre, desde o primeiro contato.</td>
+</tr>
+<tr>
+<td><strong>Estado / Cidade / País</strong></td>
+<td>Essencial para previsão de distribuição geográfica (<a href="/docs/projetos/projeto09.html#9-gestao-de-recursos">Projeto 09, Capítulo 9</a>/10).</td>
+<td>Cedo — baixa fricção, alto valor preditivo.</td>
+</tr>
+<tr>
+<td><strong>Box</strong></td>
+<td>Relevante para reconhecimento territorial (Fase 5) e social proof legítimo (<a href="/docs/projetos/projeto10.html#11-sistema-de-social-proof">Projeto 10, Capítulo 11</a>).</td>
+<td>Quando aplicável — nunca obrigatório, pois nem todo interessado já tem box.</td>
+</tr>
+<tr>
+<td><strong>Treinador</strong></td>
+<td>Relevante para crédito técnico público (<a href="/docs/projetos/projeto01.html#2-objetivos-de-comunicacao-por-publico">Projeto 01, Capítulo 2</a>).</td>
+<td>Na etapa de atualização, não no primeiro contato.</td>
+</tr>
+<tr>
+<td><strong>Sexo / Idade</strong></td>
+<td>Necessário para elegibilidade de categoria — dado sensível, tratado com propósito explícito.</td>
+<td>Quando a categoria pretendida começa a ser discutida, nunca como dado demográfico genérico.</td>
+</tr>
+<tr>
+<td><strong>Categoria / Modalidade</strong></td>
+<td>Essencial para prever ocupação de categorias (Capítulo 9).</td>
+<td>Quando o interessado já tiver essa decisão amadurecida — nunca forçada no primeiro contato.</td>
+</tr>
+<tr>
+<td><strong>Quantidade de provas pretendidas</strong></td>
+<td>Dimensiona cronograma operacional (<a href="/docs/projetos/projeto09.html#11-gestao-do-tempo-principios-nao-cronograma">Projeto 09, Capítulo 11</a>).</td>
+<td>Etapa de atualização.</td>
+</tr>
+<tr>
+<td><strong>Dias de permanência pretendidos</strong></td>
+<td>Relevante para logística local e hospedagem.</td>
+<td>Perto da confirmação, quando a decisão já está mais madura.</td>
+</tr>
+<tr>
+<td><strong>Meio de transporte / necessidade de hospedagem</strong></td>
+<td>Relevante para logística (Projeto 09) e eventuais parcerias comerciais (Projeto 05/06).</td>
+<td>Etapa avançada — decisão ainda incerta em estágios iniciais.</td>
+</tr>
+<tr>
+<td><strong>Quantidade de acompanhantes</strong></td>
+<td>Dimensiona expectativa de público/torcida (Projeto 07).</td>
+<td>Perto da confirmação.</td>
+</tr>
+<tr>
+<td><strong>Primeira participação / participações anteriores</strong></td>
+<td>Diferencia atleta novo de recorrente (indicador central, Capítulo 9).</td>
+<td>Automaticamente preenchido pelo Sistema de Memória quando a pessoa já é atleta registrado — nunca perguntado de novo a quem já tem histórico.</td>
+</tr>
+<tr>
+<td><strong>Interesse em turismo</strong></td>
+<td>Valor comercial para parcerias locais (Projeto 05/06).</td>
+<td>Opcional, só perguntado se o interessado sinalizar abertura para esse tema.</td>
+</tr>
+<tr>
+<td><strong>Interesse em cursos paralelos, arbitragem ou voluntariado</strong></td>
+<td>Alimenta o Sistema de Educação e o Sistema de Voluntariado (Fase 5/Projeto 07/09).</td>
+<td>Sempre apresentado como oportunidade separada e opcional, nunca como parte obrigatória do fluxo de inscrição.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Quando nunca perguntar:</strong> qualquer dado que já exista no Sistema de Memória para aquela pessoa; qualquer dado sem função clara em nenhum sistema constitucional já existente; qualquer dado sensível sem propósito explicitamente comunicado no momento da coleta.</p>
+<hr/>
+<h2 id="5-sistema-de-qualidade-dos-dados">5. SISTEMA DE QUALIDADE DOS DADOS</h2>
+<p><strong>Como evitar respostas ruins:</strong> validação simples de formato (ex: e-mail válido, telefone completo) no momento da coleta, sem tornar o processo burocrático.</p>
+<p><strong>Como evitar duplicidade:</strong> cruzamento automático por nome e contato com registros já existentes, especialmente com o Sistema de Memória (Projeto 08) — evita tratar um atleta recorrente como novo contato.</p>
+<p><strong>Como validar informações:</strong> confirmação simples (ex: link de confirmação) para garantir que o contato é real, sem exigir etapas excessivas.</p>
+<p><strong>Como atualizar registros:</strong> o próprio interessado pode revisar e corrigir seus dados a qualquer momento — mesmo princípio do direito de revisão já formalizado no <a href="/docs/projetos/projeto10.html#16-sistema-etico">Projeto 10, Capítulo 16</a>.</p>
+<p><strong>Como manter dados confiáveis ao longo do tempo:</strong> auditoria periódica de qualidade (duplicidade, dados desatualizados, taxa de preenchimento incompleto), seguindo a mesma lógica de controle de qualidade já estabelecida no Projeto 08, Capítulos 17 e 18.</p>
+<hr/>
+<h2 id="6-sistema-de-inteligencia">6. SISTEMA DE INTELIGÊNCIA</h2>
+<p><strong>Como transformar dados em conhecimento:</strong> cruzando os dados coletados (Capítulo 4) com o histórico de edições anteriores (Projeto 08/Capítulo 9 deste documento), gerando leitura comparativa, não apenas um retrato estático de um único momento.</p>
+<p><strong>Detectar tendências:</strong> variação de interesse por região, categoria ou perfil ao longo do tempo, comparada a edições anteriores.</p>
+<p><strong>Detectar crescimento:</strong> aumento real de interesse e conversão, distinto de flutuação sazonal ou pontual.</p>
+<p><strong>Detectar gargalos:</strong> por exemplo, concentração de interesse muito acima da capacidade prevista em uma categoria específica — sinal de alerta operacional antecipado (Projeto 09).</p>
+<p><strong>Detectar oportunidades:</strong> regiões com alto interesse declarado e baixa presença histórica — insumo direto para decisões de expansão (Fase 5).</p>
+<p><strong>Detectar riscos:</strong> queda de interesse recorrente em uma região ou perfil que historicamente era forte — aciona investigação qualitativa, não apenas reação numérica.</p>
+<p><strong>Gerar previsões:</strong> modelo simples e transparente — interesse declarado multiplicado pela taxa histórica de conversão (Capítulo 9), refinado a cada edição conforme o Sistema de Aprendizado (Capítulo 14).</p>
+<hr/>
+<h2 id="7-sistema-de-segmentacao">7. SISTEMA DE SEGMENTAÇÃO</h2>
+<p>A segmentação por estado, cidade, região, box, treinador, categoria, modalidade, experiência, idade, sexo, perfil competitivo e objetivo declarado serve, neste sistema, primariamente à <strong>análise cruzada</strong> (ex: relação entre região e categoria, entre experiência e intenção de permanência) — função distinta e complementar à segmentação de comunicação já definida no <a href="/docs/projetos/projeto10.html#10-sistema-de-segmentacao">Projeto 10, Capítulo 10</a>, que usa as mesmas dimensões para personalizar mensagem, não para gerar inteligência analítica.</p>
+<hr/>
+<h2 id="8-sistema-de-dashboards">8. SISTEMA DE DASHBOARDS</h2>
+<table>
+<thead>
+<tr>
+<th scope="col">Dashboard</th>
+<th scope="col">Indicadores centrais</th>
+<th scope="col">Uso principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Executivo</strong></td>
+<td>Visão consolidada de interesse, conversão e previsão</td>
+<td>Governança de Marca e Diretor Executivo (Fase 6)</td>
+</tr>
+<tr>
+<td><strong>Operacional</strong></td>
+<td>Distribuição geográfica, categorias, demanda de hospedagem/transporte</td>
+<td>Direção Geral e Centros Operacionais (Projeto 09)</td>
+</tr>
+<tr>
+<td><strong>Comercial</strong></td>
+<td>Volume e perfil de interesse, projeção de público</td>
+<td>Núcleo Comercial (Projeto 06)</td>
+</tr>
+<tr>
+<td><strong>Marketing</strong></td>
+<td>Engajamento, conversão por canal, evolução semanal</td>
+<td>Centro de Comunicação (Projeto 01/10)</td>
+</tr>
+<tr>
+<td><strong>Geográfico</strong></td>
+<td>Mapa de distribuição real por estado/cidade</td>
+<td>Uso cruzado — operação, comercial, comunicação</td>
+</tr>
+<tr>
+<td><strong>Categorias</strong></td>
+<td>Ocupação prevista por categoria</td>
+<td>Coordenação Técnica (Fase 5) e Operação (Projeto 09)</td>
+</tr>
+<tr>
+<td><strong>Projeções</strong></td>
+<td>Previsão vs. realizado, precisão histórica</td>
+<td>Governança de Marca — avaliação de maturidade do sistema</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Periodicidade:</strong> dado bruto atualizado continuamente; leitura estratégica consolidada em ritmo semanal, coerente com o indicador de "evolução semanal" (Capítulo 9).</p>
+<p><strong>Alertas:</strong> disparados automaticamente quando uma categoria se aproxima do limite operacional previsto, ou quando há queda abrupta e não explicada de interesse regional.</p>
+<p><strong>Níveis de acesso:</strong> conforme Capítulo 17.</p>
+<hr/>
+<h2 id="9-sistema-de-indicadores">9. SISTEMA DE INDICADORES</h2>
+<ul>
+<li><strong>Interesse total:</strong> volume bruto de manifestações — mede alcance da mobilização (Projeto 10).</li>
+<li><strong>Conversão:</strong> proporção de interesse que se torna inscrição — mede eficácia, e também honestidade do alinhamento de expectativa (conversão muito baixa pode indicar comunicação que gerou interesse mal direcionado, não apenas falha comercial).</li>
+<li><strong>Evolução semanal:</strong> ritmo de crescimento do interesse, não apenas volume acumulado.</li>
+<li><strong>Distribuição por estado, cidade, box, categoria e modalidade:</strong> informam diretamente operação (Projeto 09) e comercial (Projeto 06).</li>
+<li><strong>Atletas estreantes vs. recorrentes:</strong> distingue crescimento real de simples retenção — os dois são bons, mas exigem leitura estratégica diferente (Fase 5).</li>
+<li><strong>Média de provas pretendidas:</strong> dimensiona cronograma (<a href="/docs/projetos/projeto09.html#11-gestao-do-tempo-principios-nao-cronograma">Projeto 09, Capítulo 11</a>).</li>
+<li><strong>Média de acompanhantes:</strong> dimensiona expectativa de público (Projeto 07).</li>
+<li><strong>Demanda por hospedagem/transporte:</strong> informa parcerias comerciais relevantes (Projeto 05/06).</li>
+<li><strong>Precisão das previsões:</strong> indicador mais importante do próprio sistema — mede sua maturidade e confiabilidade ao longo do tempo (Capítulo 14).</li>
+</ul>
+<hr/>
+<h2 id="10-sistema-de-conteudo-baseado-em-dados">10. SISTEMA DE CONTEÚDO BASEADO EM DADOS</h2>
+<p><strong>Quando divulgar:</strong> quando o dado é robusto o suficiente para ser representativo, nunca tão precoce que possa induzir leitura equivocada.</p>
+<p><strong>Quando não divulgar:</strong> dados muito parciais nas primeiras semanas de Escuta; dados que, fora de contexto, possam parecer decepcionantes (ex: baixa adesão inicial em uma região específica); qualquer dado individualizado sem consentimento explícito do titular.</p>
+<p><strong>Como evitar interpretações equivocadas:</strong> todo número comunicado é sempre acompanhado do contexto mínimo necessário (data de referência, o que representa, o que não representa) — nunca um número solto.</p>
+<p><strong>Como fortalecer a comunidade com números reais:</strong> dados verdadeiros e verificáveis (ex: "interessados já confirmados em 12 estados diferentes") geram pertencimento coletivo genuíno sem exigir nenhum exagero — a prática direta do Sistema de Social Proof já definido no <a href="/docs/projetos/projeto10.html#11-sistema-de-social-proof">Projeto 10, Capítulo 11</a>.</p>
+<hr/>
+<h2 id="11-sistema-de-stories-principios-nao-pecas">11. SISTEMA DE STORIES (PRINCÍPIOS, NÃO PEÇAS)</h2>
+<p>Conteúdo de dados em formato de stories — mapa de interesse por estado, evolução semanal, cidades e boxes participantes (sempre nomeados, reforçando "nome importa" também em nível territorial), categorias mais procuradas, curiosidades comparativas entre edições — segue sempre três regras permanentes: <strong>sem manipulação, sem exagero, sem número artificial.</strong> Todo dado exibido traz data de referência clara, deixando explícito que representa um momento (ainda em curso), nunca um resultado definitivo.</p>
+<hr/>
+<h2 id="12-sistema-de-apoio-a-operacao">12. SISTEMA DE APOIO À OPERAÇÃO</h2>
+<p>Os dados deste sistema apoiam diretamente: <strong>Produção e Arena</strong> (dimensionamento físico, Projeto 09) · <strong>Hospedagem</strong> (parcerias e volume estimado) · <strong>Cronograma</strong> (número de provas e dias, <a href="/docs/projetos/projeto09.html#11-gestao-do-tempo-principios-nao-cronograma">Projeto 09 Capítulo 11</a>) · <strong>Tecnologia</strong> (dimensionamento de credenciamento e cronometragem) · <strong>Patrocínio</strong> (argumento comercial real, Projeto 06) · <strong>Memória</strong> (consolidação histórica, Projeto 08) · <strong>Experiência</strong> (dimensionamento de hospitalidade e torcida, Projeto 07) · <strong>Operação geral</strong> (<a href="/docs/projetos/projeto09.html#9-gestao-de-recursos">Projeto 09, Capítulo 9</a> — Gestão de Recursos).</p>
+<p>Nenhuma decisão de dimensionamento físico relevante é tomada sem consultar este sistema primeiro.</p>
+<hr/>
+<h2 id="13-sistema-etico-lgpd-e-privacidade">13. SISTEMA ÉTICO (LGPD E PRIVACIDADE)</h2>
+<p><strong>Base legal e finalidade específica:</strong> todo dado coletado tem finalidade declarada e específica no momento da coleta, coerente com os princípios da Lei Geral de Proteção de Dados — nunca coleta genérica "para uso futuro indefinido".</p>
+<p><strong>Minimização de dados:</strong> apenas os campos com propósito real e testado (Capítulo 4) são coletados — nenhum campo "por precaução".</p>
+<p><strong>Consentimento:</strong> explícito, específico por finalidade (ex: consentir para previsão operacional não implica consentir para compartilhamento com parceiro de turismo — são consentimentos distintos e separados).</p>
+<p><strong>Privacidade e anonimização:</strong> relatórios agregados e conteúdo público (Capítulos 10 e 11) nunca expõem dado individual identificável sem consentimento específico para essa finalidade.</p>
+<p><strong>Compartilhamento:</strong> nunca realizado com terceiros fora do escopo declarado — exceção apenas quando o próprio titular consente especificamente para aquela finalidade (ex: interesse em turismo compartilhado com parceiro turístico, apenas mediante consentimento explícito e separado).</p>
+<p><strong>Retenção:</strong> prazo definido e documentado; dados de interesse que não se converteram em inscrição seguem o mesmo tratamento já formalizado no Projeto 10 (Capítulo 8/16) — preservados de forma anonimizada para aprendizado agregado, nunca para abordagem individual insistente.</p>
+<p><strong>Direitos do titular:</strong> acesso aos próprios dados, correção, portabilidade, e exclusão completa ("direito ao esquecimento"), já formalizado como princípio no Projeto 10 e aqui reforçado como obrigação técnica operacional deste sistema especificamente.</p>
+<p><strong>Transparência:</strong> qualquer pessoa pode, a qualquer momento, saber exatamente quais dados a organização possui sobre ela e para qual finalidade.</p>
+<hr/>
+<h2 id="14-sistema-de-aprendizado">14. SISTEMA DE APRENDIZADO</h2>
+<p><strong>Como comparar uma edição com outra:</strong> usando sempre a mesma metodologia e os mesmos indicadores (Capítulo 9), garantindo comparabilidade real ao longo do tempo — mudar de metodologia a cada edição destrói a possibilidade de aprendizado acumulado.</p>
+<p><strong>Como melhorar previsões:</strong> o modelo de conversão (Capítulo 6) é recalibrado a cada edição com base na diferença real entre previsão e resultado, tornando-se mais preciso ao longo dos anos.</p>
+<p><strong>Como registrar lições aprendidas:</strong> documentação formal, seguindo a mesma lógica já estabelecida no Projeto 09 (Capítulo 16) e no Projeto 10 (Capítulo 17).</p>
+<p><strong>Como aumentar a precisão:</strong> tratando a "precisão das previsões" (Capítulo 9) como o indicador mais monitorado de todo este sistema — sua evolução ao longo dos anos é, em si, a métrica central de sucesso da própria inteligência pré-inscrição.</p>
+<hr/>
+<h2 id="15-sistema-de-integracao">15. SISTEMA DE INTEGRAÇÃO</h2>
+<ul>
+<li><strong>Projeto 01 (Comunicação):</strong> toda divulgação de dado (Capítulo 10/11) segue o checklist de comunicação já constitucional.</li>
+<li><strong>Projeto 06 (Comercial):</strong> dados de previsão alimentam diretamente propostas e negociações reais.</li>
+<li><strong>Projeto 07 (Experiência):</strong> dados de acompanhantes e permanência dimensionam hospitalidade real.</li>
+<li><strong>Projeto 08 (Memória):</strong> fonte e destino de dados históricos de atletas recorrentes.</li>
+<li><strong>Projeto 09 (Operação):</strong> insumo formal e obrigatório de todo planejamento de dimensionamento físico.</li>
+<li><strong>Projeto 10 (Lançamento):</strong> este documento é a camada técnica de aprofundamento direto dos Capítulos 8 e 9 daquele projeto.</li>
+<li><strong>CRM, Sistema de Inscrições, Sistema de Memória, Sistema de Analytics:</strong> operam de forma interconectada, nunca como bases de dados isoladas e desconexas entre si.</li>
+</ul>
+<hr/>
+<h2 id="16-sistema-de-escalabilidade">16. SISTEMA DE ESCALABILIDADE</h2>
+<p>Os princípios deste sistema (coleta progressiva, ética de dados, indicadores centrais) permanecem idênticos em qualquer escala de evento — pequeno, grande ou eventualmente internacional. O que se adapta é a complexidade dos dashboards (Capítulo 8) e a granularidade da segmentação (Capítulo 7) necessária para lidar com maior volume de dados, nunca os princípios éticos ou a lógica central de previsão.</p>
+<hr/>
+<h2 id="17-governanca">17. GOVERNANÇA</h2>
+<p><strong>Quem coleta:</strong> equipes de comunicação e comercial, sob protocolo formal definido neste documento — nenhuma coleta informal fora do sistema oficial.</p>
+<p><strong>Quem analisa:</strong> função de inteligência de dados, formalmente vinculada à Governança de Marca para questões estratégicas e ao Diretor Comercial/Diretor de Comunicação (Fase 6) para aplicação tática.</p>
+<p><strong>Quem aprova divulgação pública de dado:</strong> segue o mesmo checklist e sistema de aprovação já definidos no Sistema de Comunicação (<a href="/docs/projetos/projeto01.html#16-sistema-de-aprovacao">Projeto 01, Capítulo 16</a>).</p>
+<p><strong>Quem pode visualizar:</strong> conforme os níveis de acesso por dashboard (Capítulo 8).</p>
+<p><strong>Quem pode exportar dados brutos:</strong> função restrita, sujeita a registro formal de finalidade, coerente com os princípios de minimização e propósito específico do Capítulo 13.</p>
+<p><strong>Quem pode alterar este sistema:</strong> apenas a Governança de Marca altera princípios permanentes; ajustes técnicos de ferramentas são de responsabilidade das áreas técnicas correspondentes.</p>
+<p><strong>Versionamento e auditorias:</strong> mesma lógica formal já padronizada desde o Projeto 04, com auditoria periódica de aderência ao Sistema Ético (Capítulo 13) como prioridade permanente.</p>
+<hr/>
+<h2 id="18-roadmap-de-ferramentas-futuras">18. ROADMAP DE FERRAMENTAS FUTURAS</h2>
+<ul>
+<li><strong>Formulário de Interesse:</strong> ferramenta de captação inicial, operacionalizando a coleta progressiva do Capítulo 4.</li>
+<li><strong>Landing Page:</strong> ponto de conversão transparente, coerente com o <a href="/docs/projetos/projeto10.html#7-sistema-de-interacao">Projeto 10, Capítulo 7</a>.</li>
+<li><strong>CRM:</strong> base central de relacionamento, já prevista no Projeto 06.</li>
+<li><strong>Dashboard Executivo, Operacional, Comercial, de Marketing, Geográfico, de Categorias e de Projeções:</strong> conforme Capítulo 8.</li>
+<li><strong>Relatórios Automáticos:</strong> consolidação periódica formal, entregue conforme os níveis de acesso do Capítulo 17.</li>
+</ul>
+<hr/>
+<h2 id="19-roadmap-de-documentos-futuros">19. ROADMAP DE DOCUMENTOS FUTUROS</h2>
+<ol>
+<li><strong>Manual do Formulário de Interesse</strong> — especificação prática de campos e fluxo (Capítulo 4).</li>
+<li><strong>Manual dos Dashboards</strong> — especificação técnica completa (Capítulo 8).</li>
+<li><strong>Manual do CRM</strong> — integração técnica com o Sistema Comercial (Projeto 06).</li>
+<li><strong>Manual de Analytics</strong> — especificação do modelo de previsão (Capítulo 6).</li>
+<li><strong>Manual de Relatórios</strong> — formato de entrega periódica (Capítulo 18).</li>
+<li><strong>Manual de Pesquisa</strong> — protocolos complementares de pesquisa qualitativa.</li>
+<li><strong>Manual de Stories Baseados em Dados</strong> — aplicação prática do Capítulo 11.</li>
+<li><strong>Manual de Inteligência Comercial</strong> — aprofundamento da aplicação ao Sistema Comercial (Projeto 06).</li>
+</ol>
+<p><strong>Ordem ideal de desenvolvimento:</strong> <strong>prioridade 1</strong> — <a href="/docs/manuais/manual-formulario.html">Manual do Formulário</a> de Interesse e <a href="/docs/manuais/manual-crm.html">Manual do CRM</a>, pré-requisitos técnicos de qualquer coleta real; <strong>prioridade 2</strong> — Manual de Analytics, necessário para que os dados coletados gerem inteligência real, não apenas volume; <strong>prioridade 3</strong> — Manual dos Dashboards e Manual de Relatórios, que tornam a inteligência acessível às decisões; <strong>prioridade 4</strong> — Manual de Stories Baseados em Dados e Manual de Inteligência Comercial, que aplicam a inteligência já madura a comunicação e negociação; <strong>prioridade 5</strong> — Manual de Pesquisa, como camada complementar qualitativa.</p>
+<hr/>
+<h2 id="auditoria-final-conselho-de-onze-especialistas-ciclo-iterativo">AUDITORIA FINAL — CONSELHO DE ONZE ESPECIALISTAS (CICLO ITERATIVO)</h2>
+<h3 id="rodada-1-criticas-tecnicas">Rodada 1 — críticas técnicas</h3>
+<p><strong>Marketing Esportivo:</strong> "A tabela campo-a-campo do Capítulo 4, com justificativa e momento correto de coleta, é exatamente o nível de detalhe que faltava no Projeto 10 — resolve a lacuna sem repetir o que já havia sido dito. Nenhuma inconsistência."</p>
+<p><strong>CRM:</strong> "A regra de nunca perguntar de novo o que já está no Sistema de Memória (Capítulo 4) é tecnicamente correta e reforça a promessa central da marca até no nível de formulário. Recomendo apenas que fique explícito o que acontece quando o cruzamento automático falha (ex: pessoa com nome comum, sem certeza de ser a mesma) — hoje o documento assume que o cruzamento sempre funciona perfeitamente."</p>
+<p><strong>Business Intelligence:</strong> "Os dashboards (Capítulo 8) estão bem distribuídos por público de uso. Ponto de atenção: falta uma visão consolidada de como um mesmo dado bruto alimenta múltiplos dashboards diferentes sem duplicação de esforço de coleta ou inconsistência entre painéis."</p>
+<p><strong>Ciência de Dados:</strong> "O modelo de previsão (Capítulo 6) é simples e transparente, o que é uma escolha correta para um sistema que precisa ser compreendido por não especialistas. Recomendo que o documento reconheça explicitamente que esse modelo simples tem limitações nos primeiros ciclos (poucos dados históricos) e deve evoluir com mais sofisticação apenas quando houver maturidade suficiente de dados — hoje isso está implícito, mas não afirmado."</p>
+<p><strong>Estatística:</strong> "Concordo com Ciência de Dados. Além disso, o Capítulo 9 trata 'precisão das previsões' como indicador central, mas não define como essa precisão é calculada (ex: erro percentual, intervalo de confiança) — isso deveria, ao menos, ser mencionado como escopo técnico a ser definido no futuro Manual de Analytics."</p>
+<p><strong>UX Research:</strong> "A Jornada do Interessado (Capítulo 3) e a coleta progressiva (Capítulo 4) reduzem corretamente a fricção. Recomendo reforçar que a ordem exata de coleta progressiva deve ser validada com pesquisa real de usuário antes de ser fixada operacionalmente — o documento apresenta uma ordem lógica plausível, mas não testada."</p>
+<p><strong>LGPD:</strong> "O Sistema Ético (Capítulo 13) está tecnicamente bem alinhado aos princípios da LGPD — finalidade específica, minimização, consentimento granular e direitos do titular todos presentes. Nenhuma inconsistência estrutural relevante do ponto de vista legal-principiológico."</p>
+<p><strong>Growth Marketing:</strong> "A conexão entre este sistema e decisões comerciais e operacionais reais (Capítulo 12) está bem amarrada. Nenhuma nova observação além do que já foi endereçado no Projeto 10."</p>
+<p><strong>Comunidades:</strong> "O uso de nomes de cidades e boxes em conteúdo de dados (Capítulo 11) reforça bem o valor de reconhecimento territorial. Nenhuma inconsistência."</p>
+<p><strong>Analytics:</strong> "Recomendo que o Capítulo 8 explicite que todos os dashboards derivam de uma única fonte de dados centralizada (não fontes paralelas), resolvendo preventivamente o ponto levantado por Business Intelligence sobre duplicação e inconsistência entre painéis."</p>
+<p><strong>Inteligência de Mercado:</strong> "A distinção entre este documento (previsão de uma edição específica) e o Sistema de Inteligência de Mercado mais amplo já definido no Projeto 10 (Capítulo 9) está clara. Nenhuma sobreposição indevida identificada."</p>
+<h3 id="ajustes-incorporados-apos-a-rodada-1">Ajustes incorporados após a Rodada 1</h3>
+<ul>
+<li><strong>Capítulo 4</strong> passa a prever que, quando o cruzamento automático com o Sistema de Memória não for conclusivo (ex: nome comum, dados insuficientes para certeza), o sistema trata o registro como novo até confirmação posterior pelo próprio interessado, nunca presumindo identidade sem confiança suficiente.</li>
+<li><strong>Capítulo 8</strong> passa a determinar explicitamente que todos os dashboards derivam de uma única fonte de dados centralizada, eliminando risco de duplicação de coleta ou inconsistência entre painéis.</li>
+<li><strong>Capítulo 6</strong> passa a reconhecer explicitamente que o modelo de previsão inicial é intencionalmente simples e possui limitações nos primeiros ciclos por baixa maturidade de dados históricos, evoluindo em sofisticação apenas conforme o volume de dados acumulados justificar — nunca sofisticado prematuramente sem lastro de dados reais.</li>
+<li><strong>Capítulo 9</strong> passa a indicar que a metodologia exata de cálculo de precisão (ex: erro percentual, intervalo de confiança) é escopo técnico obrigatório do futuro Manual de Analytics (Capítulo 19), não definida neste nível constitucional, mas formalmente reservada para definição futura.</li>
+<li><strong>Capítulo 3/4</strong> passa a recomendar que a ordem exata de coleta progressiva seja validada por pesquisa real de usuário (UX Research) antes de fixação operacional definitiva, tratando a sequência apresentada neste documento como lógica de referência, não como especificação final e imutável.</li>
+</ul>
+<h3 id="rodada-2-segunda-leitura-critica-apos-ajustes">Rodada 2 — segunda leitura crítica após ajustes</h3>
+<p><strong>CRM:</strong> "O tratamento de cruzamento automático não-conclusivo resolve minha objeção — evita presunção de identidade sem confiança suficiente, o que poderia gerar erro sensível de dado."</p>
+<p><strong>Business Intelligence e Analytics (avaliação conjunta):</strong> "A determinação de fonte única centralizada de dados para todos os dashboards resolve exatamente o risco que apontamos. Sistema tecnicamente consistente."</p>
+<p><strong>Ciência de Dados e Estatística (avaliação conjunta):</strong> "O reconhecimento explícito das limitações do modelo inicial e o registro da metodologia de precisão como escopo do futuro Manual de Analytics são as respostas corretas neste nível de documento — não era necessário definir a fórmula exata aqui, apenas garantir que ela será definida formalmente."</p>
+<p><strong>UX Research:</strong> "A recomendação de validação futura da ordem de coleta progressiva por pesquisa real resolve meu ponto — o documento agora reconhece corretamente que a sequência proposta é uma hipótese de boa-fé, não uma verdade definitiva."</p>
+<p><strong>Consolidação final:</strong> a segunda rodada não identificou nenhuma inconsistência estrutural relevante remanescente. Todos os ajustes da primeira rodada foram incorporados como princípios formais ou registrados como pendências técnicas claras para os manuais futuros (Capítulo 19), sem comprometer a validade constitucional deste documento. O ciclo iterativo é encerrado nesta rodada.</p>
+<hr/>
+<p><em>Fim do Sistema Permanente de Inteligência Pré-Inscrição. Documento oficial, fundamentado nas Fases 1-6 e nos Projetos 01-10, aprofundando tecnicamente o Sistema de Inteligência Prévia do Campeonato Brasileiro de Kettlebell Sport.</em></p>
+</section>
+<section aria-labelledby="roadmap-futuro-title">
+<h2 id="roadmap-futuro-title">Roadmap de Documentos Futuros</h2>
+<p class="text-muted">Lista fiel extraída do corpo deste documento (capítulo de roadmap). Status atual: 4 dos 8 itens já existem como página publicada no portal.</p>
+<ul>
+<li><strong>Manual do Formulário de Interesse</strong> — especificação prática de campos e fluxo (Capítulo 4). <a href="/docs/manuais/manual-formulario.html"><span class="badge badge--success">Publicado — Manual — Formulário de Manifestação de Interesse</span></a></li>
+<li><strong>Manual dos Dashboards</strong> — especificação técnica completa (Capítulo 8). <a href="/docs/manuais/manual-dashboard.html"><span class="badge badge--success">Publicado — Manual — Dashboard Executivo</span></a></li>
+<li><strong>Manual do CRM</strong> — integração técnica com o Sistema Comercial (Projeto 06). <a href="/docs/manuais/manual-crm.html"><span class="badge badge--success">Publicado — Manual — CRM</span></a></li>
+<li><strong>Manual de Analytics</strong> — especificação do modelo de previsão (Capítulo 6). <span class="badge badge--neutral">Documento previsto — ainda não produzido</span></li>
+<li><strong>Manual de Relatórios</strong> — formato de entrega periódica (Capítulo 18). <span class="badge badge--neutral">Documento previsto — ainda não produzido</span></li>
+<li><strong>Manual de Pesquisa</strong> — protocolos complementares de pesquisa qualitativa. <span class="badge badge--neutral">Documento previsto — ainda não produzido</span></li>
+<li><strong>Manual de Stories Baseados em Dados</strong> — aplicação prática do Capítulo 11. <a href="/docs/manuais/manual-stories.html"><span class="badge badge--success">Publicado — Manual — Stories Baseados em Dados</span></a></li>
+<li><strong>Manual de Inteligência Comercial</strong> — aprofundamento da aplicação ao Sistema Comercial (Projeto 06). <span class="badge badge--neutral">Documento previsto — ainda não produzido</span></li>
+</ul>
+</section>
+<section aria-labelledby="glossario-relacionado-title">
+<h2 id="glossario-relacionado-title">Glossário relacionado</h2>
+<p class="text-muted">Consulte o Glossário do portal para definições de vocabulário citado neste Projeto.</p>
+</section>
+<nav aria-label="Navegação entre documentos" class="doc-nav">
+<a class="doc-nav__link doc-nav__link--prev" href="/docs/projetos/projeto10.html">
+<div class="doc-nav__label">← Anterior</div>
+<div class="doc-nav__title">Projeto 10 — Sistema de Lançamento e Mobilização</div>
+</a>
+<a class="doc-nav__link doc-nav__link--next" href="/docs/manuais/manual-formulario.html">
+<div class="doc-nav__label">Próximo →</div>
+<div class="doc-nav__title">Manual — Formulário de Manifestação de Interesse</div>
+</a>
+</nav>
+</article>
+</main>
+<aside aria-label="Sumário do documento" class="page-shell__toc toc">
+<div class="toc__title">Nesta página</div>
+<ul class="toc__list" data-toc-list=""></ul>
+</aside>
+</div>
+</div>
+<div class="modal-overlay" data-open="false" id="search-modal">
+<div aria-labelledby="search-modal-title" aria-modal="true" class="modal" role="dialog" tabindex="-1">
+<div class="modal__header">
+<h2 id="search-modal-title" style="margin:0;font-size:var(--fs-500)">Buscar</h2>
+<button aria-label="Fechar busca" class="modal__close" data-action="close-modal" type="button">×</button>
+</div>
+<div class="search-bar" role="search">
+<span aria-hidden="true" class="search-bar__icon">🔍</span>
+<label class="visually-hidden" for="modal-search-input">Buscar</label>
+<input autocomplete="off" data-search-input="" id="modal-search-input" placeholder="Buscar documentos, termos, capítulos..." type="search"/>
+</div>
+<div aria-live="polite" class="search-results" data-search-results=""></div>
+</div>
+</div>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid" data-footer-columns=""></div>
+<div class="site-footer__bottom">
+<span>© <span data-current-year=""></span> Campeonato Brasileiro de Kettlebell Sport.</span>
+</div>
+</div>
+</footer>
+<script src="/assets/js/navigation.js" type="module"></script>
+<script src="/assets/js/search.js" type="module"></script>
+<script>
+    document.querySelectorAll("[data-current-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+    import("/assets/js/navigation.js").then(function (mod) {
+      mod.renderBreadcrumb([
+        { label: "Início", url: "/index.html" },
+        { label: "Projetos", url: "/docs/projetos/index.html" },
+        { label: "Projeto 11 — Sistema de Inteligência Pré-Inscrição" }
+      ]);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!--
+  COMPONENTE: Header / Topbar
+  Uso: incluído no topo de todas as páginas. Em vanilla JS/HTML puro (sem
+  templating de servidor), este fragmento é copiado manualmente para cada
+  página (ver templates/document-template.html) ou injetado via fetch()
+  em builds futuros. data-topnav é preenchido dinamicamente por navigation.js
+  a partir de /data/navigation.json.
+  Acessibilidade: <header> semântico, nav com aria-label, botão de tema com
+  aria-pressed, botão de menu mobile com aria-expanded/aria-controls.
+-->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="/index.html">
+      <img src="/assets/icons/logo-mark.svg" alt="" width="28" height="28" loading="eager" />
+      <span>Portal CBKS</span>
+    </a>
+
+    <nav aria-label="Navegação principal">
+      <ul class="site-header__nav" data-topnav>
+        <!-- preenchido por navigation.js -->
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <button type="button" class="btn btn--icon" data-action="open-modal" data-target="search-modal" aria-label="Abrir busca (Ctrl+K)">
+        🔍
+      </button>
+      <button type="button" class="btn btn--icon" data-action="toggle-theme" aria-pressed="false" aria-label="Alternar tema claro/escuro">
+        🌓
+      </button>
+      <button type="button" class="btn btn--icon" data-action="toggle-sidebar" aria-expanded="false" aria-controls="primary-sidebar" aria-label="Abrir menu de navegação">
+        ☰
+      </button>
+    </div>
+  </div>
+</header>

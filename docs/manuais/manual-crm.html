@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manual — CRM · Portal CBKS</title>
+<meta content="Objetivo: o CRM não é uma lista de contatos — é o registro vivo do relacionamento entre a organização e cada pessoa que já se envolveu com o campeonato, em qualquer papel." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="Manual — CRM" property="og:title"/>
+<meta content="Objetivo: o CRM não é uma lista de contatos — é o registro vivo do relacionamento entre a organização e cada pessoa que já se envolveu com o campeonato, em qualquer papel." property="og:description"/>
+<meta content="{{baseUrl}}/docs/manuais/manual-crm.html" property="og:url"/>
+<meta content="/assets/images/og-default.png" property="og:image"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Manual — CRM" name="twitter:title"/>
+<meta content="Objetivo: o CRM não é uma lista de contatos — é o registro vivo do relacionamento entre a organização e cada pessoa que já se envolveu com o campeonato, em qualquer papel." name="twitter:description"/>
+<link href="{{baseUrl}}/docs/manuais/manual-crm.html" rel="canonical"/>
+<link href="/assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/css/design-system.css" rel="stylesheet"/>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Manual — CRM",
+    "description": "Objetivo: o CRM não é uma lista de contatos — é o registro vivo do relacionamento entre a organização e cada pessoa que já se envolveu com o campeonato, em qualquer papel.",
+    "url": "{{baseUrl}}/docs/manuais/manual-crm.html",
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Portal de Documentação — Campeonato Brasileiro de Kettlebell Sport"
+    },
+    "dateModified": "2026-08-05",
+    "version": "Versão documental: não versionado"
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="site-header__brand" href="/index.html">
+<img alt="" height="28" loading="eager" src="/assets/icons/logo-mark.svg" width="28"/>
+<span>Portal CBKS</span>
+</a>
+<nav aria-label="Navegação principal"><ul class="site-header__nav" data-topnav=""></ul></nav>
+<div class="site-header__actions">
+<button aria-label="Abrir busca (Ctrl+K)" class="btn btn--icon" data-action="open-modal" data-target="search-modal" type="button">🔍</button>
+<button aria-label="Alternar tema claro/escuro" aria-pressed="false" class="btn btn--icon" data-action="toggle-theme" type="button">🌓</button>
+<button aria-controls="primary-sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="btn btn--icon" data-action="toggle-sidebar" type="button">☰</button>
+</div>
+</div>
+</header>
+<div class="container">
+<div class="page-shell">
+<aside aria-label="Navegação da documentação" class="page-shell__sidebar sidebar" id="primary-sidebar">
+<div data-sidebar=""></div>
+</aside>
+<main class="page-shell__main" id="main-content">
+<nav aria-label="Trilha de navegação" class="breadcrumb" data-breadcrumb=""></nav>
+<article class="doc-content">
+<header>
+<p class="card__eyebrow">Manual / CRM</p>
+<h1>Manual — CRM</h1>
+<div class="card__meta" style="margin:var(--space-4) 0 var(--space-6)">
+<span class="badge badge--neutral">Versão: não versionado</span>
+<span class="badge badge--success">Status: finalizado, auditoria dupla</span>
+<span>⏱ 16 min de leitura</span>
+</div>
+<p class="text-muted"><strong>Objetivo:</strong> Este manual define, no eixo Captura → Relacionamento → Inteligência → Comunicação pública, a camada de RELACIONAMENTO: o sistema permanente que qualquer CRM futuro — em qualquer tecnologia — deve seguir. Opera dentro dos princípios dos Projetos 01, 06, 07, 08, 09, 10 e 11, e de toda a Constituição anterior, sem autoridade para alterá-los.</p>
+<p class="text-muted"><em>Campeonato Brasileiro de Kettlebell Sport — Manual Operacional Permanente</em></p>
+<p class="text-muted"><em>Opera dentro dos princípios dos Projetos 01, 06, 07, 08, 09, 10 e 11, e de toda a Constituição anterior — sem autoridade para alterá-los. Este manual não escolhe plataforma, não cria automação nem integração técnica — cria o sistema permanente que qualquer CRM futuro, em qualquer tecnologia, deve seguir.</em></p>
+<div class="callout callout--info" role="note" style="margin-bottom:var(--space-4)">
+<span aria-hidden="true" class="callout__icon">🧭</span>
+<div>
+<strong>Cadeia conceitual do ecossistema de dados (Captura → Relacionamento → Inteligência → Comunicação pública):</strong> Formulário = Captura · CRM = Relacionamento · Dashboard = Inteligência · Stories = Comunicação pública. Este documento corresponde ao elo <strong>RELACIONAMENTO</strong> dessa cadeia.
+              </div>
+</div>
+<div class="callout callout--warning" role="note" style="margin-bottom:var(--space-4)">
+<span aria-hidden="true" class="callout__icon">🔀</span>
+<div>
+<strong>Navegação pedagógica × grafo técnico de dependências</strong> — são dois conceitos distintos nesta página. A <em>navegação pedagógica</em> (rodapé "Anterior/Próximo") segue a ordem de leitura recomendada Formulário → CRM → Dashboard → Stories. O <em>grafo técnico de dependências</em> (abaixo, "Dependências") descreve o que tecnicamente alimenta este sistema, e pode não coincidir com a ordem de leitura.
+              </div>
+</div>
+<div class="callout callout--info" role="note">
+<span aria-hidden="true" class="callout__icon">🔗</span>
+<div>
+<strong>Dependências (grafo técnico):</strong> <a href="/docs/projetos/projeto11.html">Projeto 11 — Sistema de Inteligência Pré-Inscrição</a>, <a href="/docs/projetos/projeto08.html">Projeto 08 — Sistema de Memória e Patrimônio</a><br/>
+<strong>Documentos relacionados:</strong> <a href="/docs/manuais/manual-formulario.html">Manual — Formulário de Manifestação de Interesse</a>, <a href="/docs/manuais/manual-dashboard.html">Manual — Dashboard Executivo</a><br/>
+<strong>Roadmaps associados:</strong> <a href="/docs/roadmaps/index.html">Roadmaps consolidados</a>
+</div>
+</div>
+</header>
+<section id="conteudo-principal">
+<h2 id="1-filosofia-do-crm">1. FILOSOFIA DO CRM</h2>
+<p><strong>Objetivo:</strong> o CRM não é uma lista de contatos — é o registro vivo do relacionamento entre a organização e cada pessoa que já se envolveu com o campeonato, em qualquer papel.</p>
+<p><strong>Papel institucional:</strong> é o sistema nervoso central de relacionamento, conectando tecnicamente tudo o que os Projetos 06 a 11 já definiram como princípio.</p>
+<p><strong>Como fortalece a comunidade:</strong> garantindo que ninguém precise se apresentar duas vezes — o sistema já reconhece quem a pessoa é e o que já viveu com o campeonato, aplicação direta e literal da promessa "nós guardamos" (Fase 3).</p>
+<p><strong>Como protege a memória institucional:</strong> o CRM alimenta e é alimentado pelo Sistema de Memória (Projeto 08) — relacionamento presente e patrimônio histórico são a mesma coisa vista em momentos diferentes do tempo.</p>
+<p><strong>O que nunca deve acontecer:</strong> uma pessoa ser tratada como número ou "lead" genérico; histórico de relacionamento perdido por falha técnica ou trocas de plataforma; qualquer dado usado fora do propósito pelo qual foi coletado.</p>
+<hr/>
+<h2 id="2-arquitetura-geral">2. ARQUITETURA GERAL</h2>
+<p><strong>Entidades centrais:</strong> <strong>Pessoa</strong> (unidade central de todo o sistema, mesmo princípio já constitucional desde o <a href="/docs/projetos/projeto08.html#2-arquitetura-da-memoria">Projeto 08, Capítulo 2</a>) · <strong>Organização</strong> (boxes, patrocinadores, parceiros, federações) · <strong>Edição/Evento</strong> · <strong>Interação</strong> (todo contato registrado).</p>
+<p><strong>Relacionamentos:</strong> uma pessoa pode acumular múltiplos papéis ao longo do tempo (ser atleta e também treinador, ou voluntário e também árbitro) — o sistema nunca cria cadastros duplicados por papel; um único registro de pessoa acumula todos os papéis que ela já exerceu.</p>
+<p><strong>Hierarquia:</strong> a Pessoa está sempre acima do perfil funcional (Capítulo 3) — o perfil é um atributo da pessoa, nunca o contrário.</p>
+<p><strong>Princípio geral:</strong> nenhuma entidade existe isolada — toda organização, edição e interação está conectada a pelo menos uma pessoa, coerente com a arquitetura já estabelecida no Sistema de Memória.</p>
+<hr/>
+<h2 id="3-perfis-cadastrados">3. PERFIS CADASTRADOS</h2>
+<ul>
+<li><strong>Atletas:</strong> finalidade — histórico competitivo completo, base do Sistema de Ranking (Fase 5) e do Livro de Nomes (Projeto 08).</li>
+<li><strong>Treinadores:</strong> finalidade — reconhecimento técnico formal e vínculo com atletas formados.</li>
+<li><strong>Boxes:</strong> finalidade — reconhecimento territorial e parceria estrutural (Fase 5).</li>
+<li><strong>Árbitros:</strong> finalidade — histórico de certificação e atuação técnica (Fase 5/Projeto 09).</li>
+<li><strong>Voluntários:</strong> finalidade — reconhecimento de trajetória de contribuição operacional (Projeto 07/09).</li>
+<li><strong>Patrocinadores:</strong> finalidade — histórico de relacionamento comercial e institucional (Projeto 05/06).</li>
+<li><strong>Imprensa:</strong> finalidade — relacionamento editorial contínuo (Projeto 01/07).</li>
+<li><strong>Parceiros institucionais:</strong> finalidade — relacionamento de longo prazo com federações, universidades e órgãos públicos (Fase 5).</li>
+<li><strong>Autoridades:</strong> finalidade — relacionamento institucional formal, geralmente fora do funil comercial padrão.</li>
+<li><strong>Fornecedores:</strong> finalidade — histórico operacional de prestação de serviço (Projeto 09).</li>
+</ul>
+<hr/>
+<h2 id="4-jornada-do-relacionamento">4. JORNADA DO RELACIONAMENTO</h2>
+<ol>
+<li><strong>Primeiro contato</strong> — registro mínimo (<a href="/docs/projetos/projeto11.html#4-sistema-de-coleta-de-dados-campo-a-campo">Projeto 11, Capítulo 4</a>).</li>
+<li><strong>Manifestação de interesse</strong> — status atualizado conforme o Sistema de Inteligência Pré-Inscrição.</li>
+<li><strong>Pré-inscrição</strong> — dados progressivamente completados (<a href="/docs/manuais/manual-formulario.html">Manual do Formulário</a> de Manifestação de Interesse).</li>
+<li><strong>Inscrição</strong> — conversão formal de status, sem reentrada de dado já fornecido.</li>
+<li><strong>Competição</strong> — registro de participação e resultado, alimentando diretamente o Sistema de Memória.</li>
+<li><strong>Pós-evento</strong> — reconhecimento e contato de continuidade (<a href="/docs/projetos/projeto07.html#2-jornada-completa-do-participante">Projeto 07, Capítulo 2</a>).</li>
+<li><strong>Relacionamento contínuo</strong> — presença ativa entre edições (Fase 5).</li>
+<li><strong>Retorno na próxima edição</strong> — histórico acumulado reconhecido automaticamente, nunca tratado como novo relacionamento.</li>
+<li><strong>Memória histórica</strong> — a trajetória completa da pessoa permanece acessível e preservada permanentemente (Projeto 08).</li>
+</ol>
+<p>Cada etapa é uma mudança de status dentro do mesmo registro único de pessoa — nunca a criação de um novo cadastro desconectado do anterior.</p>
+<hr/>
+<h2 id="5-arquitetura-dos-dados">5. ARQUITETURA DOS DADOS</h2>
+<p><strong>O que deve existir:</strong> apenas dados com propósito institucional claro, aplicando o mesmo teste de propósito já constitucional desde o <a href="/docs/projetos/projeto11.html#1-filosofia-da-inteligencia-pre-inscricao">Projeto 11, Capítulo 1</a>.</p>
+<p><strong>O que nunca deve existir:</strong> dado sensível sem finalidade declarada; dado duplicado sem necessidade técnica real; qualquer campo mantido apenas "por precaução".</p>
+<p><strong>Dados permanentes:</strong> nome, histórico de participação, trajetória — nunca expiram, formam a espinha dorsal da pessoa no sistema.</p>
+<p><strong>Dados temporários:</strong> informações específicas de um ciclo (ex: necessidade de hospedagem de uma edição específica) — relevantes apenas naquele contexto, mas preservados como registro histórico após o uso, nunca simplesmente descartados.</p>
+<p><strong>Dados históricos:</strong> arquivados de forma permanente, nunca deletados por conveniência operacional, alimentando diretamente o Projeto 08.</p>
+<p><strong>Metadados:</strong> cada dado carrega proveniência, data de coleta e nível de confiabilidade, mesma lógica já formalizada no <a href="/docs/projetos/projeto08.html#11-sistema-de-metadados">Projeto 08, Capítulo 11</a>.</p>
+<p><strong>Relacionamentos:</strong> estruturados como grafo (Capítulo 2), nunca como campos isolados sem conexão.</p>
+<hr/>
+<h2 id="6-segmentacao">6. SEGMENTAÇÃO</h2>
+<p>A segmentação por estado, cidade, box, treinador, categoria, modalidade, experiência, tempo de relacionamento, participações, interesses e perfil competitivo serve, no CRM, a um propósito distinto e complementar ao da comunicação em massa (<a href="/docs/projetos/projeto10.html#10-sistema-de-segmentacao">Projeto 10, Capítulo 10</a>): aqui, a segmentação orienta <strong>relacionamento individualizado</strong> — cada segmento recebe abordagem de contato apropriada à sua trajetória real, nunca tratamento genérico de massa.</p>
+<hr/>
+<h2 id="7-historico">7. HISTÓRICO</h2>
+<p>Interações, participações, contatos, eventos, premiações, recordes, ações institucionais e comunicações são todos registrados de forma permanente e nunca sobrescritos — qualquer atualização gera novo registro versionado, preservando o histórico completo, mesmo princípio já constitucional desde o <a href="/docs/projetos/projeto08.html#11-sistema-de-metadados">Projeto 08, Capítulo 11</a>. O histórico de relacionamento é, ele mesmo, um dos ativos mais valiosos do sistema — perdê-lo equivale a quebrar a promessa central da marca.</p>
+<hr/>
+<h2 id="8-integracao">8. INTEGRAÇÃO</h2>
+<p>O CRM é a fonte primária de dado de pessoa para todos os demais sistemas: alimenta o Sistema Comercial (Projeto 06) com histórico de relacionamento; alimenta o Sistema de Experiência (Projeto 07) com reconhecimento de trajetória; alimenta o Sistema de Memória (Projeto 08) com registro permanente; alimenta o Sistema Operacional (Projeto 09) com dados de credenciamento e dimensionamento; alimenta o Sistema de Lançamento (Projeto 10) e o Sistema de Inteligência Pré-Inscrição (Projeto 11) com histórico de conversão; alimenta o Dashboard Executivo com indicadores de relacionamento (Capítulo 12). Nenhum desses sistemas mantém uma base de pessoa paralela e desconectada do CRM.</p>
+<hr/>
+<h2 id="9-governanca-dos-dados">9. GOVERNANÇA DOS DADOS</h2>
+<p><strong>Quem cria:</strong> qualquer ponto de contato oficial (formulário, comercial, credenciamento) gera ou atualiza um registro — nunca criação informal fora do sistema.</p>
+<p><strong>Quem altera:</strong> a própria pessoa, via autoatualização (<a href="/docs/projetos/projeto11.html#5-sistema-de-qualidade-dos-dados">Projeto 11, Capítulo 5</a>), ou a equipe responsável pela área correspondente (Capítulo 3).</p>
+<p><strong>Quem consulta:</strong> conforme níveis de acesso por perfil (Capítulo 13).</p>
+<p><strong>Quem aprova mudança estrutural:</strong> qualquer alteração de arquitetura de dados (Capítulo 5) exige aprovação da Governança de Marca.</p>
+<p><strong>Quem exporta:</strong> função restrita e sempre registrada.</p>
+<p><strong>Quem exclui:</strong> ninguém isoladamente — exclusão de dado pessoal segue processo formal (Capítulo 11), enquanto exclusão de registro histórico de participação segue as regras de excepcionalidade já definidas no <a href="/docs/projetos/projeto08.html#13-sistema-de-acesso">Projeto 08, Capítulo 13</a>.</p>
+<p><strong>Versionamento e auditorias:</strong> mesma lógica formal já padronizada desde o Projeto 04.</p>
+<hr/>
+<h2 id="10-qualidade-da-base">10. QUALIDADE DA BASE</h2>
+<p>Medida por: <strong>duplicidade</strong> (cruzamento automático, mesmo protocolo do <a href="/docs/projetos/projeto11.html#5-sistema-de-qualidade-dos-dados">Projeto 11, Capítulo 5</a>, incluindo tratamento de casos inconclusivos) · <strong>completude</strong> (proporção de campos relevantes preenchidos) · <strong>atualização</strong> (tempo desde a última confirmação de dado) · <strong>consistência</strong> (mesma pessoa representada de forma única em todo o sistema) · <strong>confiabilidade</strong> (proporção de dado validado versus não validado) · <strong>obsolescência</strong> (dado que não é mais operacionalmente relevante, mas que permanece preservado como histórico — nunca deletado apenas por estar desatualizado, apenas despriorizado do uso ativo).</p>
+<hr/>
+<h2 id="11-lgpd">11. LGPD</h2>
+<p><strong>Consentimento:</strong> granular e específico por finalidade, mesmo padrão já constitucional desde o <a href="/docs/manuais/manual-formulario.html">Manual do Formulário</a> de Manifestação de Interesse.</p>
+<p><strong>Finalidade:</strong> declarada no momento da coleta original, preservada como metadado permanente do próprio dado.</p>
+<p><strong>Retenção:</strong> dados de contato e relacionamento seguem prazo definido e revisável; dados de resultado esportivo oficial (informação pública de competição) seguem o regime de preservação permanente do Sistema de Memória (Capítulo 16 trata a tensão entre os dois regimes).</p>
+<p><strong>Anonimização:</strong> aplicada a relatórios agregados e análises, nunca ao registro histórico nominal central do Livro de Nomes, que é, por definição e por consentimento original informado, público e nominal.</p>
+<p><strong>Exclusão e direito ao esquecimento:</strong> aplicável integralmente a dados de contato, comerciais e de relacionamento ativo — tratado com a mesma seriedade já definida no <a href="/docs/projetos/projeto10.html#16-sistema-etico">Projeto 10, Capítulo 16</a>, e no <a href="/docs/projetos/projeto11.html#13-sistema-etico-lgpd-e-privacidade">Projeto 11, Capítulo 13</a>.</p>
+<p><strong>Direitos do titular:</strong> acesso, correção, portabilidade e exclusão de dado pessoal de contato, sempre disponíveis e de fácil exercício.</p>
+<p><strong>Compartilhamento:</strong> nunca fora do escopo declarado, exceto consentimento específico e separado por finalidade.</p>
+<p><strong>Auditorias:</strong> periódicas, com foco especial na coerência entre este capítulo e o Capítulo 16 (Casos Especiais), onde a tensão entre exclusão de dado pessoal e preservação de patrimônio histórico é mais sensível.</p>
+<hr/>
+<h2 id="12-indicadores">12. INDICADORES</h2>
+<ul>
+<li><strong>Crescimento da comunidade:</strong> volume total de pessoas relacionadas ao ecossistema ao longo do tempo — decisão associada: estratégia de expansão (Fase 5).</li>
+<li><strong>Retenção:</strong> proporção de pessoas que mantêm relacionamento ativo entre edições — decisão: prioridade de investimento em experiência (Projeto 07).</li>
+<li><strong>Recorrência:</strong> frequência de retorno de atletas, treinadores e voluntários — decisão: calibração de reconhecimento de trajetória.</li>
+<li><strong>Atualização cadastral:</strong> proporção de perfis com dado recente e confiável — decisão: priorização de campanhas de atualização de dado.</li>
+<li><strong>Participação por edição:</strong> volume ativo por ciclo — decisão: dimensionamento operacional (Projeto 09).</li>
+<li><strong>Relacionamento por perfil:</strong> volume ativo por tipo de perfil (Capítulo 3) — decisão: alocação de recursos de relacionamento por área.</li>
+<li><strong>Qualidade da base:</strong> conforme Capítulo 10 — decisão: priorização de manutenção técnica.</li>
+<li><strong>Engajamento:</strong> interação real registrada ao longo do relacionamento — decisão: calibração de comunicação individualizada (Capítulo 6).</li>
+</ul>
+<hr/>
+<h2 id="13-seguranca">13. SEGURANÇA</h2>
+<p><strong>Perfis de acesso:</strong> definidos por função institucional (Capítulo 3 e estrutura organizacional da Fase 6), nunca acesso irrestrito universal.</p>
+<p><strong>Permissões:</strong> visualizar, editar e exportar são níveis distintos, mesma lógica já aplicada no Dashboard Executivo.</p>
+<p><strong>Registro de alterações:</strong> log formal de toda mudança relevante em qualquer registro de pessoa.</p>
+<p><strong>Backup:</strong> redundância geográfica e tecnológica, mesmo princípio já constitucional desde o <a href="/docs/projetos/projeto08.html#12-sistema-de-preservacao">Projeto 08, Capítulo 12</a>.</p>
+<p><strong>Continuidade:</strong> o sistema nunca depende de uma única pessoa ou de um único fornecedor tecnológico, mesmo princípio de continuidade institucional já aplicado em todos os sistemas anteriores.</p>
+<p><strong>Proteção da informação:</strong> medidas técnicas de segurança proporcionais à sensibilidade do dado armazenado.</p>
+<hr/>
+<h2 id="14-roadmap-de-evolucao">14. ROADMAP DE EVOLUÇÃO</h2>
+<p><strong>Como o CRM deve evoluir:</strong> por incorporação de novos módulos sempre testados pelo mesmo princípio de propósito real (Capítulo 5), nunca por tendência de mercado não avaliada.</p>
+<p><strong>Como incorporar novos módulos:</strong> com aprovação da Governança de Marca para qualquer mudança estrutural (Capítulo 9).</p>
+<p><strong>Como manter compatibilidade histórica:</strong> nenhuma evolução técnica pode resultar em perda de dado histórico já acumulado — migração de plataforma nunca é motivo para descarte de registro.</p>
+<p><strong>Como preservar a memória institucional:</strong> o CRM e o Sistema de Memória (Projeto 08) crescem sempre juntos — nenhuma decisão de evolução do CRM pode enfraquecer a completude do patrimônio histórico.</p>
+<hr/>
+<h2 id="15-roadmap-de-implementacao">15. ROADMAP DE IMPLEMENTAÇÃO</h2>
+<p><strong>Etapas:</strong> (1) mapeamento formal das entidades reais (Capítulo 2) antes de qualquer escolha técnica; (2) definição de estrutura de campos conforme a Arquitetura dos Dados (Capítulo 5); (3) planejamento de integração com os sistemas já constitucionais (Capítulo 8); (4) migração de qualquer dado legado já existente, com preservação obrigatória de histórico; (5) testes com grupo reduzido antes de expansão total; (6) implantação plena, seguindo a Governança (Capítulo 9).</p>
+<p><strong>Dependências:</strong> o CRM depende do Sistema de Memória e do Sistema de Inteligência Pré-Inscrição estarem minimamente definidos (já estão, por esta própria Constituição) — a implementação técnica não precisa esperar novos princípios, apenas aplicar os já existentes.</p>
+<p><strong>Critérios de implantação:</strong> validação com um perfil de usuário real antes de expansão total (mesmo critério já usado no Dashboard Executivo).</p>
+<p><strong>Boas práticas:</strong> nenhuma tecnologia específica é exigida — qualquer plataforma que suporte os princípios de arquitetura de dados (Capítulo 5), histórico permanente (Capítulo 7) e segurança (Capítulo 13) é compatível, mesmo princípio de não-dependência de fornecedor único já usado nos Projetos 08 e 09.</p>
+<hr/>
+<h2 id="16-casos-especiais">16. CASOS ESPECIAIS</h2>
+<ul>
+<li><strong>Atletas internacionais:</strong> seguem as mesmas regras de qualquer atleta, com campos adaptados de documentação (mesmo princípio do <a href="/docs/projetos/projeto05.html#15-sistema-internacional">Projeto 05, Capítulo 15</a>).</li>
+<li><strong>Menores de idade:</strong> consentimento parental explícito e coleta mínima reforçada (<a href="/docs/projetos/projeto08.html#16-sistema-etico">Projeto 08, Capítulo 16</a>; <a href="/docs/projetos/projeto10.html#16-sistema-etico">Projeto 10, Capítulo 16</a>).</li>
+<li><strong>Boxes encerrados:</strong> o registro histórico do box e de sua relação com atletas é preservado permanentemente, mesmo que o box não exista mais operacionalmente — a história não se apaga porque a organização que a viveu deixou de existir.</li>
+<li><strong>Mudança de treinador:</strong> o vínculo histórico com o treinador anterior é preservado, não substituído — a trajetória do atleta é documentada de forma cumulativa, nunca reescrita.</li>
+<li><strong>Mudança de estado/cidade:</strong> o dado atual é atualizado; o histórico de localização anterior é preservado como parte da trajetória, não apagado.</li>
+<li><strong>Falecimento:</strong> o perfil nunca é simplesmente "excluído" ou tratado como encerramento comum de relacionamento — torna-se um registro permanente de reconhecimento e memória, tratado com o mesmo cuidado e dignidade do Sistema de Memória (Projeto 08), incluindo possível reconhecimento formal no Livro de Nomes ou Hall da Fama quando aplicável.</li>
+<li><strong>Desligamento institucional (dirigentes/staff):</strong> o registro de contribuição é preservado como parte da história organizacional, independentemente do motivo do desligamento.</li>
+<li><strong>Patrocinadores históricos:</strong> os "guardiões fundadores" (<a href="/docs/projetos/projeto05.html#11-sistema-financeiro">Projeto 05, Capítulo 11</a>) permanecem no CRM como parte permanente do patrimônio institucional, mesmo após o encerramento do contrato comercial ativo.</li>
+<li><strong>Registros permanentes vs. direito ao esquecimento:</strong> o presente manual reconhece explicitamente a tensão entre o direito de exclusão de dado pessoal (Capítulo 11) e a preservação de registro histórico de participação esportiva pública (Projeto 08). A resolução formal é: <strong>dados de contato, comerciais e de relacionamento privado</strong> podem ser excluídos mediante solicitação; <strong>o registro nominal de participação esportiva pública</strong> (nome, resultado, edição) é tratado como informação de competição pública, preservada permanentemente no Sistema de Memória, com essa distinção comunicada de forma clara e transparente no momento do consentimento original — nunca como surpresa posterior.</li>
+</ul>
+<hr/>
+<h2 id="17-sistema-de-auditoria">17. SISTEMA DE AUDITORIA</h2>
+<p><strong>Como auditar o CRM:</strong> revisão periódica formal da aderência aos princípios deste manual, especialmente Capítulos 5, 10 e 11.</p>
+<p><strong>Como validar informações:</strong> reconferência de amostras contra fonte primária, mesmo princípio já aplicado no Dashboard Executivo.</p>
+<p><strong>Como detectar inconsistências:</strong> cruzamento sistemático entre registros relacionados (ex: um mesmo atleta aparecendo com dados divergentes em contextos diferentes).</p>
+<p><strong>Como revisar registros:</strong> processo formal e documentado, nunca alteração silenciosa de dado histórico relevante.</p>
+<p><strong>Como manter qualidade ao longo dos anos:</strong> auditoria periódica obrigatória, com resultado formalmente reportado à Governança de Marca.</p>
+<hr/>
+<h2 id="18-roadmap-de-documentos-derivados">18. ROADMAP DE DOCUMENTOS DERIVADOS</h2>
+<ol>
+<li><strong>Manual de Segmentação</strong> — aprofundamento técnico do Capítulo 6.</li>
+<li><strong>Manual de Automações</strong> — regras técnicas de automação de relacionamento, sempre respeitando os limites éticos já constitucionais (<a href="/docs/projetos/projeto10.html#16-sistema-etico">Projeto 10, Capítulo 16</a>).</li>
+<li><strong>Manual de Relacionamento</strong> — protocolo prático de contato por perfil (Capítulo 3).</li>
+<li><strong>Manual de Qualidade dos Dados</strong> — aprofundamento técnico do Capítulo 10.</li>
+<li><strong>Manual de LGPD</strong> — aprofundamento jurídico-operacional do Capítulo 11.</li>
+<li><strong>Manual de Integrações</strong> — especificação técnica do Capítulo 8.</li>
+<li><strong>Manual de Migração</strong> — protocolo técnico de migração de plataforma preservando histórico (Capítulo 14).</li>
+<li><strong>Manual de Atendimento</strong> — protocolo de suporte direto a qualquer perfil cadastrado.</li>
+</ol>
+<p><strong>Prioridade de desenvolvimento:</strong> <strong>prioridade 1</strong> — Manual de LGPD e Manual de Qualidade dos Dados, pré-requisitos de conformidade e confiabilidade antes de qualquer operação em escala; <strong>prioridade 2</strong> — Manual de Integrações e Manual de Segmentação, necessários para conectar o CRM aos demais sistemas constitucionais; <strong>prioridade 3</strong> — Manual de Relacionamento e Manual de Atendimento, que operacionalizam o uso cotidiano; <strong>prioridade 4</strong> — Manual de Automações e Manual de Migração, que amadurecem a partir do uso já consolidado do sistema.</p>
+<hr/>
+<h2 id="auditoria-final-conselho-de-onze-especialistas-ciclo-iterativo">AUDITORIA FINAL — CONSELHO DE ONZE ESPECIALISTAS (CICLO ITERATIVO)</h2>
+<h3 id="rodada-1-criticas-tecnicas">Rodada 1 — críticas técnicas</h3>
+<p><strong>CRM:</strong> "A decisão de tratar Pessoa como entidade central acima de qualquer perfil funcional (Capítulo 2) é tecnicamente correta e evita o erro mais comum de sistemas de relacionamento esportivo — múltiplos cadastros fragmentados da mesma pessoa em papéis diferentes. Nenhuma inconsistência estrutural."</p>
+<p><strong>Customer Success:</strong> "A Jornada do Relacionamento (Capítulo 4), tratando cada etapa como mudança de status de um único registro, é coerente com boas práticas reais de gestão de relacionamento de longo prazo. Nenhuma inconsistência."</p>
+<p><strong>Growth Marketing:</strong> "A Segmentação (Capítulo 6) corretamente distingue uso para relacionamento individualizado de uso para comunicação em massa (Projeto 10). Nenhuma inconsistência."</p>
+<p><strong>Ciência de Dados:</strong> "A Arquitetura dos Dados (Capítulo 5), com distinção clara entre dados permanentes, temporários e históricos, está bem estruturada. Nenhuma inconsistência nova."</p>
+<p><strong>Governança de Dados:</strong> "O Capítulo 9 está bem alinhado à governança já constitucional. Recomendo apenas que o processo de 'quem exclui' explicite que, mesmo dentro da equipe autorizada, exclusão de dado sensível deve exigir dupla aprovação (não uma única pessoa), dado o risco irreversível dessa ação."</p>
+<p><strong>LGPD:</strong> "O Capítulo 16, ao enfrentar diretamente a tensão entre direito ao esquecimento e preservação de registro histórico esportivo público, é o ponto mais importante e mais bem resolvido de todo o documento — a maioria dos sistemas evita essa discussão explícita. A resolução proposta (distinção entre dado de contato/comercial excluível e registro público de competição preservado) está juridicamente defensável, desde que a transparência no consentimento original (já exigida) seja de fato cumprida na prática. Nenhuma inconsistência estrutural."</p>
+<p><strong>Marketing Esportivo:</strong> "O tratamento de patrocinadores históricos como parte permanente do patrimônio (Capítulo 16) reforça corretamente a lógica de 'guardiões fundadores' já estabelecida no Projeto 05. Nenhuma inconsistência."</p>
+<p><strong>Comunidades:</strong> "O tratamento de boxes encerrados e do caso de falecimento (Capítulo 16) demonstra um cuidado humano raro em manuais técnicos de CRM — a maioria trataria esses casos apenas como 'churn' ou 'registro inativo'. Nenhuma inconsistência, e reforço que este é um diferencial real de identidade."</p>
+<p><strong>Business Intelligence:</strong> "Os indicadores (Capítulo 12) estão bem vinculados a decisões reais, seguindo a mesma disciplina já aplicada no Dashboard Executivo. Nenhuma inconsistência."</p>
+<p><strong>Arquitetura da Informação:</strong> "A estrutura de entidades e relacionamentos (Capítulo 2) é sólida e replicável em qualquer tecnologia. Nenhuma inconsistência estrutural."</p>
+<p><strong>Gestão de Relacionamento:</strong> "O documento trata relacionamento como patrimônio de longo prazo de forma consistente do início ao fim. Recomendo apenas que o Capítulo 4 explicite o que acontece quando uma pessoa interrompe o relacionamento por múltiplos ciclos e depois retorna — hoje o fluxo assume continuidade linear, sem tratar explicitamente hiato prolongado."</p>
+<h3 id="ajustes-incorporados-apos-a-rodada-1">Ajustes incorporados após a Rodada 1</h3>
+<ul>
+<li><strong>Capítulo 9</strong> passa a exigir dupla aprovação formal para qualquer exclusão de dado pessoal sensível, mesmo dentro da equipe já autorizada — nenhuma exclusão irreversível depende de decisão de uma única pessoa.</li>
+<li><strong>Capítulo 4</strong> passa a prever explicitamente o cenário de retorno após hiato prolongado: o histórico permanece intacto e é reconhecido normalmente, sem qualquer penalização ou "reinício" do relacionamento — a pessoa retoma exatamente de onde sua trajetória documentada parou, por mais longo que tenha sido o intervalo.</li>
+</ul>
+<h3 id="rodada-2-segunda-leitura-critica-apos-ajustes">Rodada 2 — segunda leitura crítica após ajustes</h3>
+<p><strong>Governança de Dados:</strong> "A exigência de dupla aprovação para exclusão sensível resolve exatamente o risco que apontei — reduz a chance de erro irreversível por decisão isolada."</p>
+<p><strong>Gestão de Relacionamento:</strong> "O tratamento explícito do retorno após hiato prolongado, sem penalização, resolve minha observação e reforça a coerência com o valor de 'trajetória contínua' já constitucional."</p>
+<p><strong>LGPD:</strong> "Mantenho minha avaliação da Rodada 1 — nenhum ajuste adicional necessário no Capítulo 16, que já estava tecnicamente bem resolvido."</p>
+<p><strong>Consolidação final:</strong> a segunda rodada não identificou nenhuma inconsistência estrutural relevante remanescente. Os dois ajustes da primeira rodada foram incorporados como princípios formais, e a resolução da tensão entre LGPD e preservação histórica (Capítulo 16) permanece como um dos pontos mais tecnicamente sólidos de todo o documento. O ciclo iterativo é encerrado nesta rodada.</p>
+<hr/>
+<p><em>Fim do Manual do CRM. Documento oficial, fundamentado em toda a Constituição do projeto (Fases 1-6, Projetos 01-11), servindo como padrão permanente para qualquer CRM utilizado pelo Campeonato Brasileiro de Kettlebell Sport.</em></p>
+</section>
+<section aria-labelledby="glossario-relacionado-title">
+<h2 id="glossario-relacionado-title">Glossário relacionado</h2>
+<p class="text-muted">Consulte o Glossário do portal para definições de vocabulário citado neste Manual.</p>
+</section>
+<nav aria-label="Navegação entre documentos" class="doc-nav">
+<a class="doc-nav__link doc-nav__link--prev" href="/docs/manuais/manual-formulario.html">
+<div class="doc-nav__label">← Anterior</div>
+<div class="doc-nav__title">Manual — Formulário de Manifestação de Interesse</div>
+</a>
+<a class="doc-nav__link doc-nav__link--next" href="/docs/manuais/manual-dashboard.html">
+<div class="doc-nav__label">Próximo →</div>
+<div class="doc-nav__title">Manual — Dashboard Executivo</div>
+</a>
+</nav>
+</article>
+</main>
+<aside aria-label="Sumário do documento" class="page-shell__toc toc">
+<div class="toc__title">Nesta página</div>
+<ul class="toc__list" data-toc-list=""></ul>
+</aside>
+</div>
+</div>
+<div class="modal-overlay" data-open="false" id="search-modal">
+<div aria-labelledby="search-modal-title" aria-modal="true" class="modal" role="dialog" tabindex="-1">
+<div class="modal__header">
+<h2 id="search-modal-title" style="margin:0;font-size:var(--fs-500)">Buscar</h2>
+<button aria-label="Fechar busca" class="modal__close" data-action="close-modal" type="button">×</button>
+</div>
+<div class="search-bar" role="search">
+<span aria-hidden="true" class="search-bar__icon">🔍</span>
+<label class="visually-hidden" for="modal-search-input">Buscar</label>
+<input autocomplete="off" data-search-input="" id="modal-search-input" placeholder="Buscar documentos, termos, capítulos..." type="search"/>
+</div>
+<div aria-live="polite" class="search-results" data-search-results=""></div>
+</div>
+</div>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid" data-footer-columns=""></div>
+<div class="site-footer__bottom">
+<span>© <span data-current-year=""></span> Campeonato Brasileiro de Kettlebell Sport.</span>
+</div>
+</div>
+</footer>
+<script src="/assets/js/navigation.js" type="module"></script>
+<script src="/assets/js/search.js" type="module"></script>
+<script>
+    document.querySelectorAll("[data-current-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+    import("/assets/js/navigation.js").then(function (mod) {
+      mod.renderBreadcrumb([
+        { label: "Início", url: "/index.html" },
+        { label: "Manuais", url: "/docs/manuais/index.html" },
+        { label: "Manual — CRM" }
+      ]);
+    });
+  </script>
+</body>
+</html>

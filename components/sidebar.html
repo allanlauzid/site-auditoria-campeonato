@@ -1,0 +1,14 @@
+<!--
+  COMPONENTE: Sidebar (navegação lateral)
+  Uso: dentro de .page-shell__sidebar, em qualquer página de documentação.
+  Conteúdo (grupos + links) é 100% dirigido por dados: navigation.js lê
+  /data/navigation.json e preenche [data-sidebar]. Adicionar um documento
+  novo = adicionar entrada em navigation.json, sem tocar este arquivo.
+  Acessibilidade: <aside> com aria-label; cada grupo é <nav> próprio;
+  item ativo marcado com aria-current="page" (feito por navigation.js).
+-->
+<aside class="page-shell__sidebar sidebar" id="primary-sidebar" aria-label="Navegação da documentação">
+  <div data-sidebar>
+    <!-- preenchido por navigation.js a partir de data/navigation.json -->
+  </div>
+</aside>

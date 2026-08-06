@@ -1,0 +1,821 @@
+{
+  "$schema": "roadmaps.schema.v1",
+  "_comment": "Estrutura para os roadmaps de documentos futuros citados pelos 21 documentos (ex.: Projeto07 cap.20 lista 16 manuais futuros; Projeto11 cap.18/19 lista ferramentas e documentos futuros). Etapa 2A entrega schema + exemplo; Etapa 2B popula com os roadmaps reais extraídos de cada documento.",
+  "roadmaps": [
+    {
+      "id": "roadmap-projeto07-documentos-futuros",
+      "origemDocId": "projeto07",
+      "titulo": "Roadmap de Documentos Futuros (Projeto 07 — Sistema de Experiência do Evento)",
+      "itens": [
+        {
+          "titulo": "Manual Operacional do Evento",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "cronograma, logística e execução prática de uma edição específica.",
+          "idCanonico": "manual-operacional-evento-canonico",
+          "aliases": [
+            "Manual Operacional do Evento"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual do Cerimonial",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "roteiro detalhado e passo a passo dos rituais definidos no Capítulo 12.",
+          "idCanonico": "manual-cerimonial-canonico",
+          "aliases": [
+            "Manual do Cerimonial"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual do Atleta",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "guia prático entregue a cada competidor, operacionalizando a Jornada do Capítulo 3."
+        },
+        {
+          "titulo": "Manual da Arbitragem",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo técnico e operacional de julgamento, complementar à Jornada do Capítulo 7.",
+          "idCanonico": "manual-arbitragem-canonico",
+          "aliases": [
+            "Manual da Arbitragem",
+            "Manual da Coordenação Técnica / Arbitragem"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual do Staff",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "funções, escalas e responsabilidades da equipe interna de operação.",
+          "idCanonico": "manual-staff-canonico",
+          "aliases": [
+            "Manual do Staff"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual do Voluntário",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "onboarding prático, operacionalizando a Jornada do Capítulo 8.",
+          "idCanonico": "manual-voluntario-canonico",
+          "aliases": [
+            "Manual do Voluntário"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual de Hospitalidade",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "detalhamento operacional do Capítulo 13 por público.",
+          "idCanonico": "manual-hospitalidade-canonico",
+          "aliases": [
+            "Manual de Hospitalidade"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual da Imprensa",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "credenciamento, fluxo e relacionamento prático, operacionalizando o Capítulo 6."
+        },
+        {
+          "titulo": "Manual de Produção",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificações técnicas de palco, som, iluminação, conforme os princípios do Capítulo 11."
+        },
+        {
+          "titulo": "Manual de Segurança",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolos de emergência e prevenção, operacionalizando o Capítulo 16.",
+          "idCanonico": "manual-seguranca-canonico",
+          "aliases": [
+            "Manual de Segurança"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual de Arena",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "planta baixa, setorização física e dimensionamento, operacionalizando o Capítulo 9.",
+          "idCanonico": "manual-arena-canonico",
+          "aliases": [
+            "Manual da Arena",
+            "Manual de Arena"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual de Sinalização",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aplicação prática e detalhada do wayfinding (Capítulo 10)."
+        },
+        {
+          "titulo": "Manual de Credenciamento",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "fluxo operacional de identificação de todos os públicos.",
+          "idCanonico": "manual-credenciamento-canonico",
+          "aliases": [
+            "Manual de Credenciamento"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual de Tecnologia",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "sistemas de apoio à competição (cronometragem, pontuação, integração com o Sistema de Memória da Fase 5)."
+        },
+        {
+          "titulo": "Manual de Transmissão",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificações de captação ao vivo, complementar ao Sistema de Vídeo (Projeto 04, Capítulo 8)."
+        },
+        {
+          "titulo": "Manual de Atendimento ao Público",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo de suporte e informação para torcida e visitantes, operacionalizando o Capítulo 4."
+        }
+      ]
+    },
+    {
+      "id": "roadmap-projeto08-documentos-futuros",
+      "origemDocId": "projeto08",
+      "titulo": "Roadmap de Documentos Futuros (Projeto 08 — Sistema de Memória e Patrimônio)",
+      "itens": [
+        {
+          "titulo": "Manual do Sistema de Memória",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "detalhamento técnico-operacional completo deste documento constitucional."
+        },
+        {
+          "titulo": "Manual do Livro de Nomes",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificação prática do núcleo central do patrimônio (Capítulo 14)."
+        },
+        {
+          "titulo": "Manual de Curadoria",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "critérios aplicados e exemplos práticos de decisão (Capítulo 5)."
+        },
+        {
+          "titulo": "Manual de História Oral",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo prático de entrevistas (Capítulo 7)."
+        },
+        {
+          "titulo": "Manual do Acervo Fotográfico",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificação técnica de seleção e arquivamento (Capítulo 8)."
+        },
+        {
+          "titulo": "Manual do Acervo Audiovisual",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificação técnica de captação e preservação (Capítulo 9)."
+        },
+        {
+          "titulo": "Manual de Metadados",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "esquema técnico completo de campos e relações (Capítulo 11)."
+        },
+        {
+          "titulo": "Manual de Digitalização",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "processo técnico de conversão de material físico para digital."
+        },
+        {
+          "titulo": "Manual de Preservação Digital",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificação técnica de formatos, redundância e migração (Capítulo 12)."
+        },
+        {
+          "titulo": "Manual do Centro de Documentação",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "organização física do acervo documental (Capítulo 10)."
+        },
+        {
+          "titulo": "Manual do Museu Virtual",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "futura interface pública de exploração do patrimônio (não obrigatória nos primeiros anos)."
+        },
+        {
+          "titulo": "Manual do Hall da Fama",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "critérios técnicos detalhados de reconhecimento (Capítulo 14)."
+        },
+        {
+          "titulo": "Manual do Arquivo Institucional",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "gestão de documentos administrativos (Capítulo 10)."
+        },
+        {
+          "titulo": "Manual de Pesquisa Histórica",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo de acesso para pesquisadores externos (Capítulo 13)."
+        },
+        {
+          "titulo": "Manual de Gestão do Acervo",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "operação cotidiana da curadoria (Capítulo 5)."
+        },
+        {
+          "titulo": "Manual de Conservação Física",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "cuidado de objetos simbólicos e materiais físicos (Capítulo 14)."
+        }
+      ]
+    },
+    {
+      "id": "roadmap-projeto09-documentos-futuros",
+      "origemDocId": "projeto09",
+      "titulo": "Roadmap de Documentos Futuros (Projeto 09 — Sistema Operacional do Evento)",
+      "itens": [
+        {
+          "titulo": "Manual Operacional do Evento",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "detalhamento prático de uma edição específica.",
+          "idCanonico": "manual-operacional-evento-canonico",
+          "aliases": [
+            "Manual Operacional do Evento"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual da Direção Geral",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolos de autoridade e decisão central."
+        },
+        {
+          "titulo": "Manual de Segurança",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolos detalhados de prevenção e emergência.",
+          "idCanonico": "manual-seguranca-canonico",
+          "aliases": [
+            "Manual de Segurança"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual da Arena",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "planta física, setorização e fluxo detalhado.",
+          "idCanonico": "manual-arena-canonico",
+          "aliases": [
+            "Manual da Arena",
+            "Manual de Arena"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual de Gestão de Crises",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolos operacionais específicos de resposta."
+        },
+        {
+          "titulo": "Manual de Credenciamento",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "fluxo prático de identificação e acesso.",
+          "idCanonico": "manual-credenciamento-canonico",
+          "aliases": [
+            "Manual de Credenciamento"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual da Coordenação Técnica / Arbitragem",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo técnico detalhado de julgamento.",
+          "idCanonico": "manual-arbitragem-canonico",
+          "aliases": [
+            "Manual da Arbitragem",
+            "Manual da Coordenação Técnica / Arbitragem"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual do Cerimonial",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "roteiro passo a passo dos rituais (complementar ao já previsto no Projeto 07).",
+          "idCanonico": "manual-cerimonial-canonico",
+          "aliases": [
+            "Manual do Cerimonial"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual da Produção",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificações técnicas de montagem, som e iluminação."
+        },
+        {
+          "titulo": "Manual da Tecnologia",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "cronometragem, credenciamento digital e integração com o Sistema de Memória."
+        },
+        {
+          "titulo": "Manual de Comunicação Operacional",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo detalhado de canais e escalonamento."
+        },
+        {
+          "titulo": "Manual de Hospitalidade",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "detalhamento prático por público (Projeto 07, Capítulo 13).",
+          "idCanonico": "manual-hospitalidade-canonico",
+          "aliases": [
+            "Manual de Hospitalidade"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual do Staff",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "funções e responsabilidades detalhadas da equipe interna.",
+          "idCanonico": "manual-staff-canonico",
+          "aliases": [
+            "Manual do Staff"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual do Voluntário",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "onboarding prático operacional.",
+          "idCanonico": "manual-voluntario-canonico",
+          "aliases": [
+            "Manual do Voluntário"
+          ],
+          "documentosOrigem": [
+            "projeto07",
+            "projeto09"
+          ],
+          "dependencias": [
+            "projeto07",
+            "projeto09"
+          ],
+          "documento_unico": true
+        },
+        {
+          "titulo": "Manual de Logística",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "transporte, materiais e equipamentos."
+        },
+        {
+          "titulo": "Manual de Encerramento",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo de fechamento e desmontagem."
+        },
+        {
+          "titulo": "Manual de Debriefing",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "processo formal de avaliação e aprendizado pós-evento."
+        }
+      ]
+    },
+    {
+      "id": "roadmap-projeto10-documentos-futuros",
+      "origemDocId": "projeto10",
+      "titulo": "Roadmap de Documentos Futuros (Projeto 10 — Sistema de Lançamento e Mobilização)",
+      "itens": [
+        {
+          "titulo": "Manual do Lançamento",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "consolidador prático de todos os demais, aplicado a um ciclo específico."
+        },
+        {
+          "titulo": "Manual de Pesquisa com Atletas",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo detalhado de coleta de dados do Capítulo 8."
+        },
+        {
+          "titulo": "Manual de CRM",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "operacionalização técnica da base de interesse e relacionamento."
+        },
+        {
+          "titulo": "Manual Editorial",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "linha editorial detalhada de conteúdo por macrofase (Capítulo 6)."
+        },
+        {
+          "titulo": "Manual de Conteúdo",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "biblioteca de formatos e diretrizes práticas de produção."
+        },
+        {
+          "titulo": "Manual de Instagram / Manual de Stories",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aplicação prática por canal (Projeto 04, Capítulo 11)."
+        },
+        {
+          "titulo": "Manual de WhatsApp",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo de proximidade e comunidade (Capítulo 12)."
+        },
+        {
+          "titulo": "Manual de E-mail",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo de nutrição e memória formal (Projeto 01, Capítulo 10)."
+        },
+        {
+          "titulo": "Manual de Landing Pages",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificação de conversão transparente (Capítulo 7)."
+        },
+        {
+          "titulo": "Manual de Dashboards",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificação técnica dos painéis do Capítulo 14."
+        },
+        {
+          "titulo": "Manual de Inteligência de Mercado",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento técnico do Capítulo 9."
+        },
+        {
+          "titulo": "Manual de Automações",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "regras técnicas de automação de comunicação, sempre respeitando o Sistema Ético (Capítulo 16)."
+        },
+        {
+          "titulo": "Manual de Relatórios",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "formato padrão de entrega de resultados a patrocinadores e diretoria."
+        },
+        {
+          "titulo": "Manual de Comunidade",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento prático do Capítulo 12."
+        },
+        {
+          "titulo": "Manual de Métricas",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificação técnica completa dos indicadores do Capítulo 13."
+        }
+      ]
+    },
+    {
+      "id": "roadmap-projeto11-documentos-futuros",
+      "origemDocId": "projeto11",
+      "titulo": "Roadmap de Documentos Futuros (Projeto 11 — Sistema de Inteligência Pré-Inscrição)",
+      "itens": [
+        {
+          "titulo": "Manual do Formulário de Interesse",
+          "status": "produzido — publicado no portal",
+          "docId": "manual-formulario",
+          "descricao": "especificação prática de campos e fluxo (Capítulo 4)."
+        },
+        {
+          "titulo": "Manual dos Dashboards",
+          "status": "produzido — publicado no portal",
+          "docId": "manual-dashboard",
+          "descricao": "especificação técnica completa (Capítulo 8)."
+        },
+        {
+          "titulo": "Manual do CRM",
+          "status": "produzido — publicado no portal",
+          "docId": "manual-crm",
+          "descricao": "integração técnica com o Sistema Comercial (Projeto 06)."
+        },
+        {
+          "titulo": "Manual de Analytics",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificação do modelo de previsão (Capítulo 6)."
+        },
+        {
+          "titulo": "Manual de Relatórios",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "formato de entrega periódica (Capítulo 18)."
+        },
+        {
+          "titulo": "Manual de Pesquisa",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolos complementares de pesquisa qualitativa."
+        },
+        {
+          "titulo": "Manual de Stories Baseados em Dados",
+          "status": "produzido — publicado no portal",
+          "docId": "manual-stories",
+          "descricao": "aplicação prática do Capítulo 11."
+        },
+        {
+          "titulo": "Manual de Inteligência Comercial",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento da aplicação ao Sistema Comercial (Projeto 06)."
+        }
+      ]
+    },
+    {
+      "id": "roadmap-manual-crm-documentos-derivados",
+      "origemDocId": "manual-crm",
+      "titulo": "Roadmap de Documentos Derivados (Manual — CRM)",
+      "itens": [
+        {
+          "titulo": "Manual de Segmentação",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento técnico do Capítulo 6."
+        },
+        {
+          "titulo": "Manual de Automações",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "regras técnicas de automação de relacionamento, sempre respeitando os limites éticos já constitucionais (Projeto 10, Capítulo 16)."
+        },
+        {
+          "titulo": "Manual de Relacionamento",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo prático de contato por perfil (Capítulo 3)."
+        },
+        {
+          "titulo": "Manual de Qualidade dos Dados",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento técnico do Capítulo 10."
+        },
+        {
+          "titulo": "Manual de LGPD",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento jurídico-operacional do Capítulo 11."
+        },
+        {
+          "titulo": "Manual de Integrações",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "especificação técnica do Capítulo 8."
+        },
+        {
+          "titulo": "Manual de Migração",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo técnico de migração de plataforma preservando histórico (Capítulo 14)."
+        },
+        {
+          "titulo": "Manual de Atendimento",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "protocolo de suporte direto a qualquer perfil cadastrado."
+        }
+      ]
+    },
+    {
+      "id": "roadmap-manual-dashboard-documentos-derivados",
+      "origemDocId": "manual-dashboard",
+      "titulo": "Roadmap de Documentos Derivados (Manual — Dashboard Executivo)",
+      "itens": [
+        {
+          "titulo": "Manual dos KPIs",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento técnico completo do Capítulo 5."
+        },
+        {
+          "titulo": "Manual dos Indicadores Operacionais",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento específico do Projeto 09."
+        },
+        {
+          "titulo": "Manual dos Indicadores Comerciais",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento específico dos Projetos 05/06."
+        },
+        {
+          "titulo": "Manual dos Indicadores de Marketing",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento específico dos Projetos 01/10."
+        },
+        {
+          "titulo": "Manual dos Indicadores da Experiência",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento específico do Projeto 07."
+        },
+        {
+          "titulo": "Manual de Visualização de Dados",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento técnico do Capítulo 7."
+        },
+        {
+          "titulo": "Manual de Storytelling Executivo",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento técnico do Capítulo 8."
+        },
+        {
+          "titulo": "Manual de Governança dos Dados",
+          "status": "não produzido",
+          "docId": null,
+          "descricao": "aprofundamento técnico do Capítulo 10."
+        }
+      ]
+    }
+  ]
+}

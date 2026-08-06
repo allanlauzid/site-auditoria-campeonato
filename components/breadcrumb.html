@@ -1,0 +1,11 @@
+<!--
+  COMPONENTE: Breadcrumb
+  Uso: topo de .page-shell__main, abaixo do header. Preenchido dinamicamente
+  por navigation.js -> renderBreadcrumb(trail) chamado pela própria página
+  (cada página conhece sua trilha: Início > Categoria > Documento).
+  Acessibilidade: <nav aria-label="Trilha de navegação">, último item com
+  aria-current="page" e sem link (posição atual).
+-->
+<nav class="breadcrumb" data-breadcrumb aria-label="Trilha de navegação">
+  <!-- preenchido via renderBreadcrumb() -->
+</nav>

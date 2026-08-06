@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Documentação · Campeonato Brasileiro de Kettlebell Sport</title>
+  <meta name="description" content="Infraestrutura do portal de documentação oficial do Campeonato Brasileiro de Kettlebell Sport. Fases, Projetos e Manuais organizados por arquitetura de dependência." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Portal de Documentação · Campeonato Brasileiro de Kettlebell Sport" />
+  <meta property="og:description" content="Fases, Projetos e Manuais organizados por arquitetura de dependência." />
+  <meta property="og:url" content="{{baseUrl}}/" />
+  <meta property="og:image" content="/assets/images/og-default.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="canonical" href="{{baseUrl}}/" />
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/css/design-system.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Portal de Documentação — Campeonato Brasileiro de Kettlebell Sport",
+    "inLanguage": "pt-BR",
+    "url": "{{baseUrl}}/"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="/index.html">
+        <img src="/assets/icons/logo-mark.svg" alt="" width="28" height="28" loading="eager" />
+        <span>Portal CBKS</span>
+      </a>
+      <nav aria-label="Navegação principal"><ul class="site-header__nav" data-topnav></ul></nav>
+      <div class="site-header__actions">
+        <button type="button" class="btn btn--icon" data-action="open-modal" data-target="search-modal" aria-label="Abrir busca (Ctrl+K)">🔍</button>
+        <button type="button" class="btn btn--icon" data-action="toggle-theme" aria-pressed="false" aria-label="Alternar tema claro/escuro">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="container" style="padding-block: var(--space-9) var(--space-7);">
+      <p class="card__eyebrow">Etapa 3 — Auditoria Independente <span class="badge badge--accent">Release Candidate RC2</span></p>
+      <h1 style="max-width: 18ch;">Documentação institucional do Campeonato Brasileiro de Kettlebell Sport</h1>
+      <p style="max-width: 60ch; font-size: var(--fs-400); color: var(--color-text-muted);">
+        Portal técnico que organiza os 21 documentos oficiais de branding e operação —
+        Fases estratégicas, Projetos constitucionais e Manuais funcionais — em uma
+        arquitetura de navegação e busca única. Os 21 documentos e a página de controle
+        (Engenharia da Documentação) estão publicados na íntegra. Em 2026-08-05, o portal foi
+        promovido de RC1 para <strong>Release Candidate RC2</strong> após auditoria independente
+        (Etapa 3): correções técnicas/editoriais aplicadas, glossário completo (46/46) e
+        validações formais realizadas — pendências que dependem de ferramentas indisponíveis
+        neste ambiente (navegador real, domínio de produção) seguem como bloqueadores formais
+        para a versão 1.0. Consulte <a href="/RELEASE-CANDIDATE-RC2.md">RELEASE-CANDIDATE-RC2.md</a>.
+      </p>
+      <div style="display:flex; gap: var(--space-3); margin-top: var(--space-5);">
+        <a class="btn btn--primary" href="/docs/fases/index.html">Explorar Fases</a>
+        <a class="btn btn--secondary" href="/docs/roadmaps/mapa-constitucional.html">Ver mapa constitucional</a>
+      </div>
+    </section>
+
+    <section class="container" style="padding-block: var(--space-7);">
+      <div class="callout callout--success" role="note">
+        <span class="callout__icon" aria-hidden="true">✅</span>
+        <div>
+          <strong>Estado atual — Release Candidate RC2 (auditoria de 2026-08-05).</strong> Os 21 documentos oficiais
+          (6 Fases, 11 Projetos, 4 Manuais) e a página de controle "Engenharia da Documentação"
+          estão publicados integralmente no portal, com auditoria independente concluída (Fase 19).
+          Consulte <a href="/RELEASE-CANDIDATE-RC2.md">RELEASE-CANDIDATE-RC2.md</a> (histórico original em
+          <a href="/RELEASE-CANDIDATE.md">RELEASE-CANDIDATE.md</a>) para escopo, riscos aceitos e bloqueadores
+          formais pendentes antes da promoção à versão 1.0.
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="padding-block: var(--space-6);" aria-labelledby="categorias-title">
+      <h2 id="categorias-title">Categorias</h2>
+      <div class="card-grid">
+        <a class="card card--interactive" href="/docs/fases/index.html" style="text-decoration:none;color:inherit;">
+          <p class="card__eyebrow">6 documentos</p>
+          <h3 class="card__title">Fases</h3>
+          <p class="text-muted">Constituição estratégica: da inteligência de mercado ao master plan de implementação.</p>
+        </a>
+        <a class="card card--interactive" href="/docs/projetos/index.html" style="text-decoration:none;color:inherit;">
+          <p class="card__eyebrow">11 documentos</p>
+          <h3 class="card__title">Projetos</h3>
+          <p class="text-muted">Constituições operacionais por sistema — comunicação, criativo, design, comercial, memória, operação...</p>
+        </a>
+        <a class="card card--interactive" href="/docs/manuais/index.html" style="text-decoration:none;color:inherit;">
+          <p class="card__eyebrow">4 documentos</p>
+          <h3 class="card__title">Manuais</h3>
+          <p class="text-muted">Especificações funcionais de sistemas digitais: CRM, Dashboard, Formulário, Stories.</p>
+        </a>
+        <a class="card card--interactive" href="/docs/glossario/index.html" style="text-decoration:none;color:inherit;">
+          <p class="card__eyebrow">46 termos</p>
+          <h3 class="card__title">Glossário</h3>
+          <p class="text-muted">Vocabulário oficial consolidado, com origem e documentos relacionados por termo.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="container" style="padding-block: var(--space-7);" aria-labelledby="roadmap-title">
+      <h2 id="roadmap-title">Linha do tempo do projeto documental</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <div class="timeline__date">Etapa 1</div>
+          <h3 class="timeline__title">Engenharia da Documentação</h3>
+          <p class="text-muted">Inventário, classificação, arquitetura, glossário e índices dos 21 documentos.</p>
+        </li>
+        <li class="timeline__item">
+          <div class="timeline__date">Etapa 2A</div>
+          <h3 class="timeline__title">Infraestrutura do Portal</h3>
+          <p class="text-muted">Design system, componentes, navegação e arquitetura de busca.</p>
+        </li>
+        <li class="timeline__item">
+          <div class="timeline__date">Etapa 2B — esta etapa <span class="badge badge--success">Publicado</span></div>
+          <h3 class="timeline__title">Conversão de conteúdo (Lotes 0–4)</h3>
+          <p class="text-muted">Migração integral dos 21 .md + página de controle para o portal — Release Candidate RC1.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="search-modal" data-open="false">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="search-modal-title" tabindex="-1">
+      <div class="modal__header">
+        <h2 id="search-modal-title" style="margin:0;font-size:var(--fs-500)">Buscar</h2>
+        <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar busca">×</button>
+      </div>
+      <div class="search-bar" role="search">
+        <span class="search-bar__icon" aria-hidden="true">🔍</span>
+        <label for="modal-search-input" class="visually-hidden">Buscar</label>
+        <input type="search" id="modal-search-input" data-search-input placeholder="Buscar documentos, termos, capítulos..." autocomplete="off" />
+      </div>
+      <div class="search-results" data-search-results aria-live="polite"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid" data-footer-columns></div>
+      <div class="site-footer__bottom">
+        <span>© <span data-current-year></span> Campeonato Brasileiro de Kettlebell Sport.</span>
+        <span>Etapa 2B — Release Candidate RC1.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/navigation.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+  <script>
+    document.querySelectorAll("[data-current-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+  </script>
+</body>
+</html>

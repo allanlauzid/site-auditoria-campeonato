@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Busca · Portal CBKS</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/css/design-system.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="/index.html"><img src="/assets/icons/logo-mark.svg" alt="" width="28" height="28" /><span>Portal CBKS</span></a>
+      <nav aria-label="Navegação principal"><ul class="site-header__nav" data-topnav></ul></nav>
+      <div class="site-header__actions">
+        <button type="button" class="btn btn--icon" data-action="toggle-theme" aria-pressed="false" aria-label="Alternar tema">🌓</button>
+      </div>
+    </div>
+  </header>
+  <main id="main-content" class="container" style="padding-block: var(--space-7); max-width: 720px;">
+    <h1>Busca</h1>
+    <p class="text-muted">
+      Página de busca standalone (além do modal global Ctrl+K). Opera sobre
+      <code>/data/search-index.json</code>, que contém as entradas reais extraídas
+      dos 21 documentos oficiais e da página de controle (Engenharia da Documentação).
+    </p>
+    <div class="search-bar" role="search">
+      <span class="search-bar__icon" aria-hidden="true">🔍</span>
+      <label for="page-search-input" class="visually-hidden">Buscar na documentação</label>
+      <input type="search" id="page-search-input" data-search-input placeholder="Buscar documentos, termos, capítulos..." autocomplete="off" />
+    </div>
+    <div class="search-results" data-search-results aria-live="polite" style="margin-top: var(--space-4);"></div>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="site-footer__grid" data-footer-columns></div></div></footer>
+  <script type="module" src="/assets/js/navigation.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+</body>
+</html>

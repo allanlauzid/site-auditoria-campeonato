@@ -1,0 +1,28 @@
+<!--
+  COMPONENTE: Bloco de código
+  Uso: trechos de código/JSON/config dentro do conteúdo. Botão de copiar
+  usa Clipboard API nativa (sem lib). data-copy-target aponta para o <code>.
+-->
+<div class="code-block">
+  <div class="code-block__header">
+    <span>json</span>
+    <button type="button" class="code-block__copy" data-action="copy-code" data-copy-target="example-code-1">Copiar</button>
+  </div>
+  <pre><code id="example-code-1">{
+  "id": "fase3",
+  "titulo": "Fase 3 — Plataforma de Marca"
+}</code></pre>
+</div>
+<script>
+  document.addEventListener("click", function (event) {
+    var btn = event.target.closest("[data-action='copy-code']");
+    if (!btn) return;
+    var target = document.getElementById(btn.dataset.copyTarget);
+    if (!target || !navigator.clipboard) return;
+    navigator.clipboard.writeText(target.textContent).then(function () {
+      var original = btn.textContent;
+      btn.textContent = "Copiado!";
+      setTimeout(function () { btn.textContent = original; }, 1500);
+    });
+  });
+</script>

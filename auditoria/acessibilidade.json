@@ -1,0 +1,50 @@
+{
+  "ferramenta_principal": "html5validator 0.4.2 (vnu.jar via OpenJDK 11, instalado e executado com sucesso)",
+  "metodo_complementar": "manual/estatico: Python html.parser customizado + calculo WCAG de contraste (luminancia relativa real)",
+  "paginas_analisadas": 31,
+  "fragmentos_analisados": 20,
+  "achados": {
+    "critico": [],
+    "alto": [],
+    "medio": [
+      {"item": "heading skip h1->h3 em 5 paginas-indice (cards)", "status": "corrigido", "arquivos": ["docs/fases/index.html","docs/glossario/index.html","docs/manuais/index.html","docs/projetos/index.html","docs/roadmaps/index.html"]},
+      {"item": "heading skip h2->h4 em index.html (timeline)", "status": "corrigido", "arquivos": ["index.html"]},
+      {"item": "contraste text-muted 4.4957:1 < 4.5:1 AA (tema claro)", "status": "corrigido", "detalhe": "--color-cinza-ferro #6B6F73 -> #63676B, nova razao 5.06:1", "arquivo": "assets/css/design-system.css"}
+    ],
+    "baixo": [
+      {"item": "th sem scope em 14 arquivos", "status": "corrigido", "detalhe": "scope=\"col\" adicionado (100% dos th sao cabecalho de coluna em thead)"}
+    ],
+    "recomendacao": [
+      {"item": "aria-controls apontando para id em outro fragmento (header.html -> sidebar.html)", "status": "falso positivo do validador de fragmento isolado, nao corrigido, documentado"},
+      {"item": "label for= nao capturado por parser inicial", "status": "falso positivo confirmado manualmente, todos os inputs de busca tem <label for> correto"}
+    ]
+  },
+  "contraste_wcag": {
+    "tema_claro": {
+      "texto_fundo_carvao_ossosoft": 16.35,
+      "texto_muted_fundo_ANTES": 4.4957,
+      "texto_muted_fundo_DEPOIS": 5.06,
+      "link_fundo": 6.48,
+      "accent_contrast_accent": 5.06,
+      "texto_bgelevado": 18.42,
+      "warning_fg_bg": 5.42,
+      "danger_fg_bg": 6.52,
+      "success_fg_bg": 6.61,
+      "info_fg_bg": 7.04,
+      "focus_ring_fundo_claro": 4.64
+    },
+    "tema_escuro": {
+      "texto_fundo": 16.35,
+      "texto_muted_fundo": 8.14,
+      "link_fundo": 7.63,
+      "accent_contrast_accent": 6.01,
+      "texto_bgelevado": 14.64,
+      "warning_fg_bg": 8.09,
+      "danger_fg_bg": 5.99,
+      "success_fg_bg": 7.10,
+      "info_fg_bg": 7.65,
+      "focus_ring_fundo_escuro": 3.52
+    }
+  },
+  "pendencia_formal": "Teste com leitor de tela real (NVDA/VoiceOver/JAWS) nao realizado - sem AT/navegador grafico disponivel no sandbox."
+}

@@ -1,0 +1,758 @@
+[
+  {
+    "documento": "Fase 1",
+    "arquivo_md": "Fase1_Inteligencia_Estrategica_Benchmark_Campeonatos.md",
+    "pagina_html": "/docs/fases/fase1.html",
+    "status": "divergência não material apenas",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": []
+    },
+    "correcao_aplicada": [],
+    "conteudo_ausente": [],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 18,
+      "headings_html": 17,
+      "list_items_md": 126,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 20,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 99,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 33,
+      "table_rows_html": 33,
+      "hr_md": 6,
+      "hr_html": 7,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Fase 2",
+    "arquivo_md": "Fase2_Identidade_Estrategica_Kettlebell.md",
+    "pagina_html": "/docs/fases/fase2.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionado parágrafo <em> ausente: a frase de escopo/tagline ('Documento-base: Fase 1 (Inteligência Estratégica) é referência permanente...') não estava reproduzida na página; foi inserida verbatim no cabeçalho, antes do bloco de dependências."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 20,
+      "headings_html": 19,
+      "list_items_md": 18,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 38,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 102,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 21,
+      "table_rows_html": 21,
+      "hr_md": 6,
+      "hr_html": 7,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Fase 3",
+    "arquivo_md": "Fase3_Plataforma_de_Marca_Kettlebell.md",
+    "pagina_html": "/docs/fases/fase3.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionados 2 parágrafos <em> ausentes: (1) subtítulo 'Campeonato Brasileiro de Kettlebell Sport — Documento oficial de identidade permanente'; (2) tagline de escopo completa ('Fundamentado sobre a Constituição do projeto...'). Nenhum dos dois estava presente na página publicada."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 31,
+      "headings_html": 30,
+      "list_items_md": 53,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 77,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 0,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 0,
+      "table_rows_html": 0,
+      "hr_md": 22,
+      "hr_html": 21,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Fase 4",
+    "arquivo_md": "Fase4_Arquitetura_Lancamento_Kettlebell.md",
+    "pagina_html": "/docs/fases/fase4.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionados 2 parágrafos <em> ausentes: subtítulo 'Campeonato Brasileiro de Kettlebell Sport' e tagline de escopo completa ('Constituição do projeto (Fases 1, 2 e 3) tratada como definitiva...')."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 15,
+      "headings_html": 15,
+      "list_items_md": 54,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 35,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 0,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 0,
+      "table_rows_html": 0,
+      "hr_md": 14,
+      "hr_html": 13,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Fase 5",
+    "arquivo_md": "Fase5_Ecossistema_Institucional_Kettlebell.md",
+    "pagina_html": "/docs/fases/fase5.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionados 2 parágrafos <em> ausentes: subtítulo 'Campeonato Brasileiro de Kettlebell Sport' e tagline de escopo completa ('Fases 1 a 4 tratadas como Constituição definitiva...')."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 29,
+      "headings_html": 29,
+      "list_items_md": 23,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 33,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 0,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 0,
+      "table_rows_html": 0,
+      "hr_md": 10,
+      "hr_html": 11,
+      "code_blocks_md": 1,
+      "code_blocks_html": 1
+    }
+  },
+  {
+    "documento": "Fase 6",
+    "arquivo_md": "Fase6_Master_Plan_Implementacao_Kettlebell.md",
+    "pagina_html": "/docs/fases/fase6.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionados 2 parágrafos <em> ausentes: subtítulo 'Campeonato Brasileiro de Kettlebell Sport — Plano Diretor de Execução' e tagline de escopo completa ('Fases 1 a 5 tratadas como Constituição definitiva...')."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 30,
+      "headings_html": 29,
+      "list_items_md": 41,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 54,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 176,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 33,
+      "table_rows_html": 33,
+      "hr_md": 14,
+      "hr_html": 16,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Projeto 01",
+    "arquivo_md": "Projeto01_Sistema_de_Comunicacao_Kettlebell.md",
+    "pagina_html": "/docs/projetos/projeto01.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionado parágrafo <em> ausente: subtítulo 'Campeonato Brasileiro de Kettlebell Sport — Manual Oficial de Comunicação' (a tagline de escopo já estava reproduzida corretamente dentro do parágrafo 'Objetivo')."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 21,
+      "headings_html": 20,
+      "list_items_md": 92,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 35,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 0,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 0,
+      "table_rows_html": 0,
+      "hr_md": 19,
+      "hr_html": 18,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Projeto 02",
+    "arquivo_md": "Projeto02_Sistema_Criativo_Kettlebell.md",
+    "pagina_html": "/docs/projetos/projeto02.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionado parágrafo <em> ausente: subtítulo 'Campeonato Brasileiro de Kettlebell Sport — Manual Oficial do Sistema Criativo'."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 17,
+      "headings_html": 16,
+      "list_items_md": 60,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 28,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 21,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 7,
+      "table_rows_html": 7,
+      "hr_md": 14,
+      "hr_html": 14,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Projeto 03",
+    "arquivo_md": "Projeto03_Sistema_Identidade_Visual_Kettlebell.md",
+    "pagina_html": "/docs/projetos/projeto03.html",
+    "status": "divergência não material apenas",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": []
+    },
+    "correcao_aplicada": [],
+    "conteudo_ausente": [],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 26,
+      "headings_html": 25,
+      "list_items_md": 16,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 64,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 47,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 14,
+      "table_rows_html": 14,
+      "hr_md": 19,
+      "hr_html": 20,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Projeto 04",
+    "arquivo_md": "Projeto04_Brand_Book_Aplicacao_Kettlebell.md",
+    "pagina_html": "/docs/projetos/projeto04.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionado parágrafo <em> ausente: subtítulo 'Campeonato Brasileiro de Kettlebell Sport — Brand Book — Manual Operacional Oficial'."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 27,
+      "headings_html": 26,
+      "list_items_md": 101,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 78,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 80,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 24,
+      "table_rows_html": 24,
+      "hr_md": 19,
+      "hr_html": 21,
+      "code_blocks_md": 1,
+      "code_blocks_html": 1
+    }
+  },
+  {
+    "documento": "Projeto 05",
+    "arquivo_md": "Projeto05_Sistema_Patrocinios_CoBranding_Kettlebell.md",
+    "pagina_html": "/docs/projetos/projeto05.html",
+    "status": "divergência não material apenas",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": []
+    },
+    "correcao_aplicada": [],
+    "conteudo_ausente": [],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 27,
+      "headings_html": 26,
+      "list_items_md": 34,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 93,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 126,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 27,
+      "table_rows_html": 27,
+      "hr_md": 20,
+      "hr_html": 21,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Projeto 06",
+    "arquivo_md": "Projeto06_Manual_Comercial_Vendas_Kettlebell.md",
+    "pagina_html": "/docs/projetos/projeto06.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionado parágrafo <em> ausente: subtítulo 'Campeonato Brasileiro de Kettlebell Sport — Manual Comercial Oficial + Sponsor Kit (Sistema, não peças)'."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 27,
+      "headings_html": 26,
+      "list_items_md": 65,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 79,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 16,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 8,
+      "table_rows_html": 8,
+      "hr_md": 21,
+      "hr_html": 21,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Projeto 07",
+    "arquivo_md": "Projeto07_Sistema_Experiencia_Evento_Kettlebell.md",
+    "pagina_html": "/docs/projetos/projeto07.html",
+    "status": "divergência não material apenas",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": []
+    },
+    "correcao_aplicada": [],
+    "conteudo_ausente": [],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 27,
+      "headings_html": 27,
+      "list_items_md": 41,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 68,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 0,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 0,
+      "table_rows_html": 0,
+      "hr_md": 22,
+      "hr_html": 21,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Projeto 08",
+    "arquivo_md": "Projeto08_Sistema_Memoria_Patrimonio_Kettlebell.md",
+    "pagina_html": "/docs/projetos/projeto08.html",
+    "status": "divergência não material apenas",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": []
+    },
+    "correcao_aplicada": [],
+    "conteudo_ausente": [],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 27,
+      "headings_html": 27,
+      "list_items_md": 57,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 86,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 0,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 0,
+      "table_rows_html": 0,
+      "hr_md": 22,
+      "hr_html": 21,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Projeto 09",
+    "arquivo_md": "Projeto09_Sistema_Operacional_Evento_Kettlebell.md",
+    "pagina_html": "/docs/projetos/projeto09.html",
+    "status": "divergência não material apenas",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": []
+    },
+    "correcao_aplicada": [],
+    "conteudo_ausente": [],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 27,
+      "headings_html": 27,
+      "list_items_md": 57,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 89,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 30,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 15,
+      "table_rows_html": 15,
+      "hr_md": 21,
+      "hr_html": 21,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Projeto 10",
+    "arquivo_md": "Projeto10_Sistema_Lancamento_Mobilizacao_Kettlebell.md",
+    "pagina_html": "/docs/projetos/projeto10.html",
+    "status": "divergência não material apenas",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": []
+    },
+    "correcao_aplicada": [],
+    "conteudo_ausente": [],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 27,
+      "headings_html": 27,
+      "list_items_md": 79,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 64,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 24,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 8,
+      "table_rows_html": 8,
+      "hr_md": 21,
+      "hr_html": 21,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Projeto 11",
+    "arquivo_md": "Projeto11_Sistema_Inteligencia_PreInscricao_Kettlebell.md",
+    "pagina_html": "/docs/projetos/projeto11.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionado parágrafo <em> ausente: subtítulo 'Campeonato Brasileiro de Kettlebell Sport — Constituição Permanente'."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 26,
+      "headings_html": 26,
+      "list_items_md": 40,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 75,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 66,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 22,
+      "table_rows_html": 22,
+      "hr_md": 19,
+      "hr_html": 20,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Manual do Formulário",
+    "arquivo_md": "Manual_Formulario_Manifestacao_Interesse_Kettlebell.md",
+    "pagina_html": "/docs/manuais/manual-formulario.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionados 2 parágrafos <em> ausentes: subtítulo 'Campeonato Brasileiro de Kettlebell Sport — Manual Operacional Permanente' e tagline de escopo completa ('Opera dentro dos princípios do Projeto 10...')."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 22,
+      "headings_html": 22,
+      "list_items_md": 39,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 78,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 0,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 0,
+      "table_rows_html": 0,
+      "hr_md": 17,
+      "hr_html": 16,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Manual do CRM",
+    "arquivo_md": "Manual_CRM_Kettlebell.md",
+    "pagina_html": "/docs/manuais/manual-crm.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionados 2 parágrafos <em> ausentes: subtítulo 'Campeonato Brasileiro de Kettlebell Sport — Manual Operacional Permanente' e tagline de escopo completa ('Opera dentro dos princípios dos Projetos 01, 06, 07, 08, 09, 10 e 11...')."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 25,
+      "headings_html": 24,
+      "list_items_md": 46,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 73,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 0,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 0,
+      "table_rows_html": 0,
+      "hr_md": 20,
+      "hr_html": 19,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Manual do Dashboard Executivo",
+    "arquivo_md": "Manual_Dashboard_Executivo_Kettlebell.md",
+    "pagina_html": "/docs/manuais/manual-dashboard.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionados 2 parágrafos <em> ausentes: subtítulo 'Campeonato Brasileiro de Kettlebell Sport — Manual Operacional Permanente' e tagline de escopo completa ('Opera dentro dos princípios dos Projetos 01, 06, 07, 08, 09, 10 e 11...')."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 26,
+      "headings_html": 25,
+      "list_items_md": 50,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 60,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 24,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 12,
+      "table_rows_html": 12,
+      "hr_md": 20,
+      "hr_html": 20,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  },
+  {
+    "documento": "Manual dos Stories",
+    "arquivo_md": "Manual_Stories_Baseados_Dados_Kettlebell.md",
+    "pagina_html": "/docs/manuais/manual-stories.html",
+    "status": "divergência material corrigida",
+    "divergencias_encontradas": {
+      "nao_materiais": [
+        "Título de página (H1) reescrito em formato curto de exibição do portal ('Fase N — X' / 'Projeto NN — X' / 'Manual — X'), consistente em todos os 21 documentos; título original completo em caixa alta não aparece verbatim no corpo, mas é preservado em meta description, og:title, JSON-LD headline e breadcrumb."
+      ],
+      "materiais": [
+        "Subtítulo(s) H3 e/ou parágrafo de escopo (tagline em itálico) do cabeçalho do documento original não estavam reproduzidos verbatim na página publicada — corrigido nesta fase."
+      ]
+    },
+    "correcao_aplicada": [
+      "Adicionados 2 parágrafos <em> ausentes: subtítulo 'Campeonato Brasileiro de Kettlebell Sport — Manual Operacional Permanente' e tagline de escopo completa ('Opera dentro dos princípios do Projeto 01 (Comunicação)...')."
+    ],
+    "conteudo_ausente": [
+      "Ver correção aplicada — conteúdo restaurado na página HTML."
+    ],
+    "conteudo_adicional_nao_justificado": [],
+    "ordem_divergente": false,
+    "evidencia": {
+      "headings_md": 22,
+      "headings_html": 22,
+      "list_items_md": 33,
+      "list_items_ausentes_no_html": 0,
+      "paragrafos_md": 63,
+      "paragrafos_ausentes_no_html": 0,
+      "celulas_tabela_md": 39,
+      "celulas_tabela_ausentes_no_html": 0,
+      "table_rows_md": 13,
+      "table_rows_html": 13,
+      "hr_md": 16,
+      "hr_html": 16,
+      "code_blocks_md": 0,
+      "code_blocks_html": 0
+    }
+  }
+]

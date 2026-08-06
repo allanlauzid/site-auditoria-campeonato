@@ -1,0 +1,524 @@
+{
+  "$schema": "glossario.schema.v1",
+  "_comment": "Glossário oficial do portal (Etapa 8 do documento de engenharia, Engenharia_Documentacao_Etapa1.md). Contém os 46 termos oficiais listados na Etapa 8, mais 6 termos complementares (não numerados na lista oficial de 46, mas atestados no corpus dos 21 .md e mantidos por não deverem ser apagados desnecessariamente): jornada-do-interessado, coleta-progressiva, fonte-unica-de-dados, pessoa-entidade-central, catalogo-de-kpis, honestidade-estatistica. Total de entradas no arquivo: 52. Ver auditoria/glossario-46-termos.md para o mapeamento completo termo-a-termo e a confirmação de teste de publicação/busca.",
+  "termos": [
+    {
+      "id": "sistema-simbolico",
+      "termo": "Sistema Simbólico",
+      "definicao": "Conjunto dos sete rituais/elementos do Sistema Simbólico (Chamada do Nome, Livro de Nomes, Peso Testemunha, Última Respiração, Cerimônia de Reconhecimento, Marca de Retorno, Momento do Box), desenhados para reforçar concretamente a promessa central da marca.",
+      "documentoOrigem": "fase3",
+      "documentosRelacionados": [
+        "projeto07",
+        "projeto08"
+      ],
+      "categoria": "Marca"
+    },
+    {
+      "id": "governanca-de-marca",
+      "termo": "Governança de Marca",
+      "definicao": "Órgão formal com poder de veto sobre decisões que contrariem as Fases 1-5 (\"a Constituição\"), instituído na Fase 5.",
+      "documentoOrigem": "fase5",
+      "documentosRelacionados": [
+        "projeto03",
+        "projeto04"
+      ],
+      "categoria": "Governanca"
+    },
+    {
+      "id": "sistemas-permanentes",
+      "termo": "Sistemas Permanentes",
+      "definicao": "Os 14 sistemas institucionais nomeados na Fase 5 (Atletas, Treinadores, Boxes, Árbitros, Ranking, Reconhecimento, Memória, Patrocinadores, Parceiros, Imprensa, Voluntariado, Educação, Conteúdo, Inovação) + Legado — origem direta dos Projetos 05-11 e dos Manuais.",
+      "documentoOrigem": "fase5",
+      "documentosRelacionados": [
+        "projeto05",
+        "projeto06",
+        "projeto07",
+        "projeto08",
+        "projeto09",
+        "manual-crm"
+      ],
+      "categoria": "Governanca"
+    },
+    {
+      "id": "macrofases-do-lancamento",
+      "termo": "Macrofases do Lançamento",
+      "definicao": "Escuta → Aquecimento → Anúncio → Confirmação → Consolidação — sequência do Sistema de Lançamento.",
+      "documentoOrigem": "projeto10",
+      "documentosRelacionados": [
+        "fase4"
+      ],
+      "categoria": "Lancamento"
+    },
+    {
+      "id": "icp-ideal-customer-profile",
+      "termo": "ICP (Ideal Customer Profile)",
+      "definicao": "Perfil de patrocinador ideal usado no processo comercial.",
+      "documentoOrigem": "projeto06",
+      "documentosRelacionados": [],
+      "categoria": "Comercial"
+    },
+    {
+      "id": "sponsor-kit",
+      "termo": "Sponsor Kit",
+      "definicao": "Conjunto de materiais comerciais para patrocinadores, subtítulo do Projeto 06.",
+      "documentoOrigem": "projeto06",
+      "documentosRelacionados": [],
+      "categoria": "Comercial"
+    },
+    {
+      "id": "guardioes-fundadores",
+      "termo": "Guardiões Fundadores",
+      "definicao": "Patrocinadores dos primeiros ciclos, reconhecidos permanentemente mesmo após fim de contrato.",
+      "documentoOrigem": "projeto05",
+      "documentosRelacionados": [
+        "manual-crm"
+      ],
+      "categoria": "Patrocinio"
+    },
+    {
+      "id": "naming-rights",
+      "termo": "Naming Rights",
+      "definicao": "Direito comercial de nomear/associar nome a elementos do campeonato, tratado como sistema comercial específico.",
+      "documentoOrigem": "projeto05",
+      "documentosRelacionados": [],
+      "categoria": "Patrocinio"
+    },
+    {
+      "id": "wayfinding",
+      "termo": "Wayfinding",
+      "definicao": "Sistema de sinalização e orientação física dentro do evento.",
+      "documentoOrigem": "projeto07",
+      "documentosRelacionados": [],
+      "categoria": "Experiencia"
+    },
+    {
+      "id": "sistema-cerimonial",
+      "termo": "Sistema Cerimonial",
+      "definicao": "Conjunto de rituais executáveis em evento real, operacionalizando o Sistema Simbólico da Fase 3.",
+      "documentoOrigem": "projeto07",
+      "documentosRelacionados": [
+        "fase3"
+      ],
+      "categoria": "Experiencia"
+    },
+    {
+      "id": "centros-operacionais",
+      "termo": "Centros Operacionais",
+      "definicao": "Estrutura física/funcional de comando durante o evento.",
+      "documentoOrigem": "projeto09",
+      "documentosRelacionados": [],
+      "categoria": "Operacao"
+    },
+    {
+      "id": "cadeia-de-comando",
+      "termo": "Cadeia de Comando",
+      "definicao": "Hierarquia de autoridade e decisão durante a operação do evento.",
+      "documentoOrigem": "projeto09",
+      "documentosRelacionados": [],
+      "categoria": "Operacao"
+    },
+    {
+      "id": "sistema-cromatico-terracota-carvao-ferro-osso",
+      "termo": "Sistema Cromático / Terracota / Carvão / Ferro / Osso",
+      "definicao": "Nomes das cores centrais da paleta oficial do campeonato.",
+      "documentoOrigem": "projeto03",
+      "documentosRelacionados": [
+        "projeto04"
+      ],
+      "categoria": "Design"
+    },
+    {
+      "id": "versao-gravada-cunhada",
+      "termo": "Versão Gravada/Cunhada",
+      "definicao": "Variante do logotipo em traço único, sem preenchimento, usada em medalhas/metal/madeira.",
+      "documentoOrigem": "projeto03",
+      "documentosRelacionados": [
+        "projeto04"
+      ],
+      "categoria": "Design"
+    },
+    {
+      "id": "sistema-modular-oficial",
+      "termo": "Sistema Modular Oficial",
+      "definicao": "Estrutura de composição visual reutilizável definida no Brand Book.",
+      "documentoOrigem": "projeto04",
+      "documentosRelacionados": [],
+      "categoria": "Design"
+    },
+    {
+      "id": "nomenclatura-de-arquivo-padrao",
+      "termo": "Nomenclatura de Arquivo Padrão",
+      "definicao": "AAAA-MM-DD_Categoria_DescricaoCurta_Versao.extensão.",
+      "documentoOrigem": "projeto04",
+      "documentosRelacionados": [
+        "projeto05",
+        "projeto06"
+      ],
+      "categoria": "Governanca"
+    },
+    {
+      "id": "interesse-pre-inscricao",
+      "termo": "Interesse Pré-Inscrição",
+      "definicao": "Indicador central do funil: volume de manifestação de interesse válida antes da inscrição confirmada.",
+      "documentoOrigem": "projeto11",
+      "documentosRelacionados": [
+        "manual-dashboard",
+        "manual-formulario"
+      ],
+      "categoria": "Inteligencia"
+    },
+    {
+      "id": "taxa-de-nao-conversao-declarada",
+      "termo": "Taxa de Não Conversão Declarada",
+      "definicao": "Indicador recomendado (auditoria do Projeto 10) para medir interesse que não virou inscrição.",
+      "documentoOrigem": "projeto10",
+      "documentosRelacionados": [],
+      "categoria": "Inteligencia"
+    },
+    {
+      "id": "jornada-do-interessado",
+      "termo": "Jornada do Interessado",
+      "definicao": "Sequência de seis etapas — primeiro contato, manifestação de interesse, atualização de informações, confirmação, conversão em inscrição, pós-inscrição — que estrutura a coleta progressiva de dados definida no Projeto 11 e operacionalizada pelo Manual do Formulário de Manifestação de Interesse.",
+      "documentoOrigem": "projeto11",
+      "documentosRelacionados": [
+        "manual-formulario"
+      ],
+      "categoria": "Inteligencia"
+    },
+    {
+      "id": "coleta-progressiva",
+      "termo": "Coleta Progressiva",
+      "definicao": "Princípio segundo o qual nenhum campo de dado é solicitado de uma só vez — a coleta acontece em camadas ao longo da Jornada do Interessado, reduzindo fricção e respeitando o tempo de decisão de cada pessoa.",
+      "documentoOrigem": "projeto11",
+      "documentosRelacionados": [
+        "manual-formulario"
+      ],
+      "categoria": "Inteligencia"
+    },
+    {
+      "id": "fonte-unica-de-dados",
+      "termo": "Fonte Única de Dados",
+      "definicao": "Princípio segundo o qual cada dado tem exatamente uma origem primária rastreável, mesmo quando aparece em múltiplos painéis ou sistemas — evita duplicação de coleta e inconsistência entre painéis.",
+      "documentoOrigem": "projeto11",
+      "documentosRelacionados": [
+        "manual-dashboard",
+        "manual-crm"
+      ],
+      "categoria": "Tecnologia"
+    },
+    {
+      "id": "pessoa-entidade-central",
+      "termo": "Pessoa (entidade central do CRM)",
+      "definicao": "Unidade central do CRM — uma pessoa pode acumular múltiplos papéis ao longo do tempo (atleta, treinador, voluntário etc.) sem gerar cadastros duplicados; o perfil funcional é sempre um atributo da Pessoa, nunca o contrário.",
+      "documentoOrigem": "manual-crm",
+      "documentosRelacionados": [
+        "projeto08"
+      ],
+      "categoria": "Tecnologia"
+    },
+    {
+      "id": "catalogo-de-kpis",
+      "termo": "Catálogo de KPIs",
+      "definicao": "Lista formal de indicadores do Dashboard Executivo, cada um com definição, objetivo, interpretação, frequência, responsável e decisão associada — nenhum indicador existe sem vínculo a uma decisão real.",
+      "documentoOrigem": "manual-dashboard",
+      "documentosRelacionados": [
+        "projeto11"
+      ],
+      "categoria": "Tecnologia"
+    },
+    {
+      "id": "storytelling-executivo",
+      "termo": "Storytelling Executivo",
+      "definicao": "Sequência fixa de apresentação de dados a um gestor: o que aconteceu → por que aconteceu → quais impactos existem → quais decisões são recomendadas.",
+      "documentoOrigem": "manual-dashboard",
+      "documentosRelacionados": [],
+      "categoria": "Tecnologia"
+    },
+    {
+      "id": "honestidade-estatistica",
+      "termo": "Honestidade Estatística",
+      "definicao": "Conjunto de regras técnicas permanentes para qualquer visualização de dado público: gráficos sem distorção de eixo, mapas com proporção fiel, comparações sempre rotuladas, percentuais sempre com base declarada.",
+      "documentoOrigem": "manual-stories",
+      "documentosRelacionados": [
+        "manual-dashboard"
+      ],
+      "categoria": "Comunicacao"
+    },
+    {
+      "id": "sistema-de-social-proof",
+      "termo": "Sistema de Social Proof",
+      "definicao": "Uso de dados reais e verificáveis da comunidade (ex.: número de boxes ou estados já com interesse manifestado) para gerar pertencimento coletivo genuíno, sem exagero ou número artificial — base filosófica do Manual dos Stories Baseados em Dados.",
+      "documentoOrigem": "projeto10",
+      "documentosRelacionados": [
+        "manual-stories",
+        "projeto11"
+      ],
+      "categoria": "Comunicacao"
+    },
+    {
+      "id": "chamada-do-nome",
+      "termo": "Chamada do Nome",
+      "definicao": "Ritual fixo em que cada atleta tem nome, cidade e box anunciados individualmente antes de sua série, sempre no mesmo formato.",
+      "documentoOrigem": "fase3",
+      "documentosRelacionados": [
+        "fase5",
+        "projeto07",
+        "projeto08",
+        "fase6"
+      ],
+      "categoria": "Marca"
+    },
+    {
+      "id": "livro-de-nomes",
+      "termo": "Livro de Nomes",
+      "definicao": "Arquivo físico e digital permanente com nome de todo atleta que já competiu, exposto no local da prova e disponível publicamente online.",
+      "documentoOrigem": "fase3",
+      "documentosRelacionados": [
+        "projeto08",
+        "manual-crm",
+        "fase6"
+      ],
+      "categoria": "Marca"
+    },
+    {
+      "id": "peso-testemunha",
+      "termo": "Peso Testemunha",
+      "definicao": "Kettlebell simbólico específico, não usado em competição, presente em todas as edições, carregando gravações/marcas da história do campeonato.",
+      "documentoOrigem": "fase3",
+      "documentosRelacionados": [
+        "projeto03",
+        "projeto08"
+      ],
+      "categoria": "Marca"
+    },
+    {
+      "id": "ultima-respiracao",
+      "termo": "Última Respiração",
+      "definicao": "Momento ritual de silêncio total imediatamente antes do início de cada série.",
+      "documentoOrigem": "fase3",
+      "documentosRelacionados": [
+        "projeto07"
+      ],
+      "categoria": "Marca"
+    },
+    {
+      "id": "cerimonia-de-reconhecimento",
+      "termo": "Cerimônia de Reconhecimento",
+      "definicao": "Momento ao final de cada edição em que atletas de diferentes categorias/histórias são chamados publicamente por nome, não apenas o pódio.",
+      "documentoOrigem": "fase3",
+      "documentosRelacionados": [
+        "projeto07",
+        "projeto08"
+      ],
+      "categoria": "Marca"
+    },
+    {
+      "id": "marca-de-retorno",
+      "termo": "Marca de Retorno",
+      "definicao": "Reconhecimento visual (pin/patch) para atletas que competem em múltiplas edições.",
+      "documentoOrigem": "fase3",
+      "documentosRelacionados": [
+        "manual-crm"
+      ],
+      "categoria": "Marca"
+    },
+    {
+      "id": "momento-do-box",
+      "termo": "Momento do Box",
+      "definicao": "Instante da cerimônia dedicado a reconhecer publicamente boxes e técnicos.",
+      "documentoOrigem": "fase3",
+      "documentosRelacionados": [
+        "fase5",
+        "fase6"
+      ],
+      "categoria": "Marca"
+    },
+    {
+      "id": "guardiao-da-constituicao",
+      "termo": "Guardião da Constituição",
+      "definicao": "Apelido funcional do Diretor de Marca, que preside a Governança de Marca.",
+      "documentoOrigem": "fase6",
+      "documentosRelacionados": [
+        "fase5"
+      ],
+      "categoria": "Governanca"
+    },
+    {
+      "id": "existencia-categorica",
+      "termo": "Existência Categórica",
+      "definicao": "Conceito estratégico central: o problema do campeonato não é \"conversão\", é a categoria \"Kettlebell Sport\" não existir no mapa mental do público brasileiro.",
+      "documentoOrigem": "fase2",
+      "documentosRelacionados": [
+        "fase3",
+        "fase4"
+      ],
+      "categoria": "Estrategia"
+    },
+    {
+      "id": "duelo-testemunhado",
+      "termo": "Duelo Testemunhado",
+      "definicao": "Alternativa 7 (síntese final) de posicionamento estratégico, escolhida como direção vencedora.",
+      "documentoOrigem": "fase2",
+      "documentosRelacionados": [
+        "fase3"
+      ],
+      "categoria": "Estrategia"
+    },
+    {
+      "id": "dna-estrategico",
+      "termo": "DNA Estratégico",
+      "definicao": "Síntese final da Fase 2, base de tudo que a Fase 3 desenvolve.",
+      "documentoOrigem": "fase2",
+      "documentosRelacionados": [
+        "fase3"
+      ],
+      "categoria": "Estrategia"
+    },
+    {
+      "id": "territorio-emocional",
+      "termo": "Território Emocional",
+      "definicao": "Espaço de significado/emoção já ocupado ou vazio no mercado de eventos esportivos, mapeado antes de escolher posicionamento.",
+      "documentoOrigem": "fase2",
+      "documentosRelacionados": [],
+      "categoria": "Estrategia"
+    },
+    {
+      "id": "ato-1-da-narrativa-de-lancamento",
+      "termo": "Ato 1 da Narrativa de Lançamento",
+      "definicao": "Primeira fase da narrativa de lançamento definida na Fase 4, foco em descoberta sem pedir conversão.",
+      "documentoOrigem": "fase4",
+      "documentosRelacionados": [
+        "fase6"
+      ],
+      "categoria": "Lancamento"
+    },
+    {
+      "id": "p1-p19",
+      "termo": "P1–P19",
+      "definicao": "Numeração dos 19 projetos que compõem os 10 Programas do Master Plan (Fase 6); mapeiam para praticamente todos os Projetos 01-11/Manuais.",
+      "documentoOrigem": "fase6",
+      "documentosRelacionados": [],
+      "categoria": "Implementacao"
+    },
+    {
+      "id": "raci",
+      "termo": "RACI",
+      "definicao": "Matriz de Responsável/Aprovador/Consultado/Informado usada para os Programas Principais; único uso formal de RACI no corpus.",
+      "documentoOrigem": "fase6",
+      "documentosRelacionados": [],
+      "categoria": "Implementacao"
+    },
+    {
+      "id": "risk-register",
+      "termo": "Risk Register",
+      "definicao": "Tabela formal de gestão de riscos (probabilidade, impacto, prioridade, prevenção, contingência, responsável).",
+      "documentoOrigem": "fase6",
+      "documentosRelacionados": [],
+      "categoria": "Implementacao"
+    },
+    {
+      "id": "criterios-de-prontidao",
+      "termo": "Critérios de Prontidão",
+      "definicao": "Condições objetivas (não subjetivas) que determinam quando uma fase de maturidade (Fundação/Consolidação/Expansão/Maturidade) pode avançar para a próxima.",
+      "documentoOrigem": "fase6",
+      "documentosRelacionados": [
+        "fase5"
+      ],
+      "categoria": "Implementacao"
+    },
+    {
+      "id": "quick-wins",
+      "termo": "Quick Wins",
+      "definicao": "Iniciativas de alto impacto e baixo esforço que não dependem de orçamento robusto.",
+      "documentoOrigem": "fase6",
+      "documentosRelacionados": [],
+      "categoria": "Implementacao"
+    },
+    {
+      "id": "sistema-de-aprendizado",
+      "termo": "Sistema de Aprendizado",
+      "definicao": "Mecanismo formal recorrente de incorporar aprendizados ao longo das edições, citado por CRM, Formulário, Stories, Projeto 10, Projeto 11.",
+      "documentoOrigem": "projeto11",
+      "documentosRelacionados": [
+        "manual-crm",
+        "manual-formulario",
+        "manual-stories",
+        "projeto10"
+      ],
+      "categoria": "Inteligencia"
+    },
+    {
+      "id": "sistema-etico",
+      "termo": "Sistema Ético",
+      "definicao": "Capítulo/princípio dedicado a limites éticos de uso de dado e comunicação (nunca manipulação/escassez falsa).",
+      "documentoOrigem": "projeto10",
+      "documentosRelacionados": [
+        "projeto11",
+        "manual-formulario",
+        "manual-stories"
+      ],
+      "categoria": "Governanca"
+    },
+    {
+      "id": "lgpd",
+      "termo": "LGPD",
+      "definicao": "Lei Geral de Proteção de Dados, tratada em capítulo dedicado em CRM, Formulário e Projeto 11.",
+      "documentoOrigem": "manual-crm",
+      "documentosRelacionados": [
+        "manual-formulario",
+        "projeto11"
+      ],
+      "categoria": "Governanca"
+    },
+    {
+      "id": "direito-ao-esquecimento-vs-registro-historico",
+      "termo": "Direito ao Esquecimento vs. Registro Histórico",
+      "definicao": "Tensão formalmente reconhecida e resolvida no Manual do CRM entre exclusão de dado pessoal e preservação de participação esportiva pública.",
+      "documentoOrigem": "manual-crm",
+      "documentosRelacionados": [
+        "projeto08"
+      ],
+      "categoria": "Governanca"
+    },
+    {
+      "id": "stories-baseados-em-dados",
+      "termo": "Stories Baseados em Dados",
+      "definicao": "Formato de conteúdo de redes sociais cuja informação vem exclusivamente de dado validado (não suposição).",
+      "documentoOrigem": "manual-stories",
+      "documentosRelacionados": [
+        "manual-dashboard"
+      ],
+      "categoria": "Comunicacao"
+    },
+    {
+      "id": "teste-de-clareza-vs-teste-manipulativo",
+      "termo": "Teste de Clareza vs. Teste Manipulativo",
+      "definicao": "Distinção ética entre validar usabilidade (aceitável) e manipular para conversão (nunca aceitável).",
+      "documentoOrigem": "manual-formulario",
+      "documentosRelacionados": [
+        "manual-stories"
+      ],
+      "categoria": "Governanca"
+    },
+    {
+      "id": "constituicao-simbolica-internacional",
+      "termo": "Constituição Simbólica (Internacional)",
+      "definicao": "Documento futuro previsto para expansão internacional, ainda sem roadmap formal de criação (lacuna órfã identificada na auditoria da Etapa 7).",
+      "documentoOrigem": "fase5",
+      "documentosRelacionados": [
+        "fase6"
+      ],
+      "categoria": "Governanca"
+    },
+    {
+      "id": "cenarios-orcamentarios-proporcionais",
+      "termo": "Cenários Orçamentários Proporcionais (Conservador/Intermediário/Ambicioso)",
+      "definicao": "Sistema de orçamento relativo (1x / 2,5-3x / 5-7x), não absoluto, adotado por ausência de benchmark financeiro de mercado.",
+      "documentoOrigem": "fase6",
+      "documentosRelacionados": [
+        "fase1"
+      ],
+      "categoria": "Implementacao"
+    }
+  ]
+}
