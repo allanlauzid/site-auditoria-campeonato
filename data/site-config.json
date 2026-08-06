@@ -2,6 +2,6 @@
   "$schema": "site-config.schema.v1",
   "_comment": "Configuracao de ambiente do portal. baseUrl vazio proposital: nenhum dominio real foi definido ate o momento desta auditoria RC1. Antes da publicacao, preencher baseUrl (ex.: https://www.dominio-real.com.br) e executar a substituicao de {{baseUrl}} em todas as paginas (canonical, og:url, JSON-LD url) e em sitemap.xml/robots.txt.",
   "baseUrl": "",
-  "_comment_geminiProxyEndpoint": "URL do proxy serverless que guarda a GEMINI_API_KEY (Cloudflare Worker, Vercel Function ou Netlify Function). O frontend NUNCA chama a API do Gemini diretamente nem guarda a chave. Ver portal-v1/serverless-proxy-exemplo/README.md para publicar o proxy e preencher este campo com a URL publicada, ex.: https://seu-worker.workers.dev/api/gemini.",
-  "geminiProxyEndpoint": ""
+  "_comment_geminiProxyEndpoint": "Proxy publicado como Vercel Function na MESMA origem do site (arquivo api/gemini.js na raiz do projeto), por isso o caminho e relativo, sem dominio. O frontend NUNCA chama a API do Gemini diretamente nem guarda a chave. GEMINI_API_KEY deve ser configurada nas Environment Variables do projeto na Vercel.",
+  "geminiProxyEndpoint": "/api/gemini"
 }
