@@ -8,11 +8,11 @@
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="search-modal-title" tabindex="-1">
     <div class="modal__header">
       <h2 id="search-modal-title" style="margin:0;font-size:var(--fs-500)">Buscar</h2>
-      <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar busca">×</button>
+      <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar busca"><svg class="icon icon-close" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true" focusable="false"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
     </div>
     <!-- INCLUIR AQUI: components/search-bar.html -->
     <div class="search-bar" role="search">
-      <span class="search-bar__icon" aria-hidden="true">🔍</span>
+      <span class="search-bar__icon" aria-hidden="true"><svg class="icon icon-search" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="8.25" y="4" width="3.5" height="2.25"/><circle cx="10" cy="10" r="6.25"/><line x1="14.6" y1="14.6" x2="20.25" y2="20.25"/></svg></span>
       <label for="modal-search-input" class="visually-hidden">Buscar na documentação</label>
       <input type="search" id="modal-search-input" data-search-input placeholder="Buscar documentos, termos, capítulos..." autocomplete="off" />
     </div>

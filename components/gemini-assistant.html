@@ -1,0 +1,112 @@
+<!--
+  COMPONENTE: Assistente de IA (Gemini)
+  Fonte de verdade de marcação/ARIA para o assistente. Controlado por
+  assets/js/gemini-assistant.js (ES module). NUNCA insira chaves de API neste
+  arquivo — o frontend só conhece a URL de um proxy serverless próprio
+  (data/site-config.json → geminiProxyEndpoint); a chave real fica no servidor
+  do proxy (fora desta árvore estática).
+
+  Este fragmento contém TRÊS blocos de marcação, usados em contextos diferentes:
+
+  (a) BOTÃO FLUTUANTE — incluir em todas as páginas de conteúdo, EXCETO a
+      home (index.html), que já tem a janela embutida no hero (bloco c).
+      Fixed, canto inferior direito. Abre o painel modal (bloco b).
+
+  (b) PAINEL/MODAL DE CONVERSA — reaproveita a classe .modal-overlay/.modal
+      do design system (mesmo padrão de components/modal.html): role="dialog",
+      aria-modal="true", fechamento por Escape e clique fora, foco preso pelo
+      overlay (ver initGeminiAssistant() em gemini-assistant.js).
+
+  (c) JANELA EMBUTIDA NO HERO — versão inline (não modal) do mesmo painel de
+      conversa, para ser encaixada dentro da seção hero de index.html. Usa o
+      mesmo JS/lógica de estado, view diferente (sem overlay, sem foco preso).
+
+  Hooks de classe/data-attribute usados pelo JS:
+    data-gemini-root         → raiz de uma instância (modal ou inline)
+    data-gemini-messages     → contêiner das bolhas de mensagem (aria-live)
+    data-gemini-form         → formulário de envio
+    data-gemini-input        → textarea/input de pergunta
+    data-gemini-send         → botão enviar
+    data-gemini-status       → indicador de status/"digitando"
+    data-gemini-variant      → "modal" | "inline" (define comportamento no JS)
+-->
+
+<!-- (a) BOTÃO FLUTUANTE — não incluir em index.html -->
+<button
+  type="button"
+  class="gemini-fab"
+  data-action="open-modal"
+  data-target="gemini-modal"
+  aria-label="Abrir assistente de IA"
+  title="Assistente de IA"
+>
+  <span class="gemini-fab__icon" aria-hidden="true"><svg class="icon icon-assistant" viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M4.5 5.5 H19.5 V15 H9 L6 18.5 V15 H4.5 Z"/><line x1="7.5" y1="9" x2="16.5" y2="9"/><line x1="7.5" y1="12" x2="13.5" y2="12"/></svg></span>
+</button>
+
+<!-- (b) PAINEL/MODAL DE CONVERSA -->
+<div class="modal-overlay gemini-modal-overlay" id="gemini-modal" data-open="false">
+  <div
+    class="modal gemini-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="gemini-modal-title"
+    tabindex="-1"
+    data-gemini-root
+    data-gemini-variant="modal"
+  >
+    <div class="modal__header gemini-panel__header">
+      <h2 id="gemini-modal-title" style="margin:0;font-size:var(--fs-500)">
+        <span aria-hidden="true"><svg class="icon icon-assistant" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M4.5 5.5 H19.5 V15 H9 L6 18.5 V15 H4.5 Z"/><line x1="7.5" y1="9" x2="16.5" y2="9"/><line x1="7.5" y1="12" x2="13.5" y2="12"/></svg></span> Assistente CBKS
+      </h2>
+      <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar assistente de IA"><svg class="icon icon-close" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true" focusable="false"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+    </div>
+
+    <div class="gemini-panel__body">
+      <div class="gemini-messages" data-gemini-messages role="log" aria-live="polite" aria-relevant="additions"></div>
+      <p class="gemini-status" data-gemini-status hidden></p>
+    </div>
+
+    <form class="gemini-panel__form" data-gemini-form>
+      <label for="gemini-modal-input" class="visually-hidden">Pergunte ao Assistente CBKS sobre esta página</label>
+      <textarea
+        id="gemini-modal-input"
+        class="gemini-input"
+        data-gemini-input
+        rows="1"
+        placeholder="Pergunte sobre esta página..."
+        autocomplete="off"
+      ></textarea>
+      <button type="submit" class="btn btn--primary gemini-send" data-gemini-send aria-label="Enviar pergunta">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<!-- (c) JANELA EMBUTIDA NO HERO — usar apenas em index.html, dentro da seção hero -->
+<div
+  class="gemini-hero-window"
+  data-gemini-root
+  data-gemini-variant="inline"
+  aria-label="Assistente de IA do portal"
+>
+  <div class="gemini-hero-window__header">
+    <span class="gemini-hero-window__title"><span aria-hidden="true"><svg class="icon icon-assistant" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M4.5 5.5 H19.5 V15 H9 L6 18.5 V15 H4.5 Z"/><line x1="7.5" y1="9" x2="16.5" y2="9"/><line x1="7.5" y1="12" x2="13.5" y2="12"/></svg></span> Assistente CBKS</span>
+  </div>
+
+  <div class="gemini-panel__body">
+    <div class="gemini-messages" data-gemini-messages role="log" aria-live="polite" aria-relevant="additions"></div>
+    <p class="gemini-status" data-gemini-status hidden></p>
+  </div>
+
+  <form class="gemini-panel__form" data-gemini-form>
+    <label for="gemini-hero-input" class="visually-hidden">Pergunte ao Assistente CBKS sobre o portal</label>
+    <textarea
+      id="gemini-hero-input"
+      class="gemini-input"
+      data-gemini-input
+      rows="1"
+      placeholder="Ex.: o que é a Fase 3?"
+      autocomplete="off"
+    ></textarea>
+    <button type="submit" class="btn btn--primary gemini-send" data-gemini-send aria-label="Enviar pergunta">Enviar</button>
+  </form>
+</div>

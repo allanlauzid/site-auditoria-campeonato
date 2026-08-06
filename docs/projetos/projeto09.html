@@ -45,9 +45,9 @@
 </a>
 <nav aria-label="Navegação principal"><ul class="site-header__nav" data-topnav=""></ul></nav>
 <div class="site-header__actions">
-<button aria-label="Abrir busca (Ctrl+K)" class="btn btn--icon" data-action="open-modal" data-target="search-modal" type="button">🔍</button>
-<button aria-label="Alternar tema claro/escuro" aria-pressed="false" class="btn btn--icon" data-action="toggle-theme" type="button">🌓</button>
-<button aria-controls="primary-sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="btn btn--icon" data-action="toggle-sidebar" type="button">☰</button>
+<button aria-label="Abrir busca (Ctrl+K)" class="btn btn--icon" data-action="open-modal" data-target="search-modal" type="button"><svg class="icon icon-search" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="8.25" y="4" width="3.5" height="2.25"/><circle cx="10" cy="10" r="6.25"/><line x1="14.6" y1="14.6" x2="20.25" y2="20.25"/></svg></button>
+<button aria-label="Alternar tema claro/escuro" aria-pressed="false" class="btn btn--icon" data-action="toggle-theme" type="button"><svg class="icon icon-theme" viewBox="0 0 24 24" width="36" height="36" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor"/></svg></button>
+<button aria-controls="primary-sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="btn btn--icon" data-action="toggle-sidebar" type="button"><svg class="icon icon-menu" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true" focusable="false"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
 </div>
 </div>
 </header>
@@ -395,10 +395,10 @@
 <div aria-labelledby="search-modal-title" aria-modal="true" class="modal" role="dialog" tabindex="-1">
 <div class="modal__header">
 <h2 id="search-modal-title" style="margin:0;font-size:var(--fs-500)">Buscar</h2>
-<button aria-label="Fechar busca" class="modal__close" data-action="close-modal" type="button">×</button>
+<button aria-label="Fechar busca" class="modal__close" data-action="close-modal" type="button"><svg class="icon icon-close" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true" focusable="false"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
 </div>
 <div class="search-bar" role="search">
-<span aria-hidden="true" class="search-bar__icon">🔍</span>
+<span aria-hidden="true" class="search-bar__icon"><svg class="icon icon-search" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="8.25" y="4" width="3.5" height="2.25"/><circle cx="10" cy="10" r="6.25"/><line x1="14.6" y1="14.6" x2="20.25" y2="20.25"/></svg></span>
 <label class="visually-hidden" for="modal-search-input">Buscar</label>
 <input autocomplete="off" data-search-input="" id="modal-search-input" placeholder="Buscar documentos, termos, capítulos..." type="search"/>
 </div>
@@ -425,5 +425,28 @@
       ]);
     });
   </script>
+
+  <!-- INCLUIR: components/gemini-assistant.html — bloco (a) botão flutuante + (b) painel modal -->
+  <button type="button" class="gemini-fab" data-action="open-modal" data-target="gemini-modal" aria-label="Abrir assistente de IA" title="Assistente de IA">
+    <span class="gemini-fab__icon" aria-hidden="true"><svg class="icon icon-assistant" viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M4.5 5.5 H19.5 V15 H9 L6 18.5 V15 H4.5 Z"/><line x1="7.5" y1="9" x2="16.5" y2="9"/><line x1="7.5" y1="12" x2="13.5" y2="12"/></svg></span>
+  </button>
+  <div class="modal-overlay gemini-modal-overlay" id="gemini-modal" data-open="false">
+    <div class="modal gemini-panel" role="dialog" aria-modal="true" aria-labelledby="gemini-modal-title" tabindex="-1" data-gemini-root data-gemini-variant="modal">
+      <div class="modal__header gemini-panel__header">
+        <h2 id="gemini-modal-title" style="margin:0;font-size:var(--fs-500)"><span aria-hidden="true"><svg class="icon icon-assistant" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M4.5 5.5 H19.5 V15 H9 L6 18.5 V15 H4.5 Z"/><line x1="7.5" y1="9" x2="16.5" y2="9"/><line x1="7.5" y1="12" x2="13.5" y2="12"/></svg></span> Assistente CBKS</h2>
+        <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar assistente de IA"><svg class="icon icon-close" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true" focusable="false"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+      </div>
+      <div class="gemini-panel__body">
+        <div class="gemini-messages" data-gemini-messages role="log" aria-live="polite" aria-relevant="additions"></div>
+        <p class="gemini-status" data-gemini-status hidden></p>
+      </div>
+      <form class="gemini-panel__form" data-gemini-form>
+        <label for="gemini-modal-input" class="visually-hidden">Pergunte ao Assistente CBKS sobre esta página</label>
+        <textarea id="gemini-modal-input" class="gemini-input" data-gemini-input rows="1" placeholder="Pergunte sobre esta página..." autocomplete="off"></textarea>
+        <button type="submit" class="btn btn--primary gemini-send" data-gemini-send aria-label="Enviar pergunta">Enviar</button>
+      </form>
+    </div>
+  </div>
+  <script type="module" src="/assets/js/gemini-assistant.js"></script>
 </body>
 </html>

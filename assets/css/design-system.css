@@ -256,7 +256,7 @@ code { background: var(--color-bg-muted); padding: 0.15em 0.4em; border-radius: 
 .btn--secondary:hover { background: var(--color-bg-muted); }
 .btn--ghost { background: transparent; color: var(--color-text-muted); }
 .btn--ghost:hover { color: var(--color-text); }
-.btn--icon { padding: var(--space-2); border-radius: var(--radius-full); }
+.btn--icon { padding: var(--space-2); border-radius: var(--radius-full); background: transparent; }
 
 /* --------------------------------------------------------------------------
    6. CARDS
@@ -437,13 +437,20 @@ tbody tr:hover { background: var(--color-bg-muted); }
 /* --------------------------------------------------------------------------
    18. BUSCA
    -------------------------------------------------------------------------- */
+/* -- Sistema de ícones SVG originais da marca (ver components/icons.html) -- */
+.icon { display: inline-block; vertical-align: middle; flex-shrink: 0; }
+.btn--icon .icon,
+.modal__close .icon,
+.gemini-fab__icon .icon,
+.search-bar__icon .icon { vertical-align: -6px; }
+
 .search-bar { position: relative; display: flex; align-items: center; }
 .search-bar input[type="search"] {
-  width: 100%; padding: var(--space-3) var(--space-4) var(--space-3) var(--space-7);
+  width: 100%; padding: var(--space-3) var(--space-4) var(--space-3) 3.25rem;
   border: 1px solid var(--color-border); border-radius: var(--radius-md);
   background: var(--color-bg-muted); color: var(--color-text); font-size: var(--fs-200);
 }
-.search-bar__icon { position: absolute; left: var(--space-3); color: var(--color-text-muted); pointer-events: none; }
+.search-bar__icon { position: absolute; left: var(--space-3); top: 50%; transform: translateY(-50%); color: var(--color-text-muted); pointer-events: none; background: transparent; }
 .search-bar__shortcut { position: absolute; right: var(--space-3); font-size: var(--fs-100); color: var(--color-text-muted); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0 var(--space-1); }
 
 .search-results { display: flex; flex-direction: column; gap: var(--space-1); max-height: 60vh; overflow-y: auto; }
@@ -523,4 +530,255 @@ mark.search-highlight { background: var(--color-accent); color: var(--color-acce
   .doc-nav__link--next { text-align: left; }
   .card-grid { grid-template-columns: 1fr; }
   h1 { font-size: var(--fs-600); }
+}
+
+/* --------------------------------------------------------------------------
+   24. ASSISTENTE DE IA (Gemini) — botão flutuante, painel modal, janela hero
+   Reaproveita tokens do design system (cores, espaçamento, raio, sombra,
+   z-index, transições) e as classes .modal-overlay/.modal já existentes.
+   O painel modal usa data-open="true|false" controlado por navigation.js
+   (data-action="open-modal"/"close-modal"), igual ao modal de busca.
+   -------------------------------------------------------------------------- */
+
+/* -- (a) botão flutuante -- */
+.gemini-fab {
+  position: fixed;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  z-index: var(--z-sticky);
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-600);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+.gemini-fab:hover { background: var(--color-accent-hover); transform: translateY(-2px); }
+.gemini-fab:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+.gemini-fab__icon { line-height: 1; }
+
+/* -- (b) painel modal (compartilhado com a janela inline do hero) -- */
+.gemini-modal-overlay .gemini-panel {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  width: 100%;
+  max-height: 80vh;
+  padding: 0;
+  overflow: hidden;
+}
+.gemini-panel__header {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  flex: 0 0 auto;
+}
+.gemini-panel__body {
+  flex: 1 1 auto;
+  min-height: 220px;
+  max-height: 50vh;
+  overflow-y: auto;
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  flex-direction: column;
+}
+.gemini-panel__form {
+  flex: 0 0 auto;
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-end;
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+/* -- bolhas de mensagem -- */
+.gemini-messages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.gemini-message {
+  max-width: 88%;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-300);
+  line-height: var(--lh-normal);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.gemini-message--user {
+  align-self: flex-end;
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-bottom-right-radius: var(--radius-sm);
+}
+.gemini-message--assistant {
+  align-self: flex-start;
+  background: var(--color-bg-muted);
+  color: var(--color-text);
+  border-bottom-left-radius: var(--radius-sm);
+}
+.gemini-message--error {
+  align-self: stretch;
+  background: var(--color-danger-bg);
+  color: var(--color-danger-fg);
+}
+.gemini-message__retry {
+  display: inline-block;
+  margin-top: var(--space-2);
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-danger-fg);
+  text-decoration: underline;
+  font-size: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.gemini-message__retry:hover,
+.gemini-message__retry:focus-visible {
+  text-decoration: none;
+}
+.gemini-messages__empty {
+  color: var(--color-text-muted);
+  font-size: var(--fs-200);
+  text-align: center;
+  padding: var(--space-5) 0;
+}
+
+/* -- estado de carregamento / "digitando" -- */
+.gemini-status {
+  font-size: var(--fs-100);
+  color: var(--color-text-muted);
+  margin: var(--space-2) 0 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.gemini-status[hidden] { display: none; }
+.gemini-status__dots { display: inline-flex; gap: 3px; }
+.gemini-status__dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: var(--radius-full);
+  background: var(--color-text-muted);
+  animation: gemini-blink 1.2s infinite ease-in-out;
+}
+.gemini-status__dots span:nth-child(2) { animation-delay: 0.15s; }
+.gemini-status__dots span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes gemini-blink {
+  0%, 80%, 100% { opacity: 0.25; }
+  40% { opacity: 1; }
+}
+
+/* -- campo/input -- */
+.gemini-input {
+  flex: 1 1 auto;
+  resize: none;
+  min-height: 40px;
+  max-height: 120px;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--fs-300);
+}
+.gemini-input:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 1px;
+  border-color: var(--color-accent);
+}
+.gemini-send:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* -- (c) janela embutida no hero (index.html) -- */
+
+/* layout base (mobile/tablet): empilhado — texto em cima, assistente embaixo */
+.hero__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+.hero__content { min-width: 0; }
+
+.gemini-hero-window {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 420px;
+  width: 100%;
+  overflow: hidden;
+}
+.gemini-hero-window__header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-muted);
+}
+.gemini-hero-window__title {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-400);
+}
+.gemini-hero-window .gemini-panel__body { min-height: 160px; max-height: 320px; padding: var(--space-4) var(--space-5); }
+.gemini-hero-window .gemini-panel__form { padding: var(--space-3) var(--space-5) var(--space-4); border-top: 1px solid var(--color-border); }
+
+/* -- layout desktop: duas colunas lado a lado (texto | assistente) --
+   Breakpoint alinhado à escala já usada no design system (719/959/1199px):
+   960px é o limiar em que o site deixa de aplicar as regras de tablet
+   (max-width: 959px), então é usado aqui como o início do layout "desktop". */
+@media (min-width: 960px) {
+  .hero__grid {
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--space-8, var(--space-7));
+  }
+  .hero__content {
+    flex: 0 1 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .gemini-hero-window {
+    flex: 1 1 52%;
+    max-width: none;
+    align-self: stretch;
+  }
+  .gemini-hero-window .gemini-panel__body {
+    min-height: 320px;
+    max-height: none;
+    flex: 1 1 auto;
+  }
+}
+
+/* -- responsividade mobile: painel modal quase full-screen -- */
+@media (max-width: 719px) {
+  .gemini-fab { right: var(--space-4); bottom: var(--space-4); width: 64px; height: 64px; }
+  .gemini-modal-overlay.modal-overlay { padding: 0; align-items: flex-end; }
+  .gemini-modal-overlay .gemini-panel {
+    max-width: 100%;
+    width: 100%;
+    max-height: 92vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .gemini-panel__body { max-height: none; flex: 1 1 auto; }
+  .gemini-hero-window { max-width: 100%; }
+}
+
+/* -- prefers-reduced-motion -- */
+@media (prefers-reduced-motion: reduce) {
+  .gemini-fab { transition: none; }
+  .gemini-fab:hover { transform: none; }
+  .gemini-status__dots span { animation: none; opacity: 0.7; }
 }

@@ -17,6 +17,8 @@
   <link rel="canonical" href="{{baseUrl}}/" />
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/assets/css/design-system.css" />
+  <!-- Assistente de IA (Gemini) — estilos no próprio design-system.css (seção 24) -->
+  <script type="module" src="/assets/js/gemini-assistant.js"></script>
 
   <script type="application/ld+json">
   {
@@ -39,30 +41,50 @@
       </a>
       <nav aria-label="Navegação principal"><ul class="site-header__nav" data-topnav></ul></nav>
       <div class="site-header__actions">
-        <button type="button" class="btn btn--icon" data-action="open-modal" data-target="search-modal" aria-label="Abrir busca (Ctrl+K)">🔍</button>
-        <button type="button" class="btn btn--icon" data-action="toggle-theme" aria-pressed="false" aria-label="Alternar tema claro/escuro">🌓</button>
+        <button type="button" class="btn btn--icon" data-action="open-modal" data-target="search-modal" aria-label="Abrir busca (Ctrl+K)"><svg class="icon icon-search" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="8.25" y="4" width="3.5" height="2.25"/><circle cx="10" cy="10" r="6.25"/><line x1="14.6" y1="14.6" x2="20.25" y2="20.25"/></svg></button>
+        <button type="button" class="btn btn--icon" data-action="toggle-theme" aria-pressed="false" aria-label="Alternar tema claro/escuro"><svg class="icon icon-theme" viewBox="0 0 24 24" width="36" height="36" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor"/></svg></button>
       </div>
     </div>
   </header>
 
   <main id="main-content">
     <section class="container" style="padding-block: var(--space-9) var(--space-7);">
-      <p class="card__eyebrow">Etapa 3 — Auditoria Independente <span class="badge badge--accent">Release Candidate RC2</span></p>
-      <h1 style="max-width: 18ch;">Documentação institucional do Campeonato Brasileiro de Kettlebell Sport</h1>
-      <p style="max-width: 60ch; font-size: var(--fs-400); color: var(--color-text-muted);">
-        Portal técnico que organiza os 21 documentos oficiais de branding e operação —
-        Fases estratégicas, Projetos constitucionais e Manuais funcionais — em uma
-        arquitetura de navegação e busca única. Os 21 documentos e a página de controle
-        (Engenharia da Documentação) estão publicados na íntegra. Em 2026-08-05, o portal foi
-        promovido de RC1 para <strong>Release Candidate RC2</strong> após auditoria independente
-        (Etapa 3): correções técnicas/editoriais aplicadas, glossário completo (46/46) e
-        validações formais realizadas — pendências que dependem de ferramentas indisponíveis
-        neste ambiente (navegador real, domínio de produção) seguem como bloqueadores formais
-        para a versão 1.0. Consulte <a href="/RELEASE-CANDIDATE-RC2.md">RELEASE-CANDIDATE-RC2.md</a>.
-      </p>
-      <div style="display:flex; gap: var(--space-3); margin-top: var(--space-5);">
-        <a class="btn btn--primary" href="/docs/fases/index.html">Explorar Fases</a>
-        <a class="btn btn--secondary" href="/docs/roadmaps/mapa-constitucional.html">Ver mapa constitucional</a>
+      <div class="hero__grid">
+        <div class="hero__content">
+          <p class="card__eyebrow">Etapa 3 — Auditoria Independente <span class="badge badge--accent">Release Candidate RC2</span></p>
+          <h1 style="max-width: 18ch;">Documentação institucional do Campeonato Brasileiro de Kettlebell Sport</h1>
+          <p style="max-width: 60ch; font-size: var(--fs-400); color: var(--color-text-muted);">
+            Portal técnico que organiza os 21 documentos oficiais de branding e operação —
+            Fases estratégicas, Projetos constitucionais e Manuais funcionais — em uma
+            arquitetura de navegação e busca única. Os 21 documentos e a página de controle
+            (Engenharia da Documentação) estão publicados na íntegra. Em 2026-08-05, o portal foi
+            promovido de RC1 para <strong>Release Candidate RC2</strong> após auditoria independente
+            (Etapa 3): correções técnicas/editoriais aplicadas, glossário completo (46/46) e
+            validações formais realizadas — pendências que dependem de ferramentas indisponíveis
+            neste ambiente (navegador real, domínio de produção) seguem como bloqueadores formais
+            para a versão 1.0. Consulte <a href="/RELEASE-CANDIDATE-RC2.md">RELEASE-CANDIDATE-RC2.md</a>.
+          </p>
+          <div style="display:flex; gap: var(--space-3); margin-top: var(--space-5);">
+            <a class="btn btn--primary" href="/docs/fases/index.html">Explorar Fases</a>
+            <a class="btn btn--secondary" href="/docs/roadmaps/mapa-constitucional.html">Ver mapa constitucional</a>
+          </div>
+        </div>
+
+        <!-- INCLUIR: components/gemini-assistant.html — bloco (c) janela embutida no hero -->
+        <div class="gemini-hero-window" data-gemini-root data-gemini-variant="inline" aria-label="Assistente de IA do portal">
+          <div class="gemini-hero-window__header">
+            <span class="gemini-hero-window__title"><span aria-hidden="true"><svg class="icon icon-assistant" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M4.5 5.5 H19.5 V15 H9 L6 18.5 V15 H4.5 Z"/><line x1="7.5" y1="9" x2="16.5" y2="9"/><line x1="7.5" y1="12" x2="13.5" y2="12"/></svg></span> Assistente CBKS</span>
+          </div>
+          <div class="gemini-panel__body">
+            <div class="gemini-messages" data-gemini-messages role="log" aria-live="polite" aria-relevant="additions"></div>
+            <p class="gemini-status" data-gemini-status hidden></p>
+          </div>
+          <form class="gemini-panel__form" data-gemini-form>
+            <label for="gemini-hero-input" class="visually-hidden">Pergunte ao Assistente CBKS sobre o portal</label>
+            <textarea id="gemini-hero-input" class="gemini-input" data-gemini-input rows="1" placeholder="Ex.: o que é a Fase 3?" autocomplete="off"></textarea>
+            <button type="submit" class="btn btn--primary gemini-send" data-gemini-send aria-label="Enviar pergunta">Enviar</button>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -132,10 +154,10 @@
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="search-modal-title" tabindex="-1">
       <div class="modal__header">
         <h2 id="search-modal-title" style="margin:0;font-size:var(--fs-500)">Buscar</h2>
-        <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar busca">×</button>
+        <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar busca"><svg class="icon icon-close" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true" focusable="false"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
       </div>
       <div class="search-bar" role="search">
-        <span class="search-bar__icon" aria-hidden="true">🔍</span>
+        <span class="search-bar__icon" aria-hidden="true"><svg class="icon icon-search" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="8.25" y="4" width="3.5" height="2.25"/><circle cx="10" cy="10" r="6.25"/><line x1="14.6" y1="14.6" x2="20.25" y2="20.25"/></svg></span>
         <label for="modal-search-input" class="visually-hidden">Buscar</label>
         <input type="search" id="modal-search-input" data-search-input placeholder="Buscar documentos, termos, capítulos..." autocomplete="off" />
       </div>

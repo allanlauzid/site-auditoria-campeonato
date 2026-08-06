@@ -1,0 +1,107 @@
+<!--
+  COMPONENTE: Sistema de ícones (fonte de verdade)
+  Ícones SVG originais da marca CBKS — substituem emojis/glyphs genéricos
+  (lupa 🔍, sol-lua 🌓, hambúrguer ☰, fechar ×, estrela ★, sparkle ✨) usados
+  anteriormente no portal.
+
+  Linguagem visual do sistema:
+    - viewBox 24x24, sem padding interno desnecessário
+    - stroke="currentColor" (herda a cor do texto/botão pai — funciona em
+      tema claro e escuro sem duplicar SVG)
+    - stroke-width 1.75 (peso de traço único em todo o conjunto)
+    - stroke-linecap="square" / stroke-linejoin="miter" — cantos retos,
+      geométricos. Nunca "rounded" fofo/emoji.
+    - Motivo comum: referências discretas ao kettlebell (o mesmo círculo +
+      barra do logo-mark.svg), peso, controle, permanência.
+    - Cada instância inline carrega aria-hidden="true" e focusable="false"
+      porque a semântica/rótulo acessível já está no elemento pai
+      (aria-label do botão, <label> do campo etc.) — não duplicar.
+
+  Como estas páginas não usam build/templating, cada ícone abaixo é a fonte
+  de verdade em texto; copie o <svg>...</svg> literal para o local de uso
+  (é isso que assets/js não faz — a marcação já foi propagada manualmente
+  para todas as páginas por _icon_replace.py). Se precisar adicionar um
+  ícone a uma página nova, copie daqui.
+-->
+
+<!-- =====================================================================
+     icon-search — Busca
+     Uso: botão "Abrir busca" no header (.btn--icon[data-target="search-modal"])
+          e .search-bar__icon dentro do componente de busca (search-bar.html,
+          modal.html). Dimensão de uso: 18x18.
+     Leitura: lupa de traço reto; o pequeno retângulo no topo do círculo é
+     a mesma "alça"/notch do logo-mark (referência sutil ao kettlebell),
+     não uma lupa genérica de biblioteca de ícones.
+===================================================================== -->
+<svg class="icon icon-search" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false">
+  <rect x="8.25" y="4" width="3.5" height="2.25"/>
+  <circle cx="10" cy="10" r="6.25"/>
+  <line x1="14.6" y1="14.6" x2="20.25" y2="20.25"/>
+</svg>
+
+<!-- =====================================================================
+     icon-theme — Alternar tema claro/escuro
+     Uso: botão data-action="toggle-theme" no header. Dimensão: 18x18.
+     Leitura: substitui o clichê sol/lua por um círculo dividido ao meio —
+     metade contorno, metade preenchida — remetendo a equilíbrio/alternância
+     e ao próprio princípio de "peso e controle" da marca, sem imagética de
+     clima.
+===================================================================== -->
+<svg class="icon icon-theme" viewBox="0 0 24 24" width="36" height="36" aria-hidden="true" focusable="false">
+  <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.75"/>
+  <path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor"/>
+</svg>
+
+<!-- =====================================================================
+     icon-menu — Menu / navegação mobile
+     Uso: botão data-action="toggle-sidebar" no header (abre sidebar em
+     telas estreitas). Dimensão: 18x18.
+     Leitura: três barras retas de mesmo comprimento e peso — mesma
+     linguagem de traço do restante do conjunto, sem arredondamento.
+===================================================================== -->
+<svg class="icon icon-menu" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true" focusable="false">
+  <line x1="4" y1="7" x2="20" y2="7"/>
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <line x1="4" y1="17" x2="20" y2="17"/>
+</svg>
+
+<!-- =====================================================================
+     icon-close — Fechar modal
+     Uso: .modal__close (modal de busca e modal do assistente). Dimensão: 16x16.
+     Leitura: X geométrico de traço reto (sem serifa/curva), mesma família
+     visual dos demais ícones utilitários.
+===================================================================== -->
+<svg class="icon icon-close" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true" focusable="false">
+  <line x1="6" y1="6" x2="18" y2="18"/>
+  <line x1="18" y1="6" x2="6" y2="18"/>
+</svg>
+
+<!-- =====================================================================
+     icon-weight — Marcador de destaque/reconhecimento (substitui estrela ★)
+     Uso: exemplo de "ícone de ação" em components/buttons.html; qualquer
+     ponto futuro que hoje usaria uma estrela de destaque/favorito.
+     Dimensão: 18x18.
+     Leitura: placa quadrada com mira central — remete ao peso testemunha
+     (marcador oficial de aferição) em vez da estrela genérica de UI.
+===================================================================== -->
+<svg class="icon icon-weight" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false">
+  <rect x="6" y="6" width="12" height="12"/>
+  <line x1="6" y1="12" x2="18" y2="12"/>
+  <line x1="12" y1="6" x2="12" y2="18"/>
+</svg>
+
+<!-- =====================================================================
+     icon-assistant — Assistente CBKS (substitui sparkle ✨)
+     Uso: botão flutuante do assistente (.gemini-fab__icon, 22x22), título
+     do modal do assistente e da janela embutida no hero (18x18).
+     Leitura: placa/inscrição com duas linhas de texto e uma haste reta
+     apontando para baixo — não é um balão de chat arredondado nem um
+     sparkle de IA genérico; remete a testemunho e voz silenciosa
+     (coerente com o sistema simbólico "Chamada do Nome / Testemunha" da
+     marca), mantendo legibilidade como ícone de conversa.
+===================================================================== -->
+<svg class="icon icon-assistant" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false">
+  <path d="M4.5 5.5 H19.5 V15 H9 L6 18.5 V15 H4.5 Z"/>
+  <line x1="7.5" y1="9" x2="16.5" y2="9"/>
+  <line x1="7.5" y1="12" x2="13.5" y2="12"/>
+</svg>
