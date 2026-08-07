@@ -17,10 +17,19 @@
  *    texto no DOM usa textContent (ver renderMessage()), evitando XSS.
  *
  * Duas "montagens" desta mesma lógica coexistem na página:
- *  - variant="modal"  → painel modal (botão flutuante, todas as páginas exceto home)
+ *  - variant="modal"  → painel ANCORADO ao botão flutuante, canto inferior
+ *    direito (todas as páginas exceto home). Apesar do nome histórico da
+ *    variante ("modal", reaproveitado de data-gemini-variant e da classe
+ *    .modal/.modal-overlay do design system), ele NÃO é modal de verdade:
+ *    não escurece nem bloqueia o resto da página (ver .gemini-modal-overlay
+ *    no design-system.css) e usa role="dialog" com aria-modal="false" no
+ *    HTML. Fecha com o botão "X", clicando de novo no fab (toggle) ou com
+ *    Escape — mas NÃO ao clicar fora (ver initModal() em navigation.js).
  *  - variant="inline" → janela embutida no hero (somente index.html)
  * Cada uma tem seu próprio estado de conversa independente.
  */
+
+import { salvarConversa, listarConversas, carregarConversa } from "./supabase-client.js";
 
 const SITE_CONFIG_URL = "/data/site-config.json";
 const MAX_CONTEXT_CHARS = 4000;
@@ -252,14 +261,209 @@ function initInstance(root) {
   const form = root.querySelector("[data-gemini-form]");
   const input = root.querySelector("[data-gemini-input]");
   const sendBtn = root.querySelector("[data-gemini-send]");
+  const newBtn = root.querySelector("[data-gemini-new]");
+  const saveBtn = root.querySelector("[data-gemini-save]");
+  const historyBtn = root.querySelector("[data-gemini-history]");
+  const saveFeedbackEl = root.querySelector("[data-gemini-save-feedback]");
+  const chatViewEl = root.querySelector("[data-gemini-view-chat]");
+  const historyViewEl = root.querySelector("[data-gemini-view-history]");
+  const historyListEl = root.querySelector("[data-gemini-history-list]");
 
   if (!messagesEl || !form || !input || !sendBtn) return;
 
   /** Histórico em memória apenas — nunca localStorage/sessionStorage. */
   const historico = [];
   let isSending = false;
+  /** Estado da conversa atual: null até a primeira vez que salvar/carregar. */
+  let conversaAtualId = null;
+  let saveFeedbackTimer = null;
 
   renderEmptyState(messagesEl);
+  updateSaveButtonState();
+
+  /* ---------------------------------------------------------------- *
+   * NOVA CONVERSA / SALVAR / HISTÓRICO
+   * ---------------------------------------------------------------- */
+  function updateSaveButtonState() {
+    if (!saveBtn) return;
+    saveBtn.disabled = historico.length === 0;
+  }
+
+  function showSaveFeedback(text, isError) {
+    if (!saveFeedbackEl) return;
+    if (saveFeedbackTimer) {
+      clearTimeout(saveFeedbackTimer);
+      saveFeedbackTimer = null;
+    }
+    saveFeedbackEl.hidden = false;
+    saveFeedbackEl.textContent = text;
+    saveFeedbackEl.classList.toggle("gemini-save-feedback--error", !!isError);
+    saveFeedbackTimer = window.setTimeout(() => {
+      saveFeedbackEl.hidden = true;
+      saveFeedbackEl.textContent = "";
+      saveFeedbackTimer = null;
+    }, 2000);
+  }
+
+  function clearMessagesUI() {
+    messagesEl.innerHTML = "";
+    renderEmptyState(messagesEl);
+  }
+
+  function novaConversa() {
+    historico.length = 0;
+    conversaAtualId = null;
+    clearMessagesUI();
+    updateSaveButtonState();
+    showView("chat");
+  }
+
+  async function salvarConversaAtual() {
+    if (!saveBtn || saveBtn.disabled || isSending) return;
+    saveBtn.disabled = true;
+    const resultado = await salvarConversa({ id: conversaAtualId, mensagens: historico });
+    updateSaveButtonState();
+    if (resultado.sucesso) {
+      conversaAtualId = resultado.id;
+      showSaveFeedback("Conversa salva", false);
+    } else {
+      showSaveFeedback(resultado.erro || "Não foi possível salvar a conversa agora.", true);
+    }
+  }
+
+  function showView(view) {
+    if (!chatViewEl || !historyViewEl) return;
+    const isHistory = view === "history";
+    chatViewEl.hidden = isHistory;
+    historyViewEl.hidden = !isHistory;
+    if (historyBtn) {
+      historyBtn.setAttribute("aria-pressed", String(isHistory));
+      historyBtn.title = isHistory ? "Voltar para a conversa" : "Histórico";
+    }
+  }
+
+  function formatarDataHora(isoString) {
+    const data = new Date(isoString);
+    if (Number.isNaN(data.getTime())) return { data: "", hora: "" };
+    const dataFormatada = data.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+    const horaFormatada = data.toLocaleTimeString("pt-BR", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    return { data: dataFormatada, hora: horaFormatada };
+  }
+
+  async function abrirHistorico() {
+    if (historyViewEl && !historyViewEl.hidden) {
+      showView("chat");
+      return;
+    }
+    showView("history");
+    if (!historyListEl) return;
+    historyListEl.innerHTML = "";
+    const carregando = document.createElement("p");
+    carregando.className = "gemini-history__empty";
+    carregando.textContent = "Carregando histórico...";
+    historyListEl.appendChild(carregando);
+
+    const resultado = await listarConversas({ limite: 50 });
+    historyListEl.innerHTML = "";
+
+    if (!resultado.sucesso) {
+      const erro = document.createElement("p");
+      erro.className = "gemini-history__empty";
+      erro.textContent = resultado.erro || "Não foi possível carregar o histórico agora.";
+      historyListEl.appendChild(erro);
+      return;
+    }
+
+    if (!resultado.dados || resultado.dados.length === 0) {
+      const vazio = document.createElement("p");
+      vazio.className = "gemini-history__empty";
+      vazio.textContent = "Nenhuma conversa salva ainda.";
+      historyListEl.appendChild(vazio);
+      return;
+    }
+
+    /* Agrupa por data (dd/mm/aaaa), preservando a ordem já vinda do backend
+       (mais recentes primeiro). */
+    const grupos = new Map();
+    resultado.dados.forEach((conversa) => {
+      const { data, hora } = formatarDataHora(conversa.criado_em);
+      if (!grupos.has(data)) grupos.set(data, []);
+      grupos.get(data).push({ ...conversa, hora });
+    });
+
+    grupos.forEach((itens, dataLabel) => {
+      const grupoEl = document.createElement("div");
+      grupoEl.className = "gemini-history__group";
+
+      const dataEl = document.createElement("p");
+      dataEl.className = "gemini-history__date";
+      dataEl.textContent = dataLabel;
+      grupoEl.appendChild(dataEl);
+
+      const listaEl = document.createElement("ul");
+      listaEl.className = "gemini-history__items";
+
+      itens.forEach((conversa) => {
+        const itemEl = document.createElement("li");
+        const btnEl = document.createElement("button");
+        btnEl.type = "button";
+        btnEl.className = "gemini-history__item";
+
+        const tituloEl = document.createElement("span");
+        tituloEl.className = "gemini-history__item-title";
+        tituloEl.textContent = conversa.titulo || "Conversa sem título";
+
+        const horaEl = document.createElement("span");
+        horaEl.className = "gemini-history__item-time";
+        horaEl.textContent = conversa.hora;
+
+        btnEl.appendChild(tituloEl);
+        btnEl.appendChild(horaEl);
+        btnEl.addEventListener("click", () => carregarConversaNaTela(conversa.id));
+
+        itemEl.appendChild(btnEl);
+        listaEl.appendChild(itemEl);
+      });
+
+      grupoEl.appendChild(listaEl);
+      historyListEl.appendChild(grupoEl);
+    });
+  }
+
+  async function carregarConversaNaTela(id) {
+    const resultado = await carregarConversa(id);
+    if (!resultado.sucesso || !resultado.dados) {
+      showSaveFeedback(resultado.erro || "Não foi possível carregar essa conversa agora.", true);
+      return;
+    }
+
+    historico.length = 0;
+    (resultado.dados.mensagens || []).forEach((m) => historico.push(m));
+    conversaAtualId = resultado.dados.id;
+
+    messagesEl.innerHTML = "";
+    if (historico.length === 0) {
+      renderEmptyState(messagesEl);
+    } else {
+      historico.forEach((m) => {
+        const role = m.papel === "usuario" ? "user" : "assistant";
+        renderMessage(messagesEl, role, m.texto);
+      });
+    }
+    updateSaveButtonState();
+    showView("chat");
+  }
+
+  if (newBtn) newBtn.addEventListener("click", novaConversa);
+  if (saveBtn) saveBtn.addEventListener("click", salvarConversaAtual);
+  if (historyBtn) historyBtn.addEventListener("click", abrirHistorico);
 
   function setStatus(text) {
     if (!statusEl) return;
@@ -370,6 +574,7 @@ function initInstance(root) {
     clearEmptyState(messagesEl);
     renderMessage(messagesEl, "user", pergunta);
     historico.push({ papel: "usuario", texto: pergunta });
+    updateSaveButtonState();
     input.value = "";
     autoGrow(input);
 

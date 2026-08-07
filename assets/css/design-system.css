@@ -567,15 +567,39 @@ mark.search-highlight { background: var(--color-accent); color: var(--color-acce
 }
 .gemini-fab__icon { line-height: 1; }
 
-/* -- (b) painel modal (compartilhado com a janela inline do hero) -- */
+/* -- (b) painel ANCORADO ao botão flutuante (compartilha estrutura com a
+   janela inline do hero) --
+   Decisão de a11y: role="dialog" SEM aria-modal="true" (ver
+   aria-modal="false" na marcação). Este painel não é um modal de verdade —
+   ele não bloqueia nem escurece o resto da página (o overlay que o envolve
+   fica com background transparente e pointer-events:none; só o próprio
+   painel recebe pointer-events:auto). Por isso: Escape continua fechando
+   (atalho de teclado útil independente de ser modal), mas clique fora do
+   painel NÃO fecha (ver initModal() em navigation.js) — diferente do modal
+   de busca (components/modal.html), que continua 100% modal/centralizado. */
+.gemini-modal-overlay.modal-overlay {
+  background: transparent;
+  pointer-events: none;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0;
+}
 .gemini-modal-overlay .gemini-panel {
   display: flex;
   flex-direction: column;
-  max-width: 480px;
-  width: 100%;
-  max-height: 80vh;
+  pointer-events: auto;
+  position: fixed;
+  right: var(--space-5);
+  bottom: calc(72px + var(--space-5) + var(--space-3));
+  left: auto;
+  top: auto;
+  margin: 0;
+  max-width: 440px;
+  width: min(440px, calc(100vw - 2 * var(--space-5)));
+  max-height: 78vh;
   padding: 0;
   overflow: hidden;
+  transform-origin: bottom right;
 }
 .gemini-panel__header {
   padding: var(--space-5) var(--space-6);
@@ -585,7 +609,7 @@ mark.search-highlight { background: var(--color-accent); color: var(--color-acce
 .gemini-panel__body {
   flex: 1 1 auto;
   min-height: 220px;
-  max-height: 50vh;
+  max-height: none;
   overflow-y: auto;
   padding: var(--space-5) var(--space-6);
   display: flex;
@@ -701,6 +725,149 @@ mark.search-highlight { background: var(--color-accent); color: var(--color-acce
 }
 .gemini-send:disabled { opacity: 0.6; cursor: not-allowed; }
 
+/* -- cabeçalho: ações (nova conversa / salvar / histórico) -- */
+.gemini-panel__header,
+.gemini-hero-window__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.gemini-panel__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 0 0 auto;
+}
+.gemini-panel__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.gemini-panel__action .icon { width: 20px; height: 20px; }
+.gemini-panel__action:hover,
+.gemini-panel__action:focus-visible {
+  color: var(--color-text);
+  background: var(--color-bg-muted);
+}
+.gemini-panel__action:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 1px;
+}
+.gemini-panel__action:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.gemini-panel__action:disabled:hover { background: none; color: var(--color-text-muted); }
+.gemini-panel__action[aria-pressed="true"] {
+  color: var(--color-accent);
+  background: var(--color-bg-muted);
+}
+
+/* -- feedback de salvar (sucesso/erro) -- */
+.gemini-save-feedback {
+  margin: 0;
+  padding: var(--space-2) var(--space-6);
+  font-size: var(--fs-100);
+  color: var(--color-success-fg, var(--color-accent));
+  background: var(--color-success-bg, var(--color-bg-muted));
+  text-align: center;
+}
+.gemini-save-feedback[hidden] { display: none; }
+.gemini-save-feedback--error {
+  color: var(--color-danger-fg);
+  background: var(--color-danger-bg);
+}
+.gemini-hero-window .gemini-save-feedback { padding-left: var(--space-5); padding-right: var(--space-5); }
+
+/* -- view de chat/histórico: só uma visível por vez -- */
+.gemini-panel__view[hidden] { display: none; }
+
+/* -- lista de histórico de conversas -- */
+.gemini-history {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: var(--space-5) var(--space-6);
+  min-height: 220px;
+}
+.gemini-hero-window .gemini-history { padding: var(--space-4) var(--space-5); min-height: 160px; max-height: 320px; }
+.gemini-history__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.gemini-history__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.gemini-history__date {
+  margin: 0;
+  font-size: var(--fs-100);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.gemini-history__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.gemini-history__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--fs-300);
+  text-align: left;
+  cursor: pointer;
+}
+.gemini-history__item:hover,
+.gemini-history__item:focus-visible {
+  border-color: var(--color-accent);
+  background: var(--color-bg-muted);
+}
+.gemini-history__item:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 1px;
+}
+.gemini-history__item-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gemini-history__item-time {
+  flex: 0 0 auto;
+  color: var(--color-text-muted);
+  font-size: var(--fs-100);
+}
+.gemini-history__empty {
+  color: var(--color-text-muted);
+  font-size: var(--fs-200);
+  text-align: center;
+  padding: var(--space-5) 0;
+}
+
 /* -- (c) janela embutida no hero (index.html) -- */
 
 /* layout base (mobile/tablet): empilhado — texto em cima, assistente embaixo */
@@ -762,11 +929,16 @@ mark.search-highlight { background: var(--color-accent); color: var(--color-acce
   }
 }
 
-/* -- responsividade mobile: painel modal quase full-screen -- */
+/* -- responsividade mobile: painel ancorado vira bottom-sheet quase
+   full-screen (não há espaço sobrando pra "ancorar com folga", então aqui
+   ele ocupa a largura toda, grudado na borda inferior) -- */
 @media (max-width: 719px) {
   .gemini-fab { right: var(--space-4); bottom: var(--space-4); width: 64px; height: 64px; }
   .gemini-modal-overlay.modal-overlay { padding: 0; align-items: flex-end; }
   .gemini-modal-overlay .gemini-panel {
+    right: 0;
+    left: 0;
+    bottom: 0;
     max-width: 100%;
     width: 100%;
     max-height: 92vh;

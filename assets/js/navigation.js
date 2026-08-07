@@ -234,18 +234,47 @@ function initTabs() {
 
 /* ------------------------------------------------------------------ *
  * 11. MODAL genérico
- * ------------------------------------------------------------------ */
+ * ------------------------------------------------------------------ *
+ * O painel do Assistente CBKS (#gemini-modal) reaproveita esta mesma
+ * infraestrutura de data-open/data-action, mas NÃO é um modal de verdade:
+ * é um painel ancorado ao botão flutuante (ver .gemini-modal-overlay no
+ * design-system.css). Duas diferenças de comportamento em relação ao modal
+ * de busca (#search-modal, que continua 100% modal/centralizado):
+ *   1. Clique no botão flutuante funciona como TOGGLE (abre/fecha), não só abre.
+ *   2. Clique fora do painel NÃO fecha (só o botão "X" e a tecla Escape fecham).
+ * Escape continua fechando qualquer overlay aberto, gemini incluído — é um
+ * atalho de teclado padrão, diferente de "clicar fora".
+ */
 function initModal() {
   document.addEventListener("click", (event) => {
     const opener = event.target.closest("[data-action='open-modal']");
     if (opener) {
       const modal = document.getElementById(opener.dataset.target);
-      if (modal) { modal.dataset.open = "true"; modal.querySelector(".modal")?.focus(); }
+      if (modal) {
+        const isGeminiPanel = modal.id === "gemini-modal";
+        const alreadyOpen = modal.dataset.open === "true";
+        if (isGeminiPanel && alreadyOpen) {
+          // Clicar de novo no fab com o painel aberto: fecha (toggle).
+          modal.dataset.open = "false";
+        } else {
+          // Evita dois painéis flutuantes abertos ao mesmo tempo (ex.: abrir
+          // a busca enquanto o assistente está aberto fecha o assistente).
+          document.querySelectorAll(".modal-overlay[data-open='true']").forEach((m) => {
+            if (m !== modal) m.dataset.open = "false";
+          });
+          modal.dataset.open = "true";
+          modal.querySelector(".modal")?.focus();
+        }
+      }
     }
     const closer = event.target.closest("[data-action='close-modal']");
-    if (closer || event.target.classList.contains("modal-overlay")) {
+    if (closer) {
       const overlay = event.target.closest(".modal-overlay");
       if (overlay) overlay.dataset.open = "false";
+    } else if (event.target.classList.contains("modal-overlay") && event.target.id !== "gemini-modal") {
+      // Clique no backdrop fecha — exceto para o painel ancorado do
+      // assistente, que não tem "fora"/"dentro" no sentido de modal.
+      event.target.dataset.open = "false";
     }
   });
   document.addEventListener("keydown", (event) => {

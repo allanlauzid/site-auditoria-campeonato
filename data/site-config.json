@@ -3,5 +3,8 @@
   "_comment": "Configuracao de ambiente do portal. baseUrl vazio proposital: nenhum dominio real foi definido ate o momento desta auditoria RC1. Antes da publicacao, preencher baseUrl (ex.: https://www.dominio-real.com.br) e executar a substituicao de {{baseUrl}} em todas as paginas (canonical, og:url, JSON-LD url) e em sitemap.xml/robots.txt.",
   "baseUrl": "",
   "_comment_geminiProxyEndpoint": "Proxy publicado como Vercel Function na MESMA origem do site (arquivo api/gemini.js na raiz do projeto), por isso o caminho e relativo, sem dominio. O frontend NUNCA chama a API do Gemini diretamente nem guarda a chave. GEMINI_API_KEY deve ser configurada nas Environment Variables do projeto na Vercel.",
-  "geminiProxyEndpoint": "/api/gemini"
+  "geminiProxyEndpoint": "/api/gemini",
+  "_comment_supabase": "Credenciais do Supabase usadas para persistir o historico de conversas do Assistente CBKS (tabela publica 'conversas'). supabaseAnonKey e a chave PUBLICA/publishable do projeto (prefixo sb_publishable_) — foi desenhada para rodar no frontend e e protegida pelas politicas de Row Level Security (RLS) configuradas na tabela, nao pela chave em si. E completamente diferente da GEMINI_API_KEY (chave secreta, nunca exposta ao navegador, usada apenas pelo proxy serverless em api/gemini.js).",
+  "supabaseUrl": "https://yconigxtswvvijkjpvyy.supabase.co",
+  "supabaseAnonKey": "sb_publishable_N9BfaW2qLjrmJ47JxnVhMw_GGqdBkVE"
 }

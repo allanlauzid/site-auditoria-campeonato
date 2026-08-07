@@ -112,20 +112,31 @@
     <span class="gemini-fab__icon" aria-hidden="true"><svg class="icon icon-assistant" viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M4.5 5.5 H19.5 V15 H9 L6 18.5 V15 H4.5 Z"/><line x1="7.5" y1="9" x2="16.5" y2="9"/><line x1="7.5" y1="12" x2="13.5" y2="12"/></svg></span>
   </button>
   <div class="modal-overlay gemini-modal-overlay" id="gemini-modal" data-open="false">
-    <div class="modal gemini-panel" role="dialog" aria-modal="true" aria-labelledby="gemini-modal-title" tabindex="-1" data-gemini-root data-gemini-variant="modal">
+    <div class="modal gemini-panel" role="dialog" aria-modal="false" aria-labelledby="gemini-modal-title" tabindex="-1" data-gemini-root data-gemini-variant="modal">
       <div class="modal__header gemini-panel__header">
         <h2 id="gemini-modal-title" style="margin:0;font-size:var(--fs-500)"><span aria-hidden="true"><svg class="icon icon-assistant" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M4.5 5.5 H19.5 V15 H9 L6 18.5 V15 H4.5 Z"/><line x1="7.5" y1="9" x2="16.5" y2="9"/><line x1="7.5" y1="12" x2="13.5" y2="12"/></svg></span> Assistente CBKS</h2>
-        <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar assistente de IA"><svg class="icon icon-close" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true" focusable="false"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+        <div class="gemini-panel__actions">
+          <button type="button" class="gemini-panel__action" data-gemini-new aria-label="Iniciar nova conversa" title="Nova conversa"><svg class="icon icon-new" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="5.5" y="4" width="13" height="16"/><line x1="12" y1="10" x2="12" y2="16"/><line x1="9" y1="13" x2="15" y2="13"/></svg></button>
+          <button type="button" class="gemini-panel__action" data-gemini-save disabled aria-label="Salvar esta conversa" title="Salvar conversa"><svg class="icon icon-save" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M5.5 4 H14.5 L18.5 8 V20 H5.5 Z"/><path d="M14.5 4 V8 H18.5"/><line x1="8.5" y1="13.5" x2="15.5" y2="13.5"/><line x1="8.5" y1="16.5" x2="13" y2="16.5"/></svg></button>
+          <button type="button" class="gemini-panel__action" data-gemini-history aria-label="Ver histórico de conversas" title="Histórico"><svg class="icon icon-history" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><circle cx="12" cy="13" r="7.5"/><line x1="12" y1="13" x2="12" y2="8.5"/><line x1="12" y1="13" x2="15" y2="15"/><line x1="9" y1="4" x2="15" y2="4"/></svg></button>
+          <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar assistente de IA"><svg class="icon icon-close" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true" focusable="false"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+        </div>
       </div>
-      <div class="gemini-panel__body">
-        <div class="gemini-messages" data-gemini-messages role="log" aria-live="polite" aria-relevant="additions"></div>
-        <p class="gemini-status" data-gemini-status hidden></p>
+      <p class="gemini-save-feedback" data-gemini-save-feedback hidden></p>
+      <div class="gemini-panel__view" data-gemini-view-chat>
+        <div class="gemini-panel__body">
+          <div class="gemini-messages" data-gemini-messages role="log" aria-live="polite" aria-relevant="additions"></div>
+          <p class="gemini-status" data-gemini-status hidden></p>
+        </div>
+        <form class="gemini-panel__form" data-gemini-form>
+          <label for="gemini-modal-input" class="visually-hidden">Pergunte ao Assistente CBKS sobre esta página</label>
+          <textarea id="gemini-modal-input" class="gemini-input" data-gemini-input rows="1" placeholder="Pergunte sobre esta página..." autocomplete="off"></textarea>
+          <button type="submit" class="btn btn--primary gemini-send" data-gemini-send aria-label="Enviar pergunta">Enviar</button>
+        </form>
       </div>
-      <form class="gemini-panel__form" data-gemini-form>
-        <label for="gemini-modal-input" class="visually-hidden">Pergunte ao Assistente CBKS sobre esta página</label>
-        <textarea id="gemini-modal-input" class="gemini-input" data-gemini-input rows="1" placeholder="Pergunte sobre esta página..." autocomplete="off"></textarea>
-        <button type="submit" class="btn btn--primary gemini-send" data-gemini-send aria-label="Enviar pergunta">Enviar</button>
-      </form>
+      <div class="gemini-panel__view gemini-history" data-gemini-view-history hidden>
+        <div class="gemini-history__list" data-gemini-history-list></div>
+      </div>
     </div>
   </div>
   <script type="module" src="/assets/js/gemini-assistant.js"></script>
