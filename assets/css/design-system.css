@@ -257,6 +257,21 @@ code { background: var(--color-bg-muted); padding: 0.15em 0.4em; border-radius: 
 .btn--ghost { background: transparent; color: var(--color-text-muted); }
 .btn--ghost:hover { color: var(--color-text); }
 .btn--icon { padding: var(--space-2); border-radius: var(--radius-full); background: transparent; }
+.btn--download {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border-color: var(--color-border-strong);
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--fs-100);
+}
+.btn--download:hover { background: var(--color-bg-muted); }
+.btn--download .icon { vertical-align: -6px; }
+.btn--download__label { white-space: nowrap; }
+@media (max-width: 640px) {
+  .btn--download__label { display: none; }
+  .btn--download { padding: var(--space-2); border-radius: var(--radius-full); }
+}
 
 /* --------------------------------------------------------------------------
    6. CARDS
