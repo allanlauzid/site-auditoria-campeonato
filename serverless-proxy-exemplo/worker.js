@@ -14,7 +14,11 @@
 
 // Ajuste para o domínio real do portal em produção antes de publicar.
 const ALLOWED_ORIGIN = "https://www.seudominio.com.br";
-const GEMINI_MODEL = "gemini-2.0-flash";
+// "gemini-2.0-flash" tem cota ZERO na camada gratuita de projetos novos do
+// Google AI Studio (RPM/TPM/RPD = 0/0/0), o que causa 429 em toda chamada.
+// "gemini-3.1-flash-lite" tem a maior cota disponível no free tier entre os
+// modelos testados (15 RPM / 500 RPD) — melhor opção para uso contínuo.
+const GEMINI_MODEL = "gemini-3.1-flash-lite";
 const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 /**
