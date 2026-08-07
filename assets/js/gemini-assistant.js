@@ -29,9 +29,10 @@
  * Cada uma tem seu próprio estado de conversa independente.
  */
 
-import { salvarConversa, listarConversas, carregarConversa } from "./supabase-client.js";
+import { salvarConversa, listarConversas, carregarConversa, excluirConversa } from "./supabase-client.js";
 
 const SITE_CONFIG_URL = "/data/site-config.json";
+const DOCUMENTS_URL = "/data/documents.json";
 const MAX_CONTEXT_CHARS = 4000;
 const FETCH_TIMEOUT_MS = 20000;
 
@@ -54,16 +55,24 @@ async function loadSiteConfig() {
 }
 
 /* ------------------------------------------------------------------ *
- * 2. EXTRAÇÃO DO CONTEXTO DA PÁGINA ATUAL
- * ------------------------------------------------------------------ */
-function extractPageContext() {
-  const titleEl = document.querySelector("main h1") || document.querySelector("h1");
-  const title = titleEl ? titleEl.textContent.trim() : document.title;
+ * 2. EXTRAÇÃO DO CONTEXTO DE UMA PÁGINA (atual OU buscada via fetch)
+ * ------------------------------------------------------------------ *
+ * extractContentFromDocument() é a função genérica: aceita qualquer
+ * `Document` (window.document para a página atual, ou o resultado de
+ * `new DOMParser().parseFromString(html, "text/html")` para o HTML de um
+ * documento buscado via fetch — ver fetchTopicContext() mais abaixo).
+ * extractPageContext() é só um atalho que chama a genérica com a página
+ * atual, mantendo o comportamento padrão/default de sempre (analisar a
+ * página que o usuário está vendo agora).
+ */
+function extractContentFromDocument(doc, urlOverride) {
+  const titleEl = doc.querySelector("main h1") || doc.querySelector("h1");
+  const title = titleEl ? titleEl.textContent.trim() : doc.title;
 
-  const categoriaEl = document.querySelector(".doc-content > header .card__eyebrow, main .card__eyebrow");
+  const categoriaEl = doc.querySelector(".doc-content > header .card__eyebrow, main .card__eyebrow");
   const categoria = categoriaEl ? categoriaEl.textContent.trim() : "";
 
-  const mainEl = document.querySelector("main");
+  const mainEl = doc.querySelector("main");
   let bodyText = "";
   if (mainEl) {
     const clone = mainEl.cloneNode(true);
@@ -75,10 +84,80 @@ function extractPageContext() {
   }
 
   return {
-    url: window.location.pathname,
+    url: urlOverride || (doc === window.document ? window.location.pathname : ""),
     titulo: title,
     categoria,
     conteudo: bodyText,
+  };
+}
+
+function extractPageContext() {
+  return extractContentFromDocument(window.document);
+}
+
+/* ------------------------------------------------------------------ *
+ * 2b. ÍNDICE DE TÓPICOS (data/documents.json) — usado pelo filtro de
+ * tópico do painel (ver initFilterUI() mais abaixo). Cache em memória,
+ * compartilhado por todas as instâncias do assistente na página.
+ * ------------------------------------------------------------------ */
+let cachedDocumentsIndex = null;
+
+async function loadDocumentsIndex() {
+  if (cachedDocumentsIndex) return cachedDocumentsIndex;
+  try {
+    const res = await fetch(DOCUMENTS_URL);
+    if (!res.ok) throw new Error(`documents.json HTTP ${res.status}`);
+    cachedDocumentsIndex = await res.json();
+  } catch (err) {
+    console.error("[gemini-assistant.js] Falha ao carregar documents.json:", err);
+    cachedDocumentsIndex = { categories: [], documents: [] };
+  }
+  return cachedDocumentsIndex;
+}
+
+/**
+ * Busca (fetch) o HTML de um documento do índice, faz parse via DOMParser e
+ * reaproveita extractContentFromDocument() para extrair título/categoria/
+ * conteúdo — a MESMA extração usada para a página atual, só que aplicada a
+ * um Document "arbitrário" (o HTML buscado) em vez de window.document.
+ */
+async function fetchTopicContext(doc) {
+  const res = await fetchWithTimeout(doc.url, {}, FETCH_TIMEOUT_MS);
+  if (!res.ok) throw new Error(`Falha ao buscar ${doc.url}: HTTP ${res.status}`);
+  const html = await res.text();
+  const parsed = new DOMParser().parseFromString(html, "text/html");
+  const extracted = extractContentFromDocument(parsed, doc.url);
+  return {
+    url: doc.url,
+    titulo: doc.titulo || extracted.titulo,
+    categoria: doc.categoria || extracted.categoria,
+    conteudo: extracted.conteudo,
+  };
+}
+
+/**
+ * Monta o contexto "Site inteiro": não é o texto integral dos ~22
+ * documentos (estouraria MAX_CONTEXTO_CHARS do proxy) — é uma lista
+ * compacta "Título — Categoria — Grupo" de cada documento do índice,
+ * truncada com reticências caso ainda assim ultrapasse o limite.
+ */
+function buildSiteWideContext(documentsIndex) {
+  const categoryLabelById = new Map(
+    (documentsIndex.categories || []).map((c) => [c.id, c.label])
+  );
+  const linhas = (documentsIndex.documents || []).map((d) => {
+    const categoriaLabel = categoryLabelById.get(d.categoria) || d.categoria || "";
+    return `${d.titulo} — ${categoriaLabel} — ${d.grupoPrimario || ""}`;
+  });
+  let conteudo = linhas.join("\n");
+  if (conteudo.length > MAX_CONTEXT_CHARS) {
+    conteudo = conteudo.slice(0, MAX_CONTEXT_CHARS) + "…";
+  }
+  return {
+    url: "site-inteiro",
+    titulo: "Site inteiro (resumo agregado de todos os documentos)",
+    categoria: "todas",
+    conteudo,
   };
 }
 
@@ -268,6 +347,9 @@ function initInstance(root) {
   const chatViewEl = root.querySelector("[data-gemini-view-chat]");
   const historyViewEl = root.querySelector("[data-gemini-view-history]");
   const historyListEl = root.querySelector("[data-gemini-history-list]");
+  const filterToggleBtn = root.querySelector("[data-gemini-filter-toggle]");
+  const filterPanelEl = root.querySelector("[data-gemini-filter-panel]");
+  const filterChipEl = root.querySelector("[data-gemini-filter-chip]");
 
   if (!messagesEl || !form || !input || !sendBtn) return;
 
@@ -278,8 +360,23 @@ function initInstance(root) {
   let conversaAtualId = null;
   let saveFeedbackTimer = null;
 
+  /* ---------------------------------------------------------------- *
+   * FILTRO DE TÓPICO — estado da CONVERSA atual (variável JS de sessão,
+   * nunca localStorage). null = comportamento padrão (analisa a página
+   * atual). { tipo: "site" } = resumo agregado do site inteiro.
+   * { tipo: "topico", doc } = conteúdo de um documento específico do
+   * índice (documents.json), buscado via fetch mesmo que o usuário não
+   * esteja naquela página.
+   * ---------------------------------------------------------------- */
+  let filtroAtivo = null;
+  /** Cache em memória do conteúdo já buscado por id de tópico — evita
+   *  refazer fetch a cada pergunta enquanto o mesmo filtro está ativo. */
+  const topicContextCache = new Map();
+  let siteWideContextCache = null;
+
   renderEmptyState(messagesEl);
   updateSaveButtonState();
+  initFilterUI();
 
   /* ---------------------------------------------------------------- *
    * NOVA CONVERSA / SALVAR / HISTÓRICO
@@ -316,6 +413,10 @@ function initInstance(root) {
     clearMessagesUI();
     updateSaveButtonState();
     showView("chat");
+    // Reseta o filtro de tópico de volta ao padrão (página atual).
+    filtroAtivo = null;
+    updateFilterChip();
+    closeFilterPanel();
   }
 
   async function salvarConversaAtual() {
@@ -328,6 +429,31 @@ function initInstance(root) {
       showSaveFeedback("Conversa salva", false);
     } else {
       showSaveFeedback(resultado.erro || "Não foi possível salvar a conversa agora.", true);
+    }
+  }
+
+  /**
+   * Salvamento AUTOMÁTICO (autosave), disparado logo após cada resposta do
+   * assistente ser recebida com sucesso. Fire-and-forget: não bloqueia a UI,
+   * não mostra popup/feedback visual algum (isso é exclusivo do clique
+   * manual no botão "Salvar", ver salvarConversaAtual acima) e qualquer
+   * erro é apenas logado no console — nunca interrompe a conversa nem
+   * trava o campo de entrada. Reaproveita a mesma lógica de INSERT/UPDATE
+   * (upsert por id) de salvarConversa: primeira vez → id null → INSERT;
+   * vezes seguintes → id presente → UPDATE.
+   */
+  async function autoSalvarConversa() {
+    if (historico.length === 0) return;
+    try {
+      const resultado = await salvarConversa({ id: conversaAtualId, mensagens: historico });
+      if (resultado.sucesso) {
+        conversaAtualId = resultado.id;
+        updateSaveButtonState();
+      } else {
+        console.warn("[gemini-assistant.js] Autosave falhou:", resultado.erro);
+      }
+    } catch (err) {
+      console.error("[gemini-assistant.js] Erro inesperado no autosave:", err);
     }
   }
 
@@ -355,6 +481,67 @@ function initInstance(root) {
       minute: "2-digit",
     });
     return { data: dataFormatada, hora: horaFormatada };
+  }
+
+  /**
+   * Substitui temporariamente o conteúdo de um item da lista de histórico
+   * por uma confirmação inline ("Excluir esta conversa? [Confirmar]
+   * [Cancelar]"). Ao confirmar, chama excluirConversa(id); se der certo,
+   * remove o item da lista e, se a conversa excluída era a que está aberta
+   * no momento (conversaAtualId), reseta o chat para uma conversa nova
+   * vazia.
+   */
+  function pedirConfirmacaoExclusao(itemEl, id) {
+    const conteudoOriginal = Array.from(itemEl.children);
+    itemEl.innerHTML = "";
+
+    const confirmWrap = document.createElement("div");
+    confirmWrap.className = "gemini-history__confirm";
+
+    const texto = document.createElement("span");
+    texto.className = "gemini-history__confirm-text";
+    texto.textContent = "Excluir esta conversa?";
+
+    const confirmarBtn = document.createElement("button");
+    confirmarBtn.type = "button";
+    confirmarBtn.className = "gemini-history__confirm-btn gemini-history__confirm-btn--danger";
+    confirmarBtn.textContent = "Confirmar";
+
+    const cancelarBtn = document.createElement("button");
+    cancelarBtn.type = "button";
+    cancelarBtn.className = "gemini-history__confirm-btn";
+    cancelarBtn.textContent = "Cancelar";
+
+    function restaurarItem() {
+      itemEl.innerHTML = "";
+      conteudoOriginal.forEach((el) => itemEl.appendChild(el));
+    }
+
+    cancelarBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      restaurarItem();
+    });
+
+    confirmarBtn.addEventListener("click", async (event) => {
+      event.stopPropagation();
+      confirmarBtn.disabled = true;
+      cancelarBtn.disabled = true;
+      const resultado = await excluirConversa(id);
+      if (!resultado.sucesso) {
+        showSaveFeedback(resultado.erro || "Não foi possível excluir essa conversa agora.", true);
+        restaurarItem();
+        return;
+      }
+      itemEl.remove();
+      if (id === conversaAtualId) {
+        novaConversa();
+      }
+    });
+
+    confirmWrap.appendChild(texto);
+    confirmWrap.appendChild(confirmarBtn);
+    confirmWrap.appendChild(cancelarBtn);
+    itemEl.appendChild(confirmWrap);
   }
 
   async function abrirHistorico() {
@@ -412,6 +599,8 @@ function initInstance(root) {
 
       itens.forEach((conversa) => {
         const itemEl = document.createElement("li");
+        itemEl.className = "gemini-history__row";
+
         const btnEl = document.createElement("button");
         btnEl.type = "button";
         btnEl.className = "gemini-history__item";
@@ -428,7 +617,20 @@ function initInstance(root) {
         btnEl.appendChild(horaEl);
         btnEl.addEventListener("click", () => carregarConversaNaTela(conversa.id));
 
+        const deleteBtnEl = document.createElement("button");
+        deleteBtnEl.type = "button";
+        deleteBtnEl.className = "gemini-history__item-delete";
+        deleteBtnEl.setAttribute("aria-label", "Excluir esta conversa");
+        deleteBtnEl.title = "Excluir conversa";
+        deleteBtnEl.innerHTML =
+          '<svg class="icon icon-delete" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><line x1="5" y1="7" x2="19" y2="7"/><path d="M7.5 7 V5.5 H16.5 V7"/><path d="M6.5 7 L7.5 20 H16.5 L17.5 7"/><line x1="10" y1="10" x2="10" y2="17"/><line x1="14" y1="10" x2="14" y2="17"/></svg>'; // markup estático, sem dado externo — mesmo padrão de setStatus()
+        deleteBtnEl.addEventListener("click", (event) => {
+          event.stopPropagation();
+          pedirConfirmacaoExclusao(itemEl, conversa.id);
+        });
+
         itemEl.appendChild(btnEl);
+        itemEl.appendChild(deleteBtnEl);
         listaEl.appendChild(itemEl);
       });
 
@@ -459,6 +661,178 @@ function initInstance(root) {
     }
     updateSaveButtonState();
     showView("chat");
+  }
+
+  /* ---------------------------------------------------------------- *
+   * FILTRO DE TÓPICO — UI (botão retrátil + lista agrupada + chip)
+   * ---------------------------------------------------------------- */
+  function initFilterUI() {
+    if (!filterToggleBtn || !filterPanelEl) return;
+    filterToggleBtn.addEventListener("click", toggleFilterPanel);
+    updateFilterChip();
+  }
+
+  function toggleFilterPanel() {
+    if (filterPanelEl.hidden) {
+      openFilterPanel();
+    } else {
+      closeFilterPanel();
+    }
+  }
+
+  function closeFilterPanel() {
+    if (!filterPanelEl) return;
+    filterPanelEl.hidden = true;
+    if (filterToggleBtn) filterToggleBtn.setAttribute("aria-expanded", "false");
+  }
+
+  async function openFilterPanel() {
+    filterPanelEl.hidden = false;
+    if (filterToggleBtn) filterToggleBtn.setAttribute("aria-expanded", "true");
+    await renderFilterPanel();
+  }
+
+  async function renderFilterPanel() {
+    filterPanelEl.innerHTML = "";
+    const carregando = document.createElement("p");
+    carregando.className = "gemini-filter-panel__empty";
+    carregando.textContent = "Carregando tópicos...";
+    filterPanelEl.appendChild(carregando);
+
+    const documentsIndex = await loadDocumentsIndex();
+    filterPanelEl.innerHTML = "";
+
+    if (!documentsIndex.documents || documentsIndex.documents.length === 0) {
+      const erro = document.createElement("p");
+      erro.className = "gemini-filter-panel__empty";
+      erro.textContent = "Não foi possível carregar a lista de tópicos agora.";
+      filterPanelEl.appendChild(erro);
+      return;
+    }
+
+    const list = document.createElement("ul");
+    list.className = "gemini-filter-list";
+
+    // Opção fixa "Site inteiro", sempre no topo, com destaque visual.
+    const siteWideItem = document.createElement("li");
+    const siteWideBtn = document.createElement("button");
+    siteWideBtn.type = "button";
+    siteWideBtn.className = "gemini-filter-item gemini-filter-item--sitewide";
+    siteWideBtn.textContent = "Site inteiro";
+    siteWideBtn.addEventListener("click", () => selectFilter({ tipo: "site" }));
+    siteWideItem.appendChild(siteWideBtn);
+    list.appendChild(siteWideItem);
+
+    // Grupos por categoria, na ordem/rótulos definidos em documents.json.
+    (documentsIndex.categories || []).forEach((categoria) => {
+      const docsDaCategoria = documentsIndex.documents.filter((d) => d.categoria === categoria.id);
+      if (docsDaCategoria.length === 0) return;
+
+      const groupItem = document.createElement("li");
+      groupItem.className = "gemini-filter-group";
+
+      const groupLabel = document.createElement("p");
+      groupLabel.className = "gemini-filter-group__label";
+      groupLabel.textContent = categoria.label;
+      groupItem.appendChild(groupLabel);
+
+      const groupList = document.createElement("ul");
+      groupList.className = "gemini-filter-group__items";
+
+      docsDaCategoria.forEach((doc) => {
+        const docItem = document.createElement("li");
+        const docBtn = document.createElement("button");
+        docBtn.type = "button";
+        docBtn.className = "gemini-filter-item";
+        docBtn.textContent = doc.titulo;
+        docBtn.addEventListener("click", () => selectFilter({ tipo: "topico", doc }));
+        docItem.appendChild(docBtn);
+        groupList.appendChild(docItem);
+      });
+
+      groupItem.appendChild(groupList);
+      list.appendChild(groupItem);
+    });
+
+    filterPanelEl.appendChild(list);
+  }
+
+  function selectFilter(filtro) {
+    filtroAtivo = filtro;
+    updateFilterChip();
+    closeFilterPanel();
+  }
+
+  function updateFilterChip() {
+    if (!filterChipEl) return;
+    filterChipEl.innerHTML = "";
+    if (!filtroAtivo) {
+      filterChipEl.hidden = true;
+      return;
+    }
+    filterChipEl.hidden = false;
+
+    const label = document.createElement("span");
+    label.className = "gemini-filter-chip__label";
+    label.textContent =
+      filtroAtivo.tipo === "site" ? "Filtro: Site inteiro" : `Filtro: ${filtroAtivo.doc.titulo}`;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.type = "button";
+    removeBtn.className = "gemini-filter-chip__remove";
+    removeBtn.setAttribute("aria-label", "Remover filtro e voltar para a página atual");
+    removeBtn.title = "Remover filtro";
+    removeBtn.textContent = "✕";
+    removeBtn.addEventListener("click", () => {
+      filtroAtivo = null;
+      updateFilterChip();
+    });
+
+    filterChipEl.appendChild(label);
+    filterChipEl.appendChild(removeBtn);
+  }
+
+  /**
+   * Resolve o contexto a enviar ao proxy de acordo com o filtro ativo:
+   *  - sem filtro (padrão) → conteúdo da página atual (extractPageContext).
+   *  - "site" → resumo agregado do site inteiro (cacheado após a 1ª vez).
+   *  - "topico" → conteúdo do documento buscado via fetch (cacheado por id
+   *    enquanto o filtro permanecer o mesmo). Em caso de falha de rede, o
+   *    filtro é desfeito (volta para a página atual) e uma mensagem amigável
+   *    é mostrada, sem travar a conversa.
+   */
+  async function resolveContextoAtual() {
+    if (!filtroAtivo) return extractPageContext();
+
+    if (filtroAtivo.tipo === "site") {
+      if (!siteWideContextCache) {
+        const documentsIndex = await loadDocumentsIndex();
+        siteWideContextCache = buildSiteWideContext(documentsIndex);
+      }
+      return siteWideContextCache;
+    }
+
+    if (filtroAtivo.tipo === "topico") {
+      const id = filtroAtivo.doc.id;
+      if (topicContextCache.has(id)) return topicContextCache.get(id);
+      try {
+        const contexto = await fetchTopicContext(filtroAtivo.doc);
+        topicContextCache.set(id, contexto);
+        return contexto;
+      } catch (err) {
+        console.error("[gemini-assistant.js] Falha ao buscar conteúdo do tópico filtrado:", err);
+        filtroAtivo = null;
+        updateFilterChip();
+        renderErrorMessage(
+          messagesEl,
+          "Não foi possível carregar o conteúdo desse tópico agora. Voltando a usar a página atual como contexto.",
+          null
+        );
+        return extractPageContext();
+      }
+    }
+
+    return extractPageContext();
   }
 
   if (newBtn) newBtn.addEventListener("click", novaConversa);
@@ -513,6 +887,7 @@ function initInstance(root) {
     let resposta = null;
 
     try {
+      const contextoPagina = await resolveContextoAtual();
       const res = await fetchWithTimeout(
         endpoint,
         {
@@ -520,7 +895,7 @@ function initInstance(root) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             pergunta,
-            contextoPagina: extractPageContext(),
+            contextoPagina,
             historico,
           }),
         },
@@ -560,6 +935,10 @@ function initInstance(root) {
     } else {
       renderMessage(messagesEl, "assistant", resposta);
       historico.push({ papel: "assistente", texto: resposta });
+      updateSaveButtonState();
+      // Fire-and-forget: não usa await para não bloquear a UI; erros são
+      // tratados dentro de autoSalvarConversa (console.warn/error apenas).
+      autoSalvarConversa();
     }
 
     setSending(false);

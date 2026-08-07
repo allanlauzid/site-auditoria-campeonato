@@ -608,7 +608,14 @@ mark.search-highlight { background: var(--color-accent); color: var(--color-acce
 }
 .gemini-panel__body {
   flex: 1 1 auto;
-  min-height: 220px;
+  /* min-height: 0 (em vez de um valor fixo) é o que permite este item
+     flex encolher de verdade dentro do .gemini-panel (coluna flex com
+     max-height: 78vh) — sem isso o comportamento padrão do flexbox
+     (min-height: auto) trava o item no tamanho do conteúdo, o painel
+     cresce além do viewport e o overflow-y:auto abaixo nunca chega a
+     rolar. Também elimina o vão vazio fixo que existia abaixo do campo
+     de digitação em conversas curtas. */
+  min-height: 0;
   max-height: none;
   overflow-y: auto;
   padding: var(--space-5) var(--space-6);
@@ -621,7 +628,41 @@ mark.search-highlight { background: var(--color-accent); color: var(--color-acce
   gap: var(--space-3);
   align-items: flex-end;
   padding: var(--space-4) var(--space-6);
+  margin: 0;
   border-top: 1px solid var(--color-border);
+}
+
+/* -- scrollbar escura reutilizável (áreas de rolagem escuras do painel:
+   corpo de mensagens do chat e lista de histórico) -- */
+.scrollbar-escura,
+.gemini-panel__body,
+.gemini-history {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-cinza-ferro, var(--color-text-muted)) var(--color-ferro, var(--color-carvao, #1a1a1a));
+}
+.scrollbar-escura::-webkit-scrollbar,
+.gemini-panel__body::-webkit-scrollbar,
+.gemini-history::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.scrollbar-escura::-webkit-scrollbar-track,
+.gemini-panel__body::-webkit-scrollbar-track,
+.gemini-history::-webkit-scrollbar-track {
+  background: var(--color-ferro, var(--color-carvao, #1a1a1a));
+  border-radius: var(--radius-sm);
+}
+.scrollbar-escura::-webkit-scrollbar-thumb,
+.gemini-panel__body::-webkit-scrollbar-thumb,
+.gemini-history::-webkit-scrollbar-thumb {
+  background-color: var(--color-cinza-ferro, var(--color-text-muted));
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-ferro, var(--color-carvao, #1a1a1a));
+}
+.scrollbar-escura::-webkit-scrollbar-thumb:hover,
+.gemini-panel__body::-webkit-scrollbar-thumb:hover,
+.gemini-history::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-text-muted);
 }
 
 /* -- bolhas de mensagem -- */
@@ -788,6 +829,127 @@ mark.search-highlight { background: var(--color-accent); color: var(--color-acce
 }
 .gemini-hero-window .gemini-save-feedback { padding-left: var(--space-5); padding-right: var(--space-5); }
 
+/* -- filtro de tópico: botão retrátil, painel de tópicos, chip ativo -- */
+.gemini-panel__action[data-gemini-filter-toggle][aria-expanded="true"] {
+  color: var(--color-accent);
+  background: var(--color-bg-muted);
+}
+.gemini-filter-panel {
+  overflow-y: auto;
+  max-height: 260px;
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-muted);
+}
+.gemini-filter-panel[hidden] { display: none; }
+.gemini-hero-window .gemini-filter-panel { padding-left: var(--space-5); padding-right: var(--space-5); max-height: 200px; }
+.gemini-filter-panel__empty {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--fs-200);
+  text-align: center;
+  padding: var(--space-3) 0;
+}
+.gemini-filter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.gemini-filter-item {
+  display: block;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--fs-200);
+  text-align: left;
+  cursor: pointer;
+}
+.gemini-filter-item:hover,
+.gemini-filter-item:focus-visible {
+  border-color: var(--color-accent);
+  background: var(--color-bg-elevated);
+}
+.gemini-filter-item:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 1px;
+}
+.gemini-filter-item--sitewide {
+  font-weight: var(--fw-semibold);
+  border-color: var(--color-border);
+  background: var(--color-bg-elevated);
+  margin-bottom: var(--space-1);
+}
+.gemini-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+.gemini-filter-list > li.gemini-filter-group:first-of-type { border-top: none; padding-top: 0; }
+.gemini-filter-group__label {
+  margin: 0;
+  font-size: var(--fs-100);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.gemini-filter-group__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.gemini-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-3) var(--space-6) 0;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--color-bg-muted);
+  color: var(--color-accent);
+  font-size: var(--fs-100);
+  align-self: flex-start;
+}
+.gemini-filter-chip[hidden] { display: none; }
+.gemini-hero-window .gemini-filter-chip { margin-left: var(--space-5); margin-right: var(--space-5); }
+.gemini-filter-chip__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 260px;
+}
+.gemini-filter-chip__remove {
+  flex: 0 0 auto;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: var(--fs-100);
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+.gemini-filter-chip__remove:hover,
+.gemini-filter-chip__remove:focus-visible {
+  color: var(--color-danger-fg);
+}
+.gemini-filter-chip__remove:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 1px;
+}
+
 /* -- view de chat/histórico: só uma visível por vez -- */
 .gemini-panel__view[hidden] { display: none; }
 
@@ -867,6 +1029,70 @@ mark.search-highlight { background: var(--color-accent); color: var(--color-acce
   text-align: center;
   padding: var(--space-5) 0;
 }
+
+/* -- linha do item de histórico: item clicável + botão excluir à direita -- */
+.gemini-history__row {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-2);
+}
+.gemini-history__row .gemini-history__item { flex: 1 1 auto; }
+.gemini-history__item-delete {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+.gemini-history__item-delete .icon { width: 18px; height: 18px; }
+.gemini-history__item-delete:hover,
+.gemini-history__item-delete:focus-visible {
+  color: var(--color-danger-fg);
+  border-color: var(--color-danger-fg);
+  background: var(--color-danger-bg);
+}
+.gemini-history__item-delete:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 1px;
+}
+
+/* -- confirmação inline de exclusão, substitui o conteúdo do item -- */
+.gemini-history__confirm {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-danger-fg);
+  border-radius: var(--radius-md);
+  background: var(--color-danger-bg);
+}
+.gemini-history__confirm-text {
+  flex: 1 1 auto;
+  color: var(--color-danger-fg);
+  font-size: var(--fs-200);
+}
+.gemini-history__confirm-btn {
+  flex: 0 0 auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--fs-100);
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+}
+.gemini-history__confirm-btn--danger {
+  border-color: var(--color-danger-fg);
+  color: var(--color-danger-fg);
+}
+.gemini-history__confirm-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
 /* -- (c) janela embutida no hero (index.html) -- */
 

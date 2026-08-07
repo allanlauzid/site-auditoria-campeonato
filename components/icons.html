@@ -123,16 +123,32 @@
      icon-save — Salvar conversa
      Uso: botão "Salvar conversa" no cabeçalho do painel/janela do
      Assistente CBKS (.gemini-panel__action--save). Dimensão de uso: 20x20.
-     Leitura: retângulo de documento com a quina superior direita cortada
-     (dobra de canto), mais uma linha horizontal — remete a "registro/
-     arquivo salvo" em vez do disquete genérico de biblioteca de ícones,
-     mantendo a mesma linguagem reta/geométrica do sistema.
+     Leitura: disquete de traço reto — corpo com quina superior direita
+     cortada, "obturador" metálico retangular no topo e etiqueta retangular
+     na base — mesma linguagem geométrica do restante do conjunto (sem
+     curvas), agora com o pictograma universal de "salvar".
 ===================================================================== -->
 <svg class="icon icon-save" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false">
-  <path d="M5.5 4 H14.5 L18.5 8 V20 H5.5 Z"/>
-  <path d="M14.5 4 V8 H18.5"/>
-  <line x1="8.5" y1="13.5" x2="15.5" y2="13.5"/>
-  <line x1="8.5" y1="16.5" x2="13" y2="16.5"/>
+  <path d="M4.5 4.5 H16.5 L19.5 7.5 V19.5 H4.5 Z"/>
+  <rect x="7.5" y="4.5" width="8" height="5.5"/>
+  <rect x="7" y="13.5" width="10" height="6"/>
+</svg>
+
+<!-- =====================================================================
+     icon-delete — Excluir conversa
+     Uso: botão de exclusão no canto direito de cada item da lista de
+     histórico do Assistente CBKS (.gemini-history__item-delete). Dimensão
+     de uso: 18x18.
+     Leitura: lixeira simples — tampa (linha + traço de alça), corpo
+     trapezoidal reto e duas linhas verticais internas, mesma linguagem de
+     traço reto/geométrico do restante do conjunto.
+===================================================================== -->
+<svg class="icon icon-delete" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false">
+  <line x1="5" y1="7" x2="19" y2="7"/>
+  <path d="M7.5 7 V5.5 H16.5 V7"/>
+  <path d="M6.5 7 L7.5 20 H16.5 L17.5 7"/>
+  <line x1="10" y1="10" x2="10" y2="17"/>
+  <line x1="14" y1="10" x2="14" y2="17"/>
 </svg>
 
 <!-- =====================================================================
@@ -149,4 +165,18 @@
   <line x1="12" y1="13" x2="12" y2="8.5"/>
   <line x1="12" y1="13" x2="15" y2="15"/>
   <line x1="9" y1="4" x2="15" y2="4"/>
+</svg>
+
+<!-- =====================================================================
+     icon-filter — Filtrar tópico da conversa
+     Uso: botão "Filtrar tópico" no cabeçalho do painel/janela do Assistente
+     CBKS (data-gemini-filter-toggle), expande/retrai a lista de tópicos do
+     site (documents.json) usada como contexto da conversa. Dimensão de
+     uso: 20x20.
+     Leitura: funil de traço reto (silhueta poligonal única, sem curvas) —
+     pictograma universal de filtro, na mesma linguagem geométrica de
+     cantos retos do restante do conjunto.
+===================================================================== -->
+<svg class="icon icon-filter" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false">
+  <path d="M4 5.5 H20 L14 13 V19 L10 17 V13 Z"/>
 </svg>

@@ -138,6 +138,29 @@ export async function listarConversas({ limite = 50 } = {}) {
 }
 
 /**
+ * Exclui uma conversa por id (DELETE na tabela "conversas").
+ * Retorna { sucesso: true } ou { sucesso: false, erro }.
+ */
+export async function excluirConversa(id) {
+  const client = await getClient();
+  if (!client) {
+    return { sucesso: false, erro: "Histórico indisponível no momento. Tente novamente mais tarde." };
+  }
+  if (!id) {
+    return { sucesso: false, erro: "Conversa inválida." };
+  }
+
+  try {
+    const { error } = await client.from(TABELA).delete().eq("id", id);
+    if (error) throw error;
+    return { sucesso: true, erro: null };
+  } catch (err) {
+    console.error("[supabase-client.js] Falha ao excluir conversa:", err);
+    return { sucesso: false, erro: "Não foi possível excluir essa conversa agora. Tente novamente." };
+  }
+}
+
+/**
  * Carrega uma conversa completa por id.
  * Retorna { sucesso, dados, erro }.
  */
