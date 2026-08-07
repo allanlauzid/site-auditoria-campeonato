@@ -950,7 +950,23 @@ mark.search-highlight { background: var(--color-accent); color: var(--color-acce
   outline-offset: 1px;
 }
 
-/* -- view de chat/histórico: só uma visível por vez -- */
+/* -- view de chat/histórico: só uma visível por vez --
+   Causa raiz do vão vazio na janela do hero: .gemini-panel__view é filho
+   direto de .gemini-hero-window/.gemini-panel (ambos flex column), mas não
+   declarava display:flex nem flex:1 1 auto. Sem isso, o flex:1 1 auto de
+   .gemini-panel__body (linha ~610) não tinha efeito nenhum — flex só
+   funciona relativo a um pai flex container — então o corpo ficava preso
+   ao min-height/conteúdo e sobrava espaço morto entre o form e a borda
+   inferior do card sempre que o card era esticado (align-self: stretch no
+   grid do hero em desktop). Tornando esta view um flex container em
+   coluna, com flex:1 1 auto e min-height:0, o corpo volta a poder crescer
+   (e encolher) para preencher exatamente o espaço restante. */
+.gemini-panel__view {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
 .gemini-panel__view[hidden] { display: none; }
 
 /* -- lista de histórico de conversas -- */
